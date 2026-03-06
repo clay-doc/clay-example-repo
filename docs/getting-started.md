@@ -89,10 +89,10 @@ This downloads the appropriate Clay Oven binary for your platform, scans your `d
 
 ## Step 5: Preview Your Site
 
-Open the generated files in the `./output` directory with any static file server to preview your documentation site:
+Open the generated files in the `./output/public` directory with any static file server to preview your documentation site:
 
 ```bash
-npx serve output
+npx serve ./output/public
 ```
 
 That's it! You now have a fully functional documentation site powered by Clay.
