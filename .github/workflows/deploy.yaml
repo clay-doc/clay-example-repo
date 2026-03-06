@@ -23,12 +23,15 @@ jobs:
           contents: read
           pages: write
           id-token: write
+
         steps:
         - name: Checkout Repository
           uses: actions/checkout@v3
 
         - name: Build Clay 
           run: curl https://raw.githubusercontent.com/clay-doc/clay-oven/refs/heads/main/run-oven.sh | sh
+          env:
+            CLAY_FONTAWESOME_KIT: ${{ secrets.CLAY_FONTAWESOME_KIT }}
 
         - name: Setup Pages
           uses: actions/configure-pages@v3
