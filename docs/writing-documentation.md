@@ -54,7 +54,7 @@ def greet(name: str) -> str:
     return f"Hello, {name}!"
 ```
 
-The languages available for highlighting are configured in `clay.yaml` under the `langs` field:
+The languages available for highlighting are defined in your `clay.yaml` under the `langs` field. Only languages listed there will be highlighted:
 
 ```yaml
 langs:

@@ -5,7 +5,7 @@ icon: fa-solid fa-wand-magic-sparkles
 
 # Advanced Features
 
-This page covers advanced Clay features for users who want to get the most out of their documentation site.
+This page covers advanced Clay topics for users who want to get the most out of their documentation site.
 
 ## Deep Nesting
 
@@ -26,7 +26,7 @@ The corresponding `dir-meta.yaml` for this structure looks like:
 
 ## Multi-Language Code Examples
 
-Since Clay supports multiple syntax highlighting languages via Shiki, you can showcase the same concept in different languages:
+Since Clay supports multiple syntax highlighting languages via Shiki, you can showcase the same concept in different languages. Make sure each language is listed in the `langs` field of your `clay.yaml`.
 
 ### Python
 
@@ -90,23 +90,43 @@ Console.WriteLine(page.Render()); // 🚀 Getting Started
 
 ## Custom Base URLs
 
-When deploying Clay documentation to a subpath (e.g., `https://example.com/docs/`), set the `baseURL` in `clay.yaml`:
+When deploying your documentation to a subpath (e.g., `https://example.com/docs/`), set the `baseURL` in your `clay.yaml`:
 
 ```yaml
 baseURL: "/docs/"
 ```
 
-You can also override this at build time:
+You can also override this at build time using the `CLAY_BASE_URL` environment variable, without modifying your config file:
 
 ```bash
-BASE_URL=/my-custom-path/ clay-oven build
+CLAY_BASE_URL="/my-custom-path/" ./clay-oven
 ```
 
-This is particularly useful in CI/CD pipelines where the deployment path may vary between environments.
+This is particularly useful in CI/CD pipelines where the deployment path may vary between environments (e.g., staging vs. production).
+
+## Clay Oven CLI Options
+
+When building your site, Clay Oven supports several CLI flags to customise its behaviour:
+
+| Flag   | Description                                              | Default          |
+|--------|----------------------------------------------------------|------------------|
+| `-c`   | Path to config file                                      | `clay.yaml`      |
+| `-d`   | Path to documents directory                              | `./docs`         |
+| `-o`   | Output directory                                         | `./output`       |
+| `-fm`  | Path to folder meta file                                 | `dir-meta.yaml`  |
+| `-nc`  | Skip confirmation prompts                                | —                |
+| `-ci`  | Run in CI mode (plain output, no TUI, auto-confirm)      | —                |
+| `-v`   | Enable verbose (debug) output                            | —                |
+
+For example, to build with a custom docs directory and output path:
+
+```bash
+./clay-oven -d ./documentation -o ./dist
+```
 
 ## Integration with CI/CD
 
-Clay is designed to integrate smoothly into automated workflows. Here's an example GitHub Actions workflow:
+Clay is designed to fit into automated workflows. Here's an example GitHub Actions workflow that builds and deploys your documentation on every push to `main`:
 
 ```yaml
 name: Build Documentation
@@ -125,13 +145,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Clay Oven
-        run: |
-          # Install Clay Oven (see clay-oven docs for latest instructions)
-          curl -fsSL https://github.com/clay-doc/clay-oven/releases/latest/download/install.sh | bash
-
       - name: Build docs
-        run: clay-oven build
+        run: curl -fsSL https://raw.githubusercontent.com/clay-doc/clay-oven/refs/heads/main/run-oven.sh | sh
+        env:
+          CLAY_BASE_URL: "/my-project/"
 
       - name: Deploy
         uses: actions/upload-pages-artifact@v3
@@ -140,7 +157,7 @@ jobs:
 ```
 
 > [!TIP]
-> Only trigger documentation builds when files in `docs/`, `clay.yaml`, or `dir-meta.yaml` change to save CI minutes.
+> Use the `-ci` flag or the `run-oven.sh` script in CI pipelines to avoid interactive prompts. Only trigger builds when files in `docs/`, `clay.yaml`, or `dir-meta.yaml` change to save CI minutes.
 
 ## Tips for Large Documentation Sites
 

@@ -93,13 +93,13 @@ langs:
 The `dir-meta.yaml` file defines metadata for directories in your documentation, such as display names and icons:
 
 ```yaml
-- path: "subdir"
-  name: "Sub directory"
-  icon: "fa-solid fa-briefcase"
+- path: "guides"
+  name: "Guides"
+  icon: "fa-solid fa-book-open"
   children:
-    - path: "lower"
-      name: "Even Lower"
-      icon: "fa-solid fa-folder"
+    - path: "advanced"
+      name: "Advanced"
+      icon: "fa-solid fa-wand-magic-sparkles"
       children:
 ```
 

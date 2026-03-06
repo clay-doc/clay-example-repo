@@ -5,20 +5,20 @@ icon: fa-solid fa-gear
 
 # Configuration Reference
 
-Clay is configured through YAML files in the root of your project. This page provides a complete reference for all available options.
+Clay uses YAML configuration files in the root of your project to control how your documentation site looks and behaves. This page provides a complete reference for all available options.
 
 ## clay.yaml
 
-The `clay.yaml` file is the main configuration file. It controls the site title, navigation, landing page, and more.
+The `clay.yaml` file is the main configuration file. It controls the site title, navigation bar, landing page, and syntax highlighting.
 
 ### Top-Level Options
 
-| Option          | Type     | Description                                           |
-|-----------------|----------|-------------------------------------------------------|
-| `title`         | `string` | The name of your documentation site.                  |
-| `favicon`       | `string` | Path to the favicon image file.                       |
-| `baseURL`       | `string` | The base URL path where the site is served.           |
-| `fontawesomeKit`| `string` | Your FontAwesome kit ID for loading icons.            |
+| Option          | Type     | Description                                                    |
+|-----------------|----------|----------------------------------------------------------------|
+| `title`         | `string` | The name of your documentation site, displayed in the browser tab and navbar. |
+| `favicon`       | `string` | Path to the favicon image file (relative to the project root). |
+| `baseURL`       | `string` | The base URL path where the site will be served (e.g., `/` or `/docs/`). |
+| `fontawesomeKit`| `string` | Your [FontAwesome](https://fontawesome.com/) kit ID for loading icons. |
 
 ### Navbar
 
@@ -43,7 +43,7 @@ navbar:
 | `navbar.source` | `object` | Link to the source code repository.              |
 | `navbar.links`  | `array`  | Additional navigation links in the navbar.       |
 
-Each link in `navbar.links` has the following properties:
+Each entry in `navbar.source` and `navbar.links` has the following properties:
 
 | Property | Type     | Description                                |
 |----------|----------|--------------------------------------------|
@@ -53,7 +53,7 @@ Each link in `navbar.links` has the following properties:
 
 ### Index (Landing Page)
 
-The `index` section controls the landing page:
+The `index` section controls the landing page that visitors see when they first open your documentation site:
 
 ```yaml
 index:
@@ -66,11 +66,11 @@ index:
 |---------------------|----------|--------------------------------------------|
 | `index.title`       | `string` | Main heading on the landing page.          |
 | `index.description` | `string` | Subtitle or description text.              |
-| `index.icon`        | `string` | FontAwesome icon displayed on the landing. |
+| `index.icon`        | `string` | FontAwesome icon displayed on the landing page. |
 
 ### Languages
 
-The `langs` field specifies which programming languages are available for syntax highlighting:
+The `langs` field specifies which programming languages are available for syntax highlighting in code blocks:
 
 ```yaml
 langs:
@@ -82,11 +82,11 @@ langs:
   - "json"
 ```
 
-These map to [Shiki language identifiers](https://shiki.matsu.io/languages).
+These map to [Shiki language identifiers](https://shiki.matsu.io/languages). Only include the languages you actually use — this keeps the generated bundle small.
 
 ## dir-meta.yaml
 
-The `dir-meta.yaml` file provides metadata for directories within `docs/`. Without this file, directories use their folder name as the display title and have no icon.
+The `dir-meta.yaml` file provides metadata for directories within `docs/`. Without this file, directories will appear in the sidebar using their folder name and have no icon.
 
 ```yaml
 - path: "guides"
@@ -102,21 +102,31 @@ The `dir-meta.yaml` file provides metadata for directories within `docs/`. Witho
 | Property   | Type     | Description                                            |
 |------------|----------|--------------------------------------------------------|
 | `path`     | `string` | The directory name (relative to `docs/`).              |
-| `name`     | `string` | The display name in the sidebar.                       |
+| `name`     | `string` | The display name shown in the sidebar navigation.      |
 | `icon`     | `string` | FontAwesome icon class for the directory.              |
 | `children` | `array`  | Nested directory metadata for subdirectories.          |
 
-## Environment Variables
+> [!TIP]
+> If you omit `dir-meta.yaml`, Clay Oven will still generate the site — directories will just use default names derived from the folder names.
 
-Some settings can be overridden at build time using environment variables:
+## Environment Variable Overrides
 
-| Variable   | Description                                          | Example              |
-|------------|------------------------------------------------------|----------------------|
-| `BASE_URL` | Override the `baseURL` from `clay.yaml` at build time. | `BASE_URL=/docs/`  |
+Clay Oven allows you to override selected `clay.yaml` fields at **build time** using environment variables. This is useful in CI/CD pipelines where settings like the base URL or title may differ between environments. The overrides are applied only to the build output — your `clay.yaml` file is never modified.
+
+| Variable               | Overrides         | Example                          |
+|------------------------|-------------------|----------------------------------|
+| `CLAY_TITLE`           | `title`           | `CLAY_TITLE="My Docs"`          |
+| `CLAY_BASE_URL`        | `baseURL`         | `CLAY_BASE_URL="/docs"`         |
+| `CLAY_FONTAWESOME_KIT` | `fontawesomeKit`  | `CLAY_FONTAWESOME_KIT="abc123"` |
 
 ```bash
-BASE_URL=/my-project/docs/ clay-oven build
+CLAY_BASE_URL="/my-project" CLAY_TITLE="My Project" ./clay-oven
 ```
+
+During the build, Clay Oven displays which environment variables are set and prompts you to confirm before applying them (unless running with `-nc` or `-ci`).
+
+> [!IMPORTANT]
+> These environment variables are processed by **Clay Oven** during the build. They are not read by the Clay frontend at runtime.
 
 ## Example: Full Configuration
 
