@@ -1,7 +1,7 @@
 title: "Clay"
 favicon: "logo.svg"
-baseURL: "/clay-example-repo"
-fontawesomeKit: "0a7e2ccef9"
+baseURL: "/clay-example-repo/"
+fontawesomeKit: "my-kit"
 navbar:
   logo: "logo.svg"
   source:
