@@ -19,10 +19,3 @@ index:
   title: "Welcome to the Clay docs"
   description: "This is an example repository for the Clay documentation generator. It contains a simple documentation website built with Clay, showcasing its features and capabilities."
   icon: "fa-solid fa-rocket"
-langs:
-  - "cs"
-  - "python"
-  - "js"
-  - "yaml"
-  - "markdown"
-  - "bash"

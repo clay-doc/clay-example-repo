@@ -72,10 +72,6 @@ index:
   title: "Welcome to the Clay docs"
   description: "This is a clay application."
   icon: "fa-solid fa-rocket"
-langs:
-  - "cs"
-  - "python"
-  - "js"
 ```
 
 | Field            | Description                                                    |
@@ -86,7 +82,8 @@ langs:
 | `fontawesomeKit` | Your FontAwesome kit identifier.                               |
 | `navbar`         | Navbar configuration including logo, source link, and links.   |
 | `index`          | Landing page settings (title, description, and icon).          |
-| `langs`          | Programming languages for syntax highlighting.                 |
+
+Languages for syntax highlighting don't need to be configured: [Clay Oven](https://github.com/clay-doc/clay-oven) detects them from the code blocks in your docs and adds them to the bundled config.
 
 ### dir-meta.yaml
 

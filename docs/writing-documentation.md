@@ -54,14 +54,7 @@ def greet(name: str) -> str:
     return f"Hello, {name}!"
 ```
 
-The languages available for highlighting are defined in your `clay.yaml` under the `langs` field. Only languages listed there will be highlighted:
-
-```yaml
-langs:
-  - "python"
-  - "js"
-  - "cs"
-```
+Languages are detected automatically: Clay Oven scans every code block in `docs/` and enables highlighting for each language it finds. Use [Shiki language identifiers](https://shiki.matsu.io/languages) — blocks with an unknown language are rendered as plain text.
 
 ## Links
 

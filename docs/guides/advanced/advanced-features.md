@@ -26,7 +26,7 @@ The corresponding `dir-meta.yaml` for this structure looks like:
 
 ## Multi-Language Code Examples
 
-Since Clay supports multiple syntax highlighting languages via Shiki, you can showcase the same concept in different languages. Make sure each language is listed in the `langs` field of your `clay.yaml`.
+Since Clay supports multiple syntax highlighting languages via Shiki, you can showcase the same concept in different languages. Clay Oven detects each language automatically, so no extra configuration is needed.
 
 ### Python
 
@@ -166,5 +166,4 @@ jobs:
 | Too many pages in one directory | Split into subdirectories by topic |
 | Inconsistent navigation labels | Always use frontmatter `title` fields |
 | Missing icons in the sidebar | Set icons in both frontmatter and `dir-meta.yaml` |
-| Slow builds | Use specific `langs` — only include languages you actually use |
 | Broken cross-links | Use relative paths and test links after restructuring |

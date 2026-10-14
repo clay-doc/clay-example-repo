@@ -70,19 +70,9 @@ index:
 
 ### Languages
 
-The `langs` field specifies which programming languages are available for syntax highlighting in code blocks:
+Languages for syntax highlighting are not configured by hand. Clay Oven detects them from the fenced code blocks in your docs and writes them into the `langs` field of the bundled `clay.yaml`. A `langs` field in your own `clay.yaml` is ignored.
 
-```yaml
-langs:
-  - "python"
-  - "js"
-  - "cs"
-  - "bash"
-  - "yaml"
-  - "json"
-```
-
-These map to [Shiki language identifiers](https://shiki.matsu.io/languages). Only include the languages you actually use — this keeps the generated bundle small.
+Languages are named with [Shiki language identifiers](https://shiki.matsu.io/languages). Code blocks with an unknown language are rendered as plain text.
 
 ## dir-meta.yaml
 
@@ -157,13 +147,4 @@ index:
   title: "My Project Documentation"
   description: "Everything you need to know about My Project."
   icon: "fa-solid fa-rocket"
-langs:
-  - "python"
-  - "js"
-  - "ts"
-  - "bash"
-  - "yaml"
-  - "json"
-  - "html"
-  - "css"
 ```

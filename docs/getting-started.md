@@ -45,9 +45,6 @@ index:
   title: "Welcome to My Project"
   description: "Documentation for My Project."
   icon: "fa-solid fa-book"
-langs:
-  - "js"
-  - "python"
 ```
 
 > [!IMPORTANT]
