@@ -24,6 +24,9 @@ jobs:
         steps:
         - name: Checkout Repository
           uses: actions/checkout@v7
+          with:
+            # Full history, so Clay Oven can show when each page was last updated
+            fetch-depth: 0
 
         - name: Build Clay 
           run: curl https://raw.githubusercontent.com/clay-doc/clay-oven/refs/heads/main/run-oven.sh | sh
