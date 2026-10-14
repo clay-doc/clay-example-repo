@@ -1,0 +1,13 @@
+{
+  "name": "clay-example-repo",
+  "private": true,
+  "description": "A working example of a documentation site built with Clay",
+  "scripts": {
+    "dev": "clay dev",
+    "build": "clay build",
+    "preview": "clay preview"
+  },
+  "devDependencies": {
+    "clay-doc": "^2.0.0"
+  }
+}
