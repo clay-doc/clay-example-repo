@@ -3,21 +3,36 @@ favicon: "logo.svg"
 baseURL: "/clay-example-repo/"
 siteURL: "https://clay-doc.github.io"
 editURL: "https://github.com/clay-doc/clay-example-repo/edit/main/docs/"
+# The real kit ID comes from the CLAY_FONTAWESOME_KIT secret in CI
 fontawesomeKit: "set-in-ci"
+version: "2.1"
+languages: ["en", "de"]
 navbar:
   logo: "logo.svg"
   source:
-    name: "Github"
+    name: "GitHub"
     icon: "fa-brands fa-github"
-    link: "https://github.com/clay-doc/clay-example-repo"
+    link: "https://github.com/clay-doc/clay"
   links:
-    - name: "Homepage"
-      icon: "fa-solid fa-house"
-      link: "https://github.com/clay-doc"
-    - name: "Documentation"
-      icon: "fa-solid fa-book"
-      link: "https://clay-doc.github.io/clay-example-repo"
+    - name: "npm"
+      icon: "fa-brands fa-npm"
+      link: "https://www.npmjs.com/package/clay-doc"
+    - name:
+        en: "Changelog"
+        de: "Änderungen"
+      icon: "fa-solid fa-list-ul"
+      link: "https://github.com/clay-doc/clay/blob/main/CHANGELOG.md"
+    - name:
+        en: "Source of this site"
+        de: "Quelltext dieser Seite"
+      icon: "fa-solid fa-code"
+      link: "https://github.com/clay-doc/clay-example-repo"
 index:
-  title: "Welcome to the Clay docs"
-  description: "This is an example repository for the Clay documentation generator. It contains a simple documentation website built with Clay, showcasing its features and capabilities."
-  icon: "fa-solid fa-rocket"
+  title:
+    en: "Clay Documentation"
+    de: "Clay-Dokumentation"
+  description:
+    en: "Turn a folder of Markdown files into a fast, searchable documentation website. Everything you need to write, organize and publish docs with Clay."
+    de: "Mach aus einem Ordner voller Markdown-Dateien eine schnelle, durchsuchbare Dokumentationsseite. Alles, was du zum Schreiben, Ordnen und Veröffentlichen mit Clay brauchst."
+  icon: "fa-solid fa-book-open"
+lang: en

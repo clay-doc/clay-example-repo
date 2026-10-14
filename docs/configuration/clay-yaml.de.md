@@ -1,0 +1,140 @@
+---
+title: clay.yaml
+icon: fa-solid fa-sliders
+description: Referenz aller Einstellungen der clay.yaml, mit Standardwerten und einem vollständigen Beispiel.
+---
+
+# clay.yaml
+
+Die `clay.yaml` liegt im Projektordner und konfiguriert die ganze Seite. Nur `title` ist Pflicht; alles andere hat einen sinnvollen Standardwert.
+
+## Vollständiges Beispiel
+
+```yaml
+title: "Mein Projekt"
+favicon: "logo.svg"
+baseURL: "/mein-projekt/"
+siteURL: "https://meine-org.github.io"
+editURL: "https://github.com/meine-org/mein-projekt/edit/main/docs/"
+fontawesomeKit: "abc123def4"
+version: "3.2"
+languages: ["de", "en"]
+
+navbar:
+  logo: "logo.svg"
+  source:
+    name: "GitHub"
+    icon: "fa-brands fa-github"
+    link: "https://github.com/meine-org/mein-projekt"
+  links:
+    - name: "Website"
+      icon: "fa-solid fa-house"
+      link: "https://example.com"
+    - name: "Changelog"
+      icon: "fa-solid fa-list"
+      link: "https://github.com/meine-org/mein-projekt/releases"
+
+index:
+  title:
+    de: "Willkommen bei Mein Projekt"
+    en: "Welcome to My Project"
+  description:
+    de: "Alles, was du wissen musst."
+    en: "Everything you need to know."
+  icon: "fa-solid fa-rocket"
+
+messages:
+  de:
+    search: "Durchsuchen"
+```
+
+## Seite
+
+| Einstellung | Standard | Zweck |
+|-------------|----------|-------|
+| `title` | Pflicht | Name der Seite: Navigationsleiste, Browser-Tab, Suchergebnisse |
+| `favicon` | keins | Pfad zum Favicon, relativ zum Projektordner |
+| `baseURL` | `/` | Pfad, unter dem die Seite liegt, z. B. `/mein-projekt/` für Projektseiten auf GitHub |
+| `siteURL` | keine | Ursprung der Seite, z. B. `https://meine-org.github.io`; ermöglicht kanonische URLs, die Sitemap und strukturierte Daten |
+| `lang` | `en` | Sprache einer einsprachigen Seite: `<html lang>`, Datumsformate, Texte der Oberfläche |
+| `editURL` | keine | Basis-URL zum Bearbeiten einer Seite; der Dateipfad der Seite wird angehängt |
+| `fontawesomeKit` | keins | ID eines Font-Awesome-Kits; ohne werden die kostenlosen Icons genutzt |
+
+### baseURL und siteURL
+
+Zusammen ergeben sie die vollständige Adresse der Seite. Für `https://meine-org.github.io/mein-projekt/`:
+
+```yaml
+siteURL: "https://meine-org.github.io"
+baseURL: "/mein-projekt/"
+```
+
+`baseURL` brauchst du immer dann, wenn die Seite nicht an der Wurzel ihrer Domain liegt; Links, Bilder und alle weiteren Dateien hängen davon ab. `siteURL` ist nur der Ursprung: Ein Pfad darin wird ignoriert, der Pfad kommt immer aus `baseURL`. Was `siteURL` ermöglicht, steht unter [SEO](../features/seo.md).
+
+### editURL
+
+Mit `editURL` zeigt jede Seite einen Link **Diese Seite bearbeiten**. Lass ihn auf den `docs/`-Ordner deines Repositorys zeigen; Clay hängt die Datei der Seite an:
+
+```yaml
+editURL: "https://github.com/meine-org/mein-projekt/edit/main/docs/"
+```
+
+Die Seite `docs/guides/setup.md` verlinkt dann auf `…/edit/main/docs/guides/setup.md`. Das funktioniert mit GitHub, GitLab, Gitea und jedem Hoster mit ähnlichem URL-Schema. Endet die URL auf `docs/`, verlinken Seiten [älterer Versionen](../versions-and-languages/versions.md) in `versions/<name>/docs/`.
+
+## Navigationsleiste
+
+| Einstellung | Standard | Zweck |
+|-------------|----------|-------|
+| `navbar.logo` | keins | Bild neben dem Titel der Seite |
+| `navbar.source.name`, `.icon`, `.link` | keine | Ein Link als Button, meist zum Repository |
+| `navbar.links` | keine | Weitere Links unter einem Menü **Mehr**; jeder hat `name`, `icon` und `link` |
+
+Logo und Favicon können Dateien im Projektordner sein (Clay kopiert sie in die Seite) oder vollständige URLs.
+
+## Startseite
+
+| Einstellung | Standard | Zweck |
+|-------------|----------|-------|
+| `index.title` | `title` | Überschrift der Startseite |
+| `index.description` | keine | Text darunter; auch die Standardbeschreibung für Suchmaschinen |
+| `index.icon` | keins | Icon vor der Überschrift |
+
+Siehe [Startseite](../organizing/landing-page.md).
+
+## Versionen und Sprachen
+
+| Einstellung | Standard | Zweck |
+|-------------|----------|-------|
+| `version` | `Latest` | Bezeichnung von `docs/` im Versionsumschalter |
+| `languages` | `[lang]` | Sprachcodes der Seite; der erste ist die Standardsprache |
+| `messages` | keine | Eigene Texte der Oberfläche, pro Sprache |
+
+Siehe [Versionen](../versions-and-languages/versions.md) und [Übersetzungen](../versions-and-languages/translations.md).
+
+## Werte pro Sprache
+
+Auf einer mehrsprachigen Seite kann jede Texteinstellung einen Wert pro Sprache haben. Sprachen ohne Wert nutzen den der Standardsprache:
+
+```yaml
+title:
+  de: "Mein Projekt"
+  en: "My Project"
+navbar:
+  links:
+    - name: { de: "Webseite", en: "Website" }
+      icon: "fa-solid fa-house"
+      link: "https://example.com"
+```
+
+## Prüfungen
+
+Clay prüft die `clay.yaml` bei jedem Build und warnt vor:
+
+- unbekannten Einstellungen, meist Tippfehlern: `clay.yaml: unknown key "navbar.lgo" is ignored (typo?)`,
+- einem fehlenden `title`,
+- `langs`, einer Einstellung aus Clay 1, die nicht mehr nötig ist.
+
+Mit `--strict` lassen diese Warnungen den Build scheitern. Siehe [Build-Prüfungen](../cli/build-checks.md).
+
+> [!TIP]
+> Einstellungen wie `baseURL` oder `title` lassen sich in der CI überschreiben, ohne die Datei zu ändern, siehe [Umgebungsvariablen](environment-variables.md). Und `clay edit` bearbeitet all diese Einstellungen im Terminal, siehe [clay edit](../organizing/clay-edit.md).
