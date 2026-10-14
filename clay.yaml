@@ -1,6 +1,8 @@
 title: "Clay"
 favicon: "logo.svg"
 baseURL: "/clay-example-repo/"
+siteURL: "https://clay-doc.github.io"
+editURL: "https://github.com/clay-doc/clay-example-repo/edit/main/docs/"
 fontawesomeKit: "set-in-ci"
 navbar:
   logo: "logo.svg"
