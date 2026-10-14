@@ -8,6 +8,6 @@
     "preview": "clay preview"
   },
   "devDependencies": {
-    "clay-doc": "^2.0.0"
+    "clay-doc": "^2.1.1"
   }
 }
