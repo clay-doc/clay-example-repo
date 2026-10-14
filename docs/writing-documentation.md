@@ -15,13 +15,23 @@ Every Markdown file can include a YAML frontmatter block at the top. This metada
 ---
 title: My Page Title
 icon: fa-solid fa-file
+description: What this page covers, in one or two sentences.
+order: 1
 ---
 ```
 
 | Property | Description | Required |
 |----------|-------------|----------|
-| `title` | The display name shown in the sidebar navigation. If omitted, Clay derives the title from the filename. | No |
+| `title` | The display name shown in the sidebar navigation. If omitted, the page's first `# heading` is used, then the file name (`getting-started.md` becomes "Getting started"). | No |
 | `icon` | A [FontAwesome](https://fontawesome.com/icons) icon class displayed next to the title. | No |
+| `description` | A short summary of the page (about 150 characters) used by search engines and link previews. If omitted, the first paragraph is used. | No |
+| `order` | Position in the navigation, see below. | No |
+
+## Page Order
+
+Pages and folders are listed alphabetically by file name. To change the order, give pages an `order` in their frontmatter and folders an `order` in `dir-meta.yaml`. Entries with an order come first, lowest number first; the rest follow alphabetically.
+
+At the bottom of every page, Clay links to the previous and next page in this order.
 
 ## Headings
 

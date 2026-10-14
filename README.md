@@ -79,6 +79,7 @@ index:
 | `title`          | The title of the documentation site.                           |
 | `favicon`        | Path to the favicon file.                                      |
 | `baseURL`        | Base URL path for the site.                                    |
+| `siteURL`        | Origin the site is served from, for canonical URLs and the sitemap. |
 | `fontawesomeKit` | Your FontAwesome kit identifier.                               |
 | `navbar`         | Navbar configuration including logo, source link, and links.   |
 | `index`          | Landing page settings (title, description, and icon).          |
@@ -115,6 +116,7 @@ icon: fa-solid fa-house
 |---------|--------------------------------------------------|----------|
 | `title` | Display title in the navigation sidebar.         | No       |
 | `icon`  | FontAwesome icon class for the navigation entry. | No       |
+| `description` | Summary for search engines; defaults to the first paragraph. | No |
 
 ## Getting Started
 

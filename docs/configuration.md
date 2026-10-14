@@ -18,7 +18,10 @@ The `clay.yaml` file is the main configuration file. It controls the site title,
 | `title`         | `string` | The name of your documentation site, displayed in the browser tab and navbar. |
 | `favicon`       | `string` | Path to the favicon image file (relative to the project root). |
 | `baseURL`       | `string` | The base URL path where the site will be served (e.g., `/` or `/docs/`). |
-| `fontawesomeKit`| `string` | Your [FontAwesome](https://fontawesome.com/) kit ID for loading icons. |
+| `siteURL`       | `string` | The origin the site is served from, e.g. `https://docs.example.com`. Needed for canonical URLs, `sitemap.xml` and search result breadcrumbs. Optional. |
+| `lang`          | `string` | Language of the docs for the `<html lang>` attribute (default: `en`). Optional. |
+| `fontawesomeKit`| `string` | Your [FontAwesome](https://fontawesome.com/) kit ID for loading icons. Optional: without a kit, the free Font Awesome icons are used. |
+| `editURL`       | `string` | Base URL for "Edit this page" links; the doc's path is appended, e.g. `https://github.com/org/repo/edit/main/docs/`. Optional. |
 
 ### Navbar
 
@@ -95,6 +98,7 @@ The `dir-meta.yaml` file provides metadata for directories within `docs/`. Witho
 | `name`     | `string` | The display name shown in the sidebar navigation.      |
 | `icon`     | `string` | FontAwesome icon class for the directory.              |
 | `children` | `array`  | Nested directory metadata for subdirectories.          |
+| `order`    | `number` | Position in the navigation; see [Page order](writing-documentation.md#page-order). |
 
 > [!TIP]
 > If you omit `dir-meta.yaml`, Clay Oven will still generate the site — directories will just use default names derived from the folder names.
@@ -107,6 +111,7 @@ Clay Oven allows you to override selected `clay.yaml` fields at **build time** u
 |------------------------|-------------------|----------------------------------|
 | `CLAY_TITLE`           | `title`           | `CLAY_TITLE="My Docs"`          |
 | `CLAY_BASE_URL`        | `baseURL`         | `CLAY_BASE_URL="/docs"`         |
+| `CLAY_SITE_URL`        | `siteURL`         | `CLAY_SITE_URL="https://x.dev"` |
 | `CLAY_FONTAWESOME_KIT` | `fontawesomeKit`  | `CLAY_FONTAWESOME_KIT="abc123"` |
 
 ```bash
