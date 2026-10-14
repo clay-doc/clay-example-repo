@@ -1,21 +1,20 @@
 ---
 title: Getting Started
 icon: fa-solid fa-play
+order: 1
 ---
 
 # Getting Started with Clay
 
-Welcome to Clay! This guide will walk you through setting up your first documentation site from scratch using [Clay](https://github.com/clay-doc/clay) and [Clay Oven](https://github.com/clay-doc/clay-oven).
+Welcome to Clay! This guide walks you through setting up your first documentation site from scratch with [Clay](https://github.com/clay-doc/clay).
 
 ## Prerequisites
 
-Before you begin, make sure you have the following:
-
-- **Git** — for cloning and version control
+- **Node.js 20.19 or newer**, which includes `npm` and `npx`
 - A project repository where you want to add documentation
 
 > [!TIP]
-> You don't need to install Clay Oven ahead of time — it can be run directly via a one-line install script.
+> Want to try Clay first? In any folder with a `clay.yaml` and a `docs/` directory, run `npx clay-doc dev`. Nothing needs to be installed.
 
 ## Step 1: Create Your Project
 
@@ -24,17 +23,24 @@ Start by creating a new directory for your documentation project (or use an exis
 ```bash
 mkdir my-docs
 cd my-docs
+npm init -y
+npm install --save-dev clay-doc
 ```
 
 ## Step 2: Add a Configuration File
 
-Create a `clay.yaml` file in the root of your project:
+Create a `clay.yaml` file in the root of your project. Only the title is required:
+
+```yaml
+title: "My Project"
+```
+
+A fuller configuration adds a logo, links and a landing page:
 
 ```yaml
 title: "My Project"
 favicon: "logo.svg"
 baseURL: "/"
-fontawesomeKit: "your-kit-id"
 navbar:
   logo: "logo.svg"
   source:
@@ -47,8 +53,8 @@ index:
   icon: "fa-solid fa-book"
 ```
 
-> [!IMPORTANT]
-> The `fontawesomeKit` field requires a valid [FontAwesome](https://fontawesome.com/) kit ID for icons to render. You can create a free kit at [fontawesome.com](https://fontawesome.com/).
+> [!NOTE]
+> Icons use [Font Awesome](https://fontawesome.com/). The free icons work out of the box; set `fontawesomeKit` to your kit ID to use your own kit instead.
 
 ## Step 3: Create Your First Document
 
@@ -71,25 +77,26 @@ icon: fa-solid fa-door-open
 Welcome to My Project! This is your first documentation page.
 ```
 
-## Step 4: Build Your Site
+## Step 4: Preview While You Write
 
-Run Clay Oven to build your documentation. The easiest way is via the install script:
+Start the development server:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/clay-doc/clay-oven/refs/heads/main/run-oven.sh | sh
+npx clay dev
 ```
 
-This downloads the appropriate Clay Oven binary for your platform, scans your `docs/` directory, generates the site structure, and outputs a ready-to-deploy bundle in the `./output` directory.
+Open [http://localhost:3000](http://localhost:3000). The page reloads whenever you change a doc or the configuration.
 
-> [!TIP]
-> You can also download the Clay Oven binary directly from the [releases page](https://github.com/clay-doc/clay-oven/releases/latest) and run it with `./clay-oven`.
-
-## Step 5: Preview Your Site
-
-Open the generated files in the `./output/public` directory with any static file server to preview your documentation site:
+## Step 5: Build Your Site
 
 ```bash
-npx serve ./output/public
+npx clay build
+```
+
+This renders every page into a static site in `publish/public`, ready for any static host such as GitHub Pages. To check the result the way a host would serve it:
+
+```bash
+npx clay preview
 ```
 
 That's it! You now have a fully functional documentation site powered by Clay.

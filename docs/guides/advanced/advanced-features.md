@@ -26,7 +26,7 @@ The corresponding `dir-meta.yaml` for this structure looks like:
 
 ## Multi-Language Code Examples
 
-Since Clay supports multiple syntax highlighting languages via Shiki, you can showcase the same concept in different languages. Clay Oven detects each language automatically, so no extra configuration is needed.
+Since Clay supports multiple syntax highlighting languages via Shiki, you can showcase the same concept in different languages. Clay detects each language automatically, so no extra configuration is needed.
 
 ### Python
 
@@ -99,29 +99,35 @@ baseURL: "/docs/"
 You can also override this at build time using the `CLAY_BASE_URL` environment variable, without modifying your config file:
 
 ```bash
-CLAY_BASE_URL="/my-custom-path/" ./clay-oven
+CLAY_BASE_URL="/my-custom-path/" npx clay build
 ```
 
 This is particularly useful in CI/CD pipelines where the deployment path may vary between environments (e.g., staging vs. production).
 
-## Clay Oven CLI Options
+## Clay CLI
 
-When building your site, Clay Oven supports several CLI flags to customise its behaviour:
+The `clay` command has three subcommands:
 
-| Flag   | Description                                              | Default          |
-|--------|----------------------------------------------------------|------------------|
-| `-c`   | Path to config file                                      | `clay.yaml`      |
-| `-d`   | Path to documents directory                              | `./docs`         |
-| `-o`   | Output directory                                         | `./output`       |
-| `-fm`  | Path to folder meta file                                 | `dir-meta.yaml`  |
-| `-nc`  | Skip confirmation prompts                                | —                |
-| `-ci`  | Run in CI mode (plain output, no TUI, auto-confirm)      | —                |
-| `-v`   | Enable verbose (debug) output                            | —                |
+| Command         | Description                                          |
+|-----------------|------------------------------------------------------|
+| `clay dev`      | Start a development server with live reload          |
+| `clay build`    | Build the static site into `<out>/public`            |
+| `clay preview`  | Serve the built site like a static host would        |
 
-For example, to build with a custom docs directory and output path:
+And these options:
+
+| Option          | Description                                          | Default                    |
+|-----------------|------------------------------------------------------|----------------------------|
+| `--root <dir>`  | Docs project with `clay.yaml` and `docs/`            | current directory          |
+| `--out <dir>`   | Output directory                                     | `<root>/publish`           |
+| `--port <port>` | Port for `dev` and `preview`                         | `3000` and `4173`          |
+| `--host`        | Listen on all interfaces, not just localhost         | —                          |
+| `--strict`      | `build`: fail on warnings such as broken links or config typos | —                |
+
+For example, to build a docs project in another folder into `./dist`:
 
 ```bash
-./clay-oven -d ./documentation -o ./dist
+npx clay build --root ./documentation --out ./dist
 ```
 
 ## Integration with CI/CD
@@ -143,21 +149,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - run: npm ci
 
       - name: Build docs
-        run: curl -fsSL https://raw.githubusercontent.com/clay-doc/clay-oven/refs/heads/main/run-oven.sh | sh
+        run: npx clay build --strict
         env:
           CLAY_BASE_URL: "/my-project/"
 
       - name: Deploy
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
-          path: ./output
+          path: ./publish/public
 ```
 
 > [!TIP]
-> Use the `-ci` flag or the `run-oven.sh` script in CI pipelines to avoid interactive prompts. Only trigger builds when files in `docs/`, `clay.yaml`, or `dir-meta.yaml` change to save CI minutes.
+> Use `--strict` in CI so broken links fail the build instead of reaching your readers. `fetch-depth: 0` gives Clay the full history, so pages can show when they were last updated. Only trigger builds when files in `docs/`, `clay.yaml`, or `dir-meta.yaml` change to save CI minutes.
 
 ## Tips for Large Documentation Sites
 

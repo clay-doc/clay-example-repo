@@ -73,7 +73,7 @@ index:
 
 ### Languages
 
-Languages for syntax highlighting are not configured by hand. Clay Oven detects them from the fenced code blocks in your docs and writes them into the `langs` field of the bundled `clay.yaml`. A `langs` field in your own `clay.yaml` is ignored.
+Languages for syntax highlighting are not configured by hand. Clay detects them from the fenced code blocks in your docs. A `langs` field in your `clay.yaml` is ignored, and Clay warns about it.
 
 Languages are named with [Shiki language identifiers](https://shiki.matsu.io/languages). Code blocks with an unknown language are rendered as plain text.
 
@@ -101,11 +101,11 @@ The `dir-meta.yaml` file provides metadata for directories within `docs/`. Witho
 | `order`    | `number` | Position in the navigation; see [Page order](writing-documentation.md#page-order). |
 
 > [!TIP]
-> If you omit `dir-meta.yaml`, Clay Oven will still generate the site — directories will just use default names derived from the folder names.
+> If you omit `dir-meta.yaml`, Clay will still generate the site — directories will just use default names derived from the folder names.
 
 ## Environment Variable Overrides
 
-Clay Oven allows you to override selected `clay.yaml` fields at **build time** using environment variables. This is useful in CI/CD pipelines where settings like the base URL or title may differ between environments. The overrides are applied only to the build output — your `clay.yaml` file is never modified.
+Clay allows you to override selected `clay.yaml` fields using environment variables. This is useful in CI/CD pipelines where settings like the base URL or title may differ between environments. The overrides apply to `clay build` and `clay dev` — your `clay.yaml` file is never modified.
 
 | Variable               | Overrides         | Example                          |
 |------------------------|-------------------|----------------------------------|
@@ -115,13 +115,11 @@ Clay Oven allows you to override selected `clay.yaml` fields at **build time** u
 | `CLAY_FONTAWESOME_KIT` | `fontawesomeKit`  | `CLAY_FONTAWESOME_KIT="abc123"` |
 
 ```bash
-CLAY_BASE_URL="/my-project" CLAY_TITLE="My Project" ./clay-oven
+CLAY_BASE_URL="/my-project/" CLAY_TITLE="My Project" npx clay build
 ```
 
-During the build, Clay Oven displays which environment variables are set and prompts you to confirm before applying them (unless running with `-nc` or `-ci`).
-
 > [!IMPORTANT]
-> These environment variables are processed by **Clay Oven** during the build. They are not read by the Clay frontend at runtime.
+> The values are baked into the site when it is built. Changing them later on the web server has no effect.
 
 ## Example: Full Configuration
 

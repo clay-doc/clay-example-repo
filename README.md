@@ -41,6 +41,7 @@ This repository serves as a reference example for setting up a documentation sit
 ├── clay.yaml                    # Main Clay configuration file
 ├── dir-meta.yaml                # Directory metadata configuration
 ├── logo.svg                     # Logo used in navbar and favicon
+├── package.json                 # Clay as a dev dependency, with dev/build scripts
 └── README.md
 ```
 
@@ -84,7 +85,7 @@ index:
 | `navbar`         | Navbar configuration including logo, source link, and links.   |
 | `index`          | Landing page settings (title, description, and icon).          |
 
-Languages for syntax highlighting don't need to be configured: [Clay Oven](https://github.com/clay-doc/clay-oven) detects them from the code blocks in your docs and adds them to the bundled config.
+Languages for syntax highlighting don't need to be configured: Clay detects them from the code blocks in your docs.
 
 ### dir-meta.yaml
 
@@ -126,18 +127,20 @@ git clone https://github.com/clay-doc/clay-example-repo.git
 cd clay-example-repo
 ```
 
-2. Build the documentation using **[Clay Oven](https://github.com/clay-doc/clay-oven)**:
+2. Install Clay (needs Node.js 20.19 or newer):
 ```bash
-./clay-oven
+npm install
 ```
 
-> [!IMPORTANT]
-> You need [Clay Oven](https://github.com/clay-doc/clay-oven) to build the documentation site from this example repo.
+3. Preview the docs with live reload, or build the static site into `publish/public`:
+```bash
+npm run dev
+npm run build
+```
 
 ## Related
 
 - [Clay](https://github.com/clay-doc/clay) — The documentation framework.
-- [Clay Oven](https://github.com/clay-doc/clay-oven) — The build tool for Clay documentation sites.
 
 ## License
 
