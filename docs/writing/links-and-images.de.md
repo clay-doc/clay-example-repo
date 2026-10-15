@@ -33,7 +33,7 @@ Hänge den Anker der Überschrift nach `#` an:
 
 [Zeilen hervorheben](code-blocks.md#zeilen-hervorheben) und [Bilder](#bilder) auf dieser Seite.
 
-Anker entstehen wie auf GitHub: kleingeschrieben, Leerzeichen werden zu Bindestrichen, Satzzeichen fallen weg. „Links zu Abschnitten" wird zu `#links-zu-abschnitten`. Im Zweifel kopierst du den Link aus dem Inhaltsverzeichnis der Seite.
+Anker entstehen wie auf GitHub: kleingeschrieben, Leerzeichen werden zu Bindestrichen, Satzzeichen fallen weg. „Links zu Abschnitten" wird zu `#links-zu-abschnitten`. Im Zweifel kopierst du den Link aus dem Inhaltsverzeichnis der Seite. Jeder Build prüft, ob es den Abschnitt gibt.
 
 > [!NOTE]
 > Anker hängen am Text der Überschrift, und der ist in jeder Sprache anders. In einer Übersetzung verlinkst du deshalb die Anker der übersetzten Überschriften.
@@ -82,4 +82,4 @@ Verlinke jede andere Datei genauso, und Leser können sie herunterladen:
 Mit `--strict` lassen Warnungen den Build scheitern, und kaputte Links erreichen deine Leser nie. Siehe [Build-Prüfungen](../cli/build-checks.md).
 
 > [!NOTE]
-> Links zu anderen Websites und `#Anker` werden nicht geprüft.
+> Links zu anderen Websites werden nicht geprüft.

@@ -10,7 +10,7 @@ Rund um den Inhalt jeder Seite ergänzt Clay, was Leser zur Orientierung brauche
 
 ## Inhaltsverzeichnis
 
-Auf breiten Bildschirmen listet ein Inhaltsverzeichnis neben der Seite ihre `##`- und `###`-Überschriften. Beim Scrollen markiert eine Linie daneben jeden Abschnitt, der zu sehen ist; ein Klick springt dorthin. Seiten mit nur einer Überschrift kommen ohne aus.
+Auf breiten Bildschirmen listet ein Inhaltsverzeichnis neben der Seite ihre `##`- und `###`-Überschriften. Beim Scrollen markiert eine Linie daneben jeden Abschnitt, der zu sehen ist; ein Klick springt dorthin. Auf schmaleren Bildschirmen klappt es stattdessen über der Seite auf. Seiten mit nur einer Überschrift kommen ohne aus.
 
 ## Zuletzt aktualisiert
 

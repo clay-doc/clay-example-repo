@@ -39,7 +39,7 @@ npx clay dev
 | Seiten und Ordner anordnen | [Ordnen](organizing/index.md) |
 | Eine Einstellung nachschlagen | [Konfiguration](configuration/index.md) |
 | Die Seite online stellen | [Veröffentlichen](deployment/index.md) |
-| Eine Clay-2-Seite auf Clay 3 umstellen | [Umstieg auf Clay 3](guides/upgrading-to-clay-3.md) |
+| Eine Clay-3-Seite auf Clay 4 umstellen | [Umstieg auf Clay 4](guides/upgrading-to-clay-4.md) |
 
 > [!TIP]
 > Diese Website ist eine Clay-Seite. Jede Seite ist eine Markdown-Datei im [Beispiel-Repository](https://github.com/clay-doc/clay-example-repo): Sieh dir an, wie sie gemacht ist, oder kopiere sie als Ausgangspunkt.

@@ -39,7 +39,7 @@ Open [http://localhost:3000](http://localhost:3000), and every change you save s
 | Arrange pages and folders | [Organizing](organizing/index.md) |
 | Look up a setting | [Configuration](configuration/index.md) |
 | Put the site online | [Deployment](deployment/index.md) |
-| Move a Clay 2 site to Clay 3 | [Upgrading to Clay 3](guides/upgrading-to-clay-3.md) |
+| Move a Clay 3 site to Clay 4 | [Upgrading to Clay 4](guides/upgrading-to-clay-4.md) |
 
 > [!TIP]
 > This website is a Clay site. Every page is a Markdown file in the [example repository](https://github.com/clay-doc/clay-example-repo): see how it is made, or copy it as a starting point.

@@ -20,8 +20,10 @@ Every `clay build` checks your docs before it renders them. Problems are reporte
 | Check | Example warning |
 |-------|-----------------|
 | Links to pages that do not exist | `Broken link in guides/setup.md: "instal.md" points to a missing page (/guides/instal)` |
+| Links to sections that do not exist | `Broken link in index.md: "guides/setup.md#instal" points to a missing section (#instal on /guides/setup)` |
 | Images and files that do not exist | `Broken link in index.md: "img/logo.png" points to a missing file` |
 | Unknown settings in `clay.yaml` | `clay.yaml: unknown key "navbar.lgo" is ignored (typo?)` |
+| Front matter from Clay 3 | `guides/index.md: "cards" is no longer read since Clay 4; it is called "list"` |
 | Files and settings from Clay 2 | `dir-meta.yaml is no longer read since Clay 3; give each folder an index.md with its title, icon and order` |
 | A missing site title | `clay.yaml: "title" is not set` |
 | Settings from Clay 1 | `clay.yaml: "langs" is no longer needed and is ignored` |
@@ -30,7 +32,7 @@ Every `clay build` checks your docs before it renders them. Problems are reporte
 | Unusable or clashing versions | `docs-archive/1.x: docs/1.x has the same URL as this version; rename one of them` |
 | Missing git history | `the docs are not in a git repository: last-updated dates are skipped` |
 
-Links to other websites and `#anchors` are not checked.
+Links to other websites are not checked.
 
 ## --strict
 
@@ -56,13 +58,11 @@ Some problems stop every build, strict or not, for example a page that cannot be
 
 ```text
 ✖  Prerendering pages
-│  ├─ /guides/old-page (3ms)
-│  │ ├── [404] Page Not Found
-│  │ └── Linked from /guides
+│  404 Page Not Found on 1 page: /guides/old-page
 │  Exiting due to prerender errors.
 ```
 
-Here a page links to an address that does not exist, in a way the link check could not see, for example in raw HTML. Fix the link and build again.
+Here a page links to an address that does not exist, in a way the link check could not see, for example in raw HTML. Fix the link and build again. When a page itself cannot be rendered, the line above names the cause and the page, for example `Cannot read properties of undefined (rendering /guides/setup)`.
 
 For the complete output of the underlying build tools, run:
 

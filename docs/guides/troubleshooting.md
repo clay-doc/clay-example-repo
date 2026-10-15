@@ -2,7 +2,7 @@
 title: Troubleshooting
 icon: fa-solid fa-screwdriver-wrench
 description: Solutions for the most common problems with Clay sites, from missing styles to missing dates.
-order: 3
+order: 4
 ---
 
 # Troubleshooting

@@ -11,7 +11,7 @@ Around the content of each page, Clay adds what readers need to find their way: 
 
 ## Table of contents
 
-On wide screens, a table of contents next to the page lists its `##` and `###` headings. While you scroll, a line next to it marks every section on screen; click an entry to jump there. Pages with only one heading do without.
+On wide screens, a table of contents next to the page lists its `##` and `###` headings. While you scroll, a line next to it marks every section on screen; click an entry to jump there. On narrower screens, it folds up above the page instead. Pages with only one heading do without.
 
 ## Last updated
 

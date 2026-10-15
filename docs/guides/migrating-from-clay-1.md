@@ -2,7 +2,7 @@
 title: Migrating from Clay 1
 icon: fa-solid fa-arrow-right-arrow-left
 description: Move a Clay 1 site built with Clay Oven to Clay 2, step by step.
-order: 2
+order: 3
 ---
 
 # Migrating from Clay 1

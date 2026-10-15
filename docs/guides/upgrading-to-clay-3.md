@@ -2,7 +2,7 @@
 title: Upgrading to Clay 3
 icon: fa-solid fa-circle-up
 description: Move a Clay 2 site to Clay 3 - index.md files instead of dir-meta.yaml, the start page in docs/index.md and older versions in docs-archive/.
-order: 1
+order: 2
 ---
 
 # Upgrading to Clay 3

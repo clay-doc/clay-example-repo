@@ -34,7 +34,7 @@ Add the heading's anchor after `#`:
 
 [Highlighting lines](code-blocks.md#highlighting-lines) and [images](#images) on this page.
 
-Anchors are built like GitHub builds them: lowercase, spaces become hyphens, punctuation is dropped. "Links to sections" becomes `#links-to-sections`. When unsure, copy the link from the page's table of contents.
+Anchors are built like GitHub builds them: lowercase, spaces become hyphens, punctuation is dropped. "Links to sections" becomes `#links-to-sections`. When unsure, copy the link from the page's table of contents. Every build checks that the section exists.
 
 ## Links to other websites
 
@@ -78,4 +78,4 @@ Link to any other file the same way, and readers can download it:
 With `--strict`, warnings fail the build, so broken links never reach your readers. See [build checks](../cli/build-checks.md).
 
 > [!NOTE]
-> Links to other websites and `#anchors` are not checked.
+> Links to other websites are not checked.
