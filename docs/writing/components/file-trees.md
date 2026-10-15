@@ -2,7 +2,7 @@
 title: File Trees
 icon: fa-solid fa-folder-tree
 description: Folders and files from an indented list, with icons by file type, comments and folders that fold.
-order: 8
+order: 9
 ---
 
 # File Trees

@@ -1,12 +1,12 @@
 ---
 title: Markdown
 icon: fa-brands fa-markdown
-description: Die Markdown-Syntax, die Clay versteht, von Überschriften und Listen bis zu Tabellen und Aufgabenlisten, mit Beispielen.
+description: Clay Flavored Markdown - GitHubs Markdown plus Hinweise, Komponenten, Formeln und Diagramme - von Überschriften und Listen bis zu Tabellen und Aufgabenlisten, mit Beispielen.
 ---
 
 # Markdown
 
-Clay liest [GitHub Flavored Markdown](https://github.github.com/gfm/), das Markdown aus READMEs und Issues auf GitHub. Jedes Element unten zeigt sein Ergebnis und seinen Quelltext; wähl einmal **Markdown**, um überall den Quelltext zu sehen.
+Clay liest **Clay Flavored Markdown** (CFM): [GitHub Flavored Markdown](https://github.github.com/gfm/), das Markdown aus READMEs und Issues auf GitHub, plus [Hinweise](alerts.md), [Komponenten](components/index.md), [Formeln](components/math.md) und [Diagramme](components/diagrams.md). Alles, was GitHub zeigt, funktioniert auch in Clay, und was Clay ergänzt, bleibt auf GitHub lesbar. Jedes Element unten zeigt sein Ergebnis und seinen Quelltext; wähl einmal **Markdown**, um überall den Quelltext zu sehen.
 
 ## Überschriften
 

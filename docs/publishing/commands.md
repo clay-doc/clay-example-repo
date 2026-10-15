@@ -18,7 +18,8 @@ clay <command> [options]
 | `clay dev` | Live preview while you write |
 | `clay build` | Build the static site |
 | `clay preview` | Serve the build the way a web host would |
-| `clay edit` | Edit order, titles, icons and settings in the terminal |
+| `clay edit` | Edit pages, folders and settings: in an editor in the terminal, or one command at a time |
+| `clay check` | Check links and settings without building |
 | `clay version <name>` | Save the current docs as an older version |
 
 Run it with `npx clay …` in a project that has Clay installed, or through scripts in `package.json`.
@@ -84,9 +85,12 @@ publish/public/
     search.json          # the search index
   sitemap.xml            # for search engines, see SEO
   robots.txt
+  llms.txt               # for language models, see AI & agents
+  llms-full.txt
+  guides/setup.md        # every page as Markdown
 ```
 
-See [SEO](../features/seo.md) for the sitemap and `robots.txt`.
+See [SEO](../features/seo.md) for the sitemap and `robots.txt`, and [AI & agents](../features/ai-and-agents.md) for `llms.txt` and the Markdown of each page.
 
 The [build checks](build-checks.md) explain the warnings and `--strict`.
 
@@ -112,6 +116,23 @@ npx clay edit
 
 Opens an editor in the terminal to create, edit, order, rename, move, delete and translate pages and folders, in every version and language, and to edit the settings in `clay.yaml`. See [clay edit](../organizing/clay-edit.md).
 
+With a command, it makes one change and exits, for scripts and AI agents:
+
+```bash
+npx clay edit set guides/setup.md title="Setting up" order=2
+npx clay edit help    # every command, with examples
+```
+
+See [from scripts and AI agents](../organizing/clay-edit.md#from-scripts-and-ai-agents).
+
+## clay check :badge[New in Clay 4]{tip}
+
+```bash
+npx clay check
+```
+
+Runs the [build checks](build-checks.md), broken links, settings, translations and versions, without building the site. It takes a second and exits with 1 when it finds a problem, so it suits a quick look after a change, pre-commit hooks and agents. With `--json`, it prints `{"ok": …, "pages": …, "problems": [...]}`.
+
 ## clay version
 
 ```bash
@@ -130,6 +151,11 @@ Copies `docs/` into `docs-archive/2.x/`, keeping the current state of the docs a
 | `--host` | dev, preview | off | Listen on all network interfaces, for example to open the site on your phone |
 | `--strict` | build | off | Fail on warnings, see [build checks](build-checks.md) |
 | `--verbose` | build, dev | off | Show the full output of Nuxt instead of the progress |
+| `--json` | edit, check | off | Print the result as JSON, for scripts and agents |
+| `--lang <code>` | edit | default language | Work in another language |
+| `--docs-version <name>` | edit | latest | Work in an older version in `docs-archive/<name>/` |
+| `--slug <name>` | edit | from the title | File or folder name for `new` and `move` |
+| `--yes` | edit | off | Confirm `delete` |
 | `-h`, `--help` | | | Show the help |
 | `-v`, `--version` | | | Show Clay's version |
 

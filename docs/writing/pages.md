@@ -19,7 +19,7 @@ docs/
       tuning.md        # /guides/advanced/tuning
 ```
 
-Folders get a page too: `/guides` shows the folder's [index.md](../organizing/index-pages.md), or else a list of the pages and folders inside `guides/`. Opening a URL that ends in `.md`, like `/guides/setup.md`, leads to the page.
+Folders get a page too: `/guides` shows the folder's [index.md](../organizing/index-pages.md), or else a list of the pages and folders inside `guides/`. A URL that ends in `.md`, like `/guides/setup.md`, shows the page as Markdown, for language models and agents, see [AI & agents](../features/ai-and-agents.md).
 
 > [!TIP]
 > File names end up in URLs. Use lowercase words separated by hyphens (`getting-started.md`), and avoid renaming published pages: links to the old URL stop working.

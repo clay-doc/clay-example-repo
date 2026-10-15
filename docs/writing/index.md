@@ -7,7 +7,7 @@ order: 2
 
 # Writing
 
-Every page is a Markdown file in `docs/`. Clay reads the Markdown you know from GitHub, adds syntax highlighting, alerts and components, and checks your links on every build.
+Every page is a Markdown file in `docs/`, written in **Clay Flavored Markdown** (CFM): the Markdown you know from GitHub, plus syntax highlighting, alerts and components. Clay checks your links on every build.
 
 ::: cards
 - [Pages](pages.md)
@@ -73,6 +73,7 @@ pnpm add --save-dev clay-doc
 | Hide what only some readers need | [details](components/details.md) |
 | Lead readers to other pages | [cards](components/cards.md) or [links](links-and-images.md) |
 | Explain how parts fit together | a [diagram](components/diagrams.md) or a [file tree](components/file-trees.md) |
+| Suggest what to ask an AI assistant or agent | a [prompt](components/prompts.md) |
 | Mark something as new or deprecated | a [badge](components/badges.md) |
 
 ## Key ideas

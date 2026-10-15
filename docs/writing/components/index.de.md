@@ -1,7 +1,7 @@
 ---
 title: Komponenten
 icon: fa-solid fa-puzzle-piece
-description: Tabs, Schritte, Karten, einklappbare Abschnitte, Badges, Formeln, Diagramme und Dateibäume, geschrieben in schlichtem Markdown.
+description: Tabs, Schritte, Karten, einklappbare Abschnitte, Prompts, Badges, Formeln, Diagramme und Dateibäume, geschrieben in schlichtem Markdown.
 ---
 
 # Komponenten
@@ -13,6 +13,7 @@ Markdown deckt Text, Listen, Tabellen und Code ab. Für den Rest dessen, was ein
 - [Schritte](steps.md)
 - [Karten](cards.md)
 - [Details](details.md)
+- [Prompts](prompts.md)
 - [Badges](badges.md)
 - [Formeln](math.md)
 - [Diagramme](diagrams.md)
@@ -23,7 +24,7 @@ Markdown deckt Text, Listen, Tabellen und Code ab. Für den Rest dessen, was ein
 
 | Art | Sieht aus wie | Komponenten |
 |-----|---------------|-------------|
-| Container | `::: name` … `:::` um Markdown herum | [Tabs, Codegruppen](tabs.md), [Schritte](steps.md), [Karten](cards.md), [Details](details.md) |
+| Container | `::: name` … `:::` um Markdown herum | [Tabs, Codegruppen](tabs.md), [Schritte](steps.md), [Karten](cards.md), [Details](details.md), [Prompts](prompts.md) |
 | Im Text | `:badge[Neu]`, `$E = mc^2$` | [Badges](badges.md), [Formeln](math.md) |
 | Codeblöcke | ein Codeblock in der Sprache `mermaid` oder `tree` | [Diagramme](diagrams.md), [Dateibäume](file-trees.md) |
 

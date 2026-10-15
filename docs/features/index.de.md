@@ -1,7 +1,7 @@
 ---
 title: Funktionen
 icon: fa-solid fa-wand-magic-sparkles
-description: Was jede Clay-Seite mitbringt - Suche, Seitendetails, Designs und Icons sowie Suchmaschinenoptimierung.
+description: Was jede Clay-Seite mitbringt - Dokumentation für KI-Assistenten und Agenten, Suche, Seitendetails, Designs und Icons sowie Suchmaschinenoptimierung.
 ---
 
 # Funktionen
@@ -9,6 +9,7 @@ description: Was jede Clay-Seite mitbringt - Suche, Seitendetails, Designs und I
 Was jede Clay-Seite mitbringt. Nichts davon braucht Einrichtung: Es funktioniert ab dem ersten Build, und ein paar Einstellungen in der `clay.yaml` oder im Front Matter justieren es.
 
 ::: cards
+- [KI & Agenten](ai-and-agents.md)
 - [Suche](search.md)
 - [SEO](seo.md)
 - [Seitendetails](page-details.md)
@@ -19,6 +20,7 @@ Was jede Clay-Seite mitbringt. Nichts davon braucht Einrichtung: Es funktioniert
 
 | Funktion | Ohne Einrichtung | Justieren mit |
 |----------|------------------|---------------|
+| [KI & Agenten](ai-and-agents.md) | Jede Seite als Markdown, `llms.txt`, ein Menü zum Kopieren einer Seite oder Fragen an einen Assistenten, Befehle für Coding-Agenten | `siteURL` für volle Adressen |
 | [Suche](search.md) | Jede Seite und jeder Abschnitt, Tippfehler verziehen, Filter nach Bereich | Gute Überschriften; sonst nichts |
 | [SEO](seo.md) | Titel, Beschreibungen, Linkvorschauen | `siteURL` für kanonische Links, die Sitemap und strukturierte Daten |
 | [Seitendetails](page-details.md) | Inhaltsverzeichnis, Links zur vorigen und nächsten Seite | `editURL` für Bearbeiten-Links; Git-Historie für Änderungsdaten |

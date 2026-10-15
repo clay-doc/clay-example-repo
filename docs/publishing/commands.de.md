@@ -17,7 +17,8 @@ clay <befehl> [optionen]
 | `clay dev` | Live-Vorschau beim Schreiben |
 | `clay build` | Die statische Seite bauen |
 | `clay preview` | Den Build so ausliefern, wie ein Webhoster es tun würde |
-| `clay edit` | Reihenfolge, Titel, Icons und Einstellungen im Terminal bearbeiten |
+| `clay edit` | Seiten, Ordner und Einstellungen bearbeiten: in einem Editor im Terminal oder Befehl für Befehl |
+| `clay check` | Links und Einstellungen prüfen, ohne zu bauen |
 | `clay version <name>` | Die aktuelle Dokumentation als ältere Version speichern |
 
 Führe ihn mit `npx clay …` in einem Projekt aus, in dem Clay installiert ist, oder über Skripte in der `package.json`.
@@ -83,9 +84,12 @@ publish/public/
     search.json          # der Suchindex
   sitemap.xml            # für Suchmaschinen, siehe SEO
   robots.txt
+  llms.txt               # für Sprachmodelle, siehe KI & Agenten
+  llms-full.txt
+  guides/setup.md        # jede Seite als Markdown
 ```
 
-Zu Sitemap und `robots.txt` siehe [SEO](../features/seo.md).
+Zu Sitemap und `robots.txt` siehe [SEO](../features/seo.md), zu `llms.txt` und dem Markdown jeder Seite [KI & Agenten](../features/ai-and-agents.md).
 
 Die [Build-Prüfungen](build-checks.md) erklären die Warnungen und `--strict`.
 
@@ -111,6 +115,23 @@ npx clay edit
 
 Öffnet einen Editor im Terminal, um Seiten und Ordner anzulegen, zu bearbeiten, zu ordnen, umzubenennen, zu verschieben, zu löschen und zu übersetzen, in jeder Version und Sprache, und um die Einstellungen in der `clay.yaml` zu bearbeiten. Siehe [clay edit](../organizing/clay-edit.md).
 
+Mit einem Befehl macht es eine Änderung und beendet sich, für Skripte und KI-Agenten:
+
+```bash
+npx clay edit set guides/setup.md title="Einrichtung" order=2
+npx clay edit help    # jeder Befehl, mit Beispielen
+```
+
+Siehe [aus Skripten und für KI-Agenten](../organizing/clay-edit.md#aus-skripten-und-für-ki-agenten).
+
+## clay check :badge[Neu in Clay 4]{tip}
+
+```bash
+npx clay check
+```
+
+Führt die [Build-Prüfungen](build-checks.md) aus, kaputte Links, Einstellungen, Übersetzungen und Versionen, ohne die Seite zu bauen. Es dauert eine Sekunde und endet mit 1, wenn es ein Problem findet; es passt also für einen schnellen Blick nach einer Änderung, für Pre-Commit-Hooks und für Agenten. Mit `--json` gibt es `{"ok": …, "pages": …, "problems": [...]}` aus.
+
 ## clay version
 
 ```bash
@@ -129,6 +150,11 @@ Kopiert `docs/` nach `docs-archive/2.x/` und hält den aktuellen Stand der Dokum
 | `--host` | dev, preview | aus | Auf allen Netzwerkschnittstellen lauschen, etwa um die Seite auf dem Smartphone zu öffnen |
 | `--strict` | build | aus | Bei Warnungen scheitern, siehe [Build-Prüfungen](build-checks.md) |
 | `--verbose` | build, dev | aus | Die vollständige Ausgabe von Nuxt statt des Fortschritts zeigen |
+| `--json` | edit, check | aus | Das Ergebnis als JSON ausgeben, für Skripte und Agenten |
+| `--lang <code>` | edit | Standardsprache | In einer anderen Sprache arbeiten |
+| `--docs-version <name>` | edit | neueste | In einer älteren Version in `docs-archive/<name>/` arbeiten |
+| `--slug <name>` | edit | aus dem Titel | Datei- oder Ordnername für `new` und `move` |
+| `--yes` | edit | aus | `delete` bestätigen |
 | `-h`, `--help` | | | Die Hilfe zeigen |
 | `-v`, `--version` | | | Clays Version zeigen |
 

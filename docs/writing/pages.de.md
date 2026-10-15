@@ -18,7 +18,7 @@ docs/
       tuning.md        # /guides/advanced/tuning
 ```
 
-Auch Ordner bekommen eine Seite: `/guides` zeigt die [index.md](../organizing/index-pages.md) des Ordners oder sonst eine Liste der Seiten und Ordner in `guides/`. Eine URL, die auf `.md` endet, etwa `/guides/setup.md`, führt zur Seite.
+Auch Ordner bekommen eine Seite: `/guides` zeigt die [index.md](../organizing/index-pages.md) des Ordners oder sonst eine Liste der Seiten und Ordner in `guides/`. Eine URL, die auf `.md` endet, etwa `/guides/setup.md`, zeigt die Seite als Markdown, für Sprachmodelle und Agenten, siehe [KI & Agenten](../features/ai-and-agents.md).
 
 > [!TIP]
 > Dateinamen landen in URLs. Nutze kleingeschriebene Wörter mit Bindestrichen (`getting-started.md`) und benenne veröffentlichte Seiten möglichst nicht um: Links auf die alte URL funktionieren dann nicht mehr.

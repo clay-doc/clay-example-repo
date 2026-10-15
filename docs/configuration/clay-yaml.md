@@ -61,7 +61,7 @@ messages:
 | `title` | required | Name of the site: navbar, browser tab, search results |
 | `favicon` | none | Path to the favicon, relative to the project folder |
 | `baseURL` | `/` | Path the site is served under, e.g. `/my-project/` for GitHub project pages |
-| `siteURL` | none | Origin of the site, e.g. `https://my-org.github.io`; enables canonical URLs, the sitemap and structured data |
+| `siteURL` | none | Origin of the site, e.g. `https://my-org.github.io`; enables canonical URLs, the sitemap, structured data and full addresses in `llms.txt` |
 | `lang` | `en` | Language of a single-language site: `<html lang>`, date formats, interface texts |
 | `editURL` | none | Base URL to edit a page; the page's file path is appended |
 | `fontawesomeKit` | none | ID of a Font Awesome kit; without it, the free icons are used |

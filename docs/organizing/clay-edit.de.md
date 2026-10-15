@@ -81,5 +81,37 @@ Der Reiter **Settings** listet die Einstellungen der `clay.yaml`. Wähle eine au
 
 Clay ändert nur die Werte, die du bearbeitest. Kommentare, Anführungszeichen, die Reihenfolge der Schlüssel und der Rest jeder Datei bleiben, wie sie waren; der Diff in Git zeigt also genau deine Änderung.
 
+## Aus Skripten und für KI-Agenten
+
+Jede Aktion des Editors ist auch ein Befehl, der eine Änderung macht und sich beendet. Skripte und KI-Agenten nutzen sie, weil sie kein Terminal haben, um den Editor zu bedienen; `clay edit` ohne Befehl erklärt sie, wenn es ohne Terminal läuft.
+
+| Befehl | Tut |
+|--------|-----|
+| `clay edit list` | Jede Seite und jeder Ordner: Pfad, Titel, Icon, Reihenfolge, URL |
+| `clay edit show <pfad>` | Das ganze Front Matter einer Seite oder eines Ordners |
+| `clay edit set <pfad> <feld>=<wert>...` | `title`, `icon`, `description`, `order`, `list` oder `hero` setzen; ein leerer Wert entfernt es |
+| `clay edit new page <ordner> <titel>` | Eine Seite anlegen; `new folder` legt einen Ordner mit seiner `index.md` an |
+| `clay edit move <pfad> <ordner>` | Eine Seite mit ihren Übersetzungen oder einen Ordner verschieben |
+| `clay edit rename <pfad> <neuer-name>` | Eine Datei oder einen Ordner umbenennen |
+| `clay edit order <pfad> <position>` | Einen Eintrag an eine Position in seinem Ordner setzen (1 = zuerst) |
+| `clay edit delete <pfad> --yes` | Eine Seite mit ihren Übersetzungen oder einen Ordner löschen |
+| `clay edit translate <pfad> --lang <code>` | Eine Übersetzung aus dem Original beginnen |
+| `clay edit config [get|set|unset] <schlüssel>` | Die `clay.yaml` lesen und ändern, etwa `navbar.source.link` |
+
+Pfade sind relativ zu `docs/`: `guides/setup.md` (das `.md` darf fehlen), `guides` für einen Ordner, `index.md` für die Startseite. `--lang` arbeitet in einer anderen Sprache, `--docs-version` in einer älteren Version, und `--json` gibt das Ergebnis als JSON aus.
+
+```bash
+npx clay edit set guides/setup.md title="Einrichtung" order=2 --json
+```
+
+```json
+{
+  "ok": true,
+  "written": ["docs/guides/setup.md"]
+}
+```
+
+Mit `npx clay edit help` siehst du jeden Befehl mit Beispielen, und `npx clay check` nach Änderungen meldet kaputte Links und Einstellungen, ohne zu bauen. Siehe [KI & Agenten](../features/ai-and-agents.md#für-coding-agenten).
+
 > [!TIP]
 > Lass `npx clay dev` in einem zweiten Terminal laufen: Die Seite lädt bei jeder Änderung im Editor neu.

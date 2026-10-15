@@ -1,7 +1,7 @@
 ---
 title: Features
 icon: fa-solid fa-wand-magic-sparkles
-description: What every Clay site comes with - search, page details, themes and icons, and search engine optimization.
+description: What every Clay site comes with - docs for AI assistants and agents, search, page details, themes and icons, and search engine optimization.
 order: 4
 ---
 
@@ -10,6 +10,7 @@ order: 4
 What every Clay site comes with. None of these need setup: they work as soon as you build, and a few settings in `clay.yaml` or front matter fine-tune them.
 
 ::: cards
+- [AI & Agents](ai-and-agents.md)
 - [Search](search.md)
 - [SEO](seo.md)
 - [Page Details](page-details.md)
@@ -20,6 +21,7 @@ What every Clay site comes with. None of these need setup: they work as soon as 
 
 | Feature | Works without setup | Fine-tune with |
 |---------|---------------------|----------------|
+| [AI & agents](ai-and-agents.md) | Every page as Markdown, `llms.txt`, a menu to copy a page or ask an assistant, commands for coding agents | `siteURL` for full addresses |
 | [Search](search.md) | Every page and section, typos forgiven, filters by section | Good headings; nothing else |
 | [SEO](seo.md) | Titles, descriptions, link previews | `siteURL` for canonical links, the sitemap and structured data |
 | [Page details](page-details.md) | Contents of the page, previous and next links | `editURL` for edit links; git history for last-updated dates |

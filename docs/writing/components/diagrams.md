@@ -2,7 +2,7 @@
 title: Diagrams
 icon: fa-solid fa-diagram-project
 description: Flowcharts, sequence diagrams, pie charts and more from text with Mermaid, in the colors of your site.
-order: 7
+order: 8
 ---
 
 # Diagrams

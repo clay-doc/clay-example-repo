@@ -60,7 +60,7 @@ messages:
 | `title` | Pflicht | Name der Seite: Navigationsleiste, Browser-Tab, Suchergebnisse |
 | `favicon` | keins | Pfad zum Favicon, relativ zum Projektordner |
 | `baseURL` | `/` | Pfad, unter dem die Seite liegt, z. B. `/mein-projekt/` für Projektseiten auf GitHub |
-| `siteURL` | keine | Ursprung der Seite, z. B. `https://meine-org.github.io`; ermöglicht kanonische URLs, die Sitemap und strukturierte Daten |
+| `siteURL` | keine | Ursprung der Seite, z. B. `https://meine-org.github.io`; ermöglicht kanonische URLs, die Sitemap, strukturierte Daten und volle Adressen in der `llms.txt` |
 | `lang` | `en` | Sprache einer einsprachigen Seite: `<html lang>`, Datumsformate, Texte der Oberfläche |
 | `editURL` | keine | Basis-URL zum Bearbeiten einer Seite; der Dateipfad der Seite wird angehängt |
 | `fontawesomeKit` | keins | ID eines Font-Awesome-Kits; ohne werden die kostenlosen Icons genutzt |

@@ -32,6 +32,26 @@ yarn clay dev
 
 Öffne [http://localhost:3000](http://localhost:3000); jede Änderung, die du speicherst, erscheint sofort. Der [Schnellstart](getting-started/quick-start.md) führt von dort aus weiter.
 
+## Bereit für KI :badge[Neu in Clay 4]{tip}
+
+Deine Dokumentation, für Menschen und für die Assistenten, die sie fragen. Jede Seite wird auch als Markdown veröffentlicht, `llms.txt` listet alle für Sprachmodelle, und Leser kopieren eine Seite oder öffnen sie mit einem Klick in ChatGPT oder Claude. Coding-Agenten ändern und prüfen die Dokumentation mit `clay edit` und `clay check`.
+
+::: cards
+- [Jede Seite als Markdown](features/ai-and-agents.md#jede-seite-als-markdown) {fa-brands fa-markdown}
+  Probier es aus: Auch diese Seite gibt es als index.md.
+- [llms.txt](features/ai-and-agents.md#llmstxt) {fa-solid fa-robot}
+  Der Index, nach dem Sprachmodelle suchen, bei jedem Build geschrieben.
+- [Für Coding-Agenten](features/ai-and-agents.md#für-coding-agenten) {fa-solid fa-terminal}
+  Eine Änderung pro Befehl, Ergebnisse als JSON und eine Hilfe für Agenten.
+:::
+
+::: prompt
+Lies https://clay-doc.github.io/clay-example-repo/de/llms.txt und richte dann
+eine Clay-Dokumentation für dieses Repository ein: eine clay.yaml mit dem Namen
+des Projekts, einen Ordner docs/ mit einer Startseite und einen Workflow für
+GitHub Pages. Führe `npx clay check` aus, bis es durchläuft.
+:::
+
 ## Die Dokumentation
 
 ::: cards
@@ -47,6 +67,7 @@ yarn clay dev
 ## Warum Clay
 
 - **Markdown rein, Website raus.** Seiten sind Markdown-Dateien in `docs/`, Ordner werden zur Navigation. Keine Templates, kein Theme zum Bauen.
+- **Bereit für KI.** Jede Seite als Markdown, `llms.txt` und Befehle, die Coding-Agenten verstehen, siehe [KI & Agenten](features/ai-and-agents.md).
 - **Mehr als Markdown.** [Tabs, Schritte, Karten, Diagramme, Formeln und Dateibäume](writing/components/index.md), geschrieben als schlichter Text.
 - **Suche inklusive.** Jede Seite und jeder Abschnitt ist durchsuchbar, auch mit Tippfehlern, mit <kbd>Strg</kbd> + <kbd>K</kbd> oder <kbd>⌘</kbd> + <kbd>K</kbd>.
 - **Überall schnell.** Jede Seite wird vorab als HTML gerendert. Veröffentliche sie auf GitHub Pages, Netlify oder jedem Webserver.

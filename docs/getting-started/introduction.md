@@ -44,6 +44,8 @@ Clay is a single npm package, `clay-doc`. It builds on [Nuxt](https://nuxt.com) 
 ## What you get
 
 ::: cards
+- [Ready for AI](../features/ai-and-agents.md) {fa-solid fa-robot}
+  Every page as Markdown, llms.txt, and commands that coding agents understand.
 - [Navigation](../organizing/navigation.md) {fa-solid fa-sitemap}
   A sidebar from your folders, breadcrumbs, and previous and next links on every page.
 - [Search](../features/search.md) {fa-solid fa-magnifying-glass}

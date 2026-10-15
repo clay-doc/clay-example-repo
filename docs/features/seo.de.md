@@ -45,7 +45,7 @@ description: Veröffentliche eine Clay-Seite auf GitHub Pages, mit einem Workflo
 
 ## Sitemap und robots.txt
 
-Mit `siteURL` schreibt Clay eine `sitemap.xml` mit jeder Seite und dem Datum ihrer letzten Änderung, und eine `robots.txt`, die darauf verweist.
+Mit `siteURL` schreibt Clay eine `sitemap.xml` mit jeder Seite und dem Datum ihrer letzten Änderung, und eine `robots.txt`, die darauf verweist, und auf die [`llms.txt`](ai-and-agents.md#llmstxt) für Sprachmodelle.
 
 ```yaml
 siteURL: "https://meine-org.github.io"

@@ -2,7 +2,7 @@
 title: Math
 icon: fa-solid fa-square-root-variable
 description: Formulas in LaTeX, inline or on a line of their own, typeset with KaTeX when the site is built.
-order: 6
+order: 7
 ---
 
 # Math

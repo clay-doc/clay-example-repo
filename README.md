@@ -25,6 +25,10 @@ components, translations, build checks and the GitHub Pages deployment.
 > To learn Clay, read the [documentation](https://clay-doc.github.io/clay-example-repo/). To see how something is
 > done, find its page in `docs/` and look at the source.
 
+For AI assistants and coding agents, the docs are also published as Markdown:
+[llms.txt](https://clay-doc.github.io/clay-example-repo/llms.txt) lists every page, and
+[llms-full.txt](https://clay-doc.github.io/clay-example-repo/llms-full.txt) holds them all in one file.
+
 ## Structure
 
 ```text

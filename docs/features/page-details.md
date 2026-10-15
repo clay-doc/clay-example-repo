@@ -2,7 +2,7 @@
 title: Page Details
 icon: fa-solid fa-circle-info
 description: The table of contents, last-updated dates, edit links and previous/next links around each page.
-order: 3
+order: 4
 ---
 
 # Page Details

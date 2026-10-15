@@ -1,13 +1,13 @@
 ---
 title: Markdown
 icon: fa-brands fa-markdown
-description: The Markdown syntax Clay supports, from headings and lists to tables and task lists, with examples.
+description: Clay Flavored Markdown - GitHub's Markdown plus alerts, components, math and diagrams - from headings and lists to tables and task lists, with examples.
 order: 2
 ---
 
 # Markdown
 
-Clay reads [GitHub Flavored Markdown](https://github.github.com/gfm/), the Markdown you know from READMEs and issues on GitHub. Each element below shows its result and its source; pick **Markdown** once to see the source everywhere.
+Clay reads **Clay Flavored Markdown** (CFM): [GitHub Flavored Markdown](https://github.github.com/gfm/), the Markdown you know from READMEs and issues on GitHub, plus [alerts](alerts.md), [components](components/index.md), [math](components/math.md) and [diagrams](components/diagrams.md). Everything GitHub shows works in Clay too, and what Clay adds stays readable on GitHub. Each element below shows its result and its source; pick **Markdown** once to see the source everywhere.
 
 ## Headings
 

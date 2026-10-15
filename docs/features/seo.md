@@ -2,7 +2,7 @@
 title: SEO
 icon: fa-solid fa-chart-line
 description: Titles, descriptions, canonical URLs, Open Graph tags, structured data and a sitemap that Clay creates for search engines.
-order: 2
+order: 3
 ---
 
 # SEO
@@ -46,7 +46,7 @@ description: Deploy a Clay site to GitHub Pages with a workflow that builds on e
 
 ## Sitemap and robots.txt
 
-With `siteURL`, Clay writes `sitemap.xml` with every page and the date of its last change, and `robots.txt` pointing to it.
+With `siteURL`, Clay writes `sitemap.xml` with every page and the date of its last change, and `robots.txt` pointing to it, and to [`llms.txt`](ai-and-agents.md#llmstxt) for language models.
 
 ```yaml
 siteURL: "https://my-org.github.io"

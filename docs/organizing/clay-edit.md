@@ -1,7 +1,7 @@
 ---
 title: Editing with clay edit
 icon: fa-solid fa-pen-to-square
-description: Create, edit, order, rename, move and delete pages and folders, translate them and edit the settings, for every version and language.
+description: Create, edit, order, rename, move and delete pages and folders, translate them and edit the settings - in an editor in the terminal, or one command at a time for scripts and AI agents.
 order: 6
 ---
 
@@ -81,6 +81,38 @@ In another language, pages without a translation are marked **untranslated**. Se
 The **Settings** tab lists the settings of `clay.yaml`. Select one and press <kbd>⏎</kbd> to change it. Settings with a value per language are edited in the language shown in the header. Navbar links are added with **+ Add link** and removed with <kbd>d</kbd>.
 
 Clay changes only the values you edit. Comments, quotes, the order of keys and the rest of each file stay as they were, so the diff in git shows exactly your change.
+
+## From scripts and AI agents
+
+Every action of the editor is also a command that does one change and exits. Scripts and AI agents use these, since they have no terminal to drive the editor; `clay edit` without a command explains them when it runs without one.
+
+| Command | Does |
+|---------|------|
+| `clay edit list` | Every page and folder: path, title, icon, order, URL |
+| `clay edit show <path>` | All front matter of one page or folder |
+| `clay edit set <path> <field>=<value>...` | Set `title`, `icon`, `description`, `order`, `list` or `hero`; an empty value removes it |
+| `clay edit new page <folder> <title>` | Create a page; `new folder` creates a folder with its `index.md` |
+| `clay edit move <path> <folder>` | Move a page with its translations, or a folder |
+| `clay edit rename <path> <new-name>` | Rename a file or folder |
+| `clay edit order <path> <position>` | Put an entry at a position in its folder (1 = first) |
+| `clay edit delete <path> --yes` | Delete a page with its translations, or a folder |
+| `clay edit translate <path> --lang <code>` | Start a translation from the original |
+| `clay edit config [get|set|unset] <key>` | Read and change `clay.yaml`, e.g. `navbar.source.link` |
+
+Paths are relative to `docs/`: `guides/setup.md` (the `.md` may be left out), `guides` for a folder, `index.md` for the start page. `--lang` works in another language, `--docs-version` in an older version, and `--json` prints the result as JSON.
+
+```bash
+npx clay edit set guides/setup.md title="Setting up" order=2 --json
+```
+
+```json
+{
+  "ok": true,
+  "written": ["docs/guides/setup.md"]
+}
+```
+
+Run `npx clay edit help` for every command with examples, and `npx clay check` after changes: it reports broken links and settings without building. See [AI & agents](../features/ai-and-agents.md#for-coding-agents).
 
 > [!TIP]
 > Run `npx clay dev` in a second terminal: the site reloads with every change you make in the editor.

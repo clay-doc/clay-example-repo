@@ -1,7 +1,7 @@
 ---
 title: Components
 icon: fa-solid fa-puzzle-piece
-description: Tabs, steps, cards, folded sections, badges, math, diagrams and file trees, written in plain Markdown.
+description: Tabs, steps, cards, folded sections, prompts, badges, math, diagrams and file trees, written in plain Markdown.
 order: 5
 ---
 
@@ -14,6 +14,7 @@ Markdown covers text, lists, tables and code. For the rest of what docs need, li
 - [Steps](steps.md)
 - [Cards](cards.md)
 - [Details](details.md)
+- [Prompts](prompts.md)
 - [Badges](badges.md)
 - [Math](math.md)
 - [Diagrams](diagrams.md)
@@ -24,7 +25,7 @@ Markdown covers text, lists, tables and code. For the rest of what docs need, li
 
 | Kind | Looks like | Components |
 |------|------------|------------|
-| Containers | `::: name` … `:::` around Markdown | [tabs, code groups](tabs.md), [steps](steps.md), [cards](cards.md), [details](details.md) |
+| Containers | `::: name` … `:::` around Markdown | [tabs, code groups](tabs.md), [steps](steps.md), [cards](cards.md), [details](details.md), [prompts](prompts.md) |
 | Inline | `:badge[New]`, `$E = mc^2$` | [badges](badges.md), [math](math.md) |
 | Code blocks | a code block in the language `mermaid` or `tree` | [diagrams](diagrams.md), [file trees](file-trees.md) |
 

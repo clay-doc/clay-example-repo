@@ -2,7 +2,7 @@
 title: Themes & Icons
 icon: fa-solid fa-palette
 description: Light and dark mode, and how to use Font Awesome icons and kits in Clay.
-order: 4
+order: 5
 ---
 
 # Themes & Icons

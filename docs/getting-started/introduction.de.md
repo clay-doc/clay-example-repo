@@ -43,6 +43,8 @@ Clay ist ein einziges npm-Paket, `clay-doc`. Es baut auf [Nuxt](https://nuxt.com
 ## Was du bekommst
 
 ::: cards
+- [Bereit für KI](../features/ai-and-agents.md) {fa-solid fa-robot}
+  Jede Seite als Markdown, llms.txt und Befehle, die Coding-Agenten verstehen.
 - [Navigation](../organizing/navigation.md) {fa-solid fa-sitemap}
   Eine Seitenleiste aus deinen Ordnern, Brotkrumen und Links zur vorigen und nächsten Seite.
 - [Suche](../features/search.md) {fa-solid fa-magnifying-glass}

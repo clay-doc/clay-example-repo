@@ -6,7 +6,7 @@ description: Alles rund um den Inhalt einer Seite, von Markdown und Codeblöcken
 
 # Schreiben
 
-Jede Seite ist eine Markdown-Datei in `docs/`. Clay versteht das Markdown, das du von GitHub kennst, ergänzt Syntaxhervorhebung, Hinweise und Komponenten und prüft bei jedem Build deine Links.
+Jede Seite ist eine Markdown-Datei in `docs/`, geschrieben in **Clay Flavored Markdown** (CFM): dem Markdown, das du von GitHub kennst, plus Syntaxhervorhebung, Hinweisen und Komponenten. Clay prüft bei jedem Build deine Links.
 
 ::: cards
 - [Seiten](pages.md)
@@ -72,6 +72,7 @@ pnpm add --save-dev clay-doc
 | Verbergen, was nur manche Leser brauchen | [Details](components/details.md) |
 | Leser zu anderen Seiten führen | [Karten](components/cards.md) oder [Links](links-and-images.md) |
 | Erklären, wie Teile zusammenpassen | ein [Diagramm](components/diagrams.md) oder einen [Dateibaum](components/file-trees.md) |
+| Vorschlagen, was man einen KI-Assistenten oder Agenten fragt | einen [Prompt](components/prompts.md) |
 | Etwas als neu oder veraltet markieren | einen [Badge](components/badges.md) |
 
 ## Das Wichtigste

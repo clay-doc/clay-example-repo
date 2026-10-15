@@ -2,7 +2,7 @@
 title: Badges
 icon: fa-solid fa-tag
 description: Small labels in text and headings, like "New", "Beta" or "Deprecated", in the colors of the alerts.
-order: 5
+order: 6
 ---
 
 # Badges

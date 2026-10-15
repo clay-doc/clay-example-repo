@@ -2,7 +2,7 @@
 title: Search
 icon: fa-solid fa-magnifying-glass
 description: Full-text search over every page and section, with typo tolerance, highlighted matches and keyboard shortcuts.
-order: 1
+order: 2
 ---
 
 # Search

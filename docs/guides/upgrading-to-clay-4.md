@@ -69,6 +69,7 @@ Clay 4 changes one name: the front matter field `cards` is now `list`. Everythin
 ## What else is new
 
 ::: cards
+- [AI & Agents](../features/ai-and-agents.md)
 - [Components](../writing/components/index.md)
 - [Build Checks](../publishing/build-checks.md) {fa-solid fa-list-check}
   Links to sections are checked too, and a page that fails to render says why.
