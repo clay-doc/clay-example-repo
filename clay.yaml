@@ -7,6 +7,10 @@ editURL: "https://github.com/clay-doc/clay-example-repo/edit/main/docs/"
 fontawesomeKit: "set-in-ci"
 version: "3.0"
 languages: ["en", "de"]
+# {{major}} and {{node}} in the docs, see Writing › Snippets & Variables
+variables:
+  major: "4"
+  node: "20.19"
 navbar:
   logo: "logo.svg"
   source:

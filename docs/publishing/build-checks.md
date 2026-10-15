@@ -32,6 +32,7 @@ flowchart LR
 | Links to pages that do not exist | `Broken link in guides/setup.md: "instal.md" points to a missing page (/guides/instal)` |
 | Links to sections that do not exist | `Broken link in index.md: "guides/setup.md#instal" points to a missing section (#instal on /guides/setup)` |
 | Images and files that do not exist | `Broken link in index.md: "img/logo.png" points to a missing file` |
+| [Snippets](../writing/snippets-and-variables.md) that cannot be included | `docs/guides/setup.md: includes "../_snippets/gone.md", which does not exist; it is left out` |
 | Unknown settings in `clay.yaml` | `clay.yaml: unknown key "navbar.lgo" is ignored (typo?)` |
 | Front matter from Clay 3 | `guides/index.md: "cards" is no longer read since Clay 4; it is called "list"` |
 | Files and settings from Clay 2 | `dir-meta.yaml is no longer read since Clay 3; give each folder an index.md with its title, icon and order` |
@@ -42,7 +43,7 @@ flowchart LR
 | Unusable or clashing versions | `docs-archive/1.x: docs/1.x has the same URL as this version; rename one of them` |
 | Missing git history | `the docs are not in a git repository: last-updated dates are skipped` |
 
-Links to other websites are not checked.
+Links, images and videos written in HTML (`<a href>`, `<img src>`, `<video src>`) are checked like Markdown ones. Links to other websites are not checked.
 
 ## --strict
 

@@ -27,6 +27,7 @@ With `siteURL` set, pages also get:
 | `og:url` | The same, for link previews |
 | Breadcrumbs (JSON-LD) | Where the page sits, shown in search results as "Clay › Features › SEO" |
 | `hreflang` links | The page's [translations](../organizing/translations.md) |
+| `og:image`, `twitter:card` | The page's [social image](#social-images) |
 
 ## Descriptions
 
@@ -52,6 +53,21 @@ page in docs/ without a description one: one or two sentences, at most 160
 characters, that say what the page answers. Find the pages with
 `npx clay edit list --json` and set each with `npx clay edit set`.
 :::
+
+## Social images :badge[New in Clay 4]{tip}
+
+A link to a page, shared in a chat or a social network, shows a picture of it: the site's logo and title, the section, the page's title and its description, in the colors of the dark theme.
+
+![The social image of the GitHub Pages guide](https://clay-doc.github.io/clay-example-repo/_clay/social/publishing/github-pages.png)
+
+Clay draws them when it builds the site, one for each page, at `/_clay/social/<page>.png`. They need `siteURL`, since link previews only load images by their full address. To build without them:
+
+```yaml
+socialImages: false
+```
+
+- **Drawing takes a moment**, about a second for every ten pages. Clay keeps the images in `node_modules/.cache` and only draws them again when a page's title or description changes.
+- **The font has Latin, Greek and Cyrillic letters.** Pages in other scripts, like Japanese or Chinese, get no image rather than one with empty boxes.
 
 ## Sitemap and robots.txt
 

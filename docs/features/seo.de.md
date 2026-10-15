@@ -26,6 +26,7 @@ Mit `siteURL` bekommen Seiten außerdem:
 | `og:url` | Dasselbe für Link-Vorschauen |
 | Brotkrumen (JSON-LD) | Wo die Seite liegt, in Suchergebnissen als „Clay › Funktionen › SEO" |
 | `hreflang`-Links | Die [Übersetzungen](../organizing/translations.md) der Seite |
+| `og:image`, `twitter:card` | Das [Vorschaubild](#vorschaubilder) der Seite |
 
 ## Beschreibungen
 
@@ -51,6 +52,21 @@ Seite in docs/ ohne Beschreibung eine: ein, zwei Sätze, höchstens 160 Zeichen,
 die sagen, welche Frage die Seite beantwortet. Finde die Seiten mit
 `npx clay edit list --json` und setze die Beschreibungen mit `npx clay edit set`.
 :::
+
+## Vorschaubilder :badge[Neu in Clay 4]{tip}
+
+Ein Link auf eine Seite, geteilt in einem Chat oder einem sozialen Netzwerk, zeigt ein Bild von ihr: Logo und Titel der Seite, den Bereich, den Titel der Seite und ihre Beschreibung, in den Farben des dunklen Designs.
+
+![Das Vorschaubild der Anleitung zu GitHub Pages](https://clay-doc.github.io/clay-example-repo/_clay/social/de/publishing/github-pages.png)
+
+Clay zeichnet sie beim Bauen der Seite, eines für jede Seite, unter `/_clay/social/<seite>.png`. Sie brauchen `siteURL`, denn Link-Vorschauen laden Bilder nur über ihre volle Adresse. Ohne sie bauen:
+
+```yaml
+socialImages: false
+```
+
+- **Das Zeichnen dauert etwas**, etwa eine Sekunde für zehn Seiten. Clay legt die Bilder in `node_modules/.cache` ab und zeichnet sie nur neu, wenn sich Titel oder Beschreibung einer Seite ändern.
+- **Die Schrift hat lateinische, griechische und kyrillische Buchstaben.** Seiten in anderen Schriften, etwa Japanisch oder Chinesisch, bekommen kein Bild statt eines mit leeren Kästchen.
 
 ## Sitemap und robots.txt
 

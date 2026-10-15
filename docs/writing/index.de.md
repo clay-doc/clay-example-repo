@@ -16,6 +16,7 @@ Jede Seite ist eine Markdown-Datei in `docs/`, geschrieben in **Clay Flavored Ma
 - [Komponenten](components/index.md)
 - [Links & Bilder](links-and-images.md)
 - [HTML](html.md)
+- [Snippets & Variablen](snippets-and-variables.md)
 :::
 
 ## Eine Seite auf einen Blick

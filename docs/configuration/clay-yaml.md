@@ -51,6 +51,14 @@ navbar:
 messages:
   de:
     search: "Durchsuchen"
+
+variables:
+  major: "4"
+
+head:
+  meta:
+    - name: "google-site-verification"
+      content: "abc123"
 ```
 :::
 
@@ -65,6 +73,7 @@ messages:
 | `lang` | `en` | Language of a single-language site: `<html lang>`, date formats, interface texts |
 | `editURL` | none | Base URL to edit a page; the page's file path is appended |
 | `fontawesomeKit` | none | ID of a Font Awesome kit; without it, the free icons are used |
+| `socialImages` | `true` with `siteURL` | A picture of each page for link previews; `false` turns them off, see [SEO](../features/seo.md#social-images) |
 
 ### baseURL and siteURL
 
@@ -96,6 +105,36 @@ The page `docs/guides/setup.md` then links to `…/edit/main/docs/guides/setup.m
 | `navbar.links` | none | More links like the source link, next to it; each has `name`, `icon` and `link` |
 
 Logo and favicon can be files in the project folder (Clay copies them into the site) or full URLs.
+
+## Variables
+
+`variables` sets values that pages fill in with `\{{name}}`, like the current version. See [snippets & variables](../writing/snippets-and-variables.md).
+
+```yaml
+variables:
+  major: "4"
+  node: "20.19"
+```
+
+## Head
+
+`head` adds tags to the `<head>` of every page: a chat widget's script, a verification for Google Search Console, a font. Each entry is the tag's attributes; a script's code goes into `code`.
+
+```yaml
+head:
+  script:
+    - src: "https://widget.example.com/chat.js"
+      async: true
+    - code: "window.chatSettings = {position: 'right'}"
+  link:
+    - rel: "preconnect"
+      href: "https://fonts.example.com"
+  meta:
+    - name: "google-site-verification"
+      content: "abc123"
+```
+
+Like every text, values can differ per language. `clay.yaml` is part of the project: scripts in it run on every page, so review them like code.
 
 ## Start page
 

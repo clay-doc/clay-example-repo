@@ -19,7 +19,7 @@ Markdown und die [Komponenten](components/index.md) decken das meiste ab, aber m
 > [!TIP]
 > Für einklappbare Abschnitte nimm [Details](components/details.md) statt `<details>`: Das ist kürzer und sieht aus wie der Rest der Seite.
 
-## Videos und Einbettungen
+## Videos und Einbettungen :badge[Neu in Clay 4]{tip}
 
 Füge den Einbettungscode, den dir YouTube, Vimeo oder Figma geben, so ein, wie er ist:
 

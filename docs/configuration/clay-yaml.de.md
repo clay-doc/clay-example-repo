@@ -50,6 +50,14 @@ navbar:
 messages:
   de:
     search: "Durchsuchen"
+
+variables:
+  major: "4"
+
+head:
+  meta:
+    - name: "google-site-verification"
+      content: "abc123"
 ```
 :::
 
@@ -64,6 +72,7 @@ messages:
 | `lang` | `en` | Sprache einer einsprachigen Seite: `<html lang>`, Datumsformate, Texte der Oberfläche |
 | `editURL` | keine | Basis-URL zum Bearbeiten einer Seite; der Dateipfad der Seite wird angehängt |
 | `fontawesomeKit` | keins | ID eines Font-Awesome-Kits; ohne werden die kostenlosen Icons genutzt |
+| `socialImages` | `true` mit `siteURL` | Ein Bild je Seite für Link-Vorschauen; `false` schaltet sie ab, siehe [SEO](../features/seo.md#vorschaubilder) |
 
 ### baseURL und siteURL
 
@@ -95,6 +104,36 @@ Die Seite `docs/guides/setup.md` verlinkt dann auf `…/edit/main/docs/guides/se
 | `navbar.links` | keine | Weitere Links wie der Quellcode-Link, daneben; jeder hat `name`, `icon` und `link` |
 
 Logo und Favicon können Dateien im Projektordner sein (Clay kopiert sie in die Seite) oder vollständige URLs.
+
+## Variablen
+
+`variables` legt Werte fest, die Seiten mit `\{{name}}` einsetzen, etwa die aktuelle Version. Siehe [Snippets & Variablen](../writing/snippets-and-variables.md).
+
+```yaml
+variables:
+  major: "4"
+  node: "20.19"
+```
+
+## Head
+
+`head` fügt jeder Seite Tags im `<head>` hinzu: das Skript eines Chat-Widgets, eine Bestätigung für die Google Search Console, eine Schrift. Jeder Eintrag sind die Attribute des Tags; den Code eines Skripts nimmt `code` auf.
+
+```yaml
+head:
+  script:
+    - src: "https://widget.example.com/chat.js"
+      async: true
+    - code: "window.chatSettings = {position: 'right'}"
+  link:
+    - rel: "preconnect"
+      href: "https://fonts.example.com"
+  meta:
+    - name: "google-site-verification"
+      content: "abc123"
+```
+
+Wie jeder Text können die Werte je Sprache verschieden sein. Die `clay.yaml` gehört zum Projekt: Skripte darin laufen auf jeder Seite, prüf sie also wie Code.
 
 ## Startseite
 

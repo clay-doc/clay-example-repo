@@ -20,7 +20,7 @@ Markdown and the [components](components/index.md) cover most needs, but sometim
 > [!TIP]
 > For folded sections, use [details](components/details.md) instead of `<details>`: it is shorter, and styled like the rest of the site.
 
-## Videos and embeds
+## Videos and embeds :badge[New in Clay 4]{tip}
 
 Paste the embed code that YouTube, Vimeo or Figma give you, as it is:
 
