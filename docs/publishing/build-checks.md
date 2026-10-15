@@ -62,6 +62,16 @@ With `--strict`, warnings fail the build. Use it in CI: a typo in a link then st
 
 Missing git history is the one warning that never fails a build: it only means the pages show no dates.
 
+To catch problems before they are merged, run the same check on every pull request:
+
+::: prompt
+Add a GitHub Actions workflow, .github/workflows/docs-check.yaml, that runs
+`npx clay build --strict` on every pull request that changes docs/,
+docs-archive/ or clay.yaml. Set up Node.js like the deploy workflow in
+https://clay-doc.github.io/clay-example-repo/publishing/github-pages.md,
+check out the full history, and do not deploy anything.
+:::
+
 ## When a build fails
 
 Some problems stop every build, strict or not, for example a page that cannot be rendered. Clay marks the step that failed and shows the cause:

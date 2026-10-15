@@ -15,6 +15,14 @@ Clay 4 changes one name: the front matter field `cards` is now `list`. Everythin
 |--------|--------|
 | `cards: true` in an `index.md` | `list: true` |
 
+A coding agent can do the upgrade:
+
+::: prompt
+Upgrade the Clay docs in this repository to Clay 4, following
+https://clay-doc.github.io/clay-example-repo/guides/upgrading-to-clay-4.md.
+The upgrade is done when `npx clay build --strict` passes.
+:::
+
 ## Steps
 
 ::: steps

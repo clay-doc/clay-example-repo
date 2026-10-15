@@ -43,6 +43,15 @@ description: Veröffentliche eine Clay-Seite auf GitHub Pages, mit einem Workflo
 ---
 ```
 
+Fehlende Beschreibungen kann ein Coding-Agent schreiben:
+
+::: prompt
+Lies https://clay-doc.github.io/clay-example-repo/de/features/seo.md. Gib dann jeder
+Seite in docs/ ohne Beschreibung eine: ein, zwei Sätze, höchstens 160 Zeichen,
+die sagen, welche Frage die Seite beantwortet. Finde die Seiten mit
+`npx clay edit list --json` und setze die Beschreibungen mit `npx clay edit set`.
+:::
+
 ## Sitemap und robots.txt
 
 Mit `siteURL` schreibt Clay eine `sitemap.xml` mit jeder Seite und dem Datum ihrer letzten Änderung, und eine `robots.txt`, die darauf verweist, und auf die [`llms.txt`](ai-and-agents.md#llmstxt) für Sprachmodelle.

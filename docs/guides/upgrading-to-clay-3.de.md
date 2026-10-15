@@ -16,6 +16,16 @@ Clay 3 holt drei Dinge in die Dokumentation selbst: Ordnernamen, die Startseite 
 | `index` in der `clay.yaml` | `docs/index.md` |
 | `versions/<name>/docs/` | `docs-archive/<name>/` |
 
+Den Umstieg kann ein Coding-Agent übernehmen, gleich bis Clay 4:
+
+::: prompt
+Stell die Clay-Dokumentation dieses Repositorys von Clay 2 auf Clay 4 um: nach
+https://clay-doc.github.io/clay-example-repo/de/guides/upgrading-to-clay-3.md,
+dann nach https://clay-doc.github.io/clay-example-repo/de/guides/upgrading-to-clay-4.md,
+und installiere gleich clay-doc@4. Der Umstieg ist fertig, wenn
+`npx clay build --strict` durchläuft.
+:::
+
 ## Schritte
 
 ::: steps

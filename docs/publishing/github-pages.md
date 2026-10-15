@@ -39,6 +39,16 @@ flowchart LR
 4. **Push.** After a minute, the site is online; the workflow run shows its address.
 :::
 
+A coding agent can do steps 1 and 3 for you:
+
+::: prompt
+Read https://clay-doc.github.io/clay-example-repo/publishing/github-pages.md.
+Then publish the Clay docs in this repository on GitHub Pages: set baseURL
+and siteURL in clay.yaml for this repository's Pages address, and add the
+workflow as .github/workflows/deploy.yaml, with or without package.json,
+whichever fits this repository. Check with `npx clay build --strict`.
+:::
+
 ## The workflow
 
 ::: tabs

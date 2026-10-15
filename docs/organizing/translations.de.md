@@ -40,6 +40,17 @@ Die Standardsprache liegt an der Wurzel der Website, jede andere Sprache unter i
 | `docs/guides/setup.md` | `/guides/setup` | `/de/guides/setup` |
 | In Version 1.x | `/1.x/guides/setup` | `/1.x/de/guides/setup` |
 
+Die erste Runde Übersetzungen kann ein Coding-Agent übernehmen; nenn deine Sprache statt Französisch:
+
+::: prompt
+Lies https://clay-doc.github.io/clay-example-repo/de/organizing/translations.md.
+Ergänze dann die Clay-Dokumentation dieses Repositorys um Französisch: Füge
+"fr" zu languages in der clay.yaml hinzu, beginne für jede Seite eine
+Übersetzung mit `npx clay edit translate <seite> --lang fr` und übersetze den
+Text. Lass Codeblöcke, Links und Dateinamen, wie sie sind. Prüfe mit
+`npx clay check`.
+:::
+
 ## Eine übersetzte Seite
 
 Die Übersetzung ist eine vollständige eigene Seite: mit eigenem Front Matter, eigenen Überschriften, eigenem Text.

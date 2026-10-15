@@ -14,6 +14,14 @@ Clay 4 ändert einen Namen: Das Front-Matter-Feld `cards` heißt jetzt `list`. A
 |--------|--------|
 | `cards: true` in einer `index.md` | `list: true` |
 
+Den Umstieg kann ein Coding-Agent übernehmen:
+
+::: prompt
+Stell die Clay-Dokumentation dieses Repositorys auf Clay 4 um, nach
+https://clay-doc.github.io/clay-example-repo/de/guides/upgrading-to-clay-4.md.
+Der Umstieg ist fertig, wenn `npx clay build --strict` durchläuft.
+:::
+
 ## Schritte
 
 ::: steps

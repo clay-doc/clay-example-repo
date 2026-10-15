@@ -41,6 +41,16 @@ The default language lives at the root of the site; every other language under i
 | `docs/guides/setup.md` | `/guides/setup` | `/de/guides/setup` |
 | In version 1.x | `/1.x/guides/setup` | `/1.x/de/guides/setup` |
 
+A coding agent can do the first round of translations; name your language in place of German:
+
+::: prompt
+Read https://clay-doc.github.io/clay-example-repo/organizing/translations.md.
+Then add German to the Clay docs in this repository: add "de" to languages in
+clay.yaml, start a translation of every page with
+`npx clay edit translate <page> --lang de`, and translate the text. Keep code
+blocks, links and file names as they are. Check with `npx clay check`.
+:::
+
 ## A translated page
 
 The translation is a complete page of its own: its own front matter, its own headings, its own text.

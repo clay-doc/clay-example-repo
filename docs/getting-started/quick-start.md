@@ -98,6 +98,18 @@ my-docs/
 > [!NOTE]
 > Add `publish/` and `node_modules/` to your `.gitignore`. The build output is created fresh on every build and does not belong in the repository.
 
+## Coming from another tool
+
+Docs written for MkDocs, Docusaurus, VitePress or another tool are Markdown too. A coding agent can move them to Clay:
+
+::: prompt
+Read https://clay-doc.github.io/clay-example-repo/llms-full.txt to learn how Clay
+works. Then move the documentation in this repository to Clay: its settings to
+clay.yaml, its navigation to folders, index.md files and `order`, and the old
+tool's own syntax, like admonitions and tabs, to Clay Flavored Markdown.
+Remove the old tool's files once `npx clay build --strict` passes.
+:::
+
 ## Where to go from here
 
 ::: cards

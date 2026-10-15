@@ -21,6 +21,16 @@ Clay 1 needed two parts: the Clay frontend and Clay Oven, a separate Go tool tha
 | `langs` in `clay.yaml` | Not needed: languages of code blocks are detected |
 | No live preview | `npx clay dev` |
 
+A coding agent can do the upgrade, straight on to Clay 4:
+
+::: prompt
+Upgrade the Clay docs in this repository from Clay 1 and Clay Oven to Clay 4:
+follow https://clay-doc.github.io/clay-example-repo/guides/upgrading-to-clay-2.md,
+then upgrading-to-clay-3.md and upgrading-to-clay-4.md next to it, and install
+clay-doc@4 directly. Update the CI workflow too. The upgrade is done when
+`npx clay build --strict` passes.
+:::
+
 ## Steps
 
 ::: steps

@@ -17,6 +17,16 @@ Clay 3 moves three things into the docs themselves: folder names, the start page
 | `index` in `clay.yaml` | `docs/index.md` |
 | `versions/<name>/docs/` | `docs-archive/<name>/` |
 
+A coding agent can do the upgrade, straight on to Clay 4:
+
+::: prompt
+Upgrade the Clay docs in this repository from Clay 2 to Clay 4: follow
+https://clay-doc.github.io/clay-example-repo/guides/upgrading-to-clay-3.md,
+then https://clay-doc.github.io/clay-example-repo/guides/upgrading-to-clay-4.md,
+and install clay-doc@4 directly. The upgrade is done when
+`npx clay build --strict` passes.
+:::
+
 ## Steps
 
 ::: steps

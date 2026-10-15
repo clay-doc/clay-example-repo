@@ -85,4 +85,13 @@ Clay braucht Node.js 20.19 oder neuer. Prüf es mit `node --version` und aktuali
 
 ## Immer noch nicht weiter?
 
-Öffne ein Issue im [Clay-Repository](https://github.com/clay-doc/clay/issues) mit dem Befehl, den du ausgeführt hast, und seiner Ausgabe.
+Ein Coding-Agent findet die Ursache oft; beschreib das Problem an der markierten Stelle:
+
+::: prompt
+Meine Clay-Seite hat ein Problem: <beschreib es>. Lies
+https://clay-doc.github.io/clay-example-repo/de/guides/troubleshooting.md und
+https://clay-doc.github.io/clay-example-repo/de/publishing/build-checks.md, führe
+`npx clay build --strict` aus, finde die Ursache und behebe sie.
+:::
+
+Sonst öffne ein Issue im [Clay-Repository](https://github.com/clay-doc/clay/issues) mit dem Befehl, den du ausgeführt hast, und seiner Ausgabe.

@@ -61,6 +61,16 @@ pages:
 Projektseiten liegen auf GitLab unter dem Namen des Projekts, wie auf GitHub: Setz `baseURL: "/mein-projekt/"`.
 :::
 
+Ein Coding-Agent kann das einrichten; nenn deinen Hoster statt Netlify:
+
+::: prompt
+Lies https://clay-doc.github.io/clay-example-repo/de/publishing/other-hosts.md.
+Veröffentliche dann die Clay-Dokumentation dieses Repositorys auf Netlify: Leg
+die Konfiguration für den Hoster an, setze baseURL in der clay.yaml, wenn die
+Seite nicht an der Wurzel ihrer Domain liegt, und prüfe mit
+`npx clay build --strict`.
+:::
+
 ## Dein eigener Webserver
 
 Kopier `publish/public` auf den Server und liefere es als statische Dateien aus. Jede Seite ist ein Ordner mit einer `index.html`, der Server sollte also:

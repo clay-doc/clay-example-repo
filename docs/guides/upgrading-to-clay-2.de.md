@@ -20,6 +20,16 @@ Clay 1 bestand aus zwei Teilen: dem Clay-Frontend und Clay Oven, einem eigenen G
 | `langs` in der `clay.yaml` | Nicht nötig: Die Sprachen der Codeblöcke werden erkannt |
 | Keine Live-Vorschau | `npx clay dev` |
 
+Den Umstieg kann ein Coding-Agent übernehmen, gleich bis Clay 4:
+
+::: prompt
+Stell die Clay-Dokumentation dieses Repositorys von Clay 1 und Clay Oven auf
+Clay 4 um: nach https://clay-doc.github.io/clay-example-repo/de/guides/upgrading-to-clay-2.md,
+dann nach upgrading-to-clay-3.md und upgrading-to-clay-4.md daneben, und
+installiere gleich clay-doc@4. Pass auch den CI-Workflow an. Der Umstieg ist
+fertig, wenn `npx clay build --strict` durchläuft.
+:::
+
 ## Schritte
 
 ::: steps

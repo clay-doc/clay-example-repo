@@ -63,6 +63,16 @@ Mit `--strict` lassen Warnungen den Build scheitern. Nutze es in der CI: Ein Tip
 
 Fehlende Git-Historie ist die einzige Warnung, die einen Build nie scheitern lässt: Sie bedeutet nur, dass die Seiten keine Daten zeigen.
 
+Damit Probleme gar nicht erst gemergt werden, lass dieselbe Prüfung bei jedem Pull Request laufen:
+
+::: prompt
+Leg einen GitHub-Actions-Workflow an, .github/workflows/docs-check.yaml, der
+`npx clay build --strict` bei jedem Pull Request ausführt, der docs/,
+docs-archive/ oder clay.yaml ändert. Richte Node.js ein wie der Deploy-Workflow
+in https://clay-doc.github.io/clay-example-repo/de/publishing/github-pages.md,
+checke die ganze Historie aus und veröffentliche nichts.
+:::
+
 ## Wenn ein Build scheitert
 
 Manche Probleme stoppen jeden Build, ob streng oder nicht, etwa eine Seite, die sich nicht rendern lässt. Clay markiert den gescheiterten Schritt und zeigt die Ursache:

@@ -44,6 +44,15 @@ description: Deploy a Clay site to GitHub Pages with a workflow that builds on e
 ---
 ```
 
+A coding agent can write the missing descriptions:
+
+::: prompt
+Read https://clay-doc.github.io/clay-example-repo/features/seo.md. Then give every
+page in docs/ without a description one: one or two sentences, at most 160
+characters, that say what the page answers. Find the pages with
+`npx clay edit list --json` and set each with `npx clay edit set`.
+:::
+
 ## Sitemap and robots.txt
 
 With `siteURL`, Clay writes `sitemap.xml` with every page and the date of its last change, and `robots.txt` pointing to it, and to [`llms.txt`](ai-and-agents.md#llmstxt) for language models.

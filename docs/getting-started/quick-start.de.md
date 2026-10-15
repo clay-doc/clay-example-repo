@@ -97,6 +97,19 @@ meine-docs/
 > [!NOTE]
 > Trag `publish/` und `node_modules/` in deine `.gitignore` ein. Die Build-Ausgabe entsteht bei jedem Build neu und gehört nicht ins Repository.
 
+## Von einem anderen Werkzeug
+
+Dokumentation für MkDocs, Docusaurus, VitePress oder ein anderes Werkzeug ist auch Markdown. Ein Coding-Agent kann sie zu Clay umziehen:
+
+::: prompt
+Lies https://clay-doc.github.io/clay-example-repo/de/llms-full.txt, um zu lernen, wie
+Clay funktioniert. Zieh dann die Dokumentation dieses Repositorys zu Clay um:
+die Einstellungen in die clay.yaml, die Navigation in Ordner, index.md-Dateien
+und `order`, und die eigene Syntax des alten Werkzeugs, etwa Hinweisboxen und
+Tabs, in Clay Flavored Markdown. Entferne die Dateien des alten Werkzeugs, sobald
+`npx clay build --strict` durchläuft.
+:::
+
 ## Wie es weitergeht
 
 ::: cards
