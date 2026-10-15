@@ -34,7 +34,7 @@ Starts a development server at [http://localhost:3000](http://localhost:3000). I
 While it runs, the terminal shows the address, warnings such as broken links, and each page it reloads:
 
 ```text
-┌  Clay 3.1.0 · dev
+┌  Clay 4.0.0 · dev
 │
 ●  Loaded 40 pages from docs  languages de (30/30 translated) · 52ms
 │
@@ -56,7 +56,7 @@ npx clay build
 Checks the docs, renders every page to HTML and writes the finished site to `publish/public`. While it runs, Clay shows its progress:
 
 ```text
-┌  Clay 2.1.0
+┌  Clay 4.0.0
 │
 ●  Loaded 29 pages from docs  languages de (29/29 translated) · 310ms
 │
@@ -71,14 +71,22 @@ Without a terminal, for example in CI, it prints the finished steps as plain lin
 
 The build contains:
 
-| Path | Content |
-|------|---------|
-| `index.html`, `guides/setup/index.html`, … | One HTML file per page |
-| `404.html` | The page for unknown addresses |
-| `docs/` | Your images and files |
-| `_nuxt/` | Scripts and styles |
-| `_clay/search.json` | The search index |
-| `sitemap.xml`, `robots.txt` | For search engines, see [SEO](../features/seo.md) |
+```tree
+publish/public/
+  index.html             # one HTML file per page
+  guides/
+    setup/
+      index.html
+  404.html               # the page for unknown addresses
+  docs/                  # your images and files
+  _nuxt/                 # scripts and styles
+  _clay/
+    search.json          # the search index
+  sitemap.xml            # for search engines, see SEO
+  robots.txt
+```
+
+See [SEO](../features/seo.md) for the sitemap and `robots.txt`.
 
 The [build checks](build-checks.md) explain the warnings and `--strict`.
 
@@ -110,7 +118,7 @@ Opens an editor in the terminal to create, edit, order, rename, move, delete and
 npx clay version 2.x
 ```
 
-Copies `docs/` into `docs-archive/2.x/`, keeping the current state of the docs as an older version. In `clay edit`, <kbd>V</kbd> does the same. See [versions](../versions-and-languages/versions.md).
+Copies `docs/` into `docs-archive/2.x/`, keeping the current state of the docs as an older version. In `clay edit`, <kbd>V</kbd> does the same. See [versions](../organizing/versions.md).
 
 ## Options
 

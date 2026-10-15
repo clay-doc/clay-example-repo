@@ -8,8 +8,21 @@ description: Referenz aller Einstellungen der clay.yaml, mit Standardwerten und 
 
 Die `clay.yaml` liegt im Projektordner und konfiguriert die ganze Seite. Nur `title` ist Pflicht; alles andere hat einen sinnvollen Standardwert.
 
-## Vollständiges Beispiel
+## Beispiele
 
+::: tabs
+== Minimal
+```yaml
+title: "Mein Projekt"
+```
+== GitHub Pages
+```yaml
+title: "Mein Projekt"
+baseURL: "/mein-projekt/"
+siteURL: "https://meine-org.github.io"
+editURL: "https://github.com/meine-org/mein-projekt/edit/main/docs/"
+```
+== Vollständig
 ```yaml
 title: "Mein Projekt"
 favicon: "logo.svg"
@@ -38,6 +51,7 @@ messages:
   de:
     search: "Durchsuchen"
 ```
+:::
 
 ## Seite
 
@@ -70,7 +84,7 @@ Mit `editURL` zeigt jede Seite einen Link **Diese Seite bearbeiten**. Lass ihn a
 editURL: "https://github.com/meine-org/mein-projekt/edit/main/docs/"
 ```
 
-Die Seite `docs/guides/setup.md` verlinkt dann auf `…/edit/main/docs/guides/setup.md`. Das funktioniert mit GitHub, GitLab, Gitea und jedem Hoster mit ähnlichem URL-Schema. Endet die URL auf `docs/`, verlinken Seiten [älterer Versionen](../versions-and-languages/versions.md) nach `docs-archive/<name>/`.
+Die Seite `docs/guides/setup.md` verlinkt dann auf `…/edit/main/docs/guides/setup.md`. Das funktioniert mit GitHub, GitLab, Gitea und jedem Hoster mit ähnlichem URL-Schema. Endet die URL auf `docs/`, verlinken Seiten [älterer Versionen](../organizing/versions.md) nach `docs-archive/<name>/`.
 
 ## Navigationsleiste
 
@@ -94,7 +108,7 @@ Die Startseite wird hier nicht eingestellt: Sie ist `docs/index.md`, eine Markdo
 | `languages` | `[lang]` | Sprachcodes der Seite; der erste ist die Standardsprache |
 | `messages` | keine | Eigene Texte der Oberfläche, pro Sprache |
 
-Siehe [Versionen](../versions-and-languages/versions.md) und [Übersetzungen](../versions-and-languages/translations.md).
+Siehe [Versionen](../organizing/versions.md) und [Übersetzungen](../organizing/translations.md).
 
 ## Werte pro Sprache
 
@@ -120,7 +134,7 @@ Clay prüft die `clay.yaml` bei jedem Build und warnt vor:
 - `langs`, einer Einstellung aus Clay 1, die nicht mehr nötig ist,
 - `index`, `dir-meta.yaml` und `versions/` aus Clay 2, siehe [Umstieg auf Clay 3](../guides/upgrading-to-clay-3.md).
 
-Mit `--strict` lassen diese Warnungen den Build scheitern. Siehe [Build-Prüfungen](../cli/build-checks.md).
+Mit `--strict` lassen diese Warnungen den Build scheitern. Siehe [Build-Prüfungen](../publishing/build-checks.md).
 
 > [!TIP]
 > Einstellungen wie `baseURL` oder `title` lassen sich in der CI überschreiben, ohne die Datei zu ändern, siehe [Umgebungsvariablen](environment-variables.md). Und `clay edit` bearbeitet all diese Einstellungen im Terminal, siehe [clay edit](../organizing/clay-edit.md).

@@ -16,13 +16,13 @@ Jede Clay-Seite hat eine Volltextsuche, ohne Einrichtung und ohne externen Diens
 | <kbd>/</kbd> | Suche öffnen (wenn du nicht gerade in einem Feld tippst) |
 | <kbd>↑</kbd> <kbd>↓</kbd> | Durch die Ergebnisse gehen |
 | <kbd>⏎</kbd> | Das gewählte Ergebnis öffnen |
-| <kbd>Esc</kbd> | Suche schließen |
+| <kbd>Esc</kbd> | Feld leeren; noch einmal gedrückt, Suche schließen |
 
-Auch die Lupe in der Navigationsleiste öffnet sie.
+Auch die Lupe in der Navigationsleiste öffnet sie. Unten in der Suche stehen diese Tasten und die Zahl der Ergebnisse.
 
 ## Was gefunden wird
 
-Der Index umfasst jede Seite, aufgeteilt in Abschnitte an jeder `##`- und `###`-Überschrift. Ein Ergebnis führt direkt zu seinem Abschnitt, nicht nur zur Seite, und zeigt den passenden Text mit markierten Suchwörtern. Nach dem Öffnen bleiben die Wörter auf der Seite markiert, und die Seite springt zum ersten Treffer.
+Der Index umfasst jede Seite, aufgeteilt in Abschnitte an jeder `##`- und `###`-Überschrift. Ergebnisse sind nach Seiten gruppiert: der Seitentitel mit seinem Ort in der Dokumentation, darunter die passenden Abschnitte und Texte mit markierten Suchwörtern. Ein Ergebnis führt direkt zu seinem Abschnitt, nicht nur zur Seite. Nach dem Öffnen bleiben die Wörter auf der Seite markiert, und die Seite springt zum ersten Treffer.
 
 Ergebnisse werden danach sortiert, wo die Wörter vorkommen, das Beste zuerst:
 
@@ -31,6 +31,10 @@ Ergebnisse werden danach sortiert, wo die Wörter vorkommen, das Beste zuerst:
 3. Ordnernamen (der Pfad über einem Ergebnis, etwa „Anleitungen › Fortgeschritten"),
 4. der Text,
 5. Codeblöcke.
+
+## Nach Bereich filtern
+
+Über den Ergebnissen zeigt ein Chip für jeden obersten Ordner mit Treffern, wie viele es sind, etwa **Anleitungen 9**. Ein Klick zeigt nur dessen Ergebnisse; **Alle** zeigt wieder alle.
 
 ## Tippen und Tippfehler
 
@@ -44,7 +48,7 @@ Bevor du tippst, listet die Suche die Seiten, die du zuletzt über sie geöffnet
 
 ## Versionen und Sprachen
 
-Jede [Version](../versions-and-languages/versions.md) und [Sprache](../versions-and-languages/translations.md) hat ihren eigenen Index, und die Suche sucht in dem, den du gerade liest: Ergebnisse führen nie in eine andere Version oder Sprache.
+Jede [Version](../organizing/versions.md) und [Sprache](../organizing/translations.md) hat ihren eigenen Index, und die Suche sucht in dem, den du gerade liest: Ergebnisse führen nie in eine andere Version oder Sprache.
 
 > [!TIP]
 > Gute Überschriften ergeben gute Suchergebnisse. Einen Abschnitt „Auf GitHub Pages veröffentlichen" findet jeder, der danach sucht; einen Abschnitt „Schritt 3" nicht.

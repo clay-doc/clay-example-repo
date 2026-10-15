@@ -9,8 +9,21 @@ order: 1
 
 `clay.yaml` sits in the project folder and configures the whole site. Only `title` is required; everything else has a sensible default.
 
-## Complete example
+## Examples
 
+::: tabs
+== Minimal
+```yaml
+title: "My Project"
+```
+== GitHub Pages
+```yaml
+title: "My Project"
+baseURL: "/my-project/"
+siteURL: "https://my-org.github.io"
+editURL: "https://github.com/my-org/my-project/edit/main/docs/"
+```
+== Complete
 ```yaml
 title: "My Project"
 favicon: "logo.svg"
@@ -39,6 +52,7 @@ messages:
   de:
     search: "Durchsuchen"
 ```
+:::
 
 ## Site
 
@@ -71,7 +85,7 @@ With `editURL`, every page shows an **Edit this page** link. Point it at the `do
 editURL: "https://github.com/my-org/my-project/edit/main/docs/"
 ```
 
-The page `docs/guides/setup.md` then links to `…/edit/main/docs/guides/setup.md`. This works with GitHub, GitLab, Gitea and every host with a similar URL scheme. When the URL ends in `docs/`, pages of [older versions](../versions-and-languages/versions.md) link into `docs-archive/<name>/`.
+The page `docs/guides/setup.md` then links to `…/edit/main/docs/guides/setup.md`. This works with GitHub, GitLab, Gitea and every host with a similar URL scheme. When the URL ends in `docs/`, pages of [older versions](../organizing/versions.md) link into `docs-archive/<name>/`.
 
 ## Navbar
 
@@ -95,7 +109,7 @@ The start page is not configured here: it is `docs/index.md`, a Markdown page wi
 | `languages` | `[lang]` | Language codes of the site; the first is the default language |
 | `messages` | none | Your own interface texts, per language |
 
-See [versions](../versions-and-languages/versions.md) and [translations](../versions-and-languages/translations.md).
+See [versions](../organizing/versions.md) and [translations](../organizing/translations.md).
 
 ## Values per language
 
@@ -121,7 +135,7 @@ Clay checks `clay.yaml` on every build and warns about:
 - `langs`, a setting from Clay 1 that is no longer needed,
 - `index`, `dir-meta.yaml` and `versions/` from Clay 2, see [upgrading to Clay 3](../guides/upgrading-to-clay-3.md).
 
-With `--strict`, these warnings fail the build. See [build checks](../cli/build-checks.md).
+With `--strict`, these warnings fail the build. See [build checks](../publishing/build-checks.md).
 
 > [!TIP]
 > Settings like `baseURL` or `title` can be overridden in CI without editing the file, see [environment variables](environment-variables.md). And `clay edit` edits all of these settings in the terminal, see [clay edit](../organizing/clay-edit.md).

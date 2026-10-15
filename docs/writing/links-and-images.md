@@ -2,7 +2,7 @@
 title: Links & Images
 icon: fa-solid fa-link
 description: Linking between pages like on GitHub, linking to sections, adding images and offering downloads.
-order: 5
+order: 6
 ---
 
 # Links & Images
@@ -11,15 +11,18 @@ Links in Clay work like links between files on GitHub: you link to the Markdown 
 
 ## Links to pages
 
+::: tabs
+== Result
+[Installation](../getting-started/installation.md), [Alerts](alerts.md), [Code blocks](./code-blocks.md)
+== Markdown
 ```markdown
 [Installation](../getting-started/installation.md)
 [Alerts](alerts.md)
 [Code blocks](./code-blocks.md)
 ```
+:::
 
-[Installation](../getting-started/installation.md), [Alerts](alerts.md), [Code blocks](./code-blocks.md)
-
-Clay resolves the path relative to the current page, drops the `.md` and turns it into a link that keeps the site's [base URL](../configuration/clay-yaml.md). Links to folders work too, and lead to the folder's page: [the configuration section](../configuration/) or [the configuration section](../configuration/index.md).
+Clay resolves the path relative to the current page, drops the `.md` and turns it into a link that keeps the site's [base URL](../configuration/clay-yaml.md). Links to folders lead to the folder's page: [the configuration section](../configuration/) or [the configuration section](../configuration/index.md).
 
 Links starting with `/` start at the root of the docs: `[Pages](/writing/pages.md)` links to `docs/writing/pages.md` from anywhere.
 
@@ -27,14 +30,17 @@ Links starting with `/` start at the root of the docs: `[Pages](/writing/pages.m
 
 Add the heading's anchor after `#`:
 
+::: tabs
+== Result
+[Highlighting lines](code-blocks.md#highlighting-lines) and [images](#images) on this page.
+== Markdown
 ```markdown
 [Highlighting lines](code-blocks.md#highlighting-lines)
 [Images](#images)
 ```
+:::
 
-[Highlighting lines](code-blocks.md#highlighting-lines) and [images](#images) on this page.
-
-Anchors are built like GitHub builds them: lowercase, spaces become hyphens, punctuation is dropped. "Links to sections" becomes `#links-to-sections`. When unsure, copy the link from the page's table of contents. Every build checks that the section exists.
+Anchors are built like GitHub builds them: lowercase, spaces become hyphens, punctuation is dropped. "Links to sections" becomes `#links-to-sections`. When unsure, copy the `#` link next to the heading on the page.
 
 ## Links to other websites
 
@@ -56,8 +62,12 @@ Put images next to your pages and reference them relative to the page:
 
 The text in brackets describes the image for screen readers and search engines; always write one. Clay copies every file in `docs/` into the site, so `docs/writing/img/build-steps.png` is published next to this page.
 
-> [!TIP]
-> Keep images in an `img/` folder next to the pages that use them. Folders without Markdown files never appear in the navigation.
+```tree
+docs/writing/
+  links-and-images.md
+  img/                  # never shows in the navigation: no pages inside
+    build-steps.png
+```
 
 ## Downloads
 
@@ -69,13 +79,11 @@ Link to any other file the same way, and readers can download it:
 
 ## Checked on every build
 
-`clay build` checks every link and image in your docs. A link to a page that does not exist, or an image that is missing, is reported as a warning:
+`clay build` checks every link and image in your docs: pages, files and sections. A link that leads nowhere is reported as a warning:
 
 ```text
 ▲ Broken link in writing/pages.md: "setup.md" points to a missing page (/writing/setup)
+▲ Broken link in writing/pages.md: "alerts.md#tipps" points to a missing section (#tipps on /writing/alerts)
 ```
 
-With `--strict`, warnings fail the build, so broken links never reach your readers. See [build checks](../cli/build-checks.md).
-
-> [!NOTE]
-> Links to other websites are not checked.
+With `--strict`, warnings fail the build, so broken links never reach your readers. Links to other websites are not checked. See [build checks](../publishing/build-checks.md).

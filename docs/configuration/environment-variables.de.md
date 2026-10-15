@@ -17,9 +17,16 @@ Manche Einstellungen unterscheiden sich je nach Umgebung: Eine Staging-Seite lie
 
 Sie gelten für `clay build` und `clay dev`. Leere Variablen werden ignoriert.
 
+::: tabs
+== macOS und Linux
 ```bash
 CLAY_BASE_URL="/preview/" CLAY_TITLE="Meine Doku (Vorschau)" npx clay build
 ```
+== Windows (PowerShell)
+```powershell
+$env:CLAY_BASE_URL = "/preview/"; $env:CLAY_TITLE = "Meine Doku (Vorschau)"; npx clay build
+```
+:::
 
 Auch `clay preview` liest `CLAY_BASE_URL`. Liefere einen Build also mit demselben Wert aus, mit dem er gebaut wurde:
 
@@ -30,16 +37,27 @@ CLAY_BASE_URL="/preview/" npx clay preview
 > [!IMPORTANT]
 > Die Werte werden beim Build fest in die Seite eingebaut. Sie nachträglich auf dem Webserver zu ändern, hat keine Wirkung; baue stattdessen neu.
 
-## In GitHub Actions
+## In der CI
 
-Übergib Variablen mit `env`, und Geheimnisse aus den Einstellungen des Repositorys:
+Übergib Variablen im Workflow, und Geheimnisse aus den Einstellungen des Repositorys:
 
+::: tabs
+== GitHub Actions
 ```yaml
 - name: Build docs
   run: npx clay build --strict
   env:
     CLAY_FONTAWESOME_KIT: ${{ secrets.CLAY_FONTAWESOME_KIT }}
 ```
+== GitLab CI
+```yaml
+build-docs:
+  script: npx clay build --strict
+  variables:
+    CLAY_BASE_URL: "/docs/"
+```
+Geheimnisse wie die Kit-ID gehören unter **Settings → CI/CD → Variables**, von wo GitLab sie an jeden Job übergibt.
+:::
 
 Diese Seite macht es genau so: Ihre `clay.yaml` enthält einen Platzhalter, und die echte Kit-ID kommt aus einem Secret des Repositorys, damit sie nie im Repository steht. Ein Wert, der keine Kit-ID ist, wie der Platzhalter, wird ignoriert, und die kostenlosen Icons werden genutzt. So funktionieren auch lokale Builds.
 

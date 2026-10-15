@@ -9,85 +9,110 @@ order: 2
 
 Clay 3 moves three things into the docs themselves: folder names, the start page and older versions. Everything else, your pages, links, translations and the rest of `clay.yaml`, stays as it is. Until you have moved them, `clay build` reports what is left with a warning, and `--strict` fails.
 
-## 1. Update Clay
+## At a glance
 
-```bash
-npm install --save-dev clay-doc@3
-```
+| Clay 2 | Clay 3 |
+|--------|--------|
+| `dir-meta.yaml` | an `index.md` in each folder |
+| `index` in `clay.yaml` | `docs/index.md` |
+| `versions/<name>/docs/` | `docs-archive/<name>/` |
 
-## 2. Folder names: dir-meta.yaml → index.md
+## Steps
 
-Each entry of `dir-meta.yaml` becomes the front matter of an `index.md` in that folder. `name` becomes `title`:
+::: steps
+1. **Update Clay.**
 
-`dir-meta.yaml` (Clay 2):
+   ::: code-group
+   ```bash [npm]
+   npm install --save-dev clay-doc@3
+   ```
+   ```bash [pnpm]
+   pnpm add --save-dev clay-doc@3
+   ```
+   ```bash [yarn]
+   yarn add --dev clay-doc@3
+   ```
+   :::
 
-```yaml
-- path: "guides"
-  name: "Guides"
-  icon: "fa-solid fa-book-open"
-  order: 3
-```
+2. **Move folder names into `index.md` files.** Each entry of `dir-meta.yaml` becomes the front matter of an `index.md` in that folder; `name` becomes `title`:
 
-`docs/guides/index.md` (Clay 3):
+   ::: tabs
+   == Clay 2
+   `dir-meta.yaml`:
 
-```markdown
----
-title: Guides
-icon: fa-solid fa-book-open
-order: 3
----
-```
+   ```yaml
+   - path: "guides"
+     name: "Guides"
+     icon: "fa-solid fa-book-open"
+     order: 3
+   ```
+   == Clay 3
+   `docs/guides/index.md`:
 
-Names per language (`name: {en: Guides, de: Anleitungen}`) go into translations of the `index.md`: `index.de.md` with `title: Anleitungen`. Then delete `dir-meta.yaml`.
+   ```markdown
+   ---
+   title: Guides
+   icon: fa-solid fa-book-open
+   order: 3
+   ---
+   ```
+   :::
 
-An `index.md` with only front matter just names its folder. Add text below it, and it becomes the folder's page; see [index pages](../organizing/index-pages.md).
+   Names per language (`name: {en: Guides, de: Anleitungen}`) go into translations of the `index.md`: `index.de.md` with `title: Anleitungen`. Then delete `dir-meta.yaml`. An `index.md` with only front matter just names its folder; add text below it, and it becomes the folder's page, see [index pages](../organizing/index-pages.md).
 
-## 3. The start page: index in clay.yaml → docs/index.md
+3. **Move the start page into `docs/index.md`.** For a similar look, a large header and the top-level pages below it, set `hero` and `list`:
 
-The `index` section of `clay.yaml` becomes `docs/index.md`. For a similar look, a large header and the top-level pages below it, set `hero` and `list`:
+   ::: tabs
+   == Clay 2
+   `clay.yaml`:
 
-`clay.yaml` (Clay 2):
+   ```yaml
+   index:
+     title: "Welcome to My Project"
+     description: "Everything you need to know."
+     icon: "fa-solid fa-rocket"
+   ```
+   == Clay 3
+   `docs/index.md`:
 
-```yaml
-index:
-  title: "Welcome to My Project"
-  description: "Everything you need to know."
-  icon: "fa-solid fa-rocket"
-```
+   ```markdown
+   ---
+   title: Welcome to My Project
+   description: Everything you need to know.
+   icon: fa-solid fa-rocket
+   hero: true
+   list: true
+   ---
+   ```
+   :::
 
-`docs/index.md` (Clay 3):
+   Values per language go into `docs/index.de.md` and so on. Then remove `index` from `clay.yaml`.
 
-```markdown
----
-title: Welcome to My Project
-description: Everything you need to know.
-icon: fa-solid fa-rocket
-hero: true
-list: true
----
-```
+4. **Move older versions into `docs-archive/`.** They move one level up, and their `dir-meta.yaml` turns into `index.md` files as in step 2:
 
-Values per language go into `docs/index.de.md` and so on. Then remove `index` from `clay.yaml`.
+   ```tree
+   versions/1.x/docs/   # Clay 2
+   docs-archive/1.x/    # Clay 3
+   ```
 
-## 4. Older versions: versions/ → docs-archive/
+   ```bash
+   mkdir docs-archive
+   git mv versions/1.x/docs docs-archive/1.x
+   ```
 
-Older versions move one level up: `versions/1.x/docs/` becomes `docs-archive/1.x/`. Their `dir-meta.yaml` turns into `index.md` files as in step 2.
+5. **Check.**
 
-```bash
-mkdir docs-archive
-git mv versions/1.x/docs docs-archive/1.x
-```
+   ```bash
+   npx clay build --strict
+   ```
 
-## 5. Check
-
-```bash
-npx clay build --strict
-```
-
-When the build passes, the upgrade is done. Links to `index.md` files and to folders lead to the folders' pages, so existing links keep working.
+   When the build passes, the upgrade is done. Links to `index.md` files and to folders lead to the folders' pages, so existing links keep working.
+:::
 
 ## What else is new
 
 - In the sidebar, a folder's title opens its page; the arrow shows and hides its pages.
 - [clay edit](../organizing/clay-edit.md) creates, renames, moves and deletes pages and folders, edits all front matter, and works in every version and language.
 - Section headings show a `#` link to copy.
+
+Continue with [upgrading to Clay 4](upgrading-to-clay-4.md).

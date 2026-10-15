@@ -2,28 +2,12 @@
 title: HTML
 icon: fa-brands fa-html5
 description: Using HTML inside Markdown, and what Clay removes to keep your site safe.
-order: 6
+order: 7
 ---
 
 # HTML
 
-Markdown covers most needs, but sometimes HTML does the job better. You can write HTML directly in your pages:
-
-```html
-<details>
-  <summary>Show the full configuration</summary>
-
-  Everything in here is hidden until the reader opens it.
-</details>
-```
-
-<details>
-  <summary>Show the full configuration</summary>
-
-  Everything in here is hidden until the reader opens it.
-</details>
-
-Other useful elements:
+Markdown and the [components](components/index.md) cover most needs, but sometimes HTML does the job better. You can write HTML directly in your pages:
 
 | HTML | Result |
 |------|--------|
@@ -31,6 +15,10 @@ Other useful elements:
 | `H<sub>2</sub>O` | H<sub>2</sub>O |
 | `E = mc<sup>2</sup>` | E = mc<sup>2</sup> |
 | `<mark>marked</mark>` | <mark>marked</mark> |
+| `<abbr title="Static Site Generator">SSG</abbr>` | <abbr title="Static Site Generator">SSG</abbr> |
+
+> [!TIP]
+> For folded sections, use [details](components/details.md) instead of `<details>`: it is shorter, and styled like the rest of the site.
 
 ## What Clay removes
 
@@ -49,4 +37,4 @@ Everything else, including tables, images, `<details>` and inline formatting, st
 ```
 
 > [!NOTE]
-> Highlighted code keeps its colors: they are added by Clay itself, after your HTML has been cleaned.
+> Highlighted code, math and components keep their look: Clay adds their styles itself, after your HTML has been cleaned.

@@ -2,7 +2,7 @@
 title: Versions
 icon: fa-solid fa-code-branch
 description: Keep the docs of older releases online, with a version switcher and a banner that leads to the latest docs.
-order: 1
+order: 4
 ---
 
 # Versions
@@ -14,37 +14,38 @@ When a release changes how your project works, readers of older releases still n
 - `docs/` is always the **latest** version. It lives at the root of the site: `/guides/setup`.
 - Each folder in `docs-archive/` is an **older** version, a copy of `docs/` saved when that version was current. `docs-archive/1.x/` lives under `/1.x`: `/1.x/guides/setup`.
 
-```text
+```tree
 my-project/
-├── clay.yaml
-├── docs/                 # latest, at /
-└── docs-archive/
-    ├── 2.x/              # at /2.x
-    │   ├── index.md
-    │   └── guides/
-    └── 1.x/              # at /1.x
+  clay.yaml
+  docs/              # latest, at /
+  docs-archive/
+    2.x/             # at /2.x
+      index.md
+      guides/
+    1.x/             # at /1.x
 ```
 
 Most projects never need versions: without `docs-archive/`, Clay shows no version switcher at all.
 
-## Saving a version
+## Releasing a new version
 
-Right before a release changes the docs, save the current state:
+::: steps
+1. **Save the current docs**, right before the release changes them:
 
-```bash
-npx clay version 2.x
-```
+   ```bash
+   npx clay version 2.x
+   ```
 
-This copies `docs/` into `docs-archive/2.x/`. In `clay edit`, <kbd>V</kbd> does the same and switches the editor to the new version. Then update `docs/` for the new release, and give it a label in `clay.yaml`:
+   This copies `docs/` into `docs-archive/2.x/`. In `clay edit`, <kbd>V</kbd> does the same and switches the editor to the new version.
 
-```yaml
-version: "3.x"
-```
+2. **Label the latest docs** in `clay.yaml`. Without `version`, the switcher calls them "Latest".
 
-Without `version`, the switcher calls the latest docs "Latest".
+   ```yaml
+   version: "3.x"
+   ```
 
-> [!TIP]
-> A typical release flow: `npx clay version 2.x`, commit, set `version: "3.x"`, update the docs, release. The old docs are online at `/2.x` from the first build.
+3. **Update `docs/`** for the new release, commit and release. The old docs are online at `/2.x` from the first build.
+:::
 
 Version names become part of URLs, so they may contain letters, digits, `.`, `-` and `_`. `docs`, `api`, `_clay` and `_nuxt` are reserved.
 
@@ -59,7 +60,7 @@ Pages of older versions show a banner that says which version they belong to and
 | | Per version |
 |---|---|
 | Pages, images and files | `docs-archive/<name>/` |
-| Start page, folder names, icons and order | The version's `index.md` files |
+| Start page, folder titles, icons and order | The version's `index.md` files |
 | Search index | Results stay within the version |
 | Edit links | Lead into `docs-archive/<name>/` |
 | Translations | `*.de.md` files inside the version's folder |

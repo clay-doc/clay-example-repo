@@ -20,11 +20,19 @@ Unten auf jeder Seite zeigt Clay, wann sie zuletzt geändert wurde, aus dem letz
 
 Das Datum wird in der Sprache der Seite formatiert. Dafür muss die Dokumentation in einem Git-Repository mit seiner Historie liegen. Checke in der CI die ganze Historie aus; die meisten CI-Systeme klonen standardmäßig nur den letzten Commit:
 
+::: tabs
+== GitHub Actions
 ```yaml
 - uses: actions/checkout@v7
   with:
     fetch-depth: 0
 ```
+== GitLab CI
+```yaml
+variables:
+  GIT_DEPTH: 0
+```
+:::
 
 Ohne Git-Historie fehlen die Daten, und der Build weist darauf hin:
 
@@ -42,7 +50,7 @@ Mit `editURL` in der `clay.yaml` verlinkt jede Seite ihre Quelldatei, damit Lese
 editURL: "https://github.com/meine-org/mein-projekt/edit/main/docs/"
 ```
 
-Auf übersetzten Seiten führt der Link zur Übersetzung, in [älteren Versionen](../versions-and-languages/versions.md) nach `docs-archive/<name>/`.
+Auf übersetzten Seiten führt der Link zur Übersetzung, in [älteren Versionen](../organizing/versions.md) nach `docs-archive/<name>/`.
 
 ## Vor und zurück
 

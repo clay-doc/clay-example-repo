@@ -2,7 +2,7 @@
 title: Translations
 icon: fa-solid fa-language
 description: Translate your docs page by page, with a language switcher, fallbacks for untranslated pages and an interface in twelve languages.
-order: 2
+order: 5
 ---
 
 # Translations
@@ -11,15 +11,29 @@ Clay sites can come in several languages. You translate page by page, at your ow
 
 This site is an example: switch to **Deutsch** in the navbar.
 
-## Setting up languages
+## Setting up
 
-List the languages in `clay.yaml`. The first one is the default language:
+::: steps
+1. **List the languages** in `clay.yaml`. The first one is the default language:
 
-```yaml
-languages: ["en", "de"]
-```
+   ```yaml
+   languages: ["en", "de"]
+   ```
 
-Use language codes like `en`, `de`, `fr`, `pt-BR` or `zh-TW`. The default language lives at the root of the site; every other language under its code:
+   Use language codes like `en`, `de`, `fr`, `pt-BR` or `zh-TW`.
+
+2. **Translate a page.** Put the translation next to the page and add the language code before `.md`:
+
+   ```tree
+   docs/guides/
+     setup.md       # English, the original
+     setup.de.md    # German translation
+   ```
+
+3. **Translate the settings** that readers see, like the title, see [settings per language](#settings-per-language).
+:::
+
+The default language lives at the root of the site; every other language under its code:
 
 | Page | English (default) | German |
 |------|-------------------|--------|
@@ -27,15 +41,7 @@ Use language codes like `en`, `de`, `fr`, `pt-BR` or `zh-TW`. The default langua
 | `docs/guides/setup.md` | `/guides/setup` | `/de/guides/setup` |
 | In version 1.x | `/1.x/guides/setup` | `/1.x/de/guides/setup` |
 
-## Translating a page
-
-Put the translation next to the page and add the language code before `.md`:
-
-```text
-docs/guides/
-├── setup.md       # English, the original
-└── setup.de.md    # German translation
-```
+## A translated page
 
 The translation is a complete page of its own: its own front matter, its own headings, its own text.
 
@@ -49,6 +55,8 @@ description: So richtest du das Projekt in fünf Schritten ein.
 ```
 
 Its `title`, `icon` and `description` are its own. Its **position** in the navigation comes from the original, so all languages have the same structure.
+
+Folders and the start page are translated the same way: `index.de.md` next to `index.md` gives a folder its German title and page, and `docs/index.de.md` is the German start page. See [index pages](index-pages.md).
 
 ## Pages without translation
 
@@ -75,8 +83,6 @@ navbar:
       link: "https://example.com"
 ```
 
-Folders and the start page are translated like pages: `index.de.md` next to `index.md` gives a folder its German name and German page, and `docs/index.de.md` is the German start page. See [index pages](../organizing/index-pages.md).
-
 ## The interface
 
 Search, navigation, page footer and notices come in twelve languages:
@@ -89,8 +95,7 @@ Search, navigation, page footer and notices come in twelve languages:
 
 Regional codes use their base language: `pt-BR` gets Portuguese. Other languages get English, unless you provide the texts.
 
-### Your own texts
-
+::: details Your own texts
 `messages` in `clay.yaml` replaces single texts, or provides a language Clay does not ship:
 
 ```yaml
@@ -105,6 +110,7 @@ messages:
 ```
 
 The full list of texts and their English defaults is in Clay's [`common/i18n.ts`](https://github.com/clay-doc/clay/blob/main/common/i18n.ts).
+:::
 
 ## The language switcher
 

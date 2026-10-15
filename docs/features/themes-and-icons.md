@@ -35,15 +35,17 @@ Without further setup, Clay loads the free icons of Font Awesome 6. They cover t
 
 ### Font Awesome kits
 
-With a Font Awesome account, you can create a [kit](https://docs.fontawesome.com/web/setup/use-kit): a set of icons that can include Pro icons, newer versions or your own uploads. Set the kit's ID in `clay.yaml`:
+With a Font Awesome account, you can create a [kit](https://docs.fontawesome.com/web/setup/use-kit): a set of icons that can include Pro icons, newer versions or your own uploads. With a kit, Clay loads the kit instead of the free icons.
 
-```yaml
-fontawesomeKit: "abc123def4"
-```
+::: steps
+1. **Create a kit** on fontawesome.com and set its technology to **Web Fonts**. Kits set to SVG replace each icon in the page with a drawing, which interferes with how Clay updates pages while readers navigate.
+2. **Allow your site's domain** in the kit's settings.
+3. **Set the kit's ID** in `clay.yaml`. The ID is the code in the kit's embed URL, `https://kit.fontawesome.com/abc123def4.js`:
 
-The ID is the code in the kit's embed URL, `https://kit.fontawesome.com/abc123def4.js`. With a kit, Clay loads the kit instead of the free icons.
-
-Set the kit's technology to **Web Fonts** in its settings on fontawesome.com. Kits set to SVG replace each icon in the page with a drawing, which interferes with how Clay updates pages while readers navigate.
+   ```yaml
+   fontawesomeKit: "abc123def4"
+   ```
+:::
 
 > [!TIP]
 > Kits are tied to your account. Keep the ID out of a public repository by setting it in CI with `CLAY_FONTAWESOME_KIT`, as this site does; see [environment variables](../configuration/environment-variables.md). A value that is not a kit ID falls back to the free icons.

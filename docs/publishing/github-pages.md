@@ -2,36 +2,47 @@
 title: GitHub Pages
 icon: fa-brands fa-github
 description: Publish a Clay site on GitHub Pages with a workflow that checks and deploys the docs on every push.
-order: 1
+order: 3
 ---
 
 # GitHub Pages
 
 [GitHub Pages](https://pages.github.com) hosts static sites for free, straight from a repository. With the workflow on this page, every push to `main` checks the docs, builds the site and publishes it. This site is deployed exactly this way.
 
-## 1. Set the base URL
-
-A repository's site lives under its name, `https://<owner>.github.io/<repository>/`. Tell Clay in `clay.yaml`:
-
-```yaml
-baseURL: "/my-project/"
-siteURL: "https://my-org.github.io"
+```mermaid
+flowchart LR
+  A[Push to main] --> B[Check and build<br/>clay build --strict]
+  B --> C[Upload<br/>publish/public]
+  C --> D[Online at<br/>my-org.github.io/my-project]
 ```
 
-| Kind of site | Address | `baseURL` |
-|--------------|---------|-----------|
-| Project site | `https://my-org.github.io/my-project/` | `/my-project/` |
-| User or organization site (repository `my-org.github.io`) | `https://my-org.github.io/` | `/` |
-| Custom domain | `https://docs.example.com/` | `/` |
+## Setting it up
 
-## 2. Turn on Pages
+::: steps
+1. **Set the base URL.** A repository's site lives under its name, `https://<owner>.github.io/<repository>/`. Tell Clay in `clay.yaml`:
 
-In the repository, open **Settings → Pages** and set **Source** to **GitHub Actions**.
+   ```yaml
+   baseURL: "/my-project/"
+   siteURL: "https://my-org.github.io"
+   ```
 
-## 3. Add the workflow
+   | Kind of site | Address | `baseURL` |
+   |--------------|---------|-----------|
+   | Project site | `https://my-org.github.io/my-project/` | `/my-project/` |
+   | User or organization site (repository `my-org.github.io`) | `https://my-org.github.io/` | `/` |
+   | Custom domain | `https://docs.example.com/` | `/` |
 
-Create `.github/workflows/deploy.yaml`:
+2. **Turn on Pages.** In the repository, open **Settings → Pages** and set **Source** to **GitHub Actions**.
 
+3. **Add the workflow** as `.github/workflows/deploy.yaml`, see [the workflow](#the-workflow) below.
+
+4. **Push.** After a minute, the site is online; the workflow run shows its address.
+:::
+
+## The workflow
+
+::: tabs
+== With package.json
 ```yaml
 name: Deploy Docs
 
@@ -79,8 +90,32 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v5
 ```
+== Without package.json
+In repositories that are not JavaScript projects, run a fixed Clay version with `npx`; the rest of the workflow stays the same:
 
-Push it. After a minute, the site is online; the workflow run shows its address.
+```yaml
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+
+      # --strict fails the build on broken links and typos in the config
+      - run: npx clay-doc@4 build --strict
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./publish/public
+
+      - id: deployment
+        uses: actions/deploy-pages@v5
+```
+:::
 
 > [!TIP]
 > To build only when the docs change, add paths to the trigger:
@@ -91,18 +126,6 @@ Push it. After a minute, the site is online; the workflow run shows its address.
 >     branches: [main]
 >     paths: ["docs/**", "docs-archive/**", "clay.yaml", "package-lock.json"]
 > ```
-
-## Without package.json
-
-In repositories that are not JavaScript projects, replace `npm ci` and the build step with a fixed Clay version:
-
-```yaml
-      - uses: actions/setup-node@v7
-        with:
-          node-version: lts/*
-
-      - run: npx clay-doc@2.1.0 build --strict
-```
 
 ## Secrets
 
@@ -122,6 +145,8 @@ Set the domain in **Settings → Pages → Custom domain** and follow GitHub's i
 baseURL: "/"
 siteURL: "https://docs.example.com"
 ```
+
+At the root of a domain, search engines also read the site's `robots.txt` and find the sitemap through it. Project sites under a path submit their sitemap themselves, see [SEO](../features/seo.md#sites-under-a-path).
 
 ## Keeping Clay up to date
 

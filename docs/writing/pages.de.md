@@ -6,38 +6,44 @@ description: Wie aus Markdown-Dateien Seiten werden, woher Seiten ihre Titel bek
 
 # Seiten
 
-Jede Markdown-Datei in `docs/` ist eine Seite. Ihr Pfad bestimmt ihre URL:
+Jede Markdown-Datei in `docs/` ist eine Seite, und ihr Pfad ist ihre URL:
 
-| Datei | URL |
-|-------|-----|
-| `docs/introduction.md` | `/introduction` |
-| `docs/guides/setup.md` | `/guides/setup` |
-| `docs/guides/advanced/tuning.md` | `/guides/advanced/tuning` |
+```tree
+docs/
+  introduction.md      # /introduction
+  guides/
+    index.md           # /guides, die Seite des Ordners
+    setup.md           # /guides/setup
+    advanced/
+      tuning.md        # /guides/advanced/tuning
+```
 
-Auch Ordner bekommen eine Seite: `/guides` zeigt die [index.md](../organizing/index-pages.md) des Ordners, sonst eine Liste der Seiten und Ordner in `guides/`. Eine URL, die auf `.md` endet, wie `/guides/setup.md`, leitet zur Seite weiter.
+Auch Ordner bekommen eine Seite: `/guides` zeigt die [index.md](../organizing/index-pages.md) des Ordners oder sonst eine Liste der Seiten und Ordner in `guides/`. Eine URL, die auf `.md` endet, etwa `/guides/setup.md`, führt zur Seite.
 
 > [!TIP]
-> Dateinamen landen in URLs. Nimm kleingeschriebene Wörter mit Bindestrichen (`getting-started.md`) und benenne veröffentlichte Seiten möglichst nicht um: Links auf die alte URL funktionieren sonst nicht mehr.
+> Dateinamen landen in URLs. Nutze kleingeschriebene Wörter mit Bindestrichen (`getting-started.md`) und benenne veröffentlichte Seiten möglichst nicht um: Links auf die alte URL funktionieren dann nicht mehr.
 
 ## Titel
 
-Der Titel einer Seite erscheint in der Seitenleiste, den Brotkrumen, Suchergebnissen und im Browser-Tab. Clay nimmt das Erste davon:
+Der Titel einer Seite erscheint in der Seitenleiste, den Brotkrumen, Suchergebnissen und dem Browser-Tab. Clay nimmt das Erste von:
 
+::: steps
 1. `title` im Front Matter,
 2. die erste `# Überschrift` der Seite,
-3. den Dateinamen, mit Leerzeichen statt Bindestrichen: `getting-started.md` wird zu „Getting started".
+3. der Dateiname, mit Leerzeichen statt Bindestrichen: Aus `getting-started.md` wird „Getting started“.
+:::
 
-Die meisten Seiten brauchen nur eine `# Überschrift`. Nimm `title`, wenn die Seitenleiste etwas Kürzeres zeigen soll als die Überschrift.
+Die meisten Seiten brauchen nur eine `# Überschrift`. Nutze `title`, wenn die Seitenleiste etwas Kürzeres zeigen soll als die Überschrift.
 
 ## Front Matter
 
-Front Matter ist ein optionaler Block mit Einstellungen ganz oben auf einer Seite, zwischen zwei `---`-Zeilen:
+Das Front Matter ist ein optionaler Block mit Einstellungen ganz oben auf einer Seite, zwischen zwei `---`-Zeilen:
 
 ```markdown
 ---
 title: Einrichtung
 icon: fa-solid fa-wrench
-description: So installierst und konfigurierst du das Projekt in fünf Schritten.
+description: Wie du das Projekt in fünf Schritten installierst und konfigurierst.
 order: 2
 ---
 
@@ -47,14 +53,15 @@ order: 2
 | Feld | Standard | Zweck |
 |------|----------|-------|
 | `title` | erste Überschrift, dann Dateiname | Titel in Navigation, Suche und Browser-Tab |
-| `icon` | `fa-solid fa-file` | [Font-Awesome](../features/themes-and-icons.md)-Icon in Seitenleiste und Brotkrumen |
-| `description` | erster Absatz | Zusammenfassung für Suchmaschinen und Link-Vorschauen, siehe [SEO](../features/seo.md) |
-| `order` | keiner | Position zwischen den Seiten und Ordnern daneben, siehe [Navigation](../organizing/navigation.md) |
-| `list`, `hero` | `false` | Nur für `index.md`: eine Liste der Seiten des Ordners und eine große Kopfzeile, siehe [Indexseiten](../organizing/index-pages.md) |
+| `icon` | `fa-solid fa-file` | [Font-Awesome](../features/themes-and-icons.md)-Icon in Seitenleiste, Brotkrumen und [Karten](components/cards.md) |
+| `description` | erster Absatz | Zusammenfassung für Suchmaschinen, Linkvorschauen und [Karten](components/cards.md), siehe [SEO](../features/seo.md) |
+| `order` | keine | Position unter den Seiten und Ordnern daneben, siehe [Navigation](../organizing/navigation.md) |
+| `list`, `hero` | `false` | Nur für `index.md`: eine Liste der Seiten des Ordners und ein großer Kopf, siehe [Indexseiten](../organizing/index-pages.md) |
 
-Die vollständige Referenz steht auf der Seite [Front Matter](../configuration/front-matter.md). Eine Datei namens `index.md` ist keine eigene Seite: Sie ist die Seite ihres Ordners, siehe [Indexseiten](../organizing/index-pages.md).
+Jedes Feld ist in der [Front-Matter-Referenz](../configuration/front-matter.md) beschrieben. Eine Datei namens `index.md` ist keine eigene Seite: Sie ist die Seite ihres Ordners.
 
-Front Matter zählt nur, wenn `---` die allererste Zeile der Datei ist. Eine Trennlinie weiter unten wird also nie dafür gehalten. Werte dürfen in Anführungszeichen stehen, müssen aber nicht:
+::: details Wann liest Clay das Front Matter?
+Nur wenn `---` die allererste Zeile der Datei ist; eine waagerechte Linie weiter unten wird also nie dafür gehalten. Werte dürfen in Anführungszeichen stehen oder nicht; setz welche, wenn ein Doppelpunkt darin vorkommt:
 
 ```markdown
 ---
@@ -63,15 +70,15 @@ icon: fa-solid fa-wrench
 ---
 ```
 
-> [!NOTE]
-> Felder, die Clay nicht kennt, ignoriert es. Felder anderer Werkzeuge, wie `tags` oder `author`, können im selben Block bleiben.
+Clay ignoriert Felder, die es nicht kennt; Felder anderer Werkzeuge, etwa `tags` oder `author`, können im selben Block bleiben.
+:::
 
-## Aufbau einer Seite
+## Was eine Seite zeigt
 
-Jede Seite zeigt von oben nach unten:
+Von oben nach unten:
 
-- den Inhalt, aus Markdown gerendert,
-- einen Link **Diese Seite bearbeiten** und das Datum der letzten Änderung (wenn eingerichtet, siehe [Seitendetails](../features/page-details.md)),
-- Links zur vorherigen und nächsten Seite der Navigation.
+- den Inhalt der Seite, aus Markdown gerendert,
+- einen Link **Diese Seite bearbeiten** und das Datum der letzten Änderung, wenn eingerichtet, siehe [Seitendetails](../features/page-details.md),
+- Links zur vorigen und zur nächsten Seite der Navigation.
 
-Auf breiten Bildschirmen listet ein Inhaltsverzeichnis die `##`- und `###`-Überschriften der Seite und markiert den Abschnitt, den du gerade liest.
+Auf breiten Bildschirmen steht das Inhaltsverzeichnis der Seite, ihre `##`- und `###`-Überschriften, daneben und markiert die Abschnitte, die du gerade liest. Auf schmaleren Bildschirmen klappt es über der Seite auf.

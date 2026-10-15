@@ -2,7 +2,7 @@
 title: Editing with clay edit
 icon: fa-solid fa-pen-to-square
 description: Create, edit, order, rename, move and delete pages and folders, translate them and edit the settings, for every version and language.
-order: 4
+order: 6
 ---
 
 # Editing with clay edit
@@ -70,7 +70,7 @@ The header shows which version and language you are editing.
 | Key | Action |
 |-----|--------|
 | <kbd>v</kbd> | Switch to the next version |
-| <kbd>V</kbd> | Save the current docs as a new version, see [versions](../versions-and-languages/versions.md) |
+| <kbd>V</kbd> | Save the current docs as a new version, see [versions](versions.md) |
 | <kbd>l</kbd> | Switch to the next language |
 | <kbd>c</kbd> | Start a translation of the selected entry: copies the original into `*.de.md` and so on |
 

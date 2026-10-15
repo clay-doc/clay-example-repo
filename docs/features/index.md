@@ -1,22 +1,36 @@
 ---
 title: Features
 icon: fa-solid fa-wand-magic-sparkles
-order: 6
-list: true
+description: What every Clay site comes with - search, page details, themes and icons, and search engine optimization.
+order: 4
 ---
 
 # Features
 
-What every Clay site comes with: search, search engine optimization, page details like the table of contents, and themes and icons.
+What every Clay site comes with. None of these need setup: they work as soon as you build, and a few settings in `clay.yaml` or front matter fine-tune them.
 
-None of these need setup. They work as soon as you build, and a few settings in `clay.yaml` or front matter fine-tune them.
+::: cards
+- [Search](search.md)
+- [SEO](seo.md)
+- [Page Details](page-details.md)
+- [Themes & Icons](themes-and-icons.md)
+:::
 
-| If you want to … | Read |
-|------------------|------|
-| Know what the search finds and how readers use it | [Search](search.md) |
-| Be found by search engines, with good titles and previews | [SEO](seo.md) |
-| Show a table of contents, last-updated dates or edit links | [Page Details](page-details.md) |
-| Switch between light and dark, or use your own icons | [Themes & Icons](themes-and-icons.md) |
+## Out of the box, and what fine-tunes it
+
+| Feature | Works without setup | Fine-tune with |
+|---------|---------------------|----------------|
+| [Search](search.md) | Every page and section, typos forgiven, filters by section | Good headings; nothing else |
+| [SEO](seo.md) | Titles, descriptions, link previews | `siteURL` for canonical links, the sitemap and structured data |
+| [Page details](page-details.md) | Contents of the page, previous and next links | `editURL` for edit links; git history for last-updated dates |
+| [Themes & icons](themes-and-icons.md) | Light and dark, free Font Awesome icons | `fontawesomeKit` for Pro icons and your own |
+
+## For every reader
+
+- **Fast.** Every page is pre-rendered to HTML: it shows before any JavaScript runs, and works without it.
+- **On every screen.** On phones, the navigation moves into a drawer, and the contents of a page fold up above it.
+- **With the keyboard.** A "Skip to content" link, clear focus rings and shortcuts like <kbd>Ctrl</kbd> + <kbd>K</kbd> for the search.
+- **Calm.** Motion follows the system: with "reduce motion" turned on, nothing slides or fades.
 
 > [!TIP]
 > Press <kbd>Ctrl</kbd> + <kbd>K</kbd> or <kbd>⌘</kbd> + <kbd>K</kbd> on any page of this site to try the search.

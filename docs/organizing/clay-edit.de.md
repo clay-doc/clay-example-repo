@@ -69,7 +69,7 @@ Die Kopfzeile zeigt, welche Version und Sprache du bearbeitest.
 | Taste | Aktion |
 |-------|--------|
 | <kbd>v</kbd> | Zur nächsten Version wechseln |
-| <kbd>V</kbd> | Die aktuelle Dokumentation als neue Version speichern, siehe [Versionen](../versions-and-languages/versions.md) |
+| <kbd>V</kbd> | Die aktuelle Dokumentation als neue Version speichern, siehe [Versionen](versions.md) |
 | <kbd>l</kbd> | Zur nächsten Sprache wechseln |
 | <kbd>c</kbd> | Eine Übersetzung des gewählten Eintrags beginnen: kopiert das Original nach `*.de.md` und so weiter |
 

@@ -15,6 +15,16 @@ Every `clay build` checks your docs before it renders them. Problems are reporte
 │  ▲ Broken link in guides/setup.md: "instal.md" points to a missing page (/guides/instal)
 ```
 
+```mermaid
+flowchart LR
+  A[Load docs] --> B{Problems?}
+  B -- none --> D[Render every page]
+  B -- warnings --> C{--strict?}
+  C -- no --> D
+  C -- yes --> E[Build fails]
+  D --> F[publish/public]
+```
+
 ## What is checked
 
 | Check | Example warning |

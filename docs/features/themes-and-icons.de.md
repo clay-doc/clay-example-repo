@@ -34,15 +34,17 @@ Ohne weitere Einrichtung lädt Clay die kostenlosen Icons von Font Awesome 6. Si
 
 ### Font-Awesome-Kits
 
-Mit einem Font-Awesome-Konto kannst du ein [Kit](https://docs.fontawesome.com/web/setup/use-kit) anlegen: eine Sammlung von Icons, die Pro-Icons, neuere Versionen oder eigene Uploads enthalten kann. Trag die ID des Kits in die `clay.yaml` ein:
+Mit einem Font-Awesome-Konto kannst du ein [Kit](https://docs.fontawesome.com/web/setup/use-kit) anlegen: eine Sammlung von Icons, die Pro-Icons, neuere Versionen oder eigene Uploads enthalten kann. Mit einem Kit lädt Clay das Kit statt der kostenlosen Icons.
 
-```yaml
-fontawesomeKit: "abc123def4"
-```
+::: steps
+1. **Leg ein Kit an** auf fontawesome.com und stell seine Technologie auf **Web Fonts**. Auf SVG gestellte Kits ersetzen jedes Icon in der Seite durch eine Zeichnung, was sich mit der Art stört, wie Clay Seiten beim Navigieren aktualisiert.
+2. **Erlaube die Domain deiner Seite** in den Einstellungen des Kits.
+3. **Trag die ID des Kits** in die `clay.yaml` ein. Die ID ist der Code in der Einbettungs-URL des Kits, `https://kit.fontawesome.com/abc123def4.js`:
 
-Die ID ist der Code in der Einbettungs-URL des Kits, `https://kit.fontawesome.com/abc123def4.js`. Mit einem Kit lädt Clay das Kit statt der kostenlosen Icons.
-
-Stelle die Technologie des Kits in seinen Einstellungen auf fontawesome.com auf **Web Fonts**. Auf SVG gestellte Kits ersetzen jedes Icon in der Seite durch eine Zeichnung, was sich mit der Art stört, wie Clay Seiten beim Navigieren aktualisiert.
+   ```yaml
+   fontawesomeKit: "abc123def4"
+   ```
+:::
 
 > [!TIP]
 > Kits hängen an deinem Konto. Halte die ID aus einem öffentlichen Repository heraus, indem du sie in der CI mit `CLAY_FONTAWESOME_KIT` setzt, wie diese Seite es tut; siehe [Umgebungsvariablen](../configuration/environment-variables.md). Ein Wert, der keine Kit-ID ist, fällt auf die kostenlosen Icons zurück.

@@ -1,7 +1,7 @@
 ---
 title: Folders
 icon: fa-solid fa-folder-open
-description: Group pages into folders, and give folders a name, an icon, an order and a page of their own with index.md.
+description: Group pages into folders, and give folders a title, an icon, an order and a page of their own with index.md.
 order: 2
 ---
 
@@ -9,15 +9,15 @@ order: 2
 
 Folders in `docs/` become sections of the navigation, nested as deep as your folders go. A folder only appears when it contains at least one page.
 
-## Name, icon and order
+## Title, icon and order
 
 A folder describes itself in an `index.md` inside it, with the same front matter as a page:
 
-```text
+```tree
 docs/guides/
-├── index.md       # the folder's name, icon and order
-├── setup.md
-└── deploying.md
+  index.md       # the folder's title, icon and order
+  setup.md
+  deploying.md
 ```
 
 ```markdown
@@ -30,7 +30,7 @@ order: 3
 
 | Field | Default | Purpose |
 |-------|---------|---------|
-| `title` | the first heading of `index.md`, then the folder name | Name in the sidebar, breadcrumbs and search |
+| `title` | the first heading of `index.md`, then the folder name | Title in the sidebar, breadcrumbs and search |
 | `icon` | `fa-solid fa-folder` | [Font Awesome](../features/themes-and-icons.md) icon |
 | `order` | none | Position among the pages and folders next to it |
 
@@ -42,8 +42,21 @@ When `index.md` has text below its front matter, that text is the folder's page,
 
 ## Folders in other languages
 
-Translate a folder like a page: `index.de.md` next to `index.md` gives the folder its German name and German page.
+Translate a folder like a page: `index.de.md` next to `index.md` gives the folder its German title and German page.
 
+::: tabs
+== index.md
+```markdown
+---
+title: Guides
+order: 3
+---
+
+# Guides
+
+Step-by-step guides for …
+```
+== index.de.md
 ```markdown
 ---
 title: Anleitungen
@@ -53,6 +66,7 @@ title: Anleitungen
 
 Schritt-für-Schritt-Anleitungen für …
 ```
+:::
 
 The order always comes from the original `index.md`.
 

@@ -25,7 +25,7 @@ Mit `siteURL` bekommen Seiten außerdem:
 | `<link rel="canonical">` | Die vollständige Adresse der Seite, damit Suchmaschinen wissen, welche URL sie zeigen sollen |
 | `og:url` | Dasselbe für Link-Vorschauen |
 | Brotkrumen (JSON-LD) | Wo die Seite liegt, in Suchergebnissen als „Clay › Funktionen › SEO" |
-| `hreflang`-Links | Die [Übersetzungen](../versions-and-languages/translations.md) der Seite |
+| `hreflang`-Links | Die [Übersetzungen](../organizing/translations.md) der Seite |
 
 ## Beschreibungen
 
@@ -54,10 +54,23 @@ baseURL: "/mein-projekt/"
 
 Die Sitemap liegt dann unter `https://meine-org.github.io/mein-projekt/sitemap.xml`. Reiche sie in der [Google Search Console](https://search.google.com/search-console) und den [Bing Webmaster Tools](https://www.bing.com/webmasters) ein.
 
-> [!NOTE]
-> Suchmaschinen lesen die `robots.txt` nur an der Wurzel einer Domain. Liegt deine Seite unter einem Pfad, ist ihre `robots.txt` nur informativ; reiche die Sitemap stattdessen in den genannten Werkzeugen ein.
+### Seiten unter einem Pfad
+
+Suchmaschinen lesen die `robots.txt` nur an der Wurzel einer Domain, etwa `https://meine-org.github.io/robots.txt`. Eine Seite unter einem Pfad wie `/mein-projekt/` kann dort keine ablegen, Suchmaschinen erfahren über sie also nichts von ihrer Sitemap. Clay hilft auf drei Arten:
+
+- **`clay build` erinnert dich.** Mit `siteURL` und einer `baseURL` außer `/` zeigt der Build die Adresse der Sitemap zum Einreichen:
+
+  ```text
+  ●  Loaded 42 pages from docs
+  │  ℹ robots.txt only counts at the root of a domain; submit https://meine-org.github.io/mein-projekt/sitemap.xml in Google Search Console and Bing Webmaster Tools
+  ```
+
+- **Jede Seite verweist auf die Sitemap** in ihrem Kopf (`<link rel="sitemap">`), für Werkzeuge, die dort danach suchen.
+- **Suchmaschinen finden deine Seiten trotzdem**, indem sie Links folgen; die Sitemap macht es schneller und vollständig.
+
+Reiche die Sitemap einmal in der [Google Search Console](https://search.google.com/search-console) und den [Bing Webmaster Tools](https://www.bing.com/webmasters) ein. Gehört dir die Seite an der Wurzel, etwa das Repository `meine-org.github.io`, kannst du stattdessen eine Zeile in deren `robots.txt` ergänzen: `Sitemap: https://meine-org.github.io/mein-projekt/sitemap.xml`. Mit [eigener Domain](../publishing/github-pages.md) liegt die Seite an der Wurzel, und ihre `robots.txt` wirkt, wie sie ist.
 
 ## Versionen und Übersetzungen
 
-- Seiten [älterer Versionen](../versions-and-languages/versions.md) sind normale Seiten mit eigenen URLs und Einträgen in der Sitemap.
+- Seiten [älterer Versionen](../organizing/versions.md) sind normale Seiten mit eigenen URLs und Einträgen in der Sitemap.
 - Eine noch nicht übersetzte Seite zeigt in der anderen Sprache den Originaltext. Ihr kanonischer Link zeigt auf das Original, und sie fehlt in der Sitemap, damit Suchmaschinen keine doppelten Inhalte sehen.

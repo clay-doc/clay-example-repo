@@ -19,7 +19,7 @@
 This repository is two things at once: the **documentation of Clay**, published at
 [clay-doc.github.io/clay-example-repo](https://clay-doc.github.io/clay-example-repo/), and a **complete example** of a
 Clay project to copy from. Every feature it documents is in use here: folders and ordering, code notations, alerts,
-translations, build checks and the GitHub Pages deployment.
+components, translations, build checks and the GitHub Pages deployment.
 
 > [!TIP]
 > To learn Clay, read the [documentation](https://clay-doc.github.io/clay-example-repo/). To see how something is
@@ -31,17 +31,15 @@ translations, build checks and the GitHub Pages deployment.
 .
 ├── docs/                          # The pages, one Markdown file each
 │   ├── index.md                   # The start page
-│   ├── introduction.md
-│   ├── introduction.de.md         # German translation, next to the original
-│   ├── getting-started/           # index.md (the section's page), installation, quick start, …
+│   ├── index.de.md                # German translation, next to the original
+│   ├── getting-started/           # index.md (the section's page), introduction, installation, quick start, …
 │   ├── writing/                   # Pages, Markdown, code blocks, alerts, links, HTML
-│   ├── organizing/                # Navigation, folders, index pages, clay edit
-│   ├── configuration/             # clay.yaml, front matter, environment variables
+│   │   └── components/            # Tabs, steps, cards, details, badges, math, diagrams, file trees
+│   ├── organizing/                # Navigation, folders, index pages, versions, translations, clay edit
 │   ├── features/                  # Search, SEO, page details, themes and icons
-│   ├── versions-and-languages/    # Versions and translations
-│   ├── cli/                       # Commands and build checks
-│   ├── deployment/                # GitHub Pages and other hosts
-│   └── guides/                    # Upgrading to Clay 3, migrating from Clay 1, troubleshooting
+│   ├── configuration/             # clay.yaml, front matter, environment variables
+│   ├── publishing/                # Commands, build checks, GitHub Pages, other hosts
+│   └── guides/                    # Upgrading to Clay 4, 3 and 2, troubleshooting
 ├── clay.yaml                      # Site settings, with values per language
 ├── logo.svg                       # Logo and favicon
 ├── package.json                   # Clay as a dev dependency

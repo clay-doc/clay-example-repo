@@ -33,7 +33,7 @@ Startet einen Entwicklungsserver unter [http://localhost:3000](http://localhost:
 Während er läuft, zeigt das Terminal die Adresse, Warnungen wie kaputte Links und jede Seite, die er neu lädt:
 
 ```text
-┌  Clay 3.1.0 · dev
+┌  Clay 4.0.0 · dev
 │
 ●  Loaded 40 pages from docs  languages de (30/30 translated) · 52ms
 │
@@ -55,7 +55,7 @@ npx clay build
 Prüft die Dokumentation, rendert jede Seite als HTML und schreibt die fertige Seite nach `publish/public`. Währenddessen zeigt Clay seinen Fortschritt:
 
 ```text
-┌  Clay 2.1.0
+┌  Clay 4.0.0
 │
 ●  Loaded 29 pages from docs  languages de (29/29 translated) · 310ms
 │
@@ -70,14 +70,22 @@ Ohne Terminal, etwa in der CI, gibt es die fertigen Schritte als einfache Zeilen
 
 Der Build enthält:
 
-| Pfad | Inhalt |
-|------|--------|
-| `index.html`, `guides/setup/index.html`, … | Eine HTML-Datei pro Seite |
-| `404.html` | Die Seite für unbekannte Adressen |
-| `docs/` | Deine Bilder und Dateien |
-| `_nuxt/` | Skripte und Styles |
-| `_clay/search.json` | Der Suchindex |
-| `sitemap.xml`, `robots.txt` | Für Suchmaschinen, siehe [SEO](../features/seo.md) |
+```tree
+publish/public/
+  index.html             # eine HTML-Datei pro Seite
+  guides/
+    setup/
+      index.html
+  404.html               # die Seite für unbekannte Adressen
+  docs/                  # deine Bilder und Dateien
+  _nuxt/                 # Skripte und Styles
+  _clay/
+    search.json          # der Suchindex
+  sitemap.xml            # für Suchmaschinen, siehe SEO
+  robots.txt
+```
+
+Zu Sitemap und `robots.txt` siehe [SEO](../features/seo.md).
 
 Die [Build-Prüfungen](build-checks.md) erklären die Warnungen und `--strict`.
 
@@ -109,7 +117,7 @@ npx clay edit
 npx clay version 2.x
 ```
 
-Kopiert `docs/` nach `docs-archive/2.x/` und hält den aktuellen Stand der Dokumentation so als ältere Version fest. Siehe [Versionen](../versions-and-languages/versions.md).
+Kopiert `docs/` nach `docs-archive/2.x/` und hält den aktuellen Stand der Dokumentation so als ältere Version fest. Siehe [Versionen](../organizing/versions.md).
 
 ## Optionen
 

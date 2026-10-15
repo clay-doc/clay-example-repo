@@ -17,10 +17,16 @@ The sidebar lists every page and every folder that contains pages, nested the wa
 
 Within each folder, pages and folders are sorted together:
 
+::: steps
 1. Entries with an `order` come first, from the lowest number up.
 2. All other entries follow in alphabetical order of their file or folder name.
+:::
 
 Pages get their `order` in their [front matter](../writing/pages.md#front-matter), folders in the front matter of their [index.md](folders.md):
+
+::: tabs
+== A page
+`docs/installation.md`:
 
 ```markdown
 ---
@@ -28,23 +34,26 @@ title: Installation
 order: 1
 ---
 ```
+== A folder
+`docs/guides/index.md`:
 
 ```markdown
 ---
 title: Guides
-order: 3
+order: 2
 ---
 ```
+:::
 
 For example, this folder:
 
-```text
+```tree
 docs/
-├── changelog.md          (no order)
-├── faq.md                (no order)
-├── guides/               (order: 2 in guides/index.md)
-├── installation.md       (order: 1)
-└── introduction.md       (order: 0)
+  changelog.md       # no order
+  faq.md             # no order
+  guides/            # order: 2 in guides/index.md
+  installation.md    # order: 1
+  introduction.md    # order: 0
 ```
 
 is shown as: Introduction, Installation, Guides, Changelog, FAQ.

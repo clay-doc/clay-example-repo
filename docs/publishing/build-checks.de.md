@@ -14,6 +14,16 @@ Jedes `clay build` prüft deine Dokumentation, bevor es sie rendert. Probleme er
 │  ▲ Broken link in guides/setup.md: "instal.md" points to a missing page (/guides/instal)
 ```
 
+```mermaid
+flowchart LR
+  A[Dokumentation laden] --> B{Probleme?}
+  B -- keine --> D[Jede Seite rendern]
+  B -- Warnungen --> C{--strict?}
+  C -- nein --> D
+  C -- ja --> E[Build scheitert]
+  D --> F[publish/public]
+```
+
 Die Meldungen selbst sind englisch.
 
 ## Was geprüft wird

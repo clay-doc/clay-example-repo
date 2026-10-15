@@ -21,11 +21,19 @@ At the bottom of each page, Clay shows when it was last changed, taken from the 
 
 The date is formatted for the page's language. This needs the docs in a git repository with its history. In CI, check out the full history; most CI systems clone only the last commit by default:
 
+::: tabs
+== GitHub Actions
 ```yaml
 - uses: actions/checkout@v7
   with:
     fetch-depth: 0
 ```
+== GitLab CI
+```yaml
+variables:
+  GIT_DEPTH: 0
+```
+:::
 
 Without git history, the dates are left out, and the build says so:
 
@@ -43,7 +51,7 @@ With `editURL` in `clay.yaml`, each page links to its source file, so readers ca
 editURL: "https://github.com/my-org/my-project/edit/main/docs/"
 ```
 
-On translated pages the link leads to the translation, on [older versions](../versions-and-languages/versions.md) into `docs-archive/<name>/`.
+On translated pages the link leads to the translation, on [older versions](../organizing/versions.md) into `docs-archive/<name>/`.
 
 ## Previous and next
 

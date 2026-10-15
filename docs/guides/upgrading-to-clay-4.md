@@ -5,44 +5,78 @@ description: Move a Clay 3 site to Clay 4 - the cards front matter field is now 
 order: 1
 ---
 
-# Upgrading to Clay 4
+# Upgrading to Clay 4 :badge[Latest]{tip}
 
 Clay 4 changes one name: the front matter field `cards` is now `list`. Everything else, your pages, folders, links, translations and `clay.yaml`, stays as it is. Until you have renamed it, `clay build` reports each file that still uses `cards` with a warning, and `--strict` fails.
 
-## 1. Update Clay
+## At a glance
 
-```bash
-npm install --save-dev clay-doc@4
-```
+| Clay 3 | Clay 4 |
+|--------|--------|
+| `cards: true` in an `index.md` | `list: true` |
 
-## 2. cards → list
+## Steps
 
-In each `index.md` that has `cards: true`, write `list: true` instead:
+::: steps
+1. **Update Clay.**
 
-```markdown
----
-title: Guides
-list: true
----
-```
+   ::: code-group
+   ```bash [npm]
+   npm install --save-dev clay-doc@4
+   ```
+   ```bash [pnpm]
+   pnpm add --save-dev clay-doc@4
+   ```
+   ```bash [yarn]
+   yarn add --dev clay-doc@4
+   ```
+   :::
 
-Search your docs for it, or let the build list the files:
+2. **Rename `cards` to `list`.** In each `index.md` that has `cards: true`, write `list: true` instead:
 
-```bash
-grep -rl "^cards:" docs docs-archive
-```
+   ::: tabs
+   == Clay 3
+   ```markdown
+   ---
+   title: Guides
+   cards: true
+   ---
+   ```
+   == Clay 4
+   ```markdown
+   ---
+   title: Guides
+   list: true
+   ---
+   ```
+   :::
 
-## 3. Check
+   Search your docs for it, or let the build list the files:
 
-```bash
-npx clay build --strict
-```
+   ```bash
+   grep -rl "^cards:" docs docs-archive
+   ```
 
-When the build passes, the upgrade is done.
+3. **Check.**
+
+   ```bash
+   npx clay build --strict
+   ```
+
+   When the build passes, the upgrade is done.
+:::
 
 ## What else is new
 
-- Links to sections, like `pages.md#front-matter`, are checked on every build, see [build checks](../cli/build-checks.md).
-- On narrower screens, the table of contents folds up above the page.
-- A "Skip to content" link, clearer keyboard focus and stronger contrast make the site easier to use with a keyboard and to read.
-- When a page fails to render, `clay build` shows why, and which pages failed.
+::: cards
+- [Components](../writing/components/index.md)
+- [Build Checks](../publishing/build-checks.md) {fa-solid fa-list-check}
+  Links to sections are checked too, and a page that fails to render says why.
+- [Search](../features/search.md)
+- [SEO](../features/seo.md) {fa-solid fa-chart-line}
+  Sites under a path get the address of their sitemap to submit.
+:::
+
+- On narrower screens, the contents of a page fold up above it.
+- A "Skip to content" link, clearer keyboard focus and stronger contrast make the site easier to use with a keyboard and easier to read.
+- Moving around feels smoother: the sidebar mark follows you, new breadcrumbs slide in and pages fade in. With "reduce motion" turned on in the system, nothing moves.

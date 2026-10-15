@@ -26,7 +26,7 @@ With `siteURL` set, pages also get:
 | `<link rel="canonical">` | The page's full address, so search engines know which URL to show |
 | `og:url` | The same, for link previews |
 | Breadcrumbs (JSON-LD) | Where the page sits, shown in search results as "Clay › Features › SEO" |
-| `hreflang` links | The page's [translations](../versions-and-languages/translations.md) |
+| `hreflang` links | The page's [translations](../organizing/translations.md) |
 
 ## Descriptions
 
@@ -55,10 +55,23 @@ baseURL: "/my-project/"
 
 The sitemap is then at `https://my-org.github.io/my-project/sitemap.xml`. Submit it in [Google Search Console](https://search.google.com/search-console) and [Bing Webmaster Tools](https://www.bing.com/webmasters).
 
-> [!NOTE]
-> Search engines only read `robots.txt` at the root of a domain. When your site lives under a path, its `robots.txt` is informational; submit the sitemap in the tools above instead.
+### Sites under a path
+
+Search engines only read `robots.txt` at the root of a domain, like `https://my-org.github.io/robots.txt`. A site under a path, like `/my-project/`, cannot place one there, so search engines do not learn about its sitemap from it. Clay helps in three ways:
+
+- **`clay build` reminds you.** With `siteURL` and a `baseURL` other than `/`, the build shows the sitemap's address to submit:
+
+  ```text
+  ●  Loaded 42 pages from docs
+  │  ℹ robots.txt only counts at the root of a domain; submit https://my-org.github.io/my-project/sitemap.xml in Google Search Console and Bing Webmaster Tools
+  ```
+
+- **Every page links to the sitemap** in its head (`<link rel="sitemap">`), for tools that look for it there.
+- **Search engines find your pages anyway** by following links; the sitemap makes it faster and complete.
+
+Submit the sitemap once in [Google Search Console](https://search.google.com/search-console) and [Bing Webmaster Tools](https://www.bing.com/webmasters). If you own the site at the root, like the `my-org.github.io` repository, you can instead add a line to its `robots.txt`: `Sitemap: https://my-org.github.io/my-project/sitemap.xml`. With [your own domain](../publishing/github-pages.md), the site is at the root and its `robots.txt` works as it is.
 
 ## Versions and translations
 
-- Pages of [older versions](../versions-and-languages/versions.md) are regular pages with their own URLs and sitemap entries.
+- Pages of [older versions](../organizing/versions.md) are regular pages with their own URLs and sitemap entries.
 - A page that is not translated yet shows the original text in the other language. Its canonical link points to the original, and it is left out of the sitemap, so search engines do not see duplicate content.

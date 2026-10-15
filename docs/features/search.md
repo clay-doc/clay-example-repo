@@ -17,13 +17,13 @@ Every Clay site has a full-text search, with nothing to set up and no external s
 | <kbd>/</kbd> | Open the search (when not typing in a field) |
 | <kbd>↑</kbd> <kbd>↓</kbd> | Move through the results |
 | <kbd>⏎</kbd> | Open the selected result |
-| <kbd>Esc</kbd> | Close the search |
+| <kbd>Esc</kbd> | Clear the field; pressed again, close the search |
 
-The magnifying glass in the navbar opens it too.
+The magnifying glass in the navbar opens it too. The bottom of the search shows these keys and how many results there are.
 
 ## What is found
 
-The index covers every page, split into sections at each `##` and `###` heading. A result leads straight to its section, not just to the page, and shows the matching text with the matched words highlighted. After you open a result, the words stay marked on the page, and the page scrolls to the first match.
+The index covers every page, split into sections at each `##` and `###` heading. Results are grouped by page: the page title with its place in the docs, and below it the matching sections and text, with the matched words highlighted. A result leads straight to its section, not just to the page. After you open a result, the words stay marked on the page, and the page scrolls to the first match.
 
 Results are ranked by where the words appear, best first:
 
@@ -32,6 +32,10 @@ Results are ranked by where the words appear, best first:
 3. folder names (the path above a result, like "Guides › Advanced"),
 4. the text,
 5. code blocks.
+
+## Filtering by section
+
+Above the results, a chip for each top-level folder with matches shows how many there are, like **Guides 9**. Click one to see only its results; **All** shows them all again.
 
 ## Typing and typos
 
@@ -45,7 +49,7 @@ Before you type, the search lists the pages you opened from it recently. They ar
 
 ## Versions and languages
 
-Each [version](../versions-and-languages/versions.md) and [language](../versions-and-languages/translations.md) has its own index, and the search looks in the one you are reading: results never lead into another version or language.
+Each [version](../organizing/versions.md) and [language](../organizing/translations.md) has its own index, and the search looks in the one you are reading: results never lead into another version or language.
 
 > [!TIP]
 > Good headings make good search results. A section titled "Deploying to GitHub Pages" is found by everyone looking for it; one titled "Step 3" is not.

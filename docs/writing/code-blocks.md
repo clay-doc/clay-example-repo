@@ -9,17 +9,20 @@ order: 3
 
 Fence code with three backticks and name its language. Clay highlights it with [Shiki](https://shiki.style), the highlighter of VS Code, in matching colors for the light and the dark theme.
 
+::: tabs
+== Result
+```python
+def greet(name: str) -> str:
+    return f"Hello, {name}!"
+```
+== Markdown
 ````markdown
 ```python
 def greet(name: str) -> str:
     return f"Hello, {name}!"
 ```
 ````
-
-```python
-def greet(name: str) -> str:
-    return f"Hello, {name}!"
-```
+:::
 
 Every code block has a copy button in its top right corner; on touch screens it is always visible.
 
@@ -27,6 +30,7 @@ Every code block has a copy button in its top right corner; on touch screens it 
 
 Clay detects the languages your docs use and loads only those, so you never configure them. Any [language Shiki knows](https://shiki.style/languages) works, under its name or a common alias: `js`, `ts`, `py`, `sh`, `yml`, `md` and so on. A block with an unknown language, or none, is shown as plain text.
 
+::: code-group
 ```go
 package main
 
@@ -36,20 +40,29 @@ func main() {
     fmt.Println("Hello from Go")
 }
 ```
-
 ```rust
 fn main() {
     println!("Hello from Rust");
 }
 ```
-
 ```sql
 SELECT title, updated FROM pages WHERE language = 'en' ORDER BY updated DESC;
 ```
+:::
+
+The same code in several languages or for several tools fits in a [code group](components/tabs.md#code-groups) like the one above.
 
 ## Highlighting lines
 
 Put the line numbers in braces after the language, as single lines or ranges: `ts {2}` or `ts {1,3-4}`.
+
+````markdown
+```ts {2}
+const site = loadSite(root);
+const pages = site.pages.filter(page => !page.isDir);
+console.log(`${pages.length} pages`);
+```
+````
 
 ```ts {2}
 const site = loadSite(root);
@@ -73,8 +86,8 @@ Some changes are easier to mark on the line itself. Add a comment with a notatio
 
 Use the comment syntax of the block's language: `#` in Python, YAML or shell, `<!-- -->` in HTML, `--` in SQL.
 
-A diff:
-
+::: tabs
+== Diff
 ```js
 export default defineConfig({
   title: "My Project", // [!code --]
@@ -82,30 +95,25 @@ export default defineConfig({
   base: "/docs/",
 });
 ```
-
-A highlighted line and a warning:
-
+== Highlight and warning
 ```python
 config = load_config("clay.yaml")
 config["baseURL"] = "/docs/"  # [!code highlight]
 build(config, strict=False)  # [!code warning]
 ```
-
-Focus on one line:
-
+== Focus
 ```yaml
 title: "My Project"
 baseURL: "/my-project/" # [!code focus]
 siteURL: "https://example.com"
 ```
-
-Highlighted words:
-
+== Words
 ```ts
 // [!code word:edition]
 const edition = editionOf(route.path, versions, languages);
 const nav = navs[edition.prefix];
 ```
+:::
 
 ## Showing code fences
 

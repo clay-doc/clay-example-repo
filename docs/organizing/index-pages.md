@@ -9,13 +9,16 @@ order: 3
 
 Every folder has a page at its URL, and the site has a start page at its root. Both are written in Markdown, in a file named `index.md`:
 
-| File | Page |
-|------|------|
-| `docs/index.md` | The start page, `/` |
-| `docs/guides/index.md` | The page of the folder `guides`, `/guides` |
-| `docs/guides/index.de.md` | Its German translation, `/de/guides` |
+```tree
+docs/
+  index.md          # the start page, /
+  index.de.md       # its German translation, /de
+  guides/
+    index.md        # the page of the folder guides, /guides
+    index.de.md     # its German translation, /de/guides
+```
 
-An index page is a page like any other, with a heading, text, links, code and alerts. Its front matter also names the folder, see [folders](folders.md).
+An index page is a page like any other, with a heading, text, links, code, alerts and components. Its front matter also names the folder, see [folders](folders.md).
 
 ## A list of pages and a large header
 
@@ -23,10 +26,10 @@ Two front matter fields lay out index pages:
 
 | Field | Effect |
 |-------|--------|
-| `list: true` | Lists the folder's pages and subfolders below the text, under the heading "In this section" |
+| `list: true` | Lists the folder's pages and subfolders below the text |
 | `hero: true` | Shows `title`, `icon` and `description` as a large, centered header above the text |
 
-The start page of this site uses both fields:
+The start page of this site uses `hero`:
 
 ```markdown
 ---
@@ -34,13 +37,15 @@ title: Clay Documentation
 icon: fa-solid fa-book-open
 description: Turn a folder of Markdown files into a fast, searchable documentation website.
 hero: true
-list: true
 ---
 
-New to Clay? Read the [introduction](introduction.md) …
+Clay turns a folder of Markdown files into a documentation website …
 ```
 
 With `hero: true`, leave out the `# heading`: the header shows the title already.
+
+> [!TIP]
+> `list` shows every page of the folder, in the order of the sidebar. To show a few chosen pages, with their icons and descriptions, use [cards](../writing/components/cards.md) instead, like the section pages of this site do.
 
 ## Folders without an index page
 
@@ -48,7 +53,7 @@ A folder without an `index.md`, or one whose `index.md` has no text, gets a page
 
 Without `docs/index.md`, the start page shows the site title and a list of the top-level pages and folders.
 
-## In the sidebar
+## Links to folders
 
 A folder's title in the sidebar opens its page; the arrow next to it shows and hides the pages in it. Breadcrumbs and links to a folder lead to its page too, and so do links to `index.md`:
 
@@ -59,5 +64,5 @@ A folder's title in the sidebar opens its page; the arrow next to it shows and h
 
 Links inside an `index.md` are relative to its folder, like on GitHub: in `docs/guides/index.md`, `[Setup](setup.md)` leads to `docs/guides/setup.md`.
 
-> [!TIP]
+> [!NOTE]
 > Folder pages appear in search results, and the previous and next links lead through them, before the pages of their folder.

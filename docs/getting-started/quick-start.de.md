@@ -1,100 +1,107 @@
 ---
 title: Schnellstart
 icon: fa-solid fa-bolt
-description: Baue in fünf Minuten deine erste Clay-Seite, ausgehend von einem leeren Ordner.
+description: Deine erste Clay-Seite, von einem leeren Ordner bis zum fertigen Build in fünf Minuten.
 ---
 
 # Schnellstart
 
-Diese Anleitung führt dich in etwa fünf Minuten von einem leeren Ordner zu einer fertigen Dokumentationsseite.
+Von einem leeren Ordner zu einer fertigen Dokumentationsseite in etwa fünf Minuten.
 
-## 1. Das Projekt anlegen
+::: steps
+1. **Leg das Projekt an.**
 
-```bash
-mkdir meine-doku
-cd meine-doku
-npm init -y
-npm install --save-dev clay-doc
+   ```bash
+   mkdir meine-docs && cd meine-docs
+   npm init -y
+   npm install --save-dev clay-doc
+   ```
+
+2. **Konfiguriere die Seite.** Leg `clay.yaml` im Projektordner an. Nur der Titel ist Pflicht:
+
+   ```yaml
+   title: "Mein Projekt"
+   ```
+
+3. **Schreib die erste Seite.** Leg `docs/introduction.md` an:
+
+   ```markdown
+   ---
+   title: Einführung
+   icon: fa-solid fa-door-open
+   ---
+
+   # Einführung
+
+   Willkommen bei **Mein Projekt**. Das ist die erste Seite seiner Dokumentation.
+   ```
+
+   Der Teil zwischen den `---`-Zeilen ist das Front Matter. Es ist optional; ohne es nimmt Clay den Titel aus der ersten Überschrift. Siehe [Seiten](../writing/pages.md).
+
+4. **Schau beim Schreiben zu.**
+
+   ```bash
+   npx clay dev
+   ```
+
+   Öffne [http://localhost:3000](http://localhost:3000) und klick auf deine Seite. Ändere die Markdown-Datei und speichere: Der Browser zeigt die Änderung sofort.
+
+5. **Füg einen Bereich hinzu.** Seiten in einem Ordner werden zu einem Bereich der Navigation. Leg `docs/guides/setup.md` an:
+
+   ```markdown
+   # Einrichtung
+
+   Wie du Mein Projekt einrichtest.
+   ```
+
+   Die Seitenleiste zeigt jetzt **Guides**. Für einen anderen Titel, ein Icon und eine eigene Seite des Ordners leg `docs/guides/index.md` an:
+
+   ```markdown
+   ---
+   title: Anleitungen
+   icon: fa-solid fa-book
+   list: true
+   ---
+
+   # Anleitungen
+
+   Alles, was du zum Benutzen von Mein Projekt brauchst, Schritt für Schritt.
+   ```
+
+   Siehe [Indexseiten](../organizing/index-pages.md).
+
+6. **Bau die Seite.**
+
+   ```bash
+   npx clay build
+   ```
+
+   Clay prüft deine Dokumentation, rendert jede Seite und schreibt eine statische Seite nach `publish/public`. Mit `npx clay preview` prüfst du sie so, wie ein Webhoster sie ausliefert.
+:::
+
+Dein Projekt sieht jetzt so aus:
+
+```tree
+meine-docs/
+  clay.yaml
+  docs/
+    introduction.md
+    guides/
+      index.md
+      setup.md
+  node_modules/
+  package.json
+  publish/      # die gebaute Seite, bereit zum Hochladen
 ```
-
-## 2. Die Seite konfigurieren
-
-Lege im Projektordner eine `clay.yaml` an. Nur der Titel ist Pflicht:
-
-```yaml
-title: "Mein Projekt"
-```
-
-## 3. Die erste Seite schreiben
-
-Lege einen Ordner `docs/` mit einer Markdown-Datei an, `docs/introduction.md`:
-
-```markdown
----
-title: Einführung
-icon: fa-solid fa-door-open
----
-
-# Einführung
-
-Willkommen bei **Mein Projekt**. Das ist die erste Seite seiner Dokumentation.
-```
-
-Der Teil zwischen den `---`-Zeilen ist das Front Matter. Es ist optional; ohne es nimmt Clay den Titel aus der ersten Überschrift. Alle Felder findest du unter [Seiten](../writing/pages.md).
-
-## 4. Beim Schreiben ansehen
-
-```bash
-npx clay dev
-```
-
-Öffne [http://localhost:3000](http://localhost:3000). Die Startseite zeigt deine Seite; ein Klick öffnet sie. Ändere die Markdown-Datei und speichere: Der Browser lädt neu und zeigt deine Änderung.
-
-## 5. Struktur hinzufügen
-
-Seiten in einem Ordner werden zu einem Abschnitt der Navigation. Lege `docs/guides/setup.md` an:
-
-```markdown
-# Einrichtung
-
-Wie man Mein Projekt einrichtet.
-```
-
-Die Seitenleiste zeigt jetzt einen Abschnitt **Guides**. Um dem Ordner einen anderen Namen, ein Icon und eine eigene Einleitung zu geben, lege `docs/guides/index.md` an:
-
-```markdown
----
-title: Anleitungen
-icon: fa-solid fa-book
-list: true
----
-
-# Anleitungen
-
-Alles, was du zum Arbeiten mit Mein Projekt brauchst, Schritt für Schritt.
-```
-
-Der Text wird zur Seite des Ordners unter `/guides`, mit einer Liste seiner Seiten darunter. Genauso wird `docs/index.md` zur Startseite; siehe [Indexseiten](../organizing/index-pages.md).
-
-## 6. Die Seite bauen
-
-```bash
-npx clay build
-```
-
-Clay prüft deine Dokumentation, rendert jede Seite und schreibt eine statische Website nach `publish/public`. Prüfe sie so, wie ein Webhoster sie ausliefern würde:
-
-```bash
-npx clay preview
-```
-
-Das war's: `publish/public` ist bereit zum Hochladen. [GitHub Pages](../deployment/github-pages.md) zeigt, wie du die Seite bei jedem Push automatisch veröffentlichst.
 
 > [!NOTE]
-> Trag `publish/` und `node_modules/` in deine `.gitignore` ein. Die Ausgabe des Builds entsteht bei jedem Build neu und gehört nicht ins Repository.
+> Trag `publish/` und `node_modules/` in deine `.gitignore` ein. Die Build-Ausgabe entsteht bei jedem Build neu und gehört nicht ins Repository.
 
 ## Wie es weitergeht
 
-- Schreib die Startseite: [Indexseiten](../organizing/index-pages.md).
-- Bring Seiten und Ordner in eine Reihenfolge: [Navigation](../organizing/navigation.md).
-- Sieh dir alle Einstellungen an: [clay.yaml](../configuration/clay-yaml.md).
+::: cards
+- [GitHub Pages](../publishing/github-pages.md)
+- [Indexseiten](../organizing/index-pages.md)
+- [Navigation](../organizing/navigation.md)
+- [Komponenten](../writing/components/index.md)
+:::
