@@ -46,7 +46,7 @@ Die meisten Projekte brauchen nie Versionen: Ohne `docs-archive/` zeigt Clay gar
 3. **Aktualisiere `docs/`** für das neue Release, committe und veröffentliche. Die alte Dokumentation ist ab dem ersten Build unter `/2.x` online.
 :::
 
-Versionsnamen werden Teil von URLs; sie dürfen Buchstaben, Ziffern, `.`, `-` und `_` enthalten. `docs`, `api`, `_clay` und `_nuxt` sind reserviert.
+Versionsnamen werden Teil von URLs; sie dürfen Buchstaben, Ziffern, `.`, `-` und `_` enthalten. `docs`, `_clay` und `_nuxt` sind reserviert.
 
 ## Die Versionswahl
 

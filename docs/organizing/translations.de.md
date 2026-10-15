@@ -119,7 +119,7 @@ messages:
     next: "Nästa"
 ```
 
-Die vollständige Liste der Texte mit ihren englischen Standardwerten steht in Clays [`common/i18n.ts`](https://github.com/clay-doc/clay/blob/main/common/i18n.ts).
+Die vollständige Liste der Texte mit ihren englischen Standardwerten steht in Clays [`common/i18n/en.ts`](https://github.com/clay-doc/clay/blob/main/common/i18n/en.ts).
 :::
 
 ## Die Sprachwahl

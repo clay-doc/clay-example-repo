@@ -47,7 +47,7 @@ Most projects never need versions: without `docs-archive/`, Clay shows no versio
 3. **Update `docs/`** for the new release, commit and release. The old docs are online at `/2.x` from the first build.
 :::
 
-Version names become part of URLs, so they may contain letters, digits, `.`, `-` and `_`. `docs`, `api`, `_clay` and `_nuxt` are reserved.
+Version names become part of URLs, so they may contain letters, digits, `.`, `-` and `_`. `docs`, `_clay` and `_nuxt` are reserved.
 
 ## The version switcher
 

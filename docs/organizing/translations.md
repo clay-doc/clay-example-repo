@@ -119,7 +119,7 @@ messages:
     next: "Nästa"
 ```
 
-The full list of texts and their English defaults is in Clay's [`common/i18n.ts`](https://github.com/clay-doc/clay/blob/main/common/i18n.ts).
+The full list of texts and their English defaults is in Clay's [`common/i18n/en.ts`](https://github.com/clay-doc/clay/blob/main/common/i18n/en.ts).
 :::
 
 ## The language switcher
