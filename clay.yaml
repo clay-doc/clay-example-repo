@@ -15,12 +15,12 @@ navbar:
     link: "https://github.com/clay-doc/clay"
   links:
     - name: "npm"
-      icon: "fa-brands fa-npm"
+      icon: "fa-solid fa-box-open"
       link: "https://www.npmjs.com/package/clay-doc"
     - name:
         en: "Changelog"
         de: "Änderungen"
-      icon: "fa-solid fa-list-ul"
+      icon: "fa-solid fa-clock-rotate-left"
       link: "https://github.com/clay-doc/clay/blob/main/CHANGELOG.md"
     - name:
         en: "Source of this site"
