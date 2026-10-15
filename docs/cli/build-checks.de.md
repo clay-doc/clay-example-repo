@@ -23,12 +23,12 @@ Die Meldungen selbst sind englisch.
 | Links auf Seiten, die es nicht gibt | `Broken link in guides/setup.md: "instal.md" points to a missing page (/guides/instal)` |
 | Bilder und Dateien, die es nicht gibt | `Broken link in index.md: "img/logo.png" points to a missing file` |
 | Unbekannte Einstellungen in der `clay.yaml` | `clay.yaml: unknown key "navbar.lgo" is ignored (typo?)` |
-| Unbekannte Felder in der `dir-meta.yaml` | `dir-meta.yaml: unknown key "[0].icons" is ignored (typo?)` |
+| Dateien und Einstellungen aus Clay 2 | `dir-meta.yaml is no longer read since Clay 3; give each folder an index.md with its title, icon and order` |
 | Ein fehlender Titel | `clay.yaml: "title" is not set` |
 | Einstellungen aus Clay 1 | `clay.yaml: "langs" is no longer needed and is ignored` |
 | Übersetzungen ohne Original | `setup.de.md: translates setup.md, which does not exist; the file is skipped` |
 | Unbrauchbare Sprachcodes | `clay.yaml: "Deutsch" is not a language code like "en" or "pt-BR"; it is ignored` |
-| Unbrauchbare oder kollidierende Versionen | `versions/1.x: docs/1.x has the same URL as this version; rename one of them` |
+| Unbrauchbare oder kollidierende Versionen | `docs-archive/1.x: docs/1.x has the same URL as this version; rename one of them` |
 | Fehlende Git-Historie | `the docs are not in a git repository: last-updated dates are skipped` |
 
 Links zu anderen Websites und `#Anker` werden nicht geprüft.

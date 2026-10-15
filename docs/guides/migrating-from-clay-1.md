@@ -2,17 +2,17 @@
 title: Migrating from Clay 1
 icon: fa-solid fa-arrow-right-arrow-left
 description: Move a Clay 1 site built with Clay Oven to Clay 2, step by step.
-order: 1
+order: 2
 ---
 
 # Migrating from Clay 1
 
-Clay 1 needed two parts: the Clay frontend and Clay Oven, a separate Go tool that prepared the docs. Clay 2 is a single npm package, `clay-doc`, that does both. Your docs, `clay.yaml` and `dir-meta.yaml` keep working; what changes is how you build.
+Clay 1 needed two parts: the Clay frontend and Clay Oven, a separate Go tool that prepared the docs. Clay 2 is a single npm package, `clay-doc`, that does both. Your docs and `clay.yaml` keep working; what changes is how you build. This page covers the step to Clay 2; continue with [upgrading to Clay 3](upgrading-to-clay-3.md) afterwards.
 
 ## What stays the same
 
 - The `docs/` folder, Markdown files and their front matter.
-- `clay.yaml` and `dir-meta.yaml`, with all their settings.
+- `clay.yaml` and `dir-meta.yaml`, with all their settings (Clay 3 then moves `dir-meta.yaml` into `index.md` files).
 - The environment variables `CLAY_TITLE`, `CLAY_BASE_URL`, `CLAY_SITE_URL` and `CLAY_FONTAWESOME_KIT`.
 - The URLs of your pages.
 

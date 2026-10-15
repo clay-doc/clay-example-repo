@@ -35,15 +35,6 @@ navbar:
       icon: "fa-solid fa-list"
       link: "https://github.com/my-org/my-project/releases"
 
-index:
-  title:
-    en: "Welcome to My Project"
-    de: "Willkommen bei My Project"
-  description:
-    en: "Everything you need to know."
-    de: "Alles, was du wissen musst."
-  icon: "fa-solid fa-rocket"
-
 messages:
   de:
     search: "Durchsuchen"
@@ -80,7 +71,7 @@ With `editURL`, every page shows an **Edit this page** link. Point it at the `do
 editURL: "https://github.com/my-org/my-project/edit/main/docs/"
 ```
 
-The page `docs/guides/setup.md` then links to `…/edit/main/docs/guides/setup.md`. This works with GitHub, GitLab, Gitea and every host with a similar URL scheme. When the URL ends in `docs/`, pages of [older versions](../versions-and-languages/versions.md) link into `versions/<name>/docs/`.
+The page `docs/guides/setup.md` then links to `…/edit/main/docs/guides/setup.md`. This works with GitHub, GitLab, Gitea and every host with a similar URL scheme. When the URL ends in `docs/`, pages of [older versions](../versions-and-languages/versions.md) link into `docs-archive/<name>/`.
 
 ## Navbar
 
@@ -92,15 +83,9 @@ The page `docs/guides/setup.md` then links to `…/edit/main/docs/guides/setup.m
 
 Logo and favicon can be files in the project folder (Clay copies them into the site) or full URLs.
 
-## Landing page
+## Start page
 
-| Setting | Default | Purpose |
-|---------|---------|---------|
-| `index.title` | `title` | Heading of the landing page |
-| `index.description` | none | Text below it; also the default description for search engines |
-| `index.icon` | none | Icon in front of the heading |
-
-See [landing page](../organizing/landing-page.md).
+The start page is not configured here: it is `docs/index.md`, a Markdown page with optional cards and a large header. See [index pages](../organizing/index-pages.md).
 
 ## Versions and languages
 
@@ -133,7 +118,8 @@ Clay checks `clay.yaml` on every build and warns about:
 
 - unknown settings, usually typos: `clay.yaml: unknown key "navbar.lgo" is ignored (typo?)`,
 - a missing `title`,
-- `langs`, a setting from Clay 1 that is no longer needed.
+- `langs`, a setting from Clay 1 that is no longer needed,
+- `index`, `dir-meta.yaml` and `versions/` from Clay 2, see [upgrading to Clay 3](../guides/upgrading-to-clay-3.md).
 
 With `--strict`, these warnings fail the build. See [build checks](../cli/build-checks.md).
 

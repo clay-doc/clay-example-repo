@@ -18,7 +18,7 @@ Links funktionieren in Clay wie Links zwischen Dateien auf GitHub: Du verlinkst 
 
 [Installation](../getting-started/installation.md), [Hinweise](alerts.md), [Codeblöcke](./code-blocks.md)
 
-Clay löst den Pfad relativ zur aktuellen Seite auf, lässt das `.md` weg und macht daraus einen Link, der die [Basis-URL](../configuration/clay-yaml.md) der Seite beibehält. Links zu Ordnern funktionieren auch: [der Abschnitt Konfiguration](../configuration/).
+Clay löst den Pfad relativ zur aktuellen Seite auf, lässt das `.md` weg und macht daraus einen Link, der die [Basis-URL](../configuration/clay-yaml.md) der Seite beibehält. Links zu Ordnern funktionieren auch und führen zur Seite des Ordners: [der Abschnitt Konfiguration](../configuration/) oder [der Abschnitt Konfiguration](../configuration/index.md).
 
 Links, die mit `/` beginnen, starten an der Wurzel der Dokumentation: `[Seiten](/writing/pages.md)` verlinkt von überall auf `docs/writing/pages.md`.
 

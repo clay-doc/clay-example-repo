@@ -12,21 +12,20 @@ When a release changes how your project works, readers of older releases still n
 ## How versions work
 
 - `docs/` is always the **latest** version. It lives at the root of the site: `/guides/setup`.
-- Each folder in `versions/` is an **older** version, saved when it was current. `versions/1.x/` lives under `/1.x`: `/1.x/guides/setup`.
+- Each folder in `docs-archive/` is an **older** version, a copy of `docs/` saved when that version was current. `docs-archive/1.x/` lives under `/1.x`: `/1.x/guides/setup`.
 
 ```text
 my-project/
 ├── clay.yaml
-├── dir-meta.yaml
 ├── docs/                 # latest, at /
-└── versions/
+└── docs-archive/
     ├── 2.x/              # at /2.x
-    │   ├── docs/
-    │   └── dir-meta.yaml
+    │   ├── index.md
+    │   └── guides/
     └── 1.x/              # at /1.x
-        ├── docs/
-        └── dir-meta.yaml
 ```
+
+Most projects never need versions: without `docs-archive/`, Clay shows no version switcher at all.
 
 ## Saving a version
 
@@ -36,7 +35,7 @@ Right before a release changes the docs, save the current state:
 npx clay version 2.x
 ```
 
-This copies `docs/` and `dir-meta.yaml` into `versions/2.x/`. Then update `docs/` for the new release, and give it a label in `clay.yaml`:
+This copies `docs/` into `docs-archive/2.x/`. In `clay edit`, <kbd>V</kbd> does the same and switches the editor to the new version. Then update `docs/` for the new release, and give it a label in `clay.yaml`:
 
 ```yaml
 version: "3.x"
@@ -51,7 +50,7 @@ Version names become part of URLs, so they may contain letters, digits, `.`, `-`
 
 ## The version switcher
 
-As soon as there is a folder in `versions/`, the navbar shows a version switcher, newest first. Switching keeps the page you are reading when the other version has it, and otherwise opens that version's start page. It keeps the [language](translations.md) too.
+As soon as there is a folder in `docs-archive/`, the navbar shows a version switcher, newest first. Switching keeps the page you are reading when the other version has it, and otherwise opens that version's start page. It keeps the [language](translations.md) too.
 
 Pages of older versions show a banner that says which version they belong to and links to the same page in the latest version.
 
@@ -59,17 +58,17 @@ Pages of older versions show a banner that says which version they belong to and
 
 | | Per version |
 |---|---|
-| Pages, images and files | `versions/<name>/docs/` |
-| Folder names, icons and order | `versions/<name>/dir-meta.yaml` |
+| Pages, images and files | `docs-archive/<name>/` |
+| Start page, folder names, icons and order | The version's `index.md` files |
 | Search index | Results stay within the version |
-| Edit links | Lead into `versions/<name>/docs/` |
-| Translations | `*.de.md` files inside the version's docs |
+| Edit links | Lead into `docs-archive/<name>/` |
+| Translations | `*.de.md` files inside the version's folder |
 
-`clay.yaml` is shared: all versions have the same title, navbar and landing page.
+`clay.yaml` is shared: all versions have the same title and navbar.
 
 ## Editing older versions
 
-Older versions are plain files: fix a typo in `versions/1.x/docs/` like anywhere else. Links inside an older version stay in that version, as long as they are relative: `[Setup](setup.md)` links to `/1.x/setup`. Links starting with `/` lead to the latest version.
+Older versions are plain files: fix a typo in `docs-archive/1.x/` like anywhere else, or switch `clay edit` to the version with <kbd>v</kbd>. Links inside an older version stay in that version, as long as they are relative: `[Setup](setup.md)` links to `/1.x/setup`. Links starting with `/` lead to the latest version.
 
 > [!NOTE]
 > Each saved version adds its pages to the build. Keep the versions your users actually run, and delete the folders of versions nobody uses anymore.

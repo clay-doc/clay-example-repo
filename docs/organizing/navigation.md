@@ -11,7 +11,7 @@ Clay builds the navigation from your `docs/` folder; there is no separate menu t
 
 ## The sidebar
 
-The sidebar lists every page and every folder that contains pages, nested the way your folders are. Folders can be opened and closed; the page you are reading is marked. On small screens, the sidebar moves into a drawer behind the menu button in the top left corner.
+The sidebar lists every page and every folder that contains pages, nested the way your folders are. A folder's title opens the folder's page; the arrow next to it shows and hides the pages in it. The page you are reading is marked, and the folders around it open on their own. On small screens, the sidebar moves into a drawer behind the menu button in the top left corner.
 
 ## Order
 
@@ -20,7 +20,7 @@ Within each folder, pages and folders are sorted together:
 1. Entries with an `order` come first, from the lowest number up.
 2. All other entries follow in alphabetical order of their file or folder name.
 
-Pages get their `order` in the [front matter](../writing/pages.md#front-matter), folders in [dir-meta.yaml](../configuration/dir-meta-yaml.md):
+Pages get their `order` in their [front matter](../writing/pages.md#front-matter), folders in the front matter of their [index.md](folders.md):
 
 ```markdown
 ---
@@ -29,9 +29,11 @@ order: 1
 ---
 ```
 
-```yaml
-- path: "guides"
-  order: 3
+```markdown
+---
+title: Guides
+order: 3
+---
 ```
 
 For example, this folder:
@@ -40,7 +42,7 @@ For example, this folder:
 docs/
 ├── changelog.md          (no order)
 ├── faq.md                (no order)
-├── guides/               (order: 2 in dir-meta.yaml)
+├── guides/               (order: 2 in guides/index.md)
 ├── installation.md       (order: 1)
 └── introduction.md       (order: 0)
 ```
@@ -58,8 +60,8 @@ The navbar shows where the current page sits: **Guides › Advanced › Tuning**
 
 ## Folder pages
 
-Every folder has a page of its own, at its path: `/guides` for `docs/guides/`. It shows the folder's title and icon and a card for every page and subfolder in it. Breadcrumbs and links to a folder lead there.
+Every folder has a page of its own, at its path: `/guides` for `docs/guides/`. It is the folder's `index.md`, or, without one, the folder's title with a card for every page and subfolder in it. Breadcrumbs and links to a folder lead there. See [index pages](index-pages.md).
 
 ## Previous and next
 
-At the bottom of each page, links lead to the previous and the next page. They follow the order of the sidebar across folders, so readers can go through the docs from start to end like a book.
+At the bottom of each page, links lead to the previous and the next page. They follow the order of the sidebar across folders, including folder pages with text, so readers can go through the docs from start to end like a book.

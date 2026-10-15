@@ -51,6 +51,9 @@ order: 2
 | `icon` | `fa-solid fa-file` | [Font Awesome](../features/themes-and-icons.md) icon in the sidebar and breadcrumbs |
 | `description` | first paragraph | Summary for search engines and link previews, see [SEO](../features/seo.md) |
 | `order` | none | Position among the pages and folders next to it, see [navigation](../organizing/navigation.md) |
+| `cards`, `hero` | `false` | Only for `index.md`: cards and a large header, see [index pages](../organizing/index-pages.md) |
+
+The full reference is on the [front matter](../configuration/front-matter.md) page. A file named `index.md` is not a page of its own: it is the page of its folder, see [index pages](../organizing/index-pages.md).
 
 Front matter only counts when `---` is the very first line of the file, so a horizontal rule further down a page is never mistaken for it. Values may be quoted or not:
 

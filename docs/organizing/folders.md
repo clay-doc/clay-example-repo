@@ -1,73 +1,60 @@
 ---
 title: Folders
 icon: fa-solid fa-folder-open
-description: Group pages into folders and give folders names, icons and an order with dir-meta.yaml.
+description: Group pages into folders, and give folders a name, an icon, an order and a page of their own with index.md.
 order: 2
 ---
 
 # Folders
 
-Folders in `docs/` become sections of the navigation. Without any configuration, a folder is named after its folder name: `getting-started` becomes "Getting started", with a folder icon.
+Folders in `docs/` become sections of the navigation, nested as deep as your folders go. A folder only appears when it contains at least one page.
 
-## Names, icons and order
+## Name, icon and order
 
-`dir-meta.yaml`, next to `clay.yaml`, describes folders. Each entry names a folder by its `path` and sets what it shows:
+A folder describes itself in an `index.md` inside it, with the same front matter as a page:
 
-```yaml
-- path: "getting-started"
-  name: "Getting Started"
-  icon: "fa-solid fa-rocket"
-  order: 1
+```text
+docs/guides/
+├── index.md       # the folder's name, icon and order
+├── setup.md
+└── deploying.md
+```
 
-- path: "guides"
-  name: "Guides"
-  icon: "fa-solid fa-book-open"
-  order: 2
+```markdown
+---
+title: Guides
+icon: fa-solid fa-book-open
+order: 3
+---
 ```
 
 | Field | Default | Purpose |
 |-------|---------|---------|
-| `path` | required | The folder's name in `docs/` (just the name, not a path) |
-| `name` | folder name, prettified | Name in the sidebar, breadcrumbs and search |
+| `title` | the first heading of `index.md`, then the folder name | Name in the sidebar, breadcrumbs and search |
 | `icon` | `fa-solid fa-folder` | [Font Awesome](../features/themes-and-icons.md) icon |
 | `order` | none | Position among the pages and folders next to it |
-| `children` | none | Entries for the folder's subfolders |
 
-## Subfolders
+Without an `index.md`, a folder is named after its folder name: `getting-started` becomes "Getting started".
 
-Subfolders are described in `children` of their parent's entry, as deep as your folders go:
+## A page for the folder
 
-```yaml
-- path: "guides"
-  name: "Guides"
-  icon: "fa-solid fa-book-open"
-  children:
-    - path: "advanced"
-      name: "Advanced Guides"
-      icon: "fa-solid fa-graduation-cap"
-      children:
-        - path: "performance"
-          name: "Performance"
+When `index.md` has text below its front matter, that text is the folder's page, shown when readers open the folder at its URL (`/guides`). An `index.md` with only front matter just names the folder; its page then shows cards of the pages in it. See [index pages](index-pages.md).
+
+## Folders in other languages
+
+Translate a folder like a page: `index.de.md` next to `index.md` gives the folder its German name and German page.
+
+```markdown
+---
+title: Anleitungen
+---
+
+# Anleitungen
+
+Schritt-für-Schritt-Anleitungen für …
 ```
 
-A folder with no entry passes the lookup on: its subfolders are looked up in the same list as the folder itself. You only need entries for the folders you want to change.
-
-## Names in several languages
-
-On a [multilingual site](../versions-and-languages/translations.md), give `name` one value per language:
-
-```yaml
-- path: "guides"
-  name:
-    en: "Guides"
-    de: "Anleitungen"
-```
-
-Languages without a value use the default language's name.
-
-## Folder pages
-
-Each folder has a page that shows its pages and subfolders as cards, see [navigation](navigation.md#folder-pages).
+The order always comes from the original `index.md`.
 
 > [!TIP]
-> `dir-meta.yaml` is checked on every build: a misspelled field, like `ordre` or `icons`, is reported as a warning. See [dir-meta.yaml](../configuration/dir-meta-yaml.md) for the reference.
+> `clay edit` creates folders with their `index.md`, and writes the title, icon and order of existing ones. See [clay edit](clay-edit.md).

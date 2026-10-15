@@ -89,7 +89,7 @@ Push it. After a minute, the site is online; the workflow run shows its address.
 > on:
 >   push:
 >     branches: [main]
->     paths: ["docs/**", "versions/**", "clay.yaml", "dir-meta.yaml", "package-lock.json"]
+>     paths: ["docs/**", "docs-archive/**", "clay.yaml", "package-lock.json"]
 > ```
 
 ## Without package.json

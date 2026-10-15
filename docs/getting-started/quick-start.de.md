@@ -60,13 +60,21 @@ Seiten in einem Ordner werden zu einem Abschnitt der Navigation. Lege `docs/guid
 Wie man Mein Projekt einrichtet.
 ```
 
-Die Seitenleiste zeigt jetzt einen Abschnitt **Guides**. Um dem Ordner einen anderen Namen und ein Icon zu geben, lege neben der `clay.yaml` eine `dir-meta.yaml` an:
+Die Seitenleiste zeigt jetzt einen Abschnitt **Guides**. Um dem Ordner einen anderen Namen, ein Icon und eine eigene Einleitung zu geben, lege `docs/guides/index.md` an:
 
-```yaml
-- path: "guides"
-  name: "Anleitungen"
-  icon: "fa-solid fa-book"
+```markdown
+---
+title: Anleitungen
+icon: fa-solid fa-book
+cards: true
+---
+
+# Anleitungen
+
+Alles, was du zum Arbeiten mit Mein Projekt brauchst, Schritt für Schritt.
 ```
+
+Der Text wird zur Seite des Ordners unter `/guides`, mit Kacheln seiner Seiten darunter. Genauso wird `docs/index.md` zur Startseite; siehe [Indexseiten](../organizing/index-pages.md).
 
 ## 6. Die Seite bauen
 
@@ -87,6 +95,6 @@ Das war's: `publish/public` ist bereit zum Hochladen. [GitHub Pages](../deployme
 
 ## Wie es weitergeht
 
-- Gib der Startseite einen Titel und eine Beschreibung: [Startseite](../organizing/landing-page.md).
+- Schreib die Startseite: [Indexseiten](../organizing/index-pages.md).
 - Bring Seiten und Ordner in eine Reihenfolge: [Navigation](../organizing/navigation.md).
 - Sieh dir alle Einstellungen an: [clay.yaml](../configuration/clay-yaml.md).

@@ -88,7 +88,7 @@ Pushe ihn. Nach etwa einer Minute ist die Seite online; der Lauf des Workflows z
 > on:
 >   push:
 >     branches: [main]
->     paths: ["docs/**", "versions/**", "clay.yaml", "dir-meta.yaml", "package-lock.json"]
+>     paths: ["docs/**", "docs-archive/**", "clay.yaml", "package-lock.json"]
 > ```
 
 ## Ohne package.json

@@ -6,12 +6,12 @@ description: Bring eine Clay-1-Seite, die mit Clay Oven gebaut wurde, Schritt f�
 
 # Umstieg von Clay 1
 
-Clay 1 bestand aus zwei Teilen: dem Clay-Frontend und Clay Oven, einem eigenen Go-Werkzeug, das die Dokumentation aufbereitet hat. Clay 2 ist ein einziges npm-Paket, `clay-doc`, das beides erledigt. Deine Dokumentation, `clay.yaml` und `dir-meta.yaml` funktionieren weiter; was sich ändert, ist das Bauen.
+Clay 1 bestand aus zwei Teilen: dem Clay-Frontend und Clay Oven, einem eigenen Go-Werkzeug, das die Dokumentation aufbereitet hat. Clay 2 ist ein einziges npm-Paket, `clay-doc`, das beides erledigt. Deine Dokumentation und die `clay.yaml` funktionieren weiter; was sich ändert, ist das Bauen. Diese Seite beschreibt den Schritt zu Clay 2; mach danach mit dem [Umstieg auf Clay 3](upgrading-to-clay-3.md) weiter.
 
 ## Was bleibt
 
 - Der Ordner `docs/`, die Markdown-Dateien und ihr Front Matter.
-- `clay.yaml` und `dir-meta.yaml` mit all ihren Einstellungen.
+- `clay.yaml` und `dir-meta.yaml` mit all ihren Einstellungen (Clay 3 verlagert die `dir-meta.yaml` dann in `index.md`-Dateien).
 - Die Umgebungsvariablen `CLAY_TITLE`, `CLAY_BASE_URL`, `CLAY_SITE_URL` und `CLAY_FONTAWESOME_KIT`.
 - Die URLs deiner Seiten.
 

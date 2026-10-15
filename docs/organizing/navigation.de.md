@@ -10,7 +10,7 @@ Clay baut die Navigation aus deinem `docs/`-Ordner; ein eigenes Menü musst du n
 
 ## Die Seitenleiste
 
-Die Seitenleiste listet jede Seite und jeden Ordner, der Seiten enthält, verschachtelt wie deine Ordner. Ordner lassen sich auf- und zuklappen; die Seite, die du liest, ist markiert. Auf kleinen Bildschirmen wandert die Seitenleiste in eine ausklappbare Navigation hinter dem Menü-Button oben links.
+Die Seitenleiste listet jede Seite und jeden Ordner, der Seiten enthält, verschachtelt wie deine Ordner. Der Titel eines Ordners öffnet seine Seite; der Pfeil daneben blendet die Seiten darin ein und aus. Die Seite, die du liest, ist markiert, und die Ordner um sie herum klappen von selbst auf. Auf kleinen Bildschirmen wandert die Seitenleiste in eine ausklappbare Navigation hinter dem Menü-Button oben links.
 
 ## Reihenfolge
 
@@ -19,7 +19,7 @@ In jedem Ordner werden Seiten und Ordner gemeinsam sortiert:
 1. Einträge mit `order` kommen zuerst, von der kleinsten Zahl aufwärts.
 2. Alle anderen folgen alphabetisch nach ihrem Datei- oder Ordnernamen.
 
-Seiten bekommen ihr `order` im [Front Matter](../writing/pages.md#front-matter), Ordner in der [dir-meta.yaml](../configuration/dir-meta-yaml.md):
+Seiten bekommen ihr `order` in ihrem [Front Matter](../writing/pages.md#front-matter), Ordner im Front Matter ihrer [index.md](folders.md):
 
 ```markdown
 ---
@@ -28,9 +28,11 @@ order: 1
 ---
 ```
 
-```yaml
-- path: "guides"
-  order: 3
+```markdown
+---
+title: Anleitungen
+order: 3
+---
 ```
 
 Dieser Ordner zum Beispiel:
@@ -39,7 +41,7 @@ Dieser Ordner zum Beispiel:
 docs/
 ├── changelog.md          (ohne order)
 ├── faq.md                (ohne order)
-├── guides/               (order: 2 in der dir-meta.yaml)
+├── guides/               (order: 2 in guides/index.md)
 ├── installation.md       (order: 1)
 └── introduction.md       (order: 0)
 ```
@@ -57,8 +59,8 @@ Die Navigationsleiste zeigt, wo die aktuelle Seite liegt: **Anleitungen › Fort
 
 ## Ordnerseiten
 
-Jeder Ordner hat eine eigene Seite unter seinem Pfad: `/guides` für `docs/guides/`. Sie zeigt Titel und Icon des Ordners und eine Kachel für jede Seite und jeden Unterordner darin. Brotkrumen und Links auf einen Ordner führen dorthin.
+Jeder Ordner hat eine eigene Seite unter seinem Pfad: `/guides` für `docs/guides/`. Das ist die `index.md` des Ordners, oder, ohne sie, der Titel des Ordners mit einer Kachel für jede Seite und jeden Unterordner darin. Brotkrumen und Links auf einen Ordner führen dorthin. Siehe [Indexseiten](index-pages.md).
 
 ## Vor und zurück
 
-Unten auf jeder Seite führen Links zur vorherigen und nächsten Seite. Sie folgen der Reihenfolge der Seitenleiste über Ordnergrenzen hinweg, sodass man die Dokumentation wie ein Buch von vorne bis hinten lesen kann.
+Unten auf jeder Seite führen Links zur vorherigen und nächsten Seite. Sie folgen der Reihenfolge der Seitenleiste über Ordnergrenzen hinweg, Ordnerseiten mit Text eingeschlossen, sodass man die Dokumentation wie ein Buch von vorne bis hinten lesen kann.

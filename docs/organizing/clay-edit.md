@@ -1,66 +1,86 @@
 ---
 title: Editing with clay edit
 icon: fa-solid fa-pen-to-square
-description: Reorder pages and folders, rename them and edit the site settings in a terminal editor.
+description: Create, edit, order, rename, move and delete pages and folders, translate them and edit the settings, for every version and language.
 order: 4
 ---
 
 # Editing with clay edit
 
-`clay edit` opens an editor in the terminal for everything around your pages: their order, titles and icons, folder names, and the settings in `clay.yaml`. It writes the same files you would edit by hand, so you can mix both ways freely.
+`clay edit` is an editor in the terminal for everything around your pages: creating pages and folders, their front matter, their order, renaming, moving and deleting them, translations, versions and the settings in `clay.yaml`. It writes the same files you would edit by hand, so you can mix both ways freely.
 
 ```bash
 npx clay edit
 ```
 
 ```text
-┌  Clay · edit   Pages   Settings
+┌  Clay · edit   Pages   Settings   latest · en
 │
-│ › ◆ Introduction             fa-solid fa-house
-│   ▾ Getting Started          fa-solid fa-rocket
-│   │  ◆ Installation          fa-solid fa-download •
-│   │  ◆ Quick Start           fa-solid fa-bolt
-│   ▸ Guides                   fa-solid fa-book-open
+│   ⌂ Clay Documentation          fa-solid fa-book-open
+│   ◆ Introduction                fa-solid fa-house
+│ › ▾ Getting Started             fa-solid fa-rocket
+│   │  ◆ Installation             fa-solid fa-download
+│   │  ◆ Quick Start              fa-solid fa-bolt
+│   ▸ Writing                     fa-solid fa-pen-nib
 │
-└  ↑↓ select · m move · ←→ fold · ⏎ title · i icon · tab settings · s save · q quit
-   1 unsaved change(s)
+└  ⏎ details · n page · f folder · m order · o move · r rename · x delete · v/V version · l language · tab · q
 ```
 
-## Pages
+Changes are written right away, one file at a time, and the editor shows which files it wrote. Use git to review or undo them.
 
-The **Pages** tab shows your docs in navigation order. Titles in gray are defaults (from the first heading or the folder name), a yellow dot marks entries you changed.
+## Pages and folders
+
+The **Pages** tab shows the start page (`⌂`), the folders (`▾`) and the pages (`◆`) in navigation order. Titles in gray are defaults, taken from the first heading or the file name.
 
 | Key | Action |
 |-----|--------|
 | <kbd>↑</kbd> <kbd>↓</kbd> | Select an entry |
-| <kbd>m</kbd> or <kbd>Space</kbd> | Pick up the entry; move it with <kbd>↑</kbd> <kbd>↓</kbd>, drop it with <kbd>⏎</kbd> |
 | <kbd>←</kbd> <kbd>→</kbd> | Close and open folders |
-| <kbd>⏎</kbd> or <kbd>t</kbd> | Edit the title |
-| <kbd>i</kbd> | Edit the icon |
+| <kbd>⏎</kbd> | Open the details: all front matter fields of the entry |
+| <kbd>t</kbd> / <kbd>i</kbd> | Edit the title / icon directly |
+| <kbd>n</kbd> | Create a page in the selected folder (or next to the selected page) |
+| <kbd>f</kbd> | Create a folder, with an `index.md` |
+| <kbd>m</kbd> | Pick the entry up; move it with <kbd>↑</kbd> <kbd>↓</kbd>, drop it with <kbd>⏎</kbd> |
+| <kbd>o</kbd> | Move the entry into another folder |
+| <kbd>r</kbd> | Rename the file or folder |
+| <kbd>x</kbd> | Delete the entry, after asking |
 | <kbd>Tab</kbd> | Switch to the settings |
-| <kbd>s</kbd> | Save |
-| <kbd>q</kbd> | Quit; asks first when there are unsaved changes |
+| <kbd>q</kbd> | Quit |
 
-Entries move within their folder. When you move one, Clay numbers everything in that folder (`order: 1`, `2`, `3`, …) and writes only the files whose number changed.
+New pages get their title as front matter and as their first heading, and a file name made from the title, which you can change before it is created. New folders get an `index.md` with their title and `cards: true`.
 
-In a text field, <kbd>⏎</kbd> applies and <kbd>Esc</kbd> cancels. Leave a field empty to remove the value and go back to the default.
+Ordering numbers everything in the folder (`order: 1`, `2`, `3`, …) and writes only the files whose number changed.
+
+Renaming and moving take the page's translations along. Clay does not rewrite links to the entry; instead, it lists the links that broke, so you can fix them:
+
+```text
+Moved setup.md → guides/setup.md · 2 link(s) broke: introduction.md: "setup.md" points to a missing page (/setup) …
+```
+
+## The details
+
+<kbd>⏎</kbd> opens all front matter fields of the selected entry: title, icon, description and order, and for folders and the start page also `cards` and `hero` (see [index pages](index-pages.md)). Select a field and press <kbd>⏎</kbd> to change it; yes/no fields switch with <kbd>⏎</kbd>. <kbd>Esc</kbd> leads back to the list.
+
+In a text field, <kbd>⏎</kbd> applies and <kbd>Esc</kbd> cancels. Leave a field empty to remove the value and go back to the default. For a folder without an `index.md`, the editor creates one.
+
+## Versions and languages
+
+The header shows which version and language you are editing.
+
+| Key | Action |
+|-----|--------|
+| <kbd>v</kbd> | Switch to the next version |
+| <kbd>V</kbd> | Save the current docs as a new version, see [versions](../versions-and-languages/versions.md) |
+| <kbd>l</kbd> | Switch to the next language |
+| <kbd>c</kbd> | Start a translation of the selected entry: copies the original into `*.de.md` and so on |
+
+In another language, pages without a translation are marked **untranslated**. Setting a field of such a page creates the translation from the original first. The order is the same in every language, so it is changed in the default language.
 
 ## Settings
 
-The **Settings** tab lists the settings of `clay.yaml`: site, navbar and landing page. Select one and press <kbd>⏎</kbd> to change it. Navbar links can be added with **+ Add link** and removed with <kbd>d</kbd>.
+The **Settings** tab lists the settings of `clay.yaml`. Select one and press <kbd>⏎</kbd> to change it. Settings with a value per language are edited in the language shown in the header. Navbar links are added with **+ Add link** and removed with <kbd>d</kbd>.
 
-## What it writes
-
-| Change | Written to |
-|--------|-----------|
-| Page title, icon, order | The page's front matter |
-| Folder name, icon, order | `dir-meta.yaml` |
-| Settings | `clay.yaml` |
-
-Clay changes only the values you edited. Comments, quotes, the order of keys and the rest of each file stay as they were, so the diff in git shows exactly your change.
+Clay changes only the values you edit. Comments, quotes, the order of keys and the rest of each file stay as they were, so the diff in git shows exactly your change.
 
 > [!TIP]
-> Run `npx clay dev` in a second terminal: the site reloads every time you save in the editor.
-
-> [!NOTE]
-> On a [multilingual site](../versions-and-languages/translations.md), the editor works on the default language. Titles of translations live in the translated files; folder names given per language keep their other languages.
+> Run `npx clay dev` in a second terminal: the site reloads with every change you make in the editor.

@@ -22,12 +22,12 @@ Every `clay build` checks your docs before it renders them. Problems are reporte
 | Links to pages that do not exist | `Broken link in guides/setup.md: "instal.md" points to a missing page (/guides/instal)` |
 | Images and files that do not exist | `Broken link in index.md: "img/logo.png" points to a missing file` |
 | Unknown settings in `clay.yaml` | `clay.yaml: unknown key "navbar.lgo" is ignored (typo?)` |
-| Unknown fields in `dir-meta.yaml` | `dir-meta.yaml: unknown key "[0].icons" is ignored (typo?)` |
+| Files and settings from Clay 2 | `dir-meta.yaml is no longer read since Clay 3; give each folder an index.md with its title, icon and order` |
 | A missing site title | `clay.yaml: "title" is not set` |
 | Settings from Clay 1 | `clay.yaml: "langs" is no longer needed and is ignored` |
 | Translations without an original | `setup.de.md: translates setup.md, which does not exist; the file is skipped` |
 | Unusable language codes | `clay.yaml: "Deutsch" is not a language code like "en" or "pt-BR"; it is ignored` |
-| Unusable or clashing versions | `versions/1.x: docs/1.x has the same URL as this version; rename one of them` |
+| Unusable or clashing versions | `docs-archive/1.x: docs/1.x has the same URL as this version; rename one of them` |
 | Missing git history | `the docs are not in a git repository: last-updated dates are skipped` |
 
 Links to other websites and `#anchors` are not checked.

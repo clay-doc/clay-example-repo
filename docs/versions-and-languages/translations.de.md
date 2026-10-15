@@ -65,23 +65,16 @@ Texteinstellungen in der `clay.yaml` können einen Wert pro Sprache haben. Fehle
 title:
   en: "My Project"
   de: "Mein Projekt"
-index:
-  title:
-    en: "Welcome"
-    de: "Willkommen"
-  description:
-    en: "Everything you need to know."
-    de: "Alles, was du wissen musst."
+navbar:
+  links:
+    - name:
+        en: "Website"
+        de: "Webseite"
+      icon: "fa-solid fa-house"
+      link: "https://example.com"
 ```
 
-Dasselbe funktioniert für Ordnernamen in der `dir-meta.yaml`:
-
-```yaml
-- path: "guides"
-  name:
-    en: "Guides"
-    de: "Anleitungen"
-```
+Ordner und die Startseite übersetzt du wie Seiten: Eine `index.de.md` neben der `index.md` gibt einem Ordner seinen deutschen Namen und seine deutsche Seite, und `docs/index.de.md` ist die deutsche Startseite. Siehe [Indexseiten](../organizing/index-pages.md).
 
 ## Die Oberfläche
 

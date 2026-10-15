@@ -66,23 +66,16 @@ Text settings in `clay.yaml` can have one value per language. Missing languages 
 title:
   en: "My Project"
   de: "Mein Projekt"
-index:
-  title:
-    en: "Welcome"
-    de: "Willkommen"
-  description:
-    en: "Everything you need to know."
-    de: "Alles, was du wissen musst."
+navbar:
+  links:
+    - name:
+        en: "Website"
+        de: "Webseite"
+      icon: "fa-solid fa-house"
+      link: "https://example.com"
 ```
 
-The same works for folder names in `dir-meta.yaml`:
-
-```yaml
-- path: "guides"
-  name:
-    en: "Guides"
-    de: "Anleitungen"
-```
+Folders and the start page are translated like pages: `index.de.md` next to `index.md` gives a folder its German name and German page, and `docs/index.de.md` is the German start page. See [index pages](../organizing/index-pages.md).
 
 ## The interface
 

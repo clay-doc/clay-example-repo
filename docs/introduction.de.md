@@ -30,9 +30,9 @@ Ein Clay-Projekt ist ein Ordner mit einer Konfigurationsdatei und deiner Dokumen
 
 ```text
 mein-projekt/
-├── clay.yaml        # Titel, Links, Startseite
-├── dir-meta.yaml    # optional: Namen und Icons der Ordner
+├── clay.yaml        # Titel und Links
 └── docs/            # deine Markdown-Seiten, Bilder und Dateien
+    └── index.md     # optional: die Startseite
 ```
 
 Du arbeitest mit drei Befehlen:

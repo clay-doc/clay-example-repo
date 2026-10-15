@@ -15,7 +15,7 @@ Code blocks are highlighted in two color schemes and switch together with the si
 
 ## Icons
 
-Clay uses [Font Awesome](https://fontawesome.com) for icons: pages, folders, the landing page and navbar links. Write the icon's classes, as shown on the icon's page on fontawesome.com:
+Clay uses [Font Awesome](https://fontawesome.com) for icons: pages, folders, the start page and navbar links. Write the icon's classes, as shown on the icon's page on fontawesome.com:
 
 ```yaml
 icon: fa-solid fa-rocket

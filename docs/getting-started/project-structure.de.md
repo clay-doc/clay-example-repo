@@ -11,19 +11,18 @@ Ein Clay-Projekt hat einen festen Aufbau. Clay sucht seine Dateien im Projektord
 ```text
 mein-projekt/
 ├── clay.yaml              # Pflicht: Einstellungen der Seite
-├── dir-meta.yaml          # optional: Namen, Icons und Reihenfolge der Ordner
 ├── logo.svg               # optional: Logo und Favicon, angegeben in der clay.yaml
 ├── docs/                  # Pflicht: die Seiten der aktuellen Version
+│   ├── index.md           # optional: die Startseite
 │   ├── introduction.md
 │   ├── introduction.de.md # optional: eine Übersetzung
 │   └── guides/
+│       ├── index.md       # optional: Name, Icon, Reihenfolge und Seite des Ordners
 │       ├── setup.md
 │       └── img/
 │           └── screen.png # Bilder und Dateien werden unverändert veröffentlicht
-├── versions/              # optional: ältere Versionen der Dokumentation
-│   └── 1.x/
-│       ├── docs/
-│       └── dir-meta.yaml
+├── docs-archive/          # optional: ältere Versionen der Dokumentation
+│   └── 1.x/               # eine Kopie von docs/, wie es für Version 1.x war
 ├── package.json           # optional: Clay als Entwicklungsabhängigkeit
 └── publish/               # entsteht durch clay build; nicht committen
 ```
@@ -32,11 +31,11 @@ mein-projekt/
 
 | Pfad | Zweck | Mehr dazu |
 |------|-------|-----------|
-| `clay.yaml` | Titel, Basis-URL, Links in der Navigationsleiste, Startseite, Sprachen | [clay.yaml](../configuration/clay-yaml.md) |
-| `dir-meta.yaml` | Anzeigenamen, Icons und Reihenfolge der Ordner | [dir-meta.yaml](../configuration/dir-meta-yaml.md) |
+| `clay.yaml` | Titel, Basis-URL, Links in der Navigationsleiste, Sprachen | [clay.yaml](../configuration/clay-yaml.md) |
+| `index.md` | Die Startseite (`docs/index.md`), sowie Name, Icon, Reihenfolge und Seite eines Ordners | [Indexseiten](../organizing/index-pages.md) |
 | `docs/` | Jede `.md`-Datei ist eine Seite; andere Dateien werden mitveröffentlicht | [Seiten](../writing/pages.md) |
 | `*.de.md` und ähnliche | Übersetzungen der Seite daneben | [Übersetzungen](../versions-and-languages/translations.md) |
-| `versions/<name>/` | Eine gespeicherte Kopie der Dokumentation eines älteren Releases | [Versionen](../versions-and-languages/versions.md) |
+| `docs-archive/<name>/` | Eine gespeicherte Kopie der Dokumentation eines älteren Releases | [Versionen](../versions-and-languages/versions.md) |
 | `publish/public/` | Die fertige Website | [Befehle](../cli/commands.md) |
 
 ## Regeln für den docs-Ordner
@@ -48,7 +47,7 @@ mein-projekt/
 
 ## Was ins Git gehört
 
-Committe `clay.yaml`, `dir-meta.yaml`, `docs/`, `versions/`, dein Logo sowie `package.json` mit `package-lock.json`. Die Ausgabe des Builds und die Abhängigkeiten gehören nicht dazu:
+Committe `clay.yaml`, `docs/`, `docs-archive/`, dein Logo sowie `package.json` mit `package-lock.json`. Die Ausgabe des Builds und die Abhängigkeiten gehören nicht dazu:
 
 ```text
 # .gitignore

@@ -2,7 +2,7 @@
 title: Troubleshooting
 icon: fa-solid fa-screwdriver-wrench
 description: Solutions for the most common problems with Clay sites, from missing styles to missing dates.
-order: 2
+order: 3
 ---
 
 # Troubleshooting
@@ -41,7 +41,7 @@ In GitLab CI, set `GIT_DEPTH: 0`.
 
 ## Changes do not show up in clay dev
 
-`clay dev` reloads the browser when a page, an image, `clay.yaml` or `dir-meta.yaml` changes. If nothing happens, check that you edit the files of the project `clay dev` was started in, and look at its output for errors.
+`clay dev` reloads the browser when a page, an image or `clay.yaml` changes. If nothing happens, check that you edit the files of the project `clay dev` was started in, and look at its output for errors.
 
 ## The port is in use
 

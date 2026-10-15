@@ -12,19 +12,18 @@ A Clay project has a fixed layout. Clay looks for its files in the project folde
 ```text
 my-project/
 ├── clay.yaml              # required: site settings
-├── dir-meta.yaml          # optional: folder names, icons and order
 ├── logo.svg               # optional: logo and favicon, referenced in clay.yaml
 ├── docs/                  # required: the pages of the current version
+│   ├── index.md           # optional: the start page
 │   ├── introduction.md
 │   ├── introduction.de.md # optional: a translation
 │   └── guides/
+│       ├── index.md       # optional: the folder's name, icon, order and page
 │       ├── setup.md
 │       └── img/
 │           └── screen.png # images and files are published as they are
-├── versions/              # optional: older versions of the docs
-│   └── 1.x/
-│       ├── docs/
-│       └── dir-meta.yaml
+├── docs-archive/          # optional: older versions of the docs
+│   └── 1.x/               # a copy of docs/ as it was for version 1.x
 ├── package.json           # optional: Clay as a dev dependency
 └── publish/               # created by clay build; do not commit
 ```
@@ -33,11 +32,11 @@ my-project/
 
 | Path | Purpose | Read more |
 |------|---------|-----------|
-| `clay.yaml` | Title, base URL, navbar links, landing page, languages | [clay.yaml](../configuration/clay-yaml.md) |
-| `dir-meta.yaml` | Display names, icons and order of folders | [dir-meta.yaml](../configuration/dir-meta-yaml.md) |
+| `clay.yaml` | Title, base URL, navbar links, languages | [clay.yaml](../configuration/clay-yaml.md) |
+| `index.md` | The start page (`docs/index.md`), and a folder's name, icon, order and page | [index pages](../organizing/index-pages.md) |
 | `docs/` | Every `.md` file is a page; other files are published as assets | [pages](../writing/pages.md) |
 | `*.de.md` and similar | Translations of the page next to them | [translations](../versions-and-languages/translations.md) |
-| `versions/<name>/` | A saved copy of the docs of an older release | [versions](../versions-and-languages/versions.md) |
+| `docs-archive/<name>/` | A saved copy of the docs of an older release | [versions](../versions-and-languages/versions.md) |
 | `publish/public/` | The finished website | [commands](../cli/commands.md) |
 
 ## Rules for the docs folder
@@ -49,7 +48,7 @@ my-project/
 
 ## What belongs in git
 
-Commit `clay.yaml`, `dir-meta.yaml`, `docs/`, `versions/`, your logo, and `package.json` with `package-lock.json`. Do not commit the build output or the dependencies:
+Commit `clay.yaml`, `docs/`, `docs-archive/`, your logo, and `package.json` with `package-lock.json`. Do not commit the build output or the dependencies:
 
 ```text
 # .gitignore

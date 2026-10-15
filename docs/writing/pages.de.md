@@ -50,6 +50,9 @@ order: 2
 | `icon` | `fa-solid fa-file` | [Font-Awesome](../features/themes-and-icons.md)-Icon in Seitenleiste und Brotkrumen |
 | `description` | erster Absatz | Zusammenfassung für Suchmaschinen und Link-Vorschauen, siehe [SEO](../features/seo.md) |
 | `order` | keiner | Position zwischen den Seiten und Ordnern daneben, siehe [Navigation](../organizing/navigation.md) |
+| `cards`, `hero` | `false` | Nur für `index.md`: Kacheln und eine große Kopfzeile, siehe [Indexseiten](../organizing/index-pages.md) |
+
+Die vollständige Referenz steht auf der Seite [Front Matter](../configuration/front-matter.md). Eine Datei namens `index.md` ist keine eigene Seite: Sie ist die Seite ihres Ordners, siehe [Indexseiten](../organizing/index-pages.md).
 
 Front Matter zählt nur, wenn `---` die allererste Zeile der Datei ist. Eine Trennlinie weiter unten wird also nie dafür gehalten. Werte dürfen in Anführungszeichen stehen, müssen aber nicht:
 

@@ -1,67 +1,85 @@
 ---
 title: Bearbeiten mit clay edit
 icon: fa-solid fa-pen-to-square
-description: Seiten und Ordner umsortieren, umbenennen und die Einstellungen der Seite in einem Editor im Terminal bearbeiten.
+description: Seiten und Ordner anlegen, bearbeiten, ordnen, umbenennen, verschieben und löschen, übersetzen und die Einstellungen bearbeiten, für jede Version und Sprache.
 ---
 
 # Bearbeiten mit clay edit
 
-`clay edit` öffnet einen Editor im Terminal für alles rund um deine Seiten: ihre Reihenfolge, Titel und Icons, die Namen der Ordner und die Einstellungen in der `clay.yaml`. Er schreibt dieselben Dateien, die du sonst von Hand bearbeitest; beide Wege lassen sich also beliebig mischen.
+`clay edit` ist ein Editor im Terminal für alles rund um deine Seiten: Seiten und Ordner anlegen, ihr Front Matter, ihre Reihenfolge, sie umbenennen, verschieben und löschen, Übersetzungen, Versionen und die Einstellungen in der `clay.yaml`. Er schreibt dieselben Dateien, die du sonst von Hand bearbeitest; beide Wege lassen sich also beliebig mischen.
 
 ```bash
 npx clay edit
 ```
 
 ```text
-┌  Clay · edit   Pages   Settings
+┌  Clay · edit   Pages   Settings   latest · de
 │
-│ › ◆ Introduction             fa-solid fa-house
-│   ▾ Getting Started          fa-solid fa-rocket
-│   │  ◆ Installation          fa-solid fa-download •
-│   │  ◆ Quick Start           fa-solid fa-bolt
-│   ▸ Guides                   fa-solid fa-book-open
+│   ⌂ Clay-Dokumentation          fa-solid fa-book-open
+│   ◆ Einführung                  fa-solid fa-house
+│ › ▾ Erste Schritte              fa-solid fa-rocket
+│   │  ◆ Installation             fa-solid fa-download
+│   │  ◆ Schnellstart             fa-solid fa-bolt
+│   ▸ Schreiben                   fa-solid fa-pen-nib
 │
-└  ↑↓ select · m move · ←→ fold · ⏎ title · i icon · tab settings · s save · q quit
-   1 unsaved change(s)
+└  ⏎ details · n page · f folder · m order · o move · r rename · x delete · v/V version · l language · tab · q
 ```
 
-## Seiten
+Änderungen werden sofort geschrieben, Datei für Datei, und der Editor zeigt, welche Dateien er geschrieben hat. Mit Git prüfst du sie oder machst sie rückgängig. Der Editor selbst ist englisch.
 
-Der Reiter **Pages** zeigt deine Dokumentation in der Reihenfolge der Navigation. Grau dargestellte Titel sind Standardwerte (aus der ersten Überschrift oder dem Ordnernamen), ein gelber Punkt markiert Einträge, die du geändert hast.
+## Seiten und Ordner
+
+Der Reiter **Pages** zeigt die Startseite (`⌂`), die Ordner (`▾`) und die Seiten (`◆`) in der Reihenfolge der Navigation. Grau dargestellte Titel sind Standardwerte, aus der ersten Überschrift oder dem Dateinamen.
 
 | Taste | Aktion |
 |-------|--------|
 | <kbd>↑</kbd> <kbd>↓</kbd> | Eintrag auswählen |
-| <kbd>m</kbd> oder <kbd>Leertaste</kbd> | Eintrag aufnehmen; mit <kbd>↑</kbd> <kbd>↓</kbd> verschieben, mit <kbd>⏎</kbd> ablegen |
 | <kbd>←</kbd> <kbd>→</kbd> | Ordner zu- und aufklappen |
-| <kbd>⏎</kbd> oder <kbd>t</kbd> | Titel bearbeiten |
-| <kbd>i</kbd> | Icon bearbeiten |
+| <kbd>⏎</kbd> | Details öffnen: alle Front-Matter-Felder des Eintrags |
+| <kbd>t</kbd> / <kbd>i</kbd> | Titel / Icon direkt bearbeiten |
+| <kbd>n</kbd> | Eine Seite im gewählten Ordner anlegen (oder neben der gewählten Seite) |
+| <kbd>f</kbd> | Einen Ordner anlegen, mit einer `index.md` |
+| <kbd>m</kbd> | Eintrag aufnehmen; mit <kbd>↑</kbd> <kbd>↓</kbd> verschieben, mit <kbd>⏎</kbd> ablegen |
+| <kbd>o</kbd> | Eintrag in einen anderen Ordner verschieben |
+| <kbd>r</kbd> | Datei oder Ordner umbenennen |
+| <kbd>x</kbd> | Eintrag löschen, nach Rückfrage |
 | <kbd>Tab</kbd> | Zu den Einstellungen wechseln |
-| <kbd>s</kbd> | Speichern |
-| <kbd>q</kbd> | Beenden; fragt nach, wenn ungespeicherte Änderungen da sind |
+| <kbd>q</kbd> | Beenden |
 
-Einträge bewegen sich innerhalb ihres Ordners. Sobald du einen verschiebst, nummeriert Clay alles in diesem Ordner durch (`order: 1`, `2`, `3`, …) und schreibt nur die Dateien, deren Nummer sich geändert hat.
+Neue Seiten bekommen ihren Titel als Front Matter und als erste Überschrift, und einen Dateinamen aus dem Titel, den du vor dem Anlegen ändern kannst. Neue Ordner bekommen eine `index.md` mit ihrem Titel und `cards: true`.
 
-In einem Textfeld übernimmt <kbd>⏎</kbd> die Eingabe, <kbd>Esc</kbd> bricht ab. Lass ein Feld leer, um den Wert zu entfernen und zum Standard zurückzukehren.
+Beim Ordnen nummeriert Clay alles im Ordner durch (`order: 1`, `2`, `3`, …) und schreibt nur die Dateien, deren Nummer sich geändert hat.
+
+Umbenennen und Verschieben nehmen die Übersetzungen der Seite mit. Links auf den Eintrag schreibt Clay nicht um; stattdessen listet es die Links, die dadurch kaputtgegangen sind, damit du sie korrigieren kannst:
+
+```text
+Moved setup.md → guides/setup.md · 2 link(s) broke: introduction.md: "setup.md" points to a missing page (/setup) …
+```
+
+## Die Details
+
+<kbd>⏎</kbd> öffnet alle Front-Matter-Felder des gewählten Eintrags: Titel, Icon, Beschreibung und Reihenfolge, für Ordner und die Startseite auch `cards` und `hero` (siehe [Indexseiten](index-pages.md)). Wähle ein Feld und drück <kbd>⏎</kbd>, um es zu ändern; Ja/Nein-Felder schaltest du mit <kbd>⏎</kbd> um. <kbd>Esc</kbd> führt zurück zur Liste.
+
+In einem Textfeld übernimmt <kbd>⏎</kbd> die Eingabe, <kbd>Esc</kbd> bricht ab. Lass ein Feld leer, um den Wert zu entfernen und zum Standard zurückzukehren. Für einen Ordner ohne `index.md` legt der Editor eine an.
+
+## Versionen und Sprachen
+
+Die Kopfzeile zeigt, welche Version und Sprache du bearbeitest.
+
+| Taste | Aktion |
+|-------|--------|
+| <kbd>v</kbd> | Zur nächsten Version wechseln |
+| <kbd>V</kbd> | Die aktuelle Dokumentation als neue Version speichern, siehe [Versionen](../versions-and-languages/versions.md) |
+| <kbd>l</kbd> | Zur nächsten Sprache wechseln |
+| <kbd>c</kbd> | Eine Übersetzung des gewählten Eintrags beginnen: kopiert das Original nach `*.de.md` und so weiter |
+
+In einer anderen Sprache sind Seiten ohne Übersetzung als **untranslated** markiert. Setzt du ein Feld einer solchen Seite, legt der Editor die Übersetzung zuerst aus dem Original an. Die Reihenfolge ist in jeder Sprache gleich; du änderst sie deshalb in der Standardsprache.
 
 ## Einstellungen
 
-Der Reiter **Settings** listet die Einstellungen der `clay.yaml`: Seite, Navigationsleiste und Startseite. Wähle eine aus und drück <kbd>⏎</kbd>, um sie zu ändern. Links der Navigationsleiste fügst du mit **+ Add link** hinzu und entfernst sie mit <kbd>d</kbd>.
+Der Reiter **Settings** listet die Einstellungen der `clay.yaml`. Wähle eine aus und drück <kbd>⏎</kbd>, um sie zu ändern. Einstellungen mit einem Wert pro Sprache bearbeitest du in der Sprache, die die Kopfzeile zeigt. Links der Navigationsleiste fügst du mit **+ Add link** hinzu und entfernst sie mit <kbd>d</kbd>.
 
-Der Editor selbst ist englisch.
-
-## Was er schreibt
-
-| Änderung | Geschrieben in |
-|----------|----------------|
-| Titel, Icon, Reihenfolge einer Seite | Das Front Matter der Seite |
-| Name, Icon, Reihenfolge eines Ordners | `dir-meta.yaml` |
-| Einstellungen | `clay.yaml` |
-
-Clay ändert nur die Werte, die du bearbeitet hast. Kommentare, Anführungszeichen, die Reihenfolge der Schlüssel und der Rest jeder Datei bleiben, wie sie waren; der Diff in Git zeigt also genau deine Änderung.
+Clay ändert nur die Werte, die du bearbeitest. Kommentare, Anführungszeichen, die Reihenfolge der Schlüssel und der Rest jeder Datei bleiben, wie sie waren; der Diff in Git zeigt also genau deine Änderung.
 
 > [!TIP]
-> Lass `npx clay dev` in einem zweiten Terminal laufen: Die Seite lädt bei jedem Speichern im Editor neu.
-
-> [!NOTE]
-> Auf einer [mehrsprachigen Seite](../versions-and-languages/translations.md) arbeitet der Editor mit der Standardsprache. Titel von Übersetzungen stehen in den übersetzten Dateien; Ordnernamen, die pro Sprache angegeben sind, behalten ihre anderen Sprachen.
+> Lass `npx clay dev` in einem zweiten Terminal laufen: Die Seite lädt bei jeder Änderung im Editor neu.

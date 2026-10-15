@@ -5,7 +5,7 @@ siteURL: "https://clay-doc.github.io"
 editURL: "https://github.com/clay-doc/clay-example-repo/edit/main/docs/"
 # The real kit ID comes from the CLAY_FONTAWESOME_KIT secret in CI
 fontawesomeKit: "set-in-ci"
-version: "2.1"
+version: "3.0"
 languages: ["en", "de"]
 navbar:
   logo: "logo.svg"
@@ -27,12 +27,4 @@ navbar:
         de: "Quelltext dieser Seite"
       icon: "fa-solid fa-code"
       link: "https://github.com/clay-doc/clay-example-repo"
-index:
-  title:
-    en: "Clay Documentation"
-    de: "Clay-Dokumentation"
-  description:
-    en: "Turn a folder of Markdown files into a fast, searchable documentation website. Everything you need to write, organize and publish docs with Clay."
-    de: "Mach aus einem Ordner voller Markdown-Dateien eine schnelle, durchsuchbare Dokumentationsseite. Alles, was du zum Schreiben, Ordnen und Veröffentlichen mit Clay brauchst."
-  icon: "fa-solid fa-book-open"
 lang: en

@@ -16,7 +16,7 @@ Clay reads [GitHub Flavored Markdown](https://github.github.com/gfm/), the Markd
 ### A subsection
 ```
 
-`#` is the page heading; use it once per page. `##` and `###` headings appear in the table of contents and become search results of their own. Every heading gets an anchor, built like GitHub builds them, so you can link to a section: the heading "Line breaks" below is reachable as [`#line-breaks`](#line-breaks).
+`#` is the page heading; use it once per page. `##` and `###` headings appear in the table of contents and become search results of their own. Every heading gets an anchor, built like GitHub builds them, so you can link to a section: the heading "Line breaks" below is reachable as [`#line-breaks`](#line-breaks). Hover a section heading, and a `#` link to it appears on its left, ready to copy.
 
 ## Emphasis
 

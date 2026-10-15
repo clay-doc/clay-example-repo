@@ -40,7 +40,7 @@ In GitLab CI setzt du `GIT_DEPTH: 0`.
 
 ## Änderungen erscheinen nicht in clay dev
 
-`clay dev` lädt den Browser neu, wenn sich eine Seite, ein Bild, die `clay.yaml` oder die `dir-meta.yaml` ändert. Passiert nichts, prüfe, ob du die Dateien des Projekts bearbeitest, in dem `clay dev` gestartet wurde, und sieh in seiner Ausgabe nach Fehlern.
+`clay dev` lädt den Browser neu, wenn sich eine Seite, ein Bild oder die `clay.yaml` ändert. Passiert nichts, prüfe, ob du die Dateien des Projekts bearbeitest, in dem `clay dev` gestartet wurde, und sieh in seiner Ausgabe nach Fehlern.
 
 ## Der Port ist belegt
 

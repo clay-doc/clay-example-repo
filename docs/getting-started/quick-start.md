@@ -49,7 +49,7 @@ The part between the `---` lines is front matter. It is optional; without it, Cl
 npx clay dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). The landing page lists your page; click it to read it. Edit the Markdown file and save: the browser reloads with your change.
+Open [http://localhost:3000](http://localhost:3000). The start page lists your page; click it to read it. Edit the Markdown file and save: the browser reloads with your change.
 
 ## 5. Add structure
 
@@ -61,13 +61,21 @@ Pages in a folder become a section in the navigation. Create `docs/guides/setup.
 How to set up My Project.
 ```
 
-The sidebar now shows a **Guides** section. To give the folder another name and an icon, add `dir-meta.yaml` next to `clay.yaml`:
+The sidebar now shows a **Guides** section. To give the folder another name, an icon and an introduction of its own, add `docs/guides/index.md`:
 
-```yaml
-- path: "guides"
-  name: "User Guides"
-  icon: "fa-solid fa-book"
+```markdown
+---
+title: User Guides
+icon: fa-solid fa-book
+cards: true
+---
+
+# User Guides
+
+Everything you need to use My Project, step by step.
 ```
+
+The text becomes the folder's page at `/guides`, with cards of its pages below. In the same way, `docs/index.md` becomes the start page; see [index pages](../organizing/index-pages.md).
 
 ## 6. Build the site
 
@@ -88,6 +96,6 @@ That's it: `publish/public` is ready to upload. [GitHub Pages](../deployment/git
 
 ## Where to go from here
 
-- Give the landing page a title and description: [landing page](../organizing/landing-page.md).
+- Write the start page: [index pages](../organizing/index-pages.md).
 - Order pages and folders: [navigation](../organizing/navigation.md).
 - See every setting: [clay.yaml](../configuration/clay-yaml.md).

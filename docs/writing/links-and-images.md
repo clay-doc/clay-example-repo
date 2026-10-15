@@ -19,7 +19,7 @@ Links in Clay work like links between files on GitHub: you link to the Markdown 
 
 [Installation](../getting-started/installation.md), [Alerts](alerts.md), [Code blocks](./code-blocks.md)
 
-Clay resolves the path relative to the current page, drops the `.md` and turns it into a link that keeps the site's [base URL](../configuration/clay-yaml.md). Links to folders work too: [the configuration section](../configuration/).
+Clay resolves the path relative to the current page, drops the `.md` and turns it into a link that keeps the site's [base URL](../configuration/clay-yaml.md). Links to folders work too, and lead to the folder's page: [the configuration section](../configuration/) or [the configuration section](../configuration/index.md).
 
 Links starting with `/` start at the root of the docs: `[Pages](/writing/pages.md)` links to `docs/writing/pages.md` from anywhere.
 

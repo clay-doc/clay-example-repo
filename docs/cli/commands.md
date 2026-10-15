@@ -29,7 +29,7 @@ Run it with `npx clay …` in a project that has Clay installed, or through scri
 npx clay dev
 ```
 
-Starts a development server at [http://localhost:3000](http://localhost:3000). It renders each page when you open it and reloads the browser whenever you change a page, an image, `clay.yaml` or `dir-meta.yaml`. Use it while writing; it is not meant to be put online.
+Starts a development server at [http://localhost:3000](http://localhost:3000). It renders each page when you open it and reloads the browser whenever you change a page, an image or `clay.yaml`. Use it while writing; it is not meant to be put online.
 
 ## clay build
 
@@ -86,7 +86,7 @@ Run it before you deploy: a page that works in `clay preview` works on the host.
 npx clay edit
 ```
 
-Opens an editor in the terminal for the order, titles and icons of pages and folders, and for the settings in `clay.yaml`. See [clay edit](../organizing/clay-edit.md).
+Opens an editor in the terminal to create, edit, order, rename, move, delete and translate pages and folders, in every version and language, and to edit the settings in `clay.yaml`. See [clay edit](../organizing/clay-edit.md).
 
 ## clay version
 
@@ -94,7 +94,7 @@ Opens an editor in the terminal for the order, titles and icons of pages and fol
 npx clay version 2.x
 ```
 
-Copies `docs/` and `dir-meta.yaml` into `versions/2.x/`, keeping the current state of the docs as an older version. See [versions](../versions-and-languages/versions.md).
+Copies `docs/` into `docs-archive/2.x/`, keeping the current state of the docs as an older version. In `clay edit`, <kbd>V</kbd> does the same. See [versions](../versions-and-languages/versions.md).
 
 ## Options
 

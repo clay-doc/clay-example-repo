@@ -28,7 +28,7 @@ Führe ihn mit `npx clay …` in einem Projekt aus, in dem Clay installiert ist,
 npx clay dev
 ```
 
-Startet einen Entwicklungsserver unter [http://localhost:3000](http://localhost:3000). Er rendert jede Seite beim Öffnen und lädt den Browser neu, sobald du eine Seite, ein Bild, die `clay.yaml` oder die `dir-meta.yaml` änderst. Nutze ihn beim Schreiben; er ist nicht dafür gedacht, online gestellt zu werden.
+Startet einen Entwicklungsserver unter [http://localhost:3000](http://localhost:3000). Er rendert jede Seite beim Öffnen und lädt den Browser neu, sobald du eine Seite, ein Bild oder die `clay.yaml` änderst. Nutze ihn beim Schreiben; er ist nicht dafür gedacht, online gestellt zu werden.
 
 ## clay build
 
@@ -85,7 +85,7 @@ Führe ihn vor dem Veröffentlichen aus: Eine Seite, die in `clay preview` funkt
 npx clay edit
 ```
 
-Öffnet einen Editor im Terminal für Reihenfolge, Titel und Icons von Seiten und Ordnern sowie die Einstellungen in der `clay.yaml`. Siehe [clay edit](../organizing/clay-edit.md).
+Öffnet einen Editor im Terminal, um Seiten und Ordner anzulegen, zu bearbeiten, zu ordnen, umzubenennen, zu verschieben, zu löschen und zu übersetzen, in jeder Version und Sprache, und um die Einstellungen in der `clay.yaml` zu bearbeiten. Siehe [clay edit](../organizing/clay-edit.md).
 
 ## clay version
 
@@ -93,7 +93,7 @@ npx clay edit
 npx clay version 2.x
 ```
 
-Kopiert `docs/` und die `dir-meta.yaml` nach `versions/2.x/` und hält den aktuellen Stand der Dokumentation so als ältere Version fest. Siehe [Versionen](../versions-and-languages/versions.md).
+Kopiert `docs/` nach `docs-archive/2.x/` und hält den aktuellen Stand der Dokumentation so als ältere Version fest. Siehe [Versionen](../versions-and-languages/versions.md).
 
 ## Optionen
 

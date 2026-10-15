@@ -33,7 +33,7 @@ Die Beschreibung ist der kurze Text, den Suchmaschinen unter einem Ergebnis zeig
 
 1. `description` im [Front Matter](../writing/pages.md#front-matter) der Seite,
 2. den ersten Absatz der Seite,
-3. `index.description` aus der `clay.yaml`.
+3. die Beschreibung der Startseite, `docs/index.md`.
 
 Sie wird an einer Wortgrenze auf 160 Zeichen gekürzt. Eine gute Beschreibung sagt in ein, zwei Sätzen, welche Frage die Seite beantwortet:
 

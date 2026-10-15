@@ -31,9 +31,9 @@ A Clay project is a folder with a configuration file and your docs:
 
 ```text
 my-project/
-├── clay.yaml        # site title, links, landing page
-├── dir-meta.yaml    # optional: names and icons of folders
+├── clay.yaml        # site title and links
 └── docs/            # your Markdown pages, images and files
+    └── index.md     # optional: the start page
 ```
 
 You work with three commands:

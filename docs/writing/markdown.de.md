@@ -15,7 +15,7 @@ Clay liest [GitHub Flavored Markdown](https://github.github.com/gfm/), das Markd
 ### Ein Unterabschnitt
 ```
 
-`#` ist die Überschrift der Seite; nutze sie einmal pro Seite. `##`- und `###`-Überschriften erscheinen im Inhaltsverzeichnis und werden zu eigenen Suchergebnissen. Jede Überschrift bekommt einen Anker, gebildet wie auf GitHub, damit du auf einen Abschnitt verlinken kannst: Die Überschrift „Zeilenumbrüche" weiter unten erreichst du über [`#zeilenumbrüche`](#zeilenumbrüche).
+`#` ist die Überschrift der Seite; nutze sie einmal pro Seite. `##`- und `###`-Überschriften erscheinen im Inhaltsverzeichnis und werden zu eigenen Suchergebnissen. Jede Überschrift bekommt einen Anker, gebildet wie auf GitHub, damit du auf einen Abschnitt verlinken kannst: Die Überschrift „Zeilenumbrüche" weiter unten erreichst du über [`#zeilenumbrüche`](#zeilenumbrüche). Fährst du mit der Maus über eine Abschnittsüberschrift, erscheint links ein `#`-Link darauf, bereit zum Kopieren.
 
 ## Hervorhebungen
 

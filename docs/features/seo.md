@@ -34,7 +34,7 @@ The description is the short text search engines show under a result. Clay takes
 
 1. `description` in the page's [front matter](../writing/pages.md#front-matter),
 2. the first paragraph of the page,
-3. `index.description` from `clay.yaml`.
+3. the description of the start page, `docs/index.md`.
 
 It is cut to 160 characters at a word boundary. A good description says in one or two sentences what the page answers:
 

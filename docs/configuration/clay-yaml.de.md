@@ -34,15 +34,6 @@ navbar:
       icon: "fa-solid fa-list"
       link: "https://github.com/meine-org/mein-projekt/releases"
 
-index:
-  title:
-    de: "Willkommen bei Mein Projekt"
-    en: "Welcome to My Project"
-  description:
-    de: "Alles, was du wissen musst."
-    en: "Everything you need to know."
-  icon: "fa-solid fa-rocket"
-
 messages:
   de:
     search: "Durchsuchen"
@@ -79,7 +70,7 @@ Mit `editURL` zeigt jede Seite einen Link **Diese Seite bearbeiten**. Lass ihn a
 editURL: "https://github.com/meine-org/mein-projekt/edit/main/docs/"
 ```
 
-Die Seite `docs/guides/setup.md` verlinkt dann auf `…/edit/main/docs/guides/setup.md`. Das funktioniert mit GitHub, GitLab, Gitea und jedem Hoster mit ähnlichem URL-Schema. Endet die URL auf `docs/`, verlinken Seiten [älterer Versionen](../versions-and-languages/versions.md) in `versions/<name>/docs/`.
+Die Seite `docs/guides/setup.md` verlinkt dann auf `…/edit/main/docs/guides/setup.md`. Das funktioniert mit GitHub, GitLab, Gitea und jedem Hoster mit ähnlichem URL-Schema. Endet die URL auf `docs/`, verlinken Seiten [älterer Versionen](../versions-and-languages/versions.md) nach `docs-archive/<name>/`.
 
 ## Navigationsleiste
 
@@ -93,13 +84,7 @@ Logo und Favicon können Dateien im Projektordner sein (Clay kopiert sie in die 
 
 ## Startseite
 
-| Einstellung | Standard | Zweck |
-|-------------|----------|-------|
-| `index.title` | `title` | Überschrift der Startseite |
-| `index.description` | keine | Text darunter; auch die Standardbeschreibung für Suchmaschinen |
-| `index.icon` | keins | Icon vor der Überschrift |
-
-Siehe [Startseite](../organizing/landing-page.md).
+Die Startseite wird hier nicht eingestellt: Sie ist `docs/index.md`, eine Markdown-Seite mit optionalen Kacheln und einer großen Kopfzeile. Siehe [Indexseiten](../organizing/index-pages.md).
 
 ## Versionen und Sprachen
 
@@ -132,7 +117,8 @@ Clay prüft die `clay.yaml` bei jedem Build und warnt vor:
 
 - unbekannten Einstellungen, meist Tippfehlern: `clay.yaml: unknown key "navbar.lgo" is ignored (typo?)`,
 - einem fehlenden `title`,
-- `langs`, einer Einstellung aus Clay 1, die nicht mehr nötig ist.
+- `langs`, einer Einstellung aus Clay 1, die nicht mehr nötig ist,
+- `index`, `dir-meta.yaml` und `versions/` aus Clay 2, siehe [Umstieg auf Clay 3](../guides/upgrading-to-clay-3.md).
 
 Mit `--strict` lassen diese Warnungen den Build scheitern. Siehe [Build-Prüfungen](../cli/build-checks.md).
 

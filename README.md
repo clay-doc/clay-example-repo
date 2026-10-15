@@ -30,19 +30,19 @@ translations, build checks and the GitHub Pages deployment.
 ```text
 .
 ├── docs/                          # The pages, one Markdown file each
+│   ├── index.md                   # The start page
 │   ├── introduction.md
 │   ├── introduction.de.md         # German translation, next to the original
-│   ├── getting-started/           # Installation, quick start, project structure
+│   ├── getting-started/           # index.md (the section's page), installation, quick start, …
 │   ├── writing/                   # Pages, Markdown, code blocks, alerts, links, HTML
-│   ├── organizing/                # Navigation, folders, landing page, clay edit
-│   ├── configuration/             # clay.yaml, dir-meta.yaml, environment variables
+│   ├── organizing/                # Navigation, folders, index pages, clay edit
+│   ├── configuration/             # clay.yaml, front matter, environment variables
 │   ├── features/                  # Search, SEO, page details, themes and icons
 │   ├── versions-and-languages/    # Versions and translations
 │   ├── cli/                       # Commands and build checks
 │   ├── deployment/                # GitHub Pages and other hosts
-│   └── guides/                    # Migrating from Clay 1, troubleshooting
+│   └── guides/                    # Upgrading to Clay 3, migrating from Clay 1, troubleshooting
 ├── clay.yaml                      # Site settings, with values per language
-├── dir-meta.yaml                  # Folder names (per language), icons and order
 ├── logo.svg                       # Logo and favicon
 ├── package.json                   # Clay as a dev dependency
 └── .github/
