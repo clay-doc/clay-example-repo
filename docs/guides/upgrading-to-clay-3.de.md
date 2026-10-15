@@ -43,7 +43,7 @@ Eine `index.md` nur mit Front Matter benennt bloß ihren Ordner. Schreib Text da
 
 ## 3. Die Startseite: index in der clay.yaml → docs/index.md
 
-Der Abschnitt `index` der `clay.yaml` wird zu `docs/index.md`. Für dasselbe Aussehen wie bisher, eine große Kopfzeile und Kacheln der Seiten der obersten Ebene, setzt du `hero` und `cards`:
+Der Abschnitt `index` der `clay.yaml` wird zu `docs/index.md`. Für ein ähnliches Aussehen, eine große Kopfzeile und darunter die Seiten der obersten Ebene, setzt du `hero` und `list`:
 
 `clay.yaml` (Clay 2):
 
@@ -62,7 +62,7 @@ title: Willkommen bei Mein Projekt
 description: Alles, was du wissen musst.
 icon: fa-solid fa-rocket
 hero: true
-cards: true
+list: true
 ---
 ```
 

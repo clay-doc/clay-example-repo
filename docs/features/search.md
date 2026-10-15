@@ -19,7 +19,7 @@ Every Clay site has a full-text search, with nothing to set up and no external s
 | <kbd>⏎</kbd> | Open the selected result |
 | <kbd>Esc</kbd> | Close the search |
 
-The search field in the navbar opens it too; on phones, the magnifying glass does.
+The magnifying glass in the navbar opens it too.
 
 ## What is found
 

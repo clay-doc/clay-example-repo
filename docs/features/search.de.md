@@ -18,7 +18,7 @@ Jede Clay-Seite hat eine Volltextsuche, ohne Einrichtung und ohne externen Diens
 | <kbd>⏎</kbd> | Das gewählte Ergebnis öffnen |
 | <kbd>Esc</kbd> | Suche schließen |
 
-Auch das Suchfeld in der Navigationsleiste öffnet sie, auf Smartphones die Lupe.
+Auch die Lupe in der Navigationsleiste öffnet sie.
 
 ## Was gefunden wird
 

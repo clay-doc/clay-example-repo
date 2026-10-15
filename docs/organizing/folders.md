@@ -38,7 +38,7 @@ Without an `index.md`, a folder is named after its folder name: `getting-started
 
 ## A page for the folder
 
-When `index.md` has text below its front matter, that text is the folder's page, shown when readers open the folder at its URL (`/guides`). An `index.md` with only front matter just names the folder; its page then shows cards of the pages in it. See [index pages](index-pages.md).
+When `index.md` has text below its front matter, that text is the folder's page, shown when readers open the folder at its URL (`/guides`). An `index.md` with only front matter just names the folder; its page then lists the pages in it. See [index pages](index-pages.md).
 
 ## Folders in other languages
 

@@ -31,6 +31,22 @@ npx clay dev
 
 Starts a development server at [http://localhost:3000](http://localhost:3000). It renders each page when you open it and reloads the browser whenever you change a page, an image or `clay.yaml`. Use it while writing; it is not meant to be put online.
 
+While it runs, the terminal shows the address, warnings such as broken links, and each page it reloads:
+
+```text
+┌  Clay 3.1.0 · dev
+│
+●  Loaded 40 pages from docs  languages de (30/30 translated) · 52ms
+│
+●  Started dev server  1.1s
+│  ➜ Local:   http://localhost:3000/
+│  ➜ Network: use --host to expose
+│
+│  ↻ Reloaded docs/writing/pages.md  10:24:31
+```
+
+`--verbose` shows the full output of Nuxt instead.
+
 ## clay build
 
 ```bash
@@ -78,7 +94,7 @@ Serves the last build at [http://localhost:4173](http://localhost:4173), behavin
 - `/guides/setup` redirects to `/guides/setup/`,
 - unknown addresses get the `404.html` page with status 404.
 
-Run it before you deploy: a page that works in `clay preview` works on the host.
+Run it before you deploy: a page that works in `clay preview` works on the host. The terminal lists each address that got a 404, which points to a missing file or a wrong `baseURL`.
 
 ## clay edit
 
@@ -105,7 +121,7 @@ Copies `docs/` into `docs-archive/2.x/`, keeping the current state of the docs a
 | `--port <port>` | dev, preview | `3000`, `4173` | Port of the server |
 | `--host` | dev, preview | off | Listen on all network interfaces, for example to open the site on your phone |
 | `--strict` | build | off | Fail on warnings, see [build checks](build-checks.md) |
-| `--verbose` | build | off | Show the full build output instead of the progress |
+| `--verbose` | build, dev | off | Show the full output of Nuxt instead of the progress |
 | `-h`, `--help` | | | Show the help |
 | `-v`, `--version` | | | Show Clay's version |
 

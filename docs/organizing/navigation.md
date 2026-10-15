@@ -60,8 +60,8 @@ The navbar shows where the current page sits: **Guides › Advanced › Tuning**
 
 ## Folder pages
 
-Every folder has a page of its own, at its path: `/guides` for `docs/guides/`. It is the folder's `index.md`, or, without one, the folder's title with a card for every page and subfolder in it. Breadcrumbs and links to a folder lead there. See [index pages](index-pages.md).
+Every folder has a page of its own, at its path: `/guides` for `docs/guides/`. It is the folder's `index.md`, or, without one, the folder's title with a list of the pages and subfolders in it. Breadcrumbs and links to a folder lead there. See [index pages](index-pages.md).
 
 ## Previous and next
 
-At the bottom of each page, links lead to the previous and the next page. They follow the order of the sidebar across folders, including folder pages with text, so readers can go through the docs from start to end like a book.
+At the bottom of each page, links lead to the previous and the next page. They follow the order of the sidebar across folders, including the folders' own pages, so readers can go through the docs from start to end like a book.

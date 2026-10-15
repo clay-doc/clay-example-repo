@@ -43,5 +43,7 @@ fontawesomeKit: "abc123def4"
 
 The ID is the code in the kit's embed URL, `https://kit.fontawesome.com/abc123def4.js`. With a kit, Clay loads the kit instead of the free icons.
 
+Set the kit's technology to **Web Fonts** in its settings on fontawesome.com. Kits set to SVG replace each icon in the page with a drawing, which interferes with how Clay updates pages while readers navigate.
+
 > [!TIP]
 > Kits are tied to your account. Keep the ID out of a public repository by setting it in CI with `CLAY_FONTAWESOME_KIT`, as this site does; see [environment variables](../configuration/environment-variables.md). A value that is not a kit ID falls back to the free icons.

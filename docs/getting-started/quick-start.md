@@ -67,7 +67,7 @@ The sidebar now shows a **Guides** section. To give the folder another name, an 
 ---
 title: User Guides
 icon: fa-solid fa-book
-cards: true
+list: true
 ---
 
 # User Guides
@@ -75,7 +75,7 @@ cards: true
 Everything you need to use My Project, step by step.
 ```
 
-The text becomes the folder's page at `/guides`, with cards of its pages below. In the same way, `docs/index.md` becomes the start page; see [index pages](../organizing/index-pages.md).
+The text becomes the folder's page at `/guides`, with a list of its pages below. In the same way, `docs/index.md` becomes the start page; see [index pages](../organizing/index-pages.md).
 
 ## 6. Build the site
 

@@ -37,7 +37,7 @@ Ohne `index.md` heißt ein Ordner wie sein Ordnername: `getting-started` wird zu
 
 ## Eine Seite für den Ordner
 
-Hat die `index.md` unter ihrem Front Matter Text, ist dieser Text die Seite des Ordners. Sie erscheint, wenn Leser den Ordner unter seiner URL öffnen (`/guides`). Eine `index.md` nur mit Front Matter benennt den Ordner bloß; seine Seite zeigt dann Kacheln der Seiten darin. Siehe [Indexseiten](index-pages.md).
+Hat die `index.md` unter ihrem Front Matter Text, ist dieser Text die Seite des Ordners. Sie erscheint, wenn Leser den Ordner unter seiner URL öffnen (`/guides`). Eine `index.md` nur mit Front Matter benennt den Ordner bloß; seine Seite listet dann die Seiten darin. Siehe [Indexseiten](index-pages.md).
 
 ## Ordner in anderen Sprachen
 

@@ -77,14 +77,14 @@ Die Seite `docs/guides/setup.md` verlinkt dann auf `…/edit/main/docs/guides/se
 | Einstellung | Standard | Zweck |
 |-------------|----------|-------|
 | `navbar.logo` | keins | Bild neben dem Titel der Seite |
-| `navbar.source.name`, `.icon`, `.link` | keine | Ein Link als Button, meist zum Repository |
-| `navbar.links` | keine | Weitere Links unter einem Menü **Mehr**; jeder hat `name`, `icon` und `link` |
+| `navbar.source.name`, `.icon`, `.link` | keine | Ein Link, meist zum Repository, als Icon mit dem Namen als Tooltip |
+| `navbar.links` | keine | Weitere Links wie der Quellcode-Link, daneben; jeder hat `name`, `icon` und `link` |
 
 Logo und Favicon können Dateien im Projektordner sein (Clay kopiert sie in die Seite) oder vollständige URLs.
 
 ## Startseite
 
-Die Startseite wird hier nicht eingestellt: Sie ist `docs/index.md`, eine Markdown-Seite mit optionalen Kacheln und einer großen Kopfzeile. Siehe [Indexseiten](../organizing/index-pages.md).
+Die Startseite wird hier nicht eingestellt: Sie ist `docs/index.md`, eine Markdown-Seite mit optionaler Seitenliste und einer großen Kopfzeile. Siehe [Indexseiten](../organizing/index-pages.md).
 
 ## Versionen und Sprachen
 

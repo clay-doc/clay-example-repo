@@ -30,6 +30,22 @@ npx clay dev
 
 Startet einen Entwicklungsserver unter [http://localhost:3000](http://localhost:3000). Er rendert jede Seite beim Öffnen und lädt den Browser neu, sobald du eine Seite, ein Bild oder die `clay.yaml` änderst. Nutze ihn beim Schreiben; er ist nicht dafür gedacht, online gestellt zu werden.
 
+Während er läuft, zeigt das Terminal die Adresse, Warnungen wie kaputte Links und jede Seite, die er neu lädt:
+
+```text
+┌  Clay 3.1.0 · dev
+│
+●  Loaded 40 pages from docs  languages de (30/30 translated) · 52ms
+│
+●  Started dev server  1.1s
+│  ➜ Local:   http://localhost:3000/
+│  ➜ Network: use --host to expose
+│
+│  ↻ Reloaded docs/writing/pages.md  10:24:31
+```
+
+`--verbose` zeigt stattdessen die vollständige Ausgabe von Nuxt.
+
 ## clay build
 
 ```bash
@@ -77,7 +93,7 @@ Liefert den letzten Build unter [http://localhost:4173](http://localhost:4173) a
 - `/guides/setup` leitet auf `/guides/setup/` weiter,
 - unbekannte Adressen bekommen die Seite `404.html` mit Status 404.
 
-Führe ihn vor dem Veröffentlichen aus: Eine Seite, die in `clay preview` funktioniert, funktioniert auch beim Hoster.
+Führe ihn vor dem Veröffentlichen aus: Eine Seite, die in `clay preview` funktioniert, funktioniert auch beim Hoster. Das Terminal listet jede Adresse, die eine 404 bekam; das deutet auf eine fehlende Datei oder eine falsche `baseURL` hin.
 
 ## clay edit
 
@@ -104,7 +120,7 @@ Kopiert `docs/` nach `docs-archive/2.x/` und hält den aktuellen Stand der Dokum
 | `--port <port>` | dev, preview | `3000`, `4173` | Port des Servers |
 | `--host` | dev, preview | aus | Auf allen Netzwerkschnittstellen lauschen, etwa um die Seite auf dem Smartphone zu öffnen |
 | `--strict` | build | aus | Bei Warnungen scheitern, siehe [Build-Prüfungen](build-checks.md) |
-| `--verbose` | build | aus | Die vollständige Ausgabe des Builds statt des Fortschritts zeigen |
+| `--verbose` | build, dev | aus | Die vollständige Ausgabe von Nuxt statt des Fortschritts zeigen |
 | `-h`, `--help` | | | Die Hilfe zeigen |
 | `-v`, `--version` | | | Clays Version zeigen |
 

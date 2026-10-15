@@ -66,7 +66,7 @@ Die Seitenleiste zeigt jetzt einen Abschnitt **Guides**. Um dem Ordner einen and
 ---
 title: Anleitungen
 icon: fa-solid fa-book
-cards: true
+list: true
 ---
 
 # Anleitungen
@@ -74,7 +74,7 @@ cards: true
 Alles, was du zum Arbeiten mit Mein Projekt brauchst, Schritt für Schritt.
 ```
 
-Der Text wird zur Seite des Ordners unter `/guides`, mit Kacheln seiner Seiten darunter. Genauso wird `docs/index.md` zur Startseite; siehe [Indexseiten](../organizing/index-pages.md).
+Der Text wird zur Seite des Ordners unter `/guides`, mit einer Liste seiner Seiten darunter. Genauso wird `docs/index.md` zur Startseite; siehe [Indexseiten](../organizing/index-pages.md).
 
 ## 6. Die Seite bauen
 

@@ -14,7 +14,7 @@ Jede Markdown-Datei in `docs/` ist eine Seite. Ihr Pfad bestimmt ihre URL:
 | `docs/guides/setup.md` | `/guides/setup` |
 | `docs/guides/advanced/tuning.md` | `/guides/advanced/tuning` |
 
-Auch Ordner bekommen eine Seite: `/guides` zeigt die Seiten und Ordner in `guides/` als Kacheln. Eine URL, die auf `.md` endet, wie `/guides/setup.md`, leitet zur Seite weiter.
+Auch Ordner bekommen eine Seite: `/guides` zeigt die [index.md](../organizing/index-pages.md) des Ordners, sonst eine Liste der Seiten und Ordner in `guides/`. Eine URL, die auf `.md` endet, wie `/guides/setup.md`, leitet zur Seite weiter.
 
 > [!TIP]
 > Dateinamen landen in URLs. Nimm kleingeschriebene Wörter mit Bindestrichen (`getting-started.md`) und benenne veröffentlichte Seiten möglichst nicht um: Links auf die alte URL funktionieren sonst nicht mehr.
@@ -50,7 +50,7 @@ order: 2
 | `icon` | `fa-solid fa-file` | [Font-Awesome](../features/themes-and-icons.md)-Icon in Seitenleiste und Brotkrumen |
 | `description` | erster Absatz | Zusammenfassung für Suchmaschinen und Link-Vorschauen, siehe [SEO](../features/seo.md) |
 | `order` | keiner | Position zwischen den Seiten und Ordnern daneben, siehe [Navigation](../organizing/navigation.md) |
-| `cards`, `hero` | `false` | Nur für `index.md`: Kacheln und eine große Kopfzeile, siehe [Indexseiten](../organizing/index-pages.md) |
+| `list`, `hero` | `false` | Nur für `index.md`: eine Liste der Seiten des Ordners und eine große Kopfzeile, siehe [Indexseiten](../organizing/index-pages.md) |
 
 Die vollständige Referenz steht auf der Seite [Front Matter](../configuration/front-matter.md). Eine Datei namens `index.md` ist keine eigene Seite: Sie ist die Seite ihres Ordners, siehe [Indexseiten](../organizing/index-pages.md).
 

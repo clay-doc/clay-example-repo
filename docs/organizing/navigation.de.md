@@ -59,8 +59,8 @@ Die Navigationsleiste zeigt, wo die aktuelle Seite liegt: **Anleitungen › Fort
 
 ## Ordnerseiten
 
-Jeder Ordner hat eine eigene Seite unter seinem Pfad: `/guides` für `docs/guides/`. Das ist die `index.md` des Ordners, oder, ohne sie, der Titel des Ordners mit einer Kachel für jede Seite und jeden Unterordner darin. Brotkrumen und Links auf einen Ordner führen dorthin. Siehe [Indexseiten](index-pages.md).
+Jeder Ordner hat eine eigene Seite unter seinem Pfad: `/guides` für `docs/guides/`. Das ist die `index.md` des Ordners, oder, ohne sie, der Titel des Ordners mit einer Liste der Seiten und Unterordner darin. Brotkrumen und Links auf einen Ordner führen dorthin. Siehe [Indexseiten](index-pages.md).
 
 ## Vor und zurück
 
-Unten auf jeder Seite führen Links zur vorherigen und nächsten Seite. Sie folgen der Reihenfolge der Seitenleiste über Ordnergrenzen hinweg, Ordnerseiten mit Text eingeschlossen, sodass man die Dokumentation wie ein Buch von vorne bis hinten lesen kann.
+Unten auf jeder Seite führen Links zur vorherigen und nächsten Seite. Sie folgen der Reihenfolge der Seitenleiste über Ordnergrenzen hinweg, die Seiten der Ordner eingeschlossen, sodass man die Dokumentation wie ein Buch von vorne bis hinten lesen kann.

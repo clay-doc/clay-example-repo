@@ -47,7 +47,7 @@ The **Pages** tab shows the start page (`⌂`), the folders (`▾`) and the page
 | <kbd>Tab</kbd> | Switch to the settings |
 | <kbd>q</kbd> | Quit |
 
-New pages get their title as front matter and as their first heading, and a file name made from the title, which you can change before it is created. New folders get an `index.md` with their title and `cards: true`.
+New pages get their title as front matter and as their first heading, and a file name made from the title, which you can change before it is created. New folders get an `index.md` with their title and `list: true`.
 
 Ordering numbers everything in the folder (`order: 1`, `2`, `3`, …) and writes only the files whose number changed.
 
@@ -59,7 +59,7 @@ Moved setup.md → guides/setup.md · 2 link(s) broke: introduction.md: "setup.m
 
 ## The details
 
-<kbd>⏎</kbd> opens all front matter fields of the selected entry: title, icon, description and order, and for folders and the start page also `cards` and `hero` (see [index pages](index-pages.md)). Select a field and press <kbd>⏎</kbd> to change it; yes/no fields switch with <kbd>⏎</kbd>. <kbd>Esc</kbd> leads back to the list.
+<kbd>⏎</kbd> opens all front matter fields of the selected entry: title, icon, description and order, and for folders and the start page also `list` and `hero` (see [index pages](index-pages.md)). Select a field and press <kbd>⏎</kbd> to change it; yes/no fields switch with <kbd>⏎</kbd>. <kbd>Esc</kbd> leads back to the list.
 
 In a text field, <kbd>⏎</kbd> applies and <kbd>Esc</kbd> cancels. Leave a field empty to remove the value and go back to the default. For a folder without an `index.md`, the editor creates one.
 

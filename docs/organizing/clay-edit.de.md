@@ -46,7 +46,7 @@ Der Reiter **Pages** zeigt die Startseite (`⌂`), die Ordner (`▾`) und die Se
 | <kbd>Tab</kbd> | Zu den Einstellungen wechseln |
 | <kbd>q</kbd> | Beenden |
 
-Neue Seiten bekommen ihren Titel als Front Matter und als erste Überschrift, und einen Dateinamen aus dem Titel, den du vor dem Anlegen ändern kannst. Neue Ordner bekommen eine `index.md` mit ihrem Titel und `cards: true`.
+Neue Seiten bekommen ihren Titel als Front Matter und als erste Überschrift, und einen Dateinamen aus dem Titel, den du vor dem Anlegen ändern kannst. Neue Ordner bekommen eine `index.md` mit ihrem Titel und `list: true`.
 
 Beim Ordnen nummeriert Clay alles im Ordner durch (`order: 1`, `2`, `3`, …) und schreibt nur die Dateien, deren Nummer sich geändert hat.
 
@@ -58,7 +58,7 @@ Moved setup.md → guides/setup.md · 2 link(s) broke: introduction.md: "setup.m
 
 ## Die Details
 
-<kbd>⏎</kbd> öffnet alle Front-Matter-Felder des gewählten Eintrags: Titel, Icon, Beschreibung und Reihenfolge, für Ordner und die Startseite auch `cards` und `hero` (siehe [Indexseiten](index-pages.md)). Wähle ein Feld und drück <kbd>⏎</kbd>, um es zu ändern; Ja/Nein-Felder schaltest du mit <kbd>⏎</kbd> um. <kbd>Esc</kbd> führt zurück zur Liste.
+<kbd>⏎</kbd> öffnet alle Front-Matter-Felder des gewählten Eintrags: Titel, Icon, Beschreibung und Reihenfolge, für Ordner und die Startseite auch `list` und `hero` (siehe [Indexseiten](index-pages.md)). Wähle ein Feld und drück <kbd>⏎</kbd>, um es zu ändern; Ja/Nein-Felder schaltest du mit <kbd>⏎</kbd> um. <kbd>Esc</kbd> führt zurück zur Liste.
 
 In einem Textfeld übernimmt <kbd>⏎</kbd> die Eingabe, <kbd>Esc</kbd> bricht ab. Lass ein Feld leer, um den Wert zu entfernen und zum Standard zurückzukehren. Für einen Ordner ohne `index.md` legt der Editor eine an.
 

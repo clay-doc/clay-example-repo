@@ -15,7 +15,7 @@ Every Markdown file in `docs/` is a page. The file's path decides its URL:
 | `docs/guides/setup.md` | `/guides/setup` |
 | `docs/guides/advanced/tuning.md` | `/guides/advanced/tuning` |
 
-Folders get a page too: `/guides` shows the pages and folders inside `guides/` as a grid of cards. Opening a URL that ends in `.md`, like `/guides/setup.md`, redirects to the page.
+Folders get a page too: `/guides` shows the folder's [index.md](../organizing/index-pages.md), or else a list of the pages and folders inside `guides/`. Opening a URL that ends in `.md`, like `/guides/setup.md`, redirects to the page.
 
 > [!TIP]
 > File names end up in URLs. Use lowercase words separated by hyphens (`getting-started.md`), and avoid renaming published pages: links to the old URL stop working.
@@ -51,7 +51,7 @@ order: 2
 | `icon` | `fa-solid fa-file` | [Font Awesome](../features/themes-and-icons.md) icon in the sidebar and breadcrumbs |
 | `description` | first paragraph | Summary for search engines and link previews, see [SEO](../features/seo.md) |
 | `order` | none | Position among the pages and folders next to it, see [navigation](../organizing/navigation.md) |
-| `cards`, `hero` | `false` | Only for `index.md`: cards and a large header, see [index pages](../organizing/index-pages.md) |
+| `list`, `hero` | `false` | Only for `index.md`: a list of the folder's pages and a large header, see [index pages](../organizing/index-pages.md) |
 
 The full reference is on the [front matter](../configuration/front-matter.md) page. A file named `index.md` is not a page of its own: it is the page of its folder, see [index pages](../organizing/index-pages.md).
 

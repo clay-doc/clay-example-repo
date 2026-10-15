@@ -78,14 +78,14 @@ The page `docs/guides/setup.md` then links to `…/edit/main/docs/guides/setup.m
 | Setting | Default | Purpose |
 |---------|---------|---------|
 | `navbar.logo` | none | Image next to the site title |
-| `navbar.source.name`, `.icon`, `.link` | none | A link shown as a button, typically to the repository |
-| `navbar.links` | none | More links, under a **More** menu; each has `name`, `icon` and `link` |
+| `navbar.source.name`, `.icon`, `.link` | none | A link, typically to the repository, shown as its icon with the name as tooltip |
+| `navbar.links` | none | More links like the source link, next to it; each has `name`, `icon` and `link` |
 
 Logo and favicon can be files in the project folder (Clay copies them into the site) or full URLs.
 
 ## Start page
 
-The start page is not configured here: it is `docs/index.md`, a Markdown page with optional cards and a large header. See [index pages](../organizing/index-pages.md).
+The start page is not configured here: it is `docs/index.md`, a Markdown page with an optional list of pages and a large header. See [index pages](../organizing/index-pages.md).
 
 ## Versions and languages
 

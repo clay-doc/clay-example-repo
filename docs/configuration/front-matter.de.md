@@ -27,7 +27,7 @@ order: 2
 | `icon` | Text | `fa-solid fa-file`, Ordner `fa-solid fa-folder` | alle | [Font-Awesome](../features/themes-and-icons.md)-Icon |
 | `description` | Text | erster Absatz | alle | Zusammenfassung für Suchmaschinen und Link-Vorschauen, siehe [SEO](../features/seo.md) |
 | `order` | Zahl | keiner | alle | Position zwischen den Einträgen daneben, siehe [Navigation](../organizing/navigation.md) |
-| `cards` | `true` / `false` | `false` | `index.md` | Kacheln der Seiten des Ordners unter dem Text |
+| `list` | `true` / `false` | `false` | `index.md` | Liste mit Links zu den Seiten des Ordners unter dem Text |
 | `hero` | `true` / `false` | `false` | `index.md` | `title`, `icon` und `description` als große, zentrierte Kopfzeile |
 
 ## Regeln

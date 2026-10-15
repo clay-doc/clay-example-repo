@@ -28,7 +28,7 @@ order: 2
 | `icon` | text | `fa-solid fa-file`, folders `fa-solid fa-folder` | all | [Font Awesome](../features/themes-and-icons.md) icon |
 | `description` | text | first paragraph | all | Summary for search engines and link previews, see [SEO](../features/seo.md) |
 | `order` | number | none | all | Position among the entries next to it, see [navigation](../organizing/navigation.md) |
-| `cards` | `true` / `false` | `false` | `index.md` | Cards of the folder's pages below the text |
+| `list` | `true` / `false` | `false` | `index.md` | List of links to the folder's pages below the text |
 | `hero` | `true` / `false` | `false` | `index.md` | `title`, `icon` and `description` as a large centered header |
 
 ## Rules

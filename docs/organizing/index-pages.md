@@ -1,7 +1,7 @@
 ---
 title: Index Pages
 icon: fa-solid fa-flag-checkered
-description: The start page and the page of every folder are Markdown files named index.md, with optional cards and a large header.
+description: The start page and the page of every folder are Markdown files named index.md, with an optional list of pages and a large header.
 order: 3
 ---
 
@@ -17,16 +17,16 @@ Every folder has a page at its URL, and the site has a start page at its root. B
 
 An index page is a page like any other, with a heading, text, links, code and alerts. Its front matter also names the folder, see [folders](folders.md).
 
-## Cards and a large header
+## A list of pages and a large header
 
 Two front matter fields lay out index pages:
 
 | Field | Effect |
 |-------|--------|
-| `cards: true` | Shows a card for each page and subfolder below the text |
+| `list: true` | Lists the folder's pages and subfolders below the text, under the heading "In this section" |
 | `hero: true` | Shows `title`, `icon` and `description` as a large, centered header above the text |
 
-The start page of this site uses both:
+The start page of this site uses both fields:
 
 ```markdown
 ---
@@ -34,7 +34,7 @@ title: Clay Documentation
 icon: fa-solid fa-book-open
 description: Turn a folder of Markdown files into a fast, searchable documentation website.
 hero: true
-cards: true
+list: true
 ---
 
 New to Clay? Read the [introduction](introduction.md) …
@@ -44,9 +44,9 @@ With `hero: true`, leave out the `# heading`: the header shows the title already
 
 ## Folders without an index page
 
-A folder without an `index.md`, or one whose `index.md` has no text, gets a page made of its title, its icon and the cards of its pages. The site works without any `index.md`; add them where a folder deserves an introduction.
+A folder without an `index.md`, or one whose `index.md` has no text, gets a page made of its title, its icon and the list of its pages. The site works without any `index.md`; add them where a folder deserves an introduction.
 
-Without `docs/index.md`, the start page shows the site title and cards of the top-level pages and folders.
+Without `docs/index.md`, the start page shows the site title and a list of the top-level pages and folders.
 
 ## In the sidebar
 

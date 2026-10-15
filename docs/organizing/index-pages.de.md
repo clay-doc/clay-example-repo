@@ -1,7 +1,7 @@
 ---
 title: Indexseiten
 icon: fa-solid fa-flag-checkered
-description: Die Startseite und die Seite jedes Ordners sind Markdown-Dateien namens index.md, mit optionalen Kacheln und einer großen Kopfzeile.
+description: Die Startseite und die Seite jedes Ordners sind Markdown-Dateien namens index.md, mit optionaler Seitenliste und einer großen Kopfzeile.
 ---
 
 # Indexseiten
@@ -16,16 +16,16 @@ Jeder Ordner hat unter seiner URL eine Seite, und die Seite hat an ihrer Wurzel 
 
 Eine Indexseite ist eine Seite wie jede andere, mit Überschrift, Text, Links, Code und Hinweisen. Ihr Front Matter benennt außerdem den Ordner, siehe [Ordner](folders.md).
 
-## Kacheln und eine große Kopfzeile
+## Eine Seitenliste und eine große Kopfzeile
 
 Zwei Felder im Front Matter gestalten Indexseiten:
 
 | Feld | Wirkung |
 |------|---------|
-| `cards: true` | Zeigt unter dem Text eine Kachel für jede Seite und jeden Unterordner |
+| `list: true` | Listet unter dem Text die Seiten und Unterordner des Ordners, unter der Überschrift „In diesem Abschnitt“ |
 | `hero: true` | Zeigt `title`, `icon` und `description` als große, zentrierte Kopfzeile über dem Text |
 
-Die Startseite dieser Seite nutzt beides:
+Die Startseite dieser Seite nutzt beide Felder:
 
 ```markdown
 ---
@@ -33,7 +33,7 @@ title: Clay-Dokumentation
 icon: fa-solid fa-book-open
 description: Mach aus einem Ordner voller Markdown-Dateien eine schnelle, durchsuchbare Dokumentationsseite.
 hero: true
-cards: true
+list: true
 ---
 
 Neu bei Clay? Lies die [Einführung](introduction.md) …
@@ -43,9 +43,9 @@ Mit `hero: true` lässt du die `# Überschrift` weg: Die Kopfzeile zeigt den Tit
 
 ## Ordner ohne Indexseite
 
-Ein Ordner ohne `index.md`, oder einer, dessen `index.md` keinen Text hat, bekommt eine Seite aus seinem Titel, seinem Icon und den Kacheln seiner Seiten. Die Seite funktioniert ganz ohne `index.md`; ergänze sie dort, wo ein Ordner eine Einleitung verdient.
+Ein Ordner ohne `index.md`, oder einer, dessen `index.md` keinen Text hat, bekommt eine Seite aus seinem Titel, seinem Icon und der Liste seiner Seiten. Die Seite funktioniert ganz ohne `index.md`; ergänze sie dort, wo ein Ordner eine Einleitung verdient.
 
-Ohne `docs/index.md` zeigt die Startseite den Titel der Seite und Kacheln der Seiten und Ordner der obersten Ebene.
+Ohne `docs/index.md` zeigt die Startseite den Titel der Seite und eine Liste der Seiten und Ordner der obersten Ebene.
 
 ## In der Seitenleiste
 

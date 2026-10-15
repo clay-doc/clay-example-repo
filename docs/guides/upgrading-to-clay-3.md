@@ -44,7 +44,7 @@ An `index.md` with only front matter just names its folder. Add text below it, a
 
 ## 3. The start page: index in clay.yaml → docs/index.md
 
-The `index` section of `clay.yaml` becomes `docs/index.md`. For the same look as before, a large header and cards of the top-level pages, set `hero` and `cards`:
+The `index` section of `clay.yaml` becomes `docs/index.md`. For a similar look, a large header and the top-level pages below it, set `hero` and `list`:
 
 `clay.yaml` (Clay 2):
 
@@ -63,7 +63,7 @@ title: Welcome to My Project
 description: Everything you need to know.
 icon: fa-solid fa-rocket
 hero: true
-cards: true
+list: true
 ---
 ```
 
