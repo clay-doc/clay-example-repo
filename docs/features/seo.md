@@ -67,7 +67,7 @@ socialImages: false
 ```
 
 - **Drawing takes a moment**, about a second for every ten pages. Clay keeps the images in `node_modules/.cache` and only draws them again when a page's title or description changes.
-- **The font has Latin, Greek and Cyrillic letters.** Pages in other scripts, like Japanese or Chinese, get no image rather than one with empty boxes.
+- **Chinese, Japanese and Korean** need fonts too large to ship with Clay. The build fetches just the letters the images use from Google Fonts, once, and keeps them in the cache. Pages in other scripts, like Arabic or Thai, and titles with emoji get no image rather than one with empty boxes.
 
 ## Sitemap and robots.txt
 

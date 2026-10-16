@@ -18,6 +18,7 @@ Every page is a Markdown file in `docs/`, written in **Clay Flavored Markdown** 
 - [Links & Images](links-and-images.md)
 - [HTML](html.md)
 - [Snippets & Variables](snippets-and-variables.md)
+- [Generated Docs](generated-docs.md)
 :::
 
 ## A page at a glance

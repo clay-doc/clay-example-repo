@@ -115,6 +115,15 @@ variables:
   node: "20.19"
 ```
 
+## Generate
+
+`generate` führt vor jedem Build Befehle aus, die Seiten in `docs/` schreiben, etwa eine API-Referenz aus deinem Code. Siehe [generierte Dokumentation](../writing/generated-docs.md).
+
+```yaml
+generate:
+  - npx typedoc --plugin typedoc-plugin-markdown --entryFileName index --out docs/api src/index.ts
+```
+
 ## Head
 
 `head` fügt jeder Seite Tags im `<head>` hinzu: das Skript eines Chat-Widgets, eine Bestätigung für die Google Search Console, eine Schrift. Jeder Eintrag sind die Attribute des Tags; den Code eines Skripts nimmt `code` auf.

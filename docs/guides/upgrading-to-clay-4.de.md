@@ -93,6 +93,7 @@ Der Umstieg ist fertig, wenn `npx clay build --strict` durchläuft.
   Jede Seite bekommt ein Bild für Link-Vorschauen, und Seiten unter einem Pfad die Adresse ihrer Sitemap.
 :::
 
+- `generate` in der `clay.yaml` führt vor jedem Build Werkzeuge aus, die Seiten schreiben, etwa eine API-Referenz aus dem Code, siehe [generierte Dokumentation](../writing/generated-docs.md).
 - `head` in der `clay.yaml` fügt jeder Seite Skripte und Meta-Tags hinzu, siehe [clay.yaml](../configuration/clay-yaml.md#head).
 - Videos und Einbettungen von YouTube, Vimeo, Figma und mehr, siehe [HTML](../writing/html.md#videos-und-einbettungen).
 - Auf schmaleren Bildschirmen klappt das Inhaltsverzeichnis einer Seite über ihr auf.

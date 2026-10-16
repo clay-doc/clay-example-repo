@@ -94,6 +94,7 @@ The upgrade is done when `npx clay build --strict` passes.
   Every page gets a picture for link previews, and sites under a path the address of their sitemap.
 :::
 
+- `generate` in `clay.yaml` runs tools that write pages before every build, like an API reference from code, see [generated docs](../writing/generated-docs.md).
 - `head` in `clay.yaml` adds scripts and meta tags to every page, see [clay.yaml](../configuration/clay-yaml.md#head).
 - Videos and embeds of YouTube, Vimeo, Figma and more, see [HTML](../writing/html.md#videos-and-embeds).
 - On narrower screens, the contents of a page fold up above it.

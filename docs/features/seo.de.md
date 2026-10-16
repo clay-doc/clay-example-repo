@@ -66,7 +66,7 @@ socialImages: false
 ```
 
 - **Das Zeichnen dauert etwas**, etwa eine Sekunde für zehn Seiten. Clay legt die Bilder in `node_modules/.cache` ab und zeichnet sie nur neu, wenn sich Titel oder Beschreibung einer Seite ändern.
-- **Die Schrift hat lateinische, griechische und kyrillische Buchstaben.** Seiten in anderen Schriften, etwa Japanisch oder Chinesisch, bekommen kein Bild statt eines mit leeren Kästchen.
+- **Chinesisch, Japanisch und Koreanisch** brauchen Schriften, die zu groß sind, um sie mit Clay auszuliefern. Der Build holt nur die Buchstaben, die die Bilder brauchen, einmal von Google Fonts und legt sie im Cache ab. Seiten in anderen Schriften, etwa Arabisch oder Thai, und Titel mit Emoji bekommen kein Bild statt eines mit leeren Kästchen.
 
 ## Sitemap und robots.txt
 
