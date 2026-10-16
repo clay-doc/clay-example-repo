@@ -65,8 +65,10 @@ Clay zeichnet sie beim Bauen der Seite, eines für jede Seite, unter `/_clay/soc
 socialImages: false
 ```
 
-- **Das Zeichnen dauert etwas**, etwa eine Sekunde für zehn Seiten. Clay legt die Bilder in `node_modules/.cache` ab und zeichnet sie nur neu, wenn sich Titel oder Beschreibung einer Seite ändern.
-- **Chinesisch, Japanisch und Koreanisch** brauchen Schriften, die zu groß sind, um sie mit Clay auszuliefern. Der Build holt nur die Buchstaben, die die Bilder brauchen, einmal von Google Fonts und legt sie im Cache ab. Seiten in anderen Schriften, etwa Arabisch oder Thai, und Titel mit Emoji bekommen kein Bild statt eines mit leeren Kästchen.
+- **Jede Schrift, und Emoji.** Clay bringt die Schrift für lateinische, griechische und kyrillische Buchstaben mit. Für andere Schriften, etwa Arabisch, Hebräisch, Hindi, Thai, Chinesisch, Japanisch oder Koreanisch, und für Emoji holt der Build nur die Buchstaben, die die Bilder brauchen, einmal von Google Fonts und legt sie in `node_modules/.cache` ab; Leser kontaktieren Google nie. Seiten, die von rechts nach links geschrieben werden, bekommen ein gespiegeltes Bild.
+- **Ohne Verbindung** bleiben Texte, deren Schriften nicht geladen werden konnten, von ihren Bildern weg, und der nächste Build versucht es erneut.
+- **Das Zeichnen geht schnell**, Dutzende Seiten pro Sekunde, und Clay legt die Bilder im Cache ab: Es zeichnet sie nur neu, wenn sich Titel oder Beschreibung einer Seite ändern.
+- **Skia zeichnet sie**, die Grafik-Engine von Chrome, über ein Paket, das fertig gebaut für macOS, Linux und Windows kommt. Auf einer Plattform ohne Build davon baut Clay die Seite ohne Vorschaubilder und sagt das.
 
 ## Sitemap und robots.txt
 

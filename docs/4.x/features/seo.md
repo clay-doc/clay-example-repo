@@ -66,8 +66,10 @@ Clay draws them when it builds the site, one for each page, at `/_clay/social/<p
 socialImages: false
 ```
 
-- **Drawing takes a moment**, about a second for every ten pages. Clay keeps the images in `node_modules/.cache` and only draws them again when a page's title or description changes.
-- **Chinese, Japanese and Korean** need fonts too large to ship with Clay. The build fetches just the letters the images use from Google Fonts, once, and keeps them in the cache. Pages in other scripts, like Arabic or Thai, and titles with emoji get no image rather than one with empty boxes.
+- **Every script, and emoji.** Clay brings the font for Latin, Greek and Cyrillic letters. For other scripts, like Arabic, Hebrew, Hindi, Thai, Chinese, Japanese or Korean, and for emoji, the build fetches just the letters the images use from Google Fonts, once, and keeps them in `node_modules/.cache`; readers never contact Google. Pages written from right to left get a mirrored image.
+- **Without a connection**, texts whose fonts could not be fetched are left off their images, and the next build tries again.
+- **Drawing is quick**, dozens of pages a second, and Clay keeps the images in the cache: it only draws them again when a page's title or description changes.
+- **Skia draws them**, the graphics engine of Chrome, through a package that comes ready-built for macOS, Linux and Windows. On a platform it has no build for, Clay builds the site without social images and says so.
 
 ## Sitemap and robots.txt
 
