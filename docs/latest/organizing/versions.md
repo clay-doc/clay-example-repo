@@ -44,6 +44,8 @@ This site works this way: its pages are in `docs/latest/`, the docs of Clay 4 in
 
    This copies `docs/latest/` to `docs/2.x/`. In `clay edit`, <kbd>V</kbd> does the same and switches the editor to the new version.
 
+   A saved version keeps today's text: in the copy, Clay fills in the [variables](../writing/snippets-and-variables.md) and writes out includes of files outside `docs/latest/`, like `config/` or `docs/_snippets/`. When the latest docs move on to a new version number, the old ones keep theirs.
+
 2. **Label the latest docs** in `clay.yaml`. Without `version`, the switcher calls them "Latest".
 
    ```yaml [clay.yaml]

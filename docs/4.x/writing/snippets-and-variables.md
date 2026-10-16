@@ -23,10 +23,10 @@ Use them in any page with two curly braces:
 
 ::: tabs
 == Result
-Clay {{major}} needs Node.js {{node}} or newer:
+Clay 4 needs Node.js 20.19 or newer:
 
 ```bash
-npm install --save-dev clay-doc@{{major}}
+npm install --save-dev clay-doc@4
 ```
 == Markdown
 ````markdown
@@ -42,6 +42,7 @@ npm install --save-dev clay-doc@\{{major}}
 - **Only names from `variables` are filled in.** Other curly braces stay as written, so templates in code examples are safe.
 - **A backslash keeps a variable as written**: `\\{{major}}` shows `\{{major}}`.
 - **Values can differ per language**, like every text in `clay.yaml`: `product: {en: "Docs", de: "Doku"}`.
+- **Saved [versions](../organizing/versions.md) keep their values**: `clay version` fills the variables in, so the old docs still name the old version.
 
 ## Snippets
 
@@ -97,7 +98,8 @@ This site does the same with its own settings: the block below is included from 
 ::: tabs
 == Result
 ```yaml [config/variables.yaml]
-<!--@include: ../../../config/variables.yaml#values-->
+major: "4"
+node: "20.19"
 ```
 == Markdown
 ````markdown

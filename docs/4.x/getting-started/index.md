@@ -50,7 +50,7 @@ The [quick start](quick-start.md) goes through the same steps in more detail, wi
 
 | | |
 |---|---|
-| **Node.js** | {{node}} or newer, which comes with npm, see [installation](installation.md) |
+| **Node.js** | 20.19 or newer, which comes with npm, see [installation](installation.md) |
 | **Your docs** | Markdown files, or the wish to write some. Existing READMEs work as they are |
 | **An editor** | Any. `clay dev` shows every change in the browser right away |
 | **A host** | Later, to publish: [GitHub Pages](../publishing/github-pages.md) is free and set up in minutes |

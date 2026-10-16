@@ -7,10 +7,10 @@ order: 2
 
 # Installation
 
-Clay is published on npm as [`clay-doc`](https://www.npmjs.com/package/clay-doc). It needs **Node.js {{node}} or newer**:
+Clay is published on npm as [`clay-doc`](https://www.npmjs.com/package/clay-doc). It needs **Node.js 20.19 or newer**:
 
 ```bash
-node --version   # v{{node}}.0 or newer
+node --version   # v20.19.0 or newer
 ```
 
 ## Add Clay to a project

@@ -29,7 +29,7 @@ mein-projekt/
 - Jeder andere Ordner in `docs/` ist eine **ältere** Version, eine Kopie von `docs/latest/`, gespeichert, als diese Version aktuell war. `docs/1.x/` liegt unter `/1.x`: `/1.x/guides/setup`.
 - **Alle Versionen liegen gleich tief**, deshalb funktioniert ein Pfad, der aus der Dokumentation hinausführt, etwa ein [Include](../writing/snippets-and-variables.md) von `../../../clay.yaml`, in jeder Kopie gleich.
 
-Diese Website arbeitet so: Ihre Seiten liegen in `docs/latest/`, die Dokumentation von Clay 3 in `docs/3.x/`, online unter [/3.x](https://clay-doc.github.io/clay-example-repo/3.x/).
+Diese Website arbeitet so: Ihre Seiten liegen in `docs/latest/`, die Dokumentation von Clay 4 in `docs/4.x/` und die von Clay 3 in `docs/3.x/`, online unter [/4.x](https://clay-doc.github.io/clay-example-repo/4.x/) und [/3.x](https://clay-doc.github.io/clay-example-repo/3.x/).
 
 ## Eine Version speichern
 
@@ -41,6 +41,8 @@ Diese Website arbeitet so: Ihre Seiten liegen in `docs/latest/`, die Dokumentati
    ```
 
    Das kopiert `docs/latest/` nach `docs/2.x/`. In `clay edit` tut <kbd>V</kbd> dasselbe und wechselt den Editor in die neue Version.
+
+   Eine gespeicherte Version behält den heutigen Text: In der Kopie setzt Clay die [Variablen](../writing/snippets-and-variables.md) ein und schreibt Includes von Dateien außerhalb von `docs/latest/` aus, etwa aus `config/` oder `docs/_snippets/`. Wechselt die neueste Dokumentation zu einer neuen Versionsnummer, behalten die alten ihre.
 
 2. **Benenne die neueste Dokumentation** in der `clay.yaml`. Ohne `version` heißt sie in der Versionswahl „Latest“.
 

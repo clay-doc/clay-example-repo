@@ -41,6 +41,7 @@ npm install --save-dev clay-doc@\{{major}}
 - **Nur Namen aus `variables` werden eingesetzt.** Andere geschweifte Klammern bleiben, wie sie sind, Templates in Codebeispielen sind also sicher.
 - **Ein Backslash lässt eine Variable stehen**: `\\{{major}}` zeigt `\{{major}}`.
 - **Werte können je Sprache verschieden sein**, wie jeder Text in der `clay.yaml`: `product: {en: "Docs", de: "Doku"}`.
+- **Gespeicherte [Versionen](../organizing/versions.md) behalten ihre Werte**: `clay version` setzt die Variablen ein, damit die alte Dokumentation weiter die alte Version nennt.
 
 ## Snippets
 

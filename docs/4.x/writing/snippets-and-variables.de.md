@@ -22,10 +22,10 @@ Nutze sie in jeder Seite mit zwei geschweiften Klammern:
 
 ::: tabs
 == Ergebnis
-Clay {{major}} braucht Node.js {{node}} oder neuer:
+Clay 4 braucht Node.js 20.19 oder neuer:
 
 ```bash
-npm install --save-dev clay-doc@{{major}}
+npm install --save-dev clay-doc@4
 ```
 == Markdown
 ````markdown
@@ -41,6 +41,7 @@ npm install --save-dev clay-doc@\{{major}}
 - **Nur Namen aus `variables` werden eingesetzt.** Andere geschweifte Klammern bleiben, wie sie sind, Templates in Codebeispielen sind also sicher.
 - **Ein Backslash lässt eine Variable stehen**: `\\{{major}}` zeigt `\{{major}}`.
 - **Werte können je Sprache verschieden sein**, wie jeder Text in der `clay.yaml`: `product: {en: "Docs", de: "Doku"}`.
+- **Gespeicherte [Versionen](../organizing/versions.md) behalten ihre Werte**: `clay version` setzt die Variablen ein, damit die alte Dokumentation weiter die alte Version nennt.
 
 ## Snippets
 
@@ -96,7 +97,8 @@ Diese Website macht es genauso mit ihren eigenen Einstellungen: Der Block unten 
 ::: tabs
 == Ergebnis
 ```yaml [config/variables.yaml]
-<!--@include: ../../../config/variables.yaml#values-->
+major: "4"
+node: "20.19"
 ```
 == Markdown
 ````markdown

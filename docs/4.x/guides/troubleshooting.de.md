@@ -80,7 +80,7 @@ npx clay dev --port 3001
 :::
 
 ::: details Node.js ist zu alt
-Clay braucht Node.js {{node}} oder neuer. Prüf es mit `node --version` und aktualisiere Node.js von [nodejs.org](https://nodejs.org) oder mit deiner Versionsverwaltung.
+Clay braucht Node.js 20.19 oder neuer. Prüf es mit `node --version` und aktualisiere Node.js von [nodejs.org](https://nodejs.org) oder mit deiner Versionsverwaltung.
 :::
 
 ## Immer noch nicht weiter?

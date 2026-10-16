@@ -31,7 +31,7 @@ my-project/
 - Every other folder in `docs/` is an **older** version, a copy of `docs/latest/` saved when that version was current. `docs/1.x/` lives under `/1.x`: `/1.x/guides/setup`.
 - **All versions sit at the same depth**, so a path that leads out of the docs, like an [include](../writing/snippets-and-variables.md) of `../../../clay.yaml`, works the same in each copy.
 
-This site works this way: its pages are in `docs/latest/`, and the docs of Clay 3 in `docs/3.x/`, online at [/3.x](https://clay-doc.github.io/clay-example-repo/3.x/).
+This site works this way: its pages are in `docs/latest/`, the docs of Clay 4 in `docs/4.x/` and those of Clay 3 in `docs/3.x/`, online at [/4.x](https://clay-doc.github.io/clay-example-repo/4.x/) and [/3.x](https://clay-doc.github.io/clay-example-repo/3.x/).
 
 ## Saving a version
 
@@ -43,6 +43,8 @@ This site works this way: its pages are in `docs/latest/`, and the docs of Clay 
    ```
 
    This copies `docs/latest/` to `docs/2.x/`. In `clay edit`, <kbd>V</kbd> does the same and switches the editor to the new version.
+
+   A saved version keeps today's text: in the copy, Clay fills in the [variables](../writing/snippets-and-variables.md) and writes out includes of files outside `docs/latest/`, like `config/` or `docs/_snippets/`. When the latest docs move on to a new version number, the old ones keep theirs.
 
 2. **Label the latest docs** in `clay.yaml`. Without `version`, the switcher calls them "Latest".
 

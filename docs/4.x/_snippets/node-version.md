@@ -1,2 +1,2 @@
 > [!NOTE]
-> Clay {{major}} needs **Node.js {{node}}** or newer.
+> Clay 4 needs **Node.js 20.19** or newer.

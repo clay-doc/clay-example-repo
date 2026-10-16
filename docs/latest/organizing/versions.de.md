@@ -42,6 +42,8 @@ Diese Website arbeitet so: Ihre Seiten liegen in `docs/latest/`, die Dokumentati
 
    Das kopiert `docs/latest/` nach `docs/2.x/`. In `clay edit` tut <kbd>V</kbd> dasselbe und wechselt den Editor in die neue Version.
 
+   Eine gespeicherte Version behält den heutigen Text: In der Kopie setzt Clay die [Variablen](../writing/snippets-and-variables.md) ein und schreibt Includes von Dateien außerhalb von `docs/latest/` aus, etwa aus `config/` oder `docs/_snippets/`. Wechselt die neueste Dokumentation zu einer neuen Versionsnummer, behalten die alten ihre.
+
 2. **Benenne die neueste Dokumentation** in der `clay.yaml`. Ohne `version` heißt sie in der Versionswahl „Latest“.
 
    ```yaml [clay.yaml]
