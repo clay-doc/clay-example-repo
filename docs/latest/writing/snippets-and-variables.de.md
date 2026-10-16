@@ -96,12 +96,12 @@ Diese Website macht es genauso mit ihren eigenen Einstellungen: Der Block unten 
 ::: tabs
 == Ergebnis
 ```yaml [clay.yaml]
-<!--@include: ../../clay.yaml#variables-->
+<!--@include: ../../../clay.yaml#variables-->
 ```
 == Markdown
 ````markdown
 ```yaml [clay.yaml]
-\<!--@include: ../../clay.yaml#variables-->
+\<!--@include: ../../../clay.yaml#variables-->
 ```
 ````
 :::

@@ -97,12 +97,12 @@ This site does the same with its own settings: the block below is included from 
 ::: tabs
 == Result
 ```yaml [clay.yaml]
-<!--@include: ../../clay.yaml#variables-->
+<!--@include: ../../../clay.yaml#variables-->
 ```
 == Markdown
 ````markdown
 ```yaml [clay.yaml]
-\<!--@include: ../../clay.yaml#variables-->
+\<!--@include: ../../../clay.yaml#variables-->
 ```
 ````
 :::
