@@ -47,6 +47,7 @@ For AI assistants and coding agents, the docs are also published as Markdown:
 │   │   ├── configuration/         # clay.yaml, front matter, environment variables
 │   │   ├── publishing/            # Commands, build checks, GitHub Pages, other hosts, CLI reference (generated)
 │   │   └── guides/                # Upgrading to Clay 4, 3 and 2, troubleshooting
+│   ├── 4.x/                       # The docs of Clay 4, at /4.x
 │   └── 3.x/                       # The docs of Clay 3, at /3.x
 ├── config/                        # Settings in files of their own, named in clay.yaml:
 │   ├── navbar.yaml                #   logo, source and links
