@@ -67,6 +67,18 @@ Below "On this page", every page offers:
 
 On narrow screens, the menu folds up above the page together with the contents.
 
+Each entry can be hidden in `clay.yaml`; the ones you leave out stay. Without any entry, the menu is gone:
+
+```yaml [clay.yaml]
+pageActions:
+  copyMarkdown: true   # Copy as Markdown
+  openMarkdown: true   # Open as Markdown
+  chatgpt: false       # Open in ChatGPT
+  claude: false        # Open in Claude
+```
+
+The Markdown of every page and `llms.txt` are published either way, for agents that find them on their own.
+
 ## For coding agents
 
 Agents that work in your repository, like Claude Code, Codex or Cursor, change docs the way they change code: through commands whose results they can read. `clay edit` has a command for every action of its editor, and `clay check` checks the docs without building them.

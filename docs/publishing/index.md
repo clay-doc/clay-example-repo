@@ -3,6 +3,7 @@ title: Publishing
 icon: fa-solid fa-cloud-arrow-up
 description: The clay commands, the checks every build runs, and how to put the site online on GitHub Pages or any other host.
 order: 6
+redirects: ["/cli", "/deployment"]
 ---
 
 # Publishing

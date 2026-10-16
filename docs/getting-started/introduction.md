@@ -3,6 +3,7 @@ title: Introduction
 icon: fa-solid fa-house
 description: What Clay is, what it does for you and how a Clay site comes together.
 order: 1
+redirects: ["/introduction"]
 ---
 
 # Introduction

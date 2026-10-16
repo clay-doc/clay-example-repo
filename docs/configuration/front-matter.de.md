@@ -29,6 +29,7 @@ order: 2
 | `order` | Zahl | keiner | alle | Position zwischen den Einträgen daneben, siehe [Navigation](../organizing/navigation.md) |
 | `list` | `true` / `false` | `false` | `index.md` | Liste mit Links zu den Seiten des Ordners unter dem Text |
 | `hero` | `true` / `false` | `false` | `index.md` | `title`, `icon` und `description` als große, zentrierte Kopfzeile |
+| `redirects` | Liste | keine | alle | Alte Adressen, die zur Seite führen, siehe [Weiterleitungen](../organizing/redirects.md) |
 
 ## Regeln
 

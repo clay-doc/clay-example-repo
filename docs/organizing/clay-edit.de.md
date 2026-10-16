@@ -50,7 +50,7 @@ Neue Seiten bekommen ihren Titel als Front Matter und als erste Überschrift, un
 
 Beim Ordnen nummeriert Clay alles im Ordner durch (`order: 1`, `2`, `3`, …) und schreibt nur die Dateien, deren Nummer sich geändert hat.
 
-Umbenennen und Verschieben nehmen die Übersetzungen der Seite mit. Links auf den Eintrag schreibt Clay nicht um; stattdessen listet es die Links, die dadurch kaputtgegangen sind, damit du sie korrigieren kannst:
+Umbenennen und Verschieben nehmen die Übersetzungen der Seite mit und fragen, ob die alte Adresse auf die neue [weiterleiten](redirects.md) soll. Links auf den Eintrag schreibt Clay nicht um; stattdessen listet es die Links, die dadurch kaputtgegangen sind, damit du sie korrigieren kannst:
 
 ```text
 Moved setup.md → guides/setup.md · 2 link(s) broke: introduction.md: "setup.md" points to a missing page (/setup) …
@@ -91,8 +91,8 @@ Jede Aktion des Editors ist auch ein Befehl, der eine Änderung macht und sich b
 | `clay edit show <pfad>` | Das ganze Front Matter einer Seite oder eines Ordners |
 | `clay edit set <pfad> <feld>=<wert>...` | `title`, `icon`, `description`, `order`, `list` oder `hero` setzen; ein leerer Wert entfernt es |
 | `clay edit new page <ordner> <titel>` | Eine Seite anlegen; `new folder` legt einen Ordner mit seiner `index.md` an |
-| `clay edit move <pfad> <ordner>` | Eine Seite mit ihren Übersetzungen oder einen Ordner verschieben |
-| `clay edit rename <pfad> <neuer-name>` | Eine Datei oder einen Ordner umbenennen |
+| `clay edit move <pfad> <ordner>` | Eine Seite mit ihren Übersetzungen oder einen Ordner verschieben; `--redirect` behält die alte Adresse |
+| `clay edit rename <pfad> <neuer-name>` | Eine Datei oder einen Ordner umbenennen; `--redirect` behält die alte Adresse |
 | `clay edit order <pfad> <position>` | Einen Eintrag an eine Position in seinem Ordner setzen (1 = zuerst) |
 | `clay edit delete <pfad> --yes` | Eine Seite mit ihren Übersetzungen oder einen Ordner löschen |
 | `clay edit translate <pfad> --lang <code>` | Eine Übersetzung aus dem Original beginnen |

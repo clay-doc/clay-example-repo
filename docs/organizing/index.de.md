@@ -15,6 +15,7 @@ Clay baut die Navigation aus deinen Dateien: Jeder Ordner in `docs/` ist ein Ber
 - [Versionen](versions.md)
 - [Übersetzungen](translations.md)
 - [Bearbeiten mit clay edit](clay-edit.md)
+- [Weiterleitungen](redirects.md)
 :::
 
 ## Von Dateien zur Navigation

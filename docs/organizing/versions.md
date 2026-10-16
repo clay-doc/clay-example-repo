@@ -3,6 +3,7 @@ title: Versions
 icon: fa-solid fa-code-branch
 description: Keep the docs of older releases online, with a version switcher and a banner that leads to the latest docs.
 order: 4
+redirects: ["/versions-and-languages/versions"]
 ---
 
 # Versions

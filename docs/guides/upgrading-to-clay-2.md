@@ -3,6 +3,7 @@ title: Upgrading to Clay 2
 icon: fa-solid fa-circle-up
 description: Move a Clay 1 site built with Clay Oven to Clay 2 - one npm package instead of the frontend and Clay Oven.
 order: 3
+redirects: ["/guides/migrating-from-clay-1"]
 ---
 
 # Upgrading to Clay 2

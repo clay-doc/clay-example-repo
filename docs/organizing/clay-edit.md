@@ -51,7 +51,7 @@ New pages get their title as front matter and as their first heading, and a file
 
 Ordering numbers everything in the folder (`order: 1`, `2`, `3`, …) and writes only the files whose number changed.
 
-Renaming and moving take the page's translations along. Clay does not rewrite links to the entry; instead, it lists the links that broke, so you can fix them:
+Renaming and moving take the page's translations along, and ask whether the old address should [redirect](redirects.md) to the new one. Clay does not rewrite links to the entry; instead, it lists the links that broke, so you can fix them:
 
 ```text
 Moved setup.md → guides/setup.md · 2 link(s) broke: introduction.md: "setup.md" points to a missing page (/setup) …
@@ -92,8 +92,8 @@ Every action of the editor is also a command that does one change and exits. Scr
 | `clay edit show <path>` | All front matter of one page or folder |
 | `clay edit set <path> <field>=<value>...` | Set `title`, `icon`, `description`, `order`, `list` or `hero`; an empty value removes it |
 | `clay edit new page <folder> <title>` | Create a page; `new folder` creates a folder with its `index.md` |
-| `clay edit move <path> <folder>` | Move a page with its translations, or a folder |
-| `clay edit rename <path> <new-name>` | Rename a file or folder |
+| `clay edit move <path> <folder>` | Move a page with its translations, or a folder; `--redirect` keeps the old address |
+| `clay edit rename <path> <new-name>` | Rename a file or folder; `--redirect` keeps the old address |
 | `clay edit order <path> <position>` | Put an entry at a position in its folder (1 = first) |
 | `clay edit delete <path> --yes` | Delete a page with its translations, or a folder |
 | `clay edit translate <path> --lang <code>` | Start a translation from the original |

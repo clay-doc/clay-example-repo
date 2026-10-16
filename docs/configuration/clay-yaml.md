@@ -74,6 +74,7 @@ head:
 | `editURL` | none | Base URL to edit a page; the page's file path is appended |
 | `fontawesomeKit` | none | ID of a Font Awesome kit; without it, the free icons are used |
 | `socialImages` | `true` with `siteURL` | A picture of each page for link previews; `false` turns them off, see [SEO](../features/seo.md#social-images) |
+| `pageActions` | all shown | Entries of the page menu: `copyMarkdown`, `openMarkdown`, `chatgpt`, `claude`; `false` hides one, see [the page menu](../features/ai-and-agents.md#the-page-menu) |
 
 ### baseURL and siteURL
 

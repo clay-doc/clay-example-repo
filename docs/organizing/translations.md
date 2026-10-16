@@ -3,6 +3,7 @@ title: Translations
 icon: fa-solid fa-language
 description: Translate your docs page by page, with a language switcher, fallbacks for untranslated pages and an interface in twelve languages.
 order: 5
+redirects: ["/versions-and-languages/translations"]
 ---
 
 # Translations

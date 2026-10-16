@@ -30,6 +30,7 @@ order: 2
 | `order` | number | none | all | Position among the entries next to it, see [navigation](../organizing/navigation.md) |
 | `list` | `true` / `false` | `false` | `index.md` | List of links to the folder's pages below the text |
 | `hero` | `true` / `false` | `false` | `index.md` | `title`, `icon` and `description` as a large centered header |
+| `redirects` | list | none | all | Old addresses that lead to the page, see [redirects](../organizing/redirects.md) |
 
 ## Rules
 

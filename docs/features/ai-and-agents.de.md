@@ -66,6 +66,18 @@ Unter „Auf dieser Seite“ bietet jede Seite:
 
 Auf schmalen Bildschirmen klappt das Menü zusammen mit dem Inhaltsverzeichnis über der Seite auf.
 
+Jeder Eintrag lässt sich in der `clay.yaml` ausblenden; die übrigen bleiben. Ohne jeden Eintrag verschwindet das Menü:
+
+```yaml [clay.yaml]
+pageActions:
+  copyMarkdown: true   # Als Markdown kopieren
+  openMarkdown: true   # Als Markdown öffnen
+  chatgpt: false       # In ChatGPT öffnen
+  claude: false        # In Claude öffnen
+```
+
+Das Markdown jeder Seite und `llms.txt` werden so oder so veröffentlicht, für Agenten, die sie selbst finden.
+
 ## Für Coding-Agenten
 
 Agenten, die in deinem Repository arbeiten, etwa Claude Code, Codex oder Cursor, ändern Dokumentation so, wie sie Code ändern: über Befehle, deren Ergebnis sie lesen können. `clay edit` hat für jede Aktion seines Editors einen Befehl, und `clay check` prüft die Dokumentation, ohne sie zu bauen.

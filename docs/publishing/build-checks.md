@@ -3,6 +3,7 @@ title: Build Checks
 icon: fa-solid fa-list-check
 description: The problems clay build reports, how --strict turns them into errors, and what to do when a build fails.
 order: 2
+redirects: ["/cli/build-checks"]
 ---
 
 # Build Checks

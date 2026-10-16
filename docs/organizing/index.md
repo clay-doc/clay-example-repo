@@ -3,6 +3,7 @@ title: Organizing
 icon: fa-solid fa-sitemap
 description: How pages and folders become the navigation, how folders get their pages, and how versions and languages work.
 order: 3
+redirects: ["/versions-and-languages"]
 ---
 
 # Organizing
@@ -16,6 +17,7 @@ Clay builds the navigation from your files: every folder in `docs/` is a section
 - [Versions](versions.md)
 - [Translations](translations.md)
 - [Editing with clay edit](clay-edit.md)
+- [Redirects](redirects.md)
 :::
 
 ## From files to navigation

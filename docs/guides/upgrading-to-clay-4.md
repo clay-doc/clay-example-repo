@@ -99,6 +99,7 @@ The upgrade is done when `npx clay build --strict` passes.
 - `generate` in `clay.yaml` runs tools that write pages before every build, like an API reference from code, see [generated docs](../writing/generated-docs.md).
 - `head` in `clay.yaml` adds scripts and meta tags to every page, see [clay.yaml](../configuration/clay-yaml.md#head).
 - Videos and embeds of YouTube, Vimeo, Figma and more, see [HTML](../writing/html.md#videos-and-embeds).
+- Old addresses of moved pages keep working with `redirects` in front matter, see [redirects](../organizing/redirects.md).
 - Code blocks show the name of their file: ` ```yaml [clay.yaml] `, see [code blocks](../writing/code-blocks.md#file-names).
 - On narrower screens, the contents of a page fold up above it.
 - A "Skip to content" link, clearer keyboard focus and stronger contrast make the site easier to use with a keyboard and easier to read.

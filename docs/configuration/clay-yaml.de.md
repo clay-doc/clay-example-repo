@@ -73,6 +73,7 @@ head:
 | `editURL` | keine | Basis-URL zum Bearbeiten einer Seite; der Dateipfad der Seite wird angehängt |
 | `fontawesomeKit` | keins | ID eines Font-Awesome-Kits; ohne werden die kostenlosen Icons genutzt |
 | `socialImages` | `true` mit `siteURL` | Ein Bild je Seite für Link-Vorschauen; `false` schaltet sie ab, siehe [SEO](../features/seo.md#vorschaubilder) |
+| `pageActions` | alle sichtbar | Einträge des Seitenmenüs: `copyMarkdown`, `openMarkdown`, `chatgpt`, `claude`; `false` blendet einen aus, siehe [das Seitenmenü](../features/ai-and-agents.md#das-seitenmenü) |
 
 ### baseURL und siteURL
 

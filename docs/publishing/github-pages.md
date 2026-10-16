@@ -3,6 +3,7 @@ title: GitHub Pages
 icon: fa-brands fa-github
 description: Publish a Clay site on GitHub Pages with a workflow that checks and deploys the docs on every push.
 order: 3
+redirects: ["/deployment/github-pages"]
 ---
 
 # GitHub Pages

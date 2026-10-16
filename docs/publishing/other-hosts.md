@@ -3,6 +3,7 @@ title: Other Hosts
 icon: fa-solid fa-server
 description: Deploy a Clay site to Netlify, Cloudflare Pages, GitLab Pages or your own web server.
 order: 4
+redirects: ["/deployment/other-hosts"]
 ---
 
 # Other Hosts

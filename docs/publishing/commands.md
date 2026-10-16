@@ -3,6 +3,7 @@ title: Commands
 icon: fa-solid fa-terminal
 description: Every clay command and option, from the live preview to building, previewing, editing and saving versions.
 order: 1
+redirects: ["/cli/commands"]
 ---
 
 # Commands

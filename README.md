@@ -19,8 +19,8 @@
 This repository is two things at once: the **documentation of Clay**, published at
 [clay-doc.github.io/clay-example-repo](https://clay-doc.github.io/clay-example-repo/), and a **complete example** of a
 Clay project to copy from. Every feature it documents is in use here: folders and ordering, code blocks with file
-names and notations, alerts, components, snippets and variables, translations, an older version, generated
-pages, settings in files of their own, analytics, build checks and the GitHub Pages deployment.
+names and notations, alerts, components, snippets and variables, translations, an older version, redirects,
+generated pages, settings in files of their own, analytics, build checks and the GitHub Pages deployment.
 
 > [!TIP]
 > To learn Clay, read the [documentation](https://clay-doc.github.io/clay-example-repo/). To see how something is
