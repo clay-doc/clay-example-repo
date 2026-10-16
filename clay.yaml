@@ -5,7 +5,7 @@ siteURL: "https://clay-doc.github.io"
 editURL: "https://github.com/clay-doc/clay-example-repo/edit/main/docs/"
 # The real kit ID comes from the CLAY_FONTAWESOME_KIT secret in CI
 fontawesomeKit: "set-in-ci"
-version: "3.0"
+version: "4.0"
 languages: ["en", "de"]
 # {{major}} and {{node}} in the docs, see Writing › Snippets & Variables
 variables:
