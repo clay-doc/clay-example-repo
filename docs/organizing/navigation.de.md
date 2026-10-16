@@ -25,18 +25,14 @@ Seiten bekommen ihr `order` in ihrem [Front Matter](../writing/pages.md#front-ma
 
 ::: tabs
 == Eine Seite
-`docs/installation.md`:
-
-```markdown
+```markdown [docs/installation.md]
 ---
 title: Installation
 order: 1
 ---
 ```
 == Ein Ordner
-`docs/guides/index.md`:
-
-```markdown
+```markdown [docs/guides/index.md]
 ---
 title: Anleitungen
 order: 2

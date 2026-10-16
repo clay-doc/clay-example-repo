@@ -2,18 +2,13 @@
 title: Anleitungen
 icon: fa-solid fa-book-open
 description: Umstieg von älteren Clay-Versionen und Lösungen für häufige Probleme.
+list: true
 ---
 
 # Anleitungen
 
 Umstieg von älteren Clay-Versionen und Lösungen für häufige Probleme.
 
-::: cards
-- [Umstieg auf Clay 4](upgrading-to-clay-4.md)
-- [Umstieg auf Clay 3](upgrading-to-clay-3.md)
-- [Umstieg auf Clay 2](upgrading-to-clay-2.md)
-- [Problemlösung](troubleshooting.md)
-:::
 
 ## Welche Anleitung brauche ich?
 

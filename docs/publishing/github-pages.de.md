@@ -20,7 +20,7 @@ flowchart LR
 ::: steps
 1. **Setz die Basis-URL.** Die Seite eines Repositorys liegt unter seinem Namen, `https://<besitzer>.github.io/<repository>/`. Sag es Clay in der `clay.yaml`:
 
-   ```yaml
+   ```yaml [clay.yaml]
    baseURL: "/mein-projekt/"
    siteURL: "https://meine-org.github.io"
    ```
@@ -53,7 +53,7 @@ oder ohne package.json, je nachdem, was zu diesem Repository passt. Prüfe mit
 
 ::: tabs
 == Mit package.json
-```yaml
+```yaml [.github/workflows/deploy.yaml]
 name: Deploy Docs
 
 on:
@@ -151,7 +151,7 @@ Werte, die nicht ins Repository gehören, etwa ein Font-Awesome-Kit, kommen unte
 
 Trag die Domain unter **Settings → Pages → Custom domain** ein und folge GitHubs Anleitung für die DNS-Einträge. Liefere die Seite dann von der Wurzel aus:
 
-```yaml
+```yaml [clay.yaml]
 baseURL: "/"
 siteURL: "https://docs.example.com"
 ```
@@ -162,7 +162,7 @@ An der Wurzel einer Domain lesen Suchmaschinen auch die `robots.txt` der Seite u
 
 Lass Dependabot Clay-Updates als Pull Requests vorschlagen, mit `.github/dependabot.yml`:
 
-```yaml
+```yaml [.github/dependabot.yml]
 version: 2
 updates:
   - package-ecosystem: npm

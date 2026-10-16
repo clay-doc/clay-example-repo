@@ -40,7 +40,7 @@ Most projects never need versions: without `docs-archive/`, Clay shows no versio
 
 2. **Label the latest docs** in `clay.yaml`. Without `version`, the switcher calls them "Latest".
 
-   ```yaml
+   ```yaml [clay.yaml]
    version: "3.x"
    ```
 

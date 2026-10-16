@@ -73,7 +73,7 @@ With a Font Awesome account, you can create a [kit](https://docs.fontawesome.com
 2. **Allow your site's domain** in the kit's settings.
 3. **Set the kit's ID** in `clay.yaml`. The ID is the code in the kit's embed URL, `https://kit.fontawesome.com/abc123def4.js`:
 
-   ```yaml
+   ```yaml [clay.yaml]
    fontawesomeKit: "abc123def4"
    ```
 :::

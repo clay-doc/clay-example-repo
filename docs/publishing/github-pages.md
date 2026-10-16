@@ -21,7 +21,7 @@ flowchart LR
 ::: steps
 1. **Set the base URL.** A repository's site lives under its name, `https://<owner>.github.io/<repository>/`. Tell Clay in `clay.yaml`:
 
-   ```yaml
+   ```yaml [clay.yaml]
    baseURL: "/my-project/"
    siteURL: "https://my-org.github.io"
    ```
@@ -53,7 +53,7 @@ whichever fits this repository. Check with `npx clay build --strict`.
 
 ::: tabs
 == With package.json
-```yaml
+```yaml [.github/workflows/deploy.yaml]
 name: Deploy Docs
 
 on:
@@ -151,7 +151,7 @@ Values that should not be in the repository, like a Font Awesome kit, go into **
 
 Set the domain in **Settings → Pages → Custom domain** and follow GitHub's instructions for the DNS records. Then serve the site from the root:
 
-```yaml
+```yaml [clay.yaml]
 baseURL: "/"
 siteURL: "https://docs.example.com"
 ```
@@ -162,7 +162,7 @@ At the root of a domain, search engines also read the site's `robots.txt` and fi
 
 Let Dependabot propose Clay updates as pull requests, with `.github/dependabot.yml`:
 
-```yaml
+```yaml [.github/dependabot.yml]
 version: 2
 updates:
   - package-ecosystem: npm

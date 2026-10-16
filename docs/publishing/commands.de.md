@@ -21,7 +21,7 @@ clay <befehl> [optionen]
 | `clay check` | Links und Einstellungen prüfen, ohne zu bauen |
 | `clay version <name>` | Die aktuelle Dokumentation als ältere Version speichern |
 
-Führe ihn mit `npx clay …` in einem Projekt aus, in dem Clay installiert ist, oder über Skripte in der `package.json`.
+Führe ihn mit `npx clay …` in einem Projekt aus, in dem Clay installiert ist, oder über Skripte in der `package.json`. Jede Option jedes Befehls steht in der [CLI-Referenz](cli-reference.md).
 
 ## clay dev
 

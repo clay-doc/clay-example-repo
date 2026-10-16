@@ -50,8 +50,7 @@ my-project/
 
 Commit `clay.yaml`, `docs/`, `docs-archive/`, your logo, and `package.json` with its lockfile. Leave out the build output and the dependencies:
 
-```text
-# .gitignore
+```text [.gitignore]
 node_modules/
 publish/
 ```

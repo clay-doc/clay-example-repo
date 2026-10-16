@@ -13,7 +13,7 @@ description: Lösungen für die häufigsten Probleme mit Clay-Seiten, von fehlen
 ::: details Die Seite hat keine Styles, oder Links führen zu 404
 Die Seite liegt unter einem Pfad, aber Clay hat sie für die Wurzel gebaut. Setz `baseURL` auf diesen Pfad, mit Schrägstrichen auf beiden Seiten:
 
-```yaml
+```yaml [clay.yaml]
 baseURL: "/mein-projekt/"
 ```
 
@@ -80,7 +80,7 @@ npx clay dev --port 3001
 :::
 
 ::: details Node.js ist zu alt
-Clay braucht Node.js 20.19 oder neuer. Prüf es mit `node --version` und aktualisiere Node.js von [nodejs.org](https://nodejs.org) oder mit deiner Versionsverwaltung.
+Clay braucht Node.js {{node}} oder neuer. Prüf es mit `node --version` und aktualisiere Node.js von [nodejs.org](https://nodejs.org) oder mit deiner Versionsverwaltung.
 :::
 
 ## Immer noch nicht weiter?

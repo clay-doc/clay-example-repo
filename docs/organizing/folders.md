@@ -20,7 +20,7 @@ docs/guides/
   deploying.md
 ```
 
-```markdown
+```markdown [docs/guides/index.md]
 ---
 title: Guides
 icon: fa-solid fa-book-open

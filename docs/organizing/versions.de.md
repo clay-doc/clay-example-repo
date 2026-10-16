@@ -39,7 +39,7 @@ Die meisten Projekte brauchen nie Versionen: Ohne `docs-archive/` zeigt Clay gar
 
 2. **Benenne die neueste Dokumentation** in der `clay.yaml`. Ohne `version` heißt sie in der Versionswahl „Latest“.
 
-   ```yaml
+   ```yaml [clay.yaml]
    version: "3.x"
    ```
 

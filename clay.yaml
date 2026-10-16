@@ -7,10 +7,31 @@ editURL: "https://github.com/clay-doc/clay-example-repo/edit/main/docs/"
 fontawesomeKit: "set-in-ci"
 version: "4.0"
 languages: ["en", "de"]
-# {{major}} and {{node}} in the docs, see Writing › Snippets & Variables
+# {{major}} and {{node}} in the docs, see Writing › Snippets & Variables.
+# The page includes this block from here, between the region comments.
+# #region variables
 variables:
   major: "4"
   node: "20.19"
+# #endregion
+# Interface texts that differ from Clay's, in a file of their own
+messages: config/messages.yaml
+# The color of the browser's bar on phones, matching the navbar
+head:
+  meta:
+    - name: "theme-color"
+      content: "#f6f2f2"
+      media: "(prefers-color-scheme: light)"
+    - name: "theme-color"
+      content: "#151111"
+      media: "(prefers-color-scheme: dark)"
+# Page views and searches without results, without cookies: clay.goatcounter.com
+analytics:
+  goatcounter:
+    code: "clay"
+# Writes Publishing › CLI Reference from Clay's own help before every build
+generate:
+  - node scripts/cli-reference.mjs
 navbar:
   logo: "logo.svg"
   source:

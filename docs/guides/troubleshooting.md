@@ -14,7 +14,7 @@ Open the problem you have.
 ::: details The site has no styles, or links lead to 404
 The site is served under a path, but Clay built it for the root. Set `baseURL` to that path, with slashes on both sides:
 
-```yaml
+```yaml [clay.yaml]
 baseURL: "/my-project/"
 ```
 
@@ -81,7 +81,7 @@ npx clay dev --port 3001
 :::
 
 ::: details Node.js is too old
-Clay needs Node.js 20.19 or newer. Check with `node --version`, and update Node.js from [nodejs.org](https://nodejs.org) or with your version manager.
+Clay needs Node.js {{node}} or newer. Check with `node --version`, and update Node.js from [nodejs.org](https://nodejs.org) or with your version manager.
 :::
 
 ## Still stuck?

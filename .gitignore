@@ -1,3 +1,5 @@
 .idea/
 node_modules/
 publish/
+# Written by scripts/cli-reference.mjs before every build
+docs/publishing/cli-reference.md

@@ -13,7 +13,7 @@ Some text belongs on many pages: a requirement, a warning, the current version. 
 
 Define values in `clay.yaml`:
 
-```yaml
+```yaml [clay.yaml]
 variables:
   major: "4"
   node: "20.19"
@@ -55,9 +55,7 @@ Put a text you want to reuse in a file whose name, or whose folder's name, start
 \<!--@include: ../_snippets/node-version.md-->
 ```
 == The snippet
-`docs/_snippets/node-version.md`:
-
-```markdown
+```markdown [docs/_snippets/node-version.md]
 > [!NOTE]
 > Clay \{{major}} needs **Node.js \{{node}}** or newer.
 ```
@@ -93,6 +91,21 @@ Mark regions in comments of the file's language; the marker lines are left out:
 const client = createClient({token: process.env.TOKEN});
 // #endregion
 ```
+
+This site does the same with its own settings: the block below is included from its `clay.yaml`, between `# #region variables` and `# #endregion`, and changes with it.
+
+::: tabs
+== Result
+```yaml [clay.yaml]
+<!--@include: ../../clay.yaml#variables-->
+```
+== Markdown
+````markdown
+```yaml [clay.yaml]
+\<!--@include: ../../clay.yaml#variables-->
+```
+````
+:::
 
 > [!NOTE]
 > Files outside the project folder cannot be included, so a page cannot publish files from elsewhere on the machine that builds it. `clay dev` reloads the page when an included file changes.

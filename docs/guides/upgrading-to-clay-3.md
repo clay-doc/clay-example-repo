@@ -48,18 +48,14 @@ and install clay-doc@4 directly. The upgrade is done when
 
    ::: tabs
    == Clay 2
-   `dir-meta.yaml`:
-
-   ```yaml
+   ```yaml [dir-meta.yaml]
    - path: "guides"
      name: "Guides"
      icon: "fa-solid fa-book-open"
      order: 3
    ```
    == Clay 3
-   `docs/guides/index.md`:
-
-   ```markdown
+   ```markdown [docs/guides/index.md]
    ---
    title: Guides
    icon: fa-solid fa-book-open
@@ -74,18 +70,14 @@ and install clay-doc@4 directly. The upgrade is done when
 
    ::: tabs
    == Clay 2
-   `clay.yaml`:
-
-   ```yaml
+   ```yaml [clay.yaml]
    index:
      title: "Welcome to My Project"
      description: "Everything you need to know."
      icon: "fa-solid fa-rocket"
    ```
    == Clay 3
-   `docs/index.md`:
-
-   ```markdown
+   ```markdown [docs/index.md]
    ---
    title: Welcome to My Project
    description: Everything you need to know.

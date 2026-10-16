@@ -22,7 +22,7 @@ clay <command> [options]
 | `clay check` | Check links and settings without building |
 | `clay version <name>` | Save the current docs as an older version |
 
-Run it with `npx clay …` in a project that has Clay installed, or through scripts in `package.json`.
+Run it with `npx clay …` in a project that has Clay installed, or through scripts in `package.json`. Every option of every command is in the [CLI reference](cli-reference.md).
 
 ## clay dev
 

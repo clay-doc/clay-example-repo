@@ -1,0 +1,8 @@
+# Interface texts of this site that differ from Clay's, per language.
+# Every text and its default: Configuration › clay.yaml › messages
+en:
+  editPage: "Edit this page on GitHub"
+  olderVersion: "These are the docs for Clay {version}."
+de:
+  editPage: "Diese Seite auf GitHub bearbeiten"
+  olderVersion: "Das ist die Dokumentation für Clay {version}."

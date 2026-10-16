@@ -15,6 +15,9 @@ generate:
 
 Die Befehle laufen im Projektordner, einer nach dem anderen. Was sie in `docs/` schreiben, wird zu Seiten: in der Navigation, der Suche, den Linkprüfungen und dem [Markdown für Agenten](../features/ai-and-agents.md).
 
+> [!TIP]
+> Diese Website erzeugt ihre [CLI-Referenz](../publishing/cli-reference.md) aus Clays eigener Hilfe, mit einem Skript von ein paar Zeilen: [`scripts/cli-reference.mjs`](https://github.com/clay-doc/clay-example-repo/blob/main/scripts/cli-reference.mjs).
+
 ## API-Referenz aus dem Code
 
 Jedes Werkzeug, das Markdown schreibt, funktioniert:
@@ -58,7 +61,7 @@ generate:
 ::: steps
 1. **Halte erzeugte Seiten aus Git heraus.** Sie entstehen bei jedem Build neu:
 
-   ```text
+   ```text [.gitignore]
    docs/api/
    ```
 

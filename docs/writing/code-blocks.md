@@ -1,7 +1,7 @@
 ---
 title: Code Blocks
 icon: fa-solid fa-code
-description: Syntax highlighting for over 200 languages, highlighted lines, diffs, focus and a copy button.
+description: Syntax highlighting for over 200 languages, file names, highlighted lines, diffs, focus and a copy button.
 order: 3
 ---
 
@@ -69,6 +69,27 @@ const site = loadSite(root);
 const pages = site.pages.filter(page => !page.isDir);
 console.log(`${pages.length} pages`);
 ```
+
+## File names :badge[New in Clay 4]{tip}
+
+Put the name of the file in square brackets after the language, and Clay shows it in a bar above the code, so readers see at once where the code goes:
+
+::: tabs
+== Result
+```yaml [clay.yaml]
+title: "My Project"
+baseURL: "/my-project/"
+```
+== Markdown
+````markdown
+```yaml [clay.yaml]
+title: "My Project"
+baseURL: "/my-project/"
+```
+````
+:::
+
+The name may contain folders and spaces, like `[docs/guides/setup.md]`, and goes with highlighted lines: `ts [src/client.ts] {2}`. In a [code group](components/tabs.md#code-groups), the name in brackets labels the tab instead.
 
 ## Notations in comments
 

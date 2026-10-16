@@ -16,7 +16,7 @@ This site is an example: switch to **Deutsch** in the navbar.
 ::: steps
 1. **List the languages** in `clay.yaml`. The first one is the default language:
 
-   ```yaml
+   ```yaml [clay.yaml]
    languages: ["en", "de"]
    ```
 
@@ -80,7 +80,7 @@ For search engines, such a page points to the original, and it is not listed in 
 
 Text settings in `clay.yaml` can have one value per language. Missing languages use the default language's value:
 
-```yaml
+```yaml [clay.yaml]
 title:
   en: "My Project"
   de: "Mein Projekt"
@@ -108,7 +108,7 @@ Regional codes use their base language: `pt-BR` gets Portuguese. Other languages
 ::: details Your own texts
 `messages` in `clay.yaml` replaces single texts, or provides a language Clay does not ship:
 
-```yaml
+```yaml [clay.yaml]
 languages: ["en", "sv"]
 messages:
   sv:

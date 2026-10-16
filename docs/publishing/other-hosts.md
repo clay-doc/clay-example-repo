@@ -21,7 +21,7 @@ A Clay build is a folder of static files, `publish/public`. Any service or serve
 == Netlify
 In **Site configuration → Build & deploy**, or in a `netlify.toml`:
 
-```toml
+```toml [netlify.toml]
 [build]
   command = "npx clay build --strict"
   publish = "publish/public"
@@ -43,7 +43,7 @@ Create a project from your repository and set:
 == GitLab Pages
 GitLab publishes the folder `public` of a job named `pages`. Move the build there in `.gitlab-ci.yml`:
 
-```yaml
+```yaml [.gitlab-ci.yml]
 pages:
   image: node:22
   variables:
@@ -96,12 +96,12 @@ server {
 }
 ```
 == Docker
-```dockerfile
+```dockerfile [Dockerfile]
 FROM nginx:alpine
 COPY publish/public /usr/share/nginx/html
 ```
 == Caddy
-```text
+```text [Caddyfile]
 docs.example.com {
     root * /var/www/docs
     file_server

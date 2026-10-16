@@ -16,6 +16,9 @@ generate:
 
 The commands run in the project folder, one after another. Whatever they write into `docs/` becomes pages: in the navigation, the search, the link checks and the [Markdown for agents](../features/ai-and-agents.md).
 
+> [!TIP]
+> This site generates its [CLI reference](../publishing/cli-reference.md) from Clay's own help, with a script of a few lines: [`scripts/cli-reference.mjs`](https://github.com/clay-doc/clay-example-repo/blob/main/scripts/cli-reference.mjs).
+
 ## API reference from code
 
 Any tool that writes Markdown works:
@@ -59,7 +62,7 @@ generate:
 ::: steps
 1. **Keep generated pages out of git.** They are written fresh on every build:
 
-   ```text
+   ```text [.gitignore]
    docs/api/
    ```
 

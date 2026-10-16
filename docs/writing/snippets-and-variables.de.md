@@ -12,7 +12,7 @@ Manche Texte gehören auf viele Seiten: eine Voraussetzung, eine Warnung, die ak
 
 Leg die Werte in der `clay.yaml` fest:
 
-```yaml
+```yaml [clay.yaml]
 variables:
   major: "4"
   node: "20.19"
@@ -54,9 +54,7 @@ Leg einen Text, den du mehrfach nutzen willst, in eine Datei, deren Name oder de
 \<!--@include: ../_snippets/node-version.de.md-->
 ```
 == Das Snippet
-`docs/_snippets/node-version.de.md`:
-
-```markdown
+```markdown [docs/_snippets/node-version.de.md]
 > [!NOTE]
 > Clay \{{major}} braucht **Node.js \{{node}}** oder neuer.
 ```
@@ -92,6 +90,21 @@ Markiere Bereiche in Kommentaren der Sprache der Datei; die Markierungszeilen bl
 const client = createClient({token: process.env.TOKEN});
 // #endregion
 ```
+
+Diese Website macht es genauso mit ihren eigenen Einstellungen: Der Block unten ist aus ihrer `clay.yaml` eingebunden, zwischen `# #region variables` und `# #endregion`, und ändert sich mit ihr.
+
+::: tabs
+== Ergebnis
+```yaml [clay.yaml]
+<!--@include: ../../clay.yaml#variables-->
+```
+== Markdown
+````markdown
+```yaml [clay.yaml]
+\<!--@include: ../../clay.yaml#variables-->
+```
+````
+:::
 
 > [!NOTE]
 > Dateien außerhalb des Projektordners lassen sich nicht einbinden, damit eine Seite keine anderen Dateien des Rechners veröffentlichen kann, der sie baut. `clay dev` lädt die Seite neu, wenn sich eine eingebundene Datei ändert.

@@ -49,8 +49,7 @@ mein-projekt/
 
 Committe `clay.yaml`, `docs/`, `docs-archive/`, dein Logo sowie `package.json` mit ihrer Lockfile. Lass die Build-Ausgabe und die Abhängigkeiten weg:
 
-```text
-# .gitignore
+```text [.gitignore]
 node_modules/
 publish/
 ```

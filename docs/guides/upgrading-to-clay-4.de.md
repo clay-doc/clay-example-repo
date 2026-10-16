@@ -44,14 +44,14 @@ Der Umstieg ist fertig, wenn `npx clay build --strict` durchläuft.
 
    ::: tabs
    == Clay 3
-   ```markdown
+   ```markdown [docs/guides/index.md]
    ---
    title: Anleitungen
    cards: true
    ---
    ```
    == Clay 4
-   ```markdown
+   ```markdown [docs/guides/index.md]
    ---
    title: Anleitungen
    list: true
@@ -98,6 +98,7 @@ Der Umstieg ist fertig, wenn `npx clay build --strict` durchläuft.
 - `generate` in der `clay.yaml` führt vor jedem Build Werkzeuge aus, die Seiten schreiben, etwa eine API-Referenz aus dem Code, siehe [generierte Dokumentation](../writing/generated-docs.md).
 - `head` in der `clay.yaml` fügt jeder Seite Skripte und Meta-Tags hinzu, siehe [clay.yaml](../configuration/clay-yaml.md#head).
 - Videos und Einbettungen von YouTube, Vimeo, Figma und mehr, siehe [HTML](../writing/html.md#videos-und-einbettungen).
+- Codeblöcke zeigen den Namen ihrer Datei: ` ```yaml [clay.yaml] `, siehe [Codeblöcke](../writing/code-blocks.md#dateinamen).
 - Auf schmaleren Bildschirmen klappt das Inhaltsverzeichnis einer Seite über ihr auf.
 - Ein Link „Zum Inhalt springen“, ein deutlicherer Tastaturfokus und stärkere Kontraste machen die Seite mit der Tastatur besser bedienbar und leichter lesbar.
 - Die Navigation wirkt ruhiger: Die Markierung in der Seitenleiste wandert mit, neue Brotkrumen gleiten herein und Seiten blenden ein. Ist in den Systemeinstellungen „Bewegung reduzieren“ an, bewegt sich nichts.

@@ -6,10 +6,10 @@ description: Clay mit npm, pnpm oder yarn in ein Projekt installieren, oder ganz
 
 # Installation
 
-Clay ist auf npm als [`clay-doc`](https://www.npmjs.com/package/clay-doc) veröffentlicht. Es braucht **Node.js 20.19 oder neuer**:
+Clay ist auf npm als [`clay-doc`](https://www.npmjs.com/package/clay-doc) veröffentlicht. Es braucht **Node.js {{node}} oder neuer**:
 
 ```bash
-node --version   # v20.19.0 oder neuer
+node --version   # v{{node}}.0 oder neuer
 ```
 
 ## Clay zu einem Projekt hinzufügen
@@ -32,7 +32,7 @@ Damit steht Clay in der `package.json`, und die Lockfile hält die genaue Versio
 
 Ergänze Skripte in der `package.json`, damit sich niemand die Befehle merken muss:
 
-```json
+```json [package.json]
 {
   "scripts": {
     "docs:dev": "clay dev",

@@ -41,6 +41,9 @@ analytics:
 `code` ist der Name deiner Seite unter `meine-docs.goatcounter.com`. Für einen eigenen Server setze `endpoint`, etwa `https://stats.example.com/count`.
 :::
 
+> [!TIP]
+> Diese Website zählt mit GoatCounter: `goatcounter: {code: "clay"}`.
+
 ## Was gezählt wird
 
 - **Seitenaufrufe**, auch wenn Leser von Seite zu Seite gehen, ohne dass der Browser eine neue Seite lädt.

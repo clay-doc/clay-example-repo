@@ -47,18 +47,14 @@ und installiere gleich clay-doc@4. Der Umstieg ist fertig, wenn
 
    ::: tabs
    == Clay 2
-   `dir-meta.yaml`:
-
-   ```yaml
+   ```yaml [dir-meta.yaml]
    - path: "guides"
      name: "Anleitungen"
      icon: "fa-solid fa-book-open"
      order: 3
    ```
    == Clay 3
-   `docs/guides/index.md`:
-
-   ```markdown
+   ```markdown [docs/guides/index.md]
    ---
    title: Anleitungen
    icon: fa-solid fa-book-open
@@ -73,18 +69,14 @@ und installiere gleich clay-doc@4. Der Umstieg ist fertig, wenn
 
    ::: tabs
    == Clay 2
-   `clay.yaml`:
-
-   ```yaml
+   ```yaml [clay.yaml]
    index:
      title: "Willkommen bei Mein Projekt"
      description: "Alles, was du wissen musst."
      icon: "fa-solid fa-rocket"
    ```
    == Clay 3
-   `docs/index.md`:
-
-   ```markdown
+   ```markdown [docs/index.md]
    ---
    title: Willkommen bei Mein Projekt
    description: Alles, was du wissen musst.

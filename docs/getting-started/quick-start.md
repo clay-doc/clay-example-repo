@@ -20,13 +20,13 @@ From an empty folder to a finished documentation site in about five minutes.
 
 2. **Configure the site.** Create `clay.yaml` in the project folder. Only the title is required:
 
-   ```yaml
+   ```yaml [clay.yaml]
    title: "My Project"
    ```
 
 3. **Write the first page.** Create `docs/introduction.md`:
 
-   ```markdown
+   ```markdown [docs/introduction.md]
    ---
    title: Introduction
    icon: fa-solid fa-door-open
@@ -49,7 +49,7 @@ From an empty folder to a finished documentation site in about five minutes.
 
 5. **Add a section.** Pages in a folder become a section of the navigation. Create `docs/guides/setup.md`:
 
-   ```markdown
+   ```markdown [docs/guides/setup.md]
    # Setup
 
    How to set up My Project.
@@ -57,7 +57,7 @@ From an empty folder to a finished documentation site in about five minutes.
 
    The sidebar now shows **Guides**. To give the folder another title, an icon and a page of its own, add `docs/guides/index.md`:
 
-   ```markdown
+   ```markdown [docs/guides/index.md]
    ---
    title: User Guides
    icon: fa-solid fa-book

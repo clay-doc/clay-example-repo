@@ -110,7 +110,7 @@ von `npx clay edit` für Titel, Beschreibungen und Reihenfolge, und führe
 
 Für jede Sitzung lesen Agenten Anweisungsdateien wie `AGENTS.md` oder `CLAUDE.md` im Repository. Ein paar Zeilen bringen sie dazu, Clays Befehle zu nutzen:
 
-```markdown
+```markdown [AGENTS.md]
 ## Documentation
 
 The docs are a Clay site: Markdown in docs/, settings in clay.yaml.

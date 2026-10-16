@@ -15,7 +15,7 @@ Diese Website ist ein Beispiel: Wechsle in der Navigationsleiste zu **English**.
 ::: steps
 1. **Liste die Sprachen** in der `clay.yaml` auf. Die erste ist die Standardsprache:
 
-   ```yaml
+   ```yaml [clay.yaml]
    languages: ["en", "de"]
    ```
 
@@ -80,7 +80,7 @@ Für Suchmaschinen verweist eine solche Seite auf das Original und fehlt in der 
 
 Texteinstellungen in der `clay.yaml` können einen Wert je Sprache haben. Fehlende Sprachen nutzen den Wert der Standardsprache:
 
-```yaml
+```yaml [clay.yaml]
 title:
   en: "My Project"
   de: "Mein Projekt"
@@ -108,7 +108,7 @@ Regionale Codes nutzen ihre Grundsprache: `pt-BR` bekommt Portugiesisch. Andere 
 ::: details Eigene Texte
 `messages` in der `clay.yaml` ersetzt einzelne Texte oder liefert eine Sprache, die Clay nicht mitbringt:
 
-```yaml
+```yaml [clay.yaml]
 languages: ["en", "sv"]
 messages:
   sv:

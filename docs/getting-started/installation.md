@@ -7,10 +7,10 @@ order: 2
 
 # Installation
 
-Clay is published on npm as [`clay-doc`](https://www.npmjs.com/package/clay-doc). It needs **Node.js 20.19 or newer**:
+Clay is published on npm as [`clay-doc`](https://www.npmjs.com/package/clay-doc). It needs **Node.js {{node}} or newer**:
 
 ```bash
-node --version   # v20.19.0 or newer
+node --version   # v{{node}}.0 or newer
 ```
 
 ## Add Clay to a project
@@ -33,7 +33,7 @@ This adds Clay to `package.json` and pins the exact version in the lockfile, so 
 
 Add scripts to `package.json`, so nobody has to remember the commands:
 
-```json
+```json [package.json]
 {
   "scripts": {
     "docs:dev": "clay dev",

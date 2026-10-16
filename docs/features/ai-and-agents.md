@@ -111,7 +111,7 @@ problems.
 
 For every session, agents read instruction files like `AGENTS.md` or `CLAUDE.md` in the repository. A few lines make them use Clay's commands:
 
-```markdown
+```markdown [AGENTS.md]
 ## Documentation
 
 The docs are a Clay site: Markdown in docs/, settings in clay.yaml.

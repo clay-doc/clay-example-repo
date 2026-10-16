@@ -26,13 +26,13 @@ Clay macht aus einem Ordner voller Markdown-Dateien eine Dokumentationsseite. Du
 
 2. **Benenne die Seite** in der `clay.yaml`:
 
-   ```yaml
+   ```yaml [clay.yaml]
    title: "Mein Projekt"
    ```
 
 3. **Schreib eine Seite**, `docs/index.md`:
 
-   ```markdown
+   ```markdown [docs/index.md]
    # Willkommen
 
    Das ist die Dokumentation von **Mein Projekt**.
@@ -49,7 +49,7 @@ Der [Schnellstart](quick-start.md) geht dieselben Schritte ausführlicher durch,
 
 | | |
 |---|---|
-| **Node.js** | 20.19 oder neuer, das npm mitbringt, siehe [Installation](installation.md) |
+| **Node.js** | {{node}} oder neuer, das npm mitbringt, siehe [Installation](installation.md) |
 | **Deine Dokumentation** | Markdown-Dateien, oder die Lust, welche zu schreiben. Vorhandene READMEs funktionieren, wie sie sind |
 | **Einen Editor** | Jeden. `clay dev` zeigt jede Änderung sofort im Browser |
 | **Einen Hoster** | Später, zum Veröffentlichen: [GitHub Pages](../publishing/github-pages.md) ist kostenlos und in Minuten eingerichtet |

@@ -46,7 +46,7 @@ Diese Warnung lässt einen Build nie scheitern, auch nicht mit `--strict`.
 
 Mit `editURL` in der `clay.yaml` verlinkt jede Seite ihre Quelldatei, damit Leser einen Tippfehler in einer Minute beheben können:
 
-```yaml
+```yaml [clay.yaml]
 editURL: "https://github.com/meine-org/mein-projekt/edit/main/docs/"
 ```
 

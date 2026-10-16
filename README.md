@@ -18,8 +18,9 @@
 
 This repository is two things at once: the **documentation of Clay**, published at
 [clay-doc.github.io/clay-example-repo](https://clay-doc.github.io/clay-example-repo/), and a **complete example** of a
-Clay project to copy from. Every feature it documents is in use here: folders and ordering, code notations, alerts,
-components, translations, build checks and the GitHub Pages deployment.
+Clay project to copy from. Every feature it documents is in use here: folders and ordering, code blocks with file
+names and notations, alerts, components, snippets and variables, translations, an older version, generated
+pages, settings in files of their own, analytics, build checks and the GitHub Pages deployment.
 
 > [!TIP]
 > To learn Clay, read the [documentation](https://clay-doc.github.io/clay-example-repo/). To see how something is
@@ -37,13 +38,17 @@ For AI assistants and coding agents, the docs are also published as Markdown:
 │   ├── index.md                   # The start page
 │   ├── index.de.md                # German translation, next to the original
 │   ├── getting-started/           # index.md (the section's page), introduction, installation, quick start, …
-│   ├── writing/                   # Pages, Markdown, code blocks, alerts, links, HTML
-│   │   └── components/            # Tabs, steps, cards, details, badges, math, diagrams, file trees
+│   ├── writing/                   # Pages, Markdown, code blocks, alerts, links, HTML, snippets, generated docs
+│   │   └── components/            # Tabs, steps, cards, details, prompts, badges, math, diagrams, file trees
+│   ├── _snippets/                 # Text included into pages; no pages of their own
 │   ├── organizing/                # Navigation, folders, index pages, versions, translations, clay edit
-│   ├── features/                  # Search, SEO, page details, themes and icons
+│   ├── features/                  # AI and agents, search, SEO, page details, themes and icons, analytics
 │   ├── configuration/             # clay.yaml, front matter, environment variables
-│   ├── publishing/                # Commands, build checks, GitHub Pages, other hosts
+│   ├── publishing/                # Commands, build checks, GitHub Pages, other hosts, CLI reference (generated)
 │   └── guides/                    # Upgrading to Clay 4, 3 and 2, troubleshooting
+├── docs-archive/3.x/              # The docs of Clay 3, online under /3.x
+├── config/messages.yaml           # Interface texts that differ from Clay's, named in clay.yaml
+├── scripts/cli-reference.mjs      # Writes the CLI reference before every build ("generate" in clay.yaml)
 ├── clay.yaml                      # Site settings, with values per language
 ├── logo.svg                       # Logo and favicon
 ├── package.json                   # Clay as a dev dependency

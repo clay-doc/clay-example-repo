@@ -47,7 +47,7 @@ This warning never fails a build, not even with `--strict`.
 
 With `editURL` in `clay.yaml`, each page links to its source file, so readers can fix a typo in a minute:
 
-```yaml
+```yaml [clay.yaml]
 editURL: "https://github.com/my-org/my-project/edit/main/docs/"
 ```
 

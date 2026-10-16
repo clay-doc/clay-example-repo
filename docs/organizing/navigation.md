@@ -26,18 +26,14 @@ Pages get their `order` in their [front matter](../writing/pages.md#front-matter
 
 ::: tabs
 == A page
-`docs/installation.md`:
-
-```markdown
+```markdown [docs/installation.md]
 ---
 title: Installation
 order: 1
 ---
 ```
 == A folder
-`docs/guides/index.md`:
-
-```markdown
+```markdown [docs/guides/index.md]
 ---
 title: Guides
 order: 2

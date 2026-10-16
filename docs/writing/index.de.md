@@ -67,7 +67,7 @@ pnpm add --save-dev clay-doc
 
 | Du willst … | Nimm |
 |-------------|------|
-| Einen Befehl oder eine Datei zeigen | einen [Codeblock](code-blocks.md), mit markierten Zeilen oder einem Diff |
+| Einen Befehl oder eine Datei zeigen | einen [Codeblock](code-blocks.md), mit Dateinamen, markierten Zeilen oder einem Diff |
 | Dasselbe für npm, pnpm und yarn zeigen, oder für jedes System | [Tabs oder eine Codegruppe](components/tabs.md) |
 | Leser der Reihe nach durch etwas führen | [Schritte](components/steps.md) |
 | Auf einen Tipp, eine Warnung oder ein Risiko hinweisen | einen [Hinweis](alerts.md) |

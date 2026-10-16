@@ -42,6 +42,9 @@ analytics:
 `code` is the name of your site at `my-docs.goatcounter.com`. For your own server, set `endpoint`, e.g. `https://stats.example.com/count`.
 :::
 
+> [!TIP]
+> This site counts with GoatCounter: `goatcounter: {code: "clay"}`.
+
 ## What is counted
 
 - **Page views**, also when readers move from page to page without the browser loading a new page.

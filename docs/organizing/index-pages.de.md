@@ -44,7 +44,7 @@ Clay macht aus einem Ordner voller Markdown-Dateien eine Dokumentationsseite …
 Mit `hero: true` lässt du die `# Überschrift` weg: Der Kopf zeigt den Titel schon.
 
 > [!TIP]
-> `list` zeigt jede Seite des Ordners, in der Reihenfolge der Seitenleiste. Für einige ausgewählte Seiten, mit ihren Icons und Beschreibungen, nimm stattdessen [Karten](../writing/components/cards.md), wie die Bereichsseiten dieser Website.
+> `list` zeigt jede Seite des Ordners, in der Reihenfolge der Seitenleiste, wie bei den [Anleitungen](../guides/index.md) dieser Website. Für einige ausgewählte Seiten, mit ihren Icons und Beschreibungen, nimm stattdessen [Karten](../writing/components/cards.md), wie die anderen Bereichsseiten.
 
 ## Ordner ohne Indexseite
 

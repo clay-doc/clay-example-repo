@@ -19,13 +19,13 @@ Von einem leeren Ordner zu einer fertigen Dokumentationsseite in etwa fünf Minu
 
 2. **Konfiguriere die Seite.** Leg `clay.yaml` im Projektordner an. Nur der Titel ist Pflicht:
 
-   ```yaml
+   ```yaml [clay.yaml]
    title: "Mein Projekt"
    ```
 
 3. **Schreib die erste Seite.** Leg `docs/introduction.md` an:
 
-   ```markdown
+   ```markdown [docs/introduction.md]
    ---
    title: Einführung
    icon: fa-solid fa-door-open
@@ -48,7 +48,7 @@ Von einem leeren Ordner zu einer fertigen Dokumentationsseite in etwa fünf Minu
 
 5. **Füg einen Bereich hinzu.** Seiten in einem Ordner werden zu einem Bereich der Navigation. Leg `docs/guides/setup.md` an:
 
-   ```markdown
+   ```markdown [docs/guides/setup.md]
    # Einrichtung
 
    Wie du Mein Projekt einrichtest.
@@ -56,7 +56,7 @@ Von einem leeren Ordner zu einer fertigen Dokumentationsseite in etwa fünf Minu
 
    Die Seitenleiste zeigt jetzt **Guides**. Für einen anderen Titel, ein Icon und eine eigene Seite des Ordners leg `docs/guides/index.md` an:
 
-   ```markdown
+   ```markdown [docs/guides/index.md]
    ---
    title: Anleitungen
    icon: fa-solid fa-book

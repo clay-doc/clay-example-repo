@@ -62,7 +62,7 @@ A link to a page, shared in a chat or a social network, shows a picture of it: t
 
 Clay draws them when it builds the site, one for each page, at `/_clay/social/<page>.png`. They need `siteURL`, since link previews only load images by their full address. To build without them:
 
-```yaml
+```yaml [clay.yaml]
 socialImages: false
 ```
 
@@ -73,7 +73,7 @@ socialImages: false
 
 With `siteURL`, Clay writes `sitemap.xml` with every page and the date of its last change, and `robots.txt` pointing to it, and to [`llms.txt`](ai-and-agents.md#llmstxt) for language models.
 
-```yaml
+```yaml [clay.yaml]
 siteURL: "https://my-org.github.io"
 baseURL: "/my-project/"
 ```

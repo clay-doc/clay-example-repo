@@ -1,7 +1,7 @@
 ---
 title: Codeblöcke
 icon: fa-solid fa-code
-description: Syntaxhervorhebung für über 200 Sprachen, hervorgehobene Zeilen, Diffs, Fokus und ein Kopierknopf.
+description: Syntaxhervorhebung für über 200 Sprachen, Dateinamen, hervorgehobene Zeilen, Diffs, Fokus und ein Kopierknopf.
 ---
 
 # Codeblöcke
@@ -68,6 +68,27 @@ const site = loadSite(root);
 const pages = site.pages.filter(page => !page.isDir);
 console.log(`${pages.length} Seiten`);
 ```
+
+## Dateinamen :badge[Neu in Clay 4]{tip}
+
+Schreib den Namen der Datei in eckigen Klammern hinter die Sprache, und Clay zeigt ihn in einer Leiste über dem Code. So sehen Leser sofort, wohin der Code gehört:
+
+::: tabs
+== Ergebnis
+```yaml [clay.yaml]
+title: "Mein Projekt"
+baseURL: "/mein-projekt/"
+```
+== Markdown
+````markdown
+```yaml [clay.yaml]
+title: "Mein Projekt"
+baseURL: "/mein-projekt/"
+```
+````
+:::
+
+Der Name darf Ordner und Leerzeichen enthalten, etwa `[docs/guides/setup.md]`, und lässt sich mit hervorgehobenen Zeilen kombinieren: `ts [src/client.ts] {2}`. In einer [Code-Gruppe](components/tabs.md#codegruppen) benennt der Name in Klammern stattdessen den Tab.
 
 ## Markierungen in Kommentaren
 

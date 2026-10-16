@@ -61,7 +61,7 @@ Ein Link auf eine Seite, geteilt in einem Chat oder einem sozialen Netzwerk, zei
 
 Clay zeichnet sie beim Bauen der Seite, eines für jede Seite, unter `/_clay/social/<seite>.png`. Sie brauchen `siteURL`, denn Link-Vorschauen laden Bilder nur über ihre volle Adresse. Ohne sie bauen:
 
-```yaml
+```yaml [clay.yaml]
 socialImages: false
 ```
 
@@ -72,7 +72,7 @@ socialImages: false
 
 Mit `siteURL` schreibt Clay eine `sitemap.xml` mit jeder Seite und dem Datum ihrer letzten Änderung, und eine `robots.txt`, die darauf verweist, und auf die [`llms.txt`](ai-and-agents.md#llmstxt) für Sprachmodelle.
 
-```yaml
+```yaml [clay.yaml]
 siteURL: "https://meine-org.github.io"
 baseURL: "/mein-projekt/"
 ```

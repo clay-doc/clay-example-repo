@@ -72,7 +72,7 @@ Mit einem Font-Awesome-Konto kannst du ein [Kit](https://docs.fontawesome.com/we
 2. **Erlaube die Domain deiner Seite** in den Einstellungen des Kits.
 3. **Trag die ID des Kits** in die `clay.yaml` ein. Die ID ist der Code in der Einbettungs-URL des Kits, `https://kit.fontawesome.com/abc123def4.js`:
 
-   ```yaml
+   ```yaml [clay.yaml]
    fontawesomeKit: "abc123def4"
    ```
 :::

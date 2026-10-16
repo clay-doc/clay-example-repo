@@ -3,18 +3,13 @@ title: Guides
 icon: fa-solid fa-book-open
 description: Upgrading from earlier versions of Clay, and solutions for common problems.
 order: 7
+list: true
 ---
 
 # Guides
 
 Upgrading from earlier versions of Clay, and solutions for common problems.
 
-::: cards
-- [Upgrading to Clay 4](upgrading-to-clay-4.md)
-- [Upgrading to Clay 3](upgrading-to-clay-3.md)
-- [Upgrading to Clay 2](upgrading-to-clay-2.md)
-- [Troubleshooting](troubleshooting.md)
-:::
 
 ## Which guide do I need?
 

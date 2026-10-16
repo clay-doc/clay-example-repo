@@ -45,7 +45,7 @@ Clay turns a folder of Markdown files into a documentation website …
 With `hero: true`, leave out the `# heading`: the header shows the title already.
 
 > [!TIP]
-> `list` shows every page of the folder, in the order of the sidebar. To show a few chosen pages, with their icons and descriptions, use [cards](../writing/components/cards.md) instead, like the section pages of this site do.
+> `list` shows every page of the folder, in the order of the sidebar, like on the [guides](../guides/index.md) of this site. To show a few chosen pages, with their icons and descriptions, use [cards](../writing/components/cards.md) instead, like the other section pages do.
 
 ## Folders without an index page
 

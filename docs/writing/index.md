@@ -68,7 +68,7 @@ pnpm add --save-dev clay-doc
 
 | You want to … | Use |
 |---------------|-----|
-| Show a command or a file | a [code block](code-blocks.md), with highlighted lines or a diff |
+| Show a command or a file | a [code block](code-blocks.md), with its file name, highlighted lines or a diff |
 | Show the same thing for npm, pnpm and yarn, or for each system | [tabs or a code group](components/tabs.md) |
 | Walk readers through something in order | [steps](components/steps.md) |
 | Point out a tip, a warning or a risk | an [alert](alerts.md) |

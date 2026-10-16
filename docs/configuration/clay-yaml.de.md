@@ -12,18 +12,18 @@ Die `clay.yaml` liegt im Projektordner und konfiguriert die ganze Seite. Nur `ti
 
 ::: tabs
 == Minimal
-```yaml
+```yaml [clay.yaml]
 title: "Mein Projekt"
 ```
 == GitHub Pages
-```yaml
+```yaml [clay.yaml]
 title: "Mein Projekt"
 baseURL: "/mein-projekt/"
 siteURL: "https://meine-org.github.io"
 editURL: "https://github.com/meine-org/mein-projekt/edit/main/docs/"
 ```
 == Vollständig
-```yaml
+```yaml [clay.yaml]
 title: "Mein Projekt"
 favicon: "logo.svg"
 baseURL: "/mein-projekt/"
@@ -189,7 +189,7 @@ navbar:
 
 Eine Einstellung kann eine YAML-Datei nennen, die ihren Wert enthält, relativ zur `clay.yaml`:
 
-```yaml
+```yaml [clay.yaml]
 title: "Mein Projekt"
 siteURL: "https://meine-org.github.io"
 navbar: config/navbar.yaml
@@ -206,7 +206,7 @@ Das funktioniert für `navbar`, `messages`, `variables`, `head`, `analytics`, `t
 - `head`, wenn sich Skripte und Bestätigungen häufen,
 - `navbar`, wenn es viele Links sind.
 
-Kurze Einstellungen findet man am leichtesten, wo sie sind; eine Seite mit einer Handvoll Einstellungen braucht keine Aufteilung.
+Kurze Einstellungen findet man am leichtesten, wo sie sind; eine Seite mit einer Handvoll Einstellungen braucht keine Aufteilung. Diese Website hält ihre Oberflächentexte in [`config/messages.yaml`](https://github.com/clay-doc/clay-example-repo/blob/main/config/messages.yaml).
 
 > [!NOTE]
 > `clay edit` ändert Einstellungen in der `clay.yaml` selbst. Einstellungen in eigenen Dateien bearbeitest du in diesen Dateien.
