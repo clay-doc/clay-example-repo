@@ -50,7 +50,7 @@ Mit `editURL` in der `clay.yaml` verlinkt jede Seite ihre Quelldatei, damit Lese
 editURL: "https://github.com/meine-org/mein-projekt/edit/main/docs/"
 ```
 
-Auf übersetzten Seiten führt der Link zur Übersetzung, in [älteren Versionen](../organizing/versions.md) nach `docs-archive/<name>/`.
+Auf übersetzten Seiten führt der Link zur Übersetzung, mit [Versionen](../organizing/versions.md) in den Ordner der Version, `docs/latest/` oder `docs/<name>/`.
 
 ## Vor und zurück
 

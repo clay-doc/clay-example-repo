@@ -138,7 +138,7 @@ Führt die [Build-Prüfungen](build-checks.md) aus, kaputte Links, Einstellungen
 npx clay version 2.x
 ```
 
-Kopiert `docs/` nach `docs-archive/2.x/` und hält den aktuellen Stand der Dokumentation so als ältere Version fest. Siehe [Versionen](../organizing/versions.md).
+Kopiert `docs/latest/` nach `docs/2.x/` und hält die neueste Dokumentation so als ältere Version fest. Solange die Seiten direkt in `docs/` liegen, verschiebt es sie zuerst nach `docs/latest/`: Es zeigt, was sich ändert, und fragt vorher. In `clay edit` tut <kbd>V</kbd> dasselbe. Siehe [Versionen](../organizing/versions.md#die-erste-version).
 
 ## Optionen
 
@@ -152,9 +152,10 @@ Kopiert `docs/` nach `docs-archive/2.x/` und hält den aktuellen Stand der Dokum
 | `--verbose` | build, dev | aus | Die vollständige Ausgabe von Nuxt statt des Fortschritts zeigen |
 | `--json` | edit, check | aus | Das Ergebnis als JSON ausgeben, für Skripte und Agenten |
 | `--lang <code>` | edit | Standardsprache | In einer anderen Sprache arbeiten |
-| `--docs-version <name>` | edit | neueste | In einer älteren Version in `docs-archive/<name>/` arbeiten |
+| `--docs-version <name>` | edit | neueste | In einer älteren Version in `docs/<name>/` arbeiten |
 | `--slug <name>` | edit | aus dem Titel | Datei- oder Ordnername für `new` und `move` |
-| `--yes` | edit | aus | `delete` bestätigen |
+| `--redirect` | edit | aus | Die alte Adresse einer Seite bei `move` und `rename` behalten, siehe [Weiterleitungen](../organizing/redirects.md) |
+| `--yes` | edit, version | aus | `delete` bestätigen; `docs/` ohne Nachfrage nach `docs/latest/` verschieben |
 | `-h`, `--help` | | | Die Hilfe zeigen |
 | `-v`, `--version` | | | Clays Version zeigen |
 

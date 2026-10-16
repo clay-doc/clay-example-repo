@@ -69,7 +69,7 @@ Die Kopfzeile zeigt, welche Version und Sprache du bearbeitest.
 | Taste | Aktion |
 |-------|--------|
 | <kbd>v</kbd> | Zur nächsten Version wechseln |
-| <kbd>V</kbd> | Die aktuelle Dokumentation als neue Version speichern, siehe [Versionen](versions.md) |
+| <kbd>V</kbd> | Die neueste Dokumentation als neue Version speichern; die erste verschiebt `docs/` nach `docs/latest/`, nach Rückfrage, siehe [Versionen](versions.md) |
 | <kbd>l</kbd> | Zur nächsten Sprache wechseln |
 | <kbd>c</kbd> | Eine Übersetzung des gewählten Eintrags beginnen: kopiert das Original nach `*.de.md` und so weiter |
 
@@ -98,7 +98,7 @@ Jede Aktion des Editors ist auch ein Befehl, der eine Änderung macht und sich b
 | `clay edit translate <pfad> --lang <code>` | Eine Übersetzung aus dem Original beginnen |
 | `clay edit config [get|set|unset] <schlüssel>` | Die `clay.yaml` lesen und ändern, etwa `navbar.source.link` |
 
-Pfade sind relativ zu `docs/`: `guides/setup.md` (das `.md` darf fehlen), `guides` für einen Ordner, `index.md` für die Startseite. `--lang` arbeitet in einer anderen Sprache, `--docs-version` in einer älteren Version, und `--json` gibt das Ergebnis als JSON aus.
+Pfade sind relativ zur Dokumentation, `docs/` oder mit Versionen `docs/latest/`: `guides/setup.md` (das `.md` darf fehlen), `guides` für einen Ordner, `index.md` für die Startseite. `--lang` arbeitet in einer anderen Sprache, `--docs-version` in einer älteren Version, und `--json` gibt das Ergebnis als JSON aus.
 
 ```bash
 npx clay edit set guides/setup.md title="Einrichtung" order=2 --json

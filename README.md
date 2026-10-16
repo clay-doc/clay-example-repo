@@ -34,19 +34,20 @@ For AI assistants and coding agents, the docs are also published as Markdown:
 
 ```text
 .
-├── docs/                          # The pages, one Markdown file each
-│   ├── index.md                   # The start page
-│   ├── index.de.md                # German translation, next to the original
-│   ├── getting-started/           # index.md (the section's page), introduction, installation, quick start, …
-│   ├── writing/                   # Pages, Markdown, code blocks, alerts, links, HTML, snippets, generated docs
-│   │   └── components/            # Tabs, steps, cards, details, prompts, badges, math, diagrams, file trees
-│   ├── _snippets/                 # Text included into pages; no pages of their own
-│   ├── organizing/                # Navigation, folders, index pages, versions, translations, clay edit
-│   ├── features/                  # AI and agents, search, SEO, page details, themes and icons, analytics
-│   ├── configuration/             # clay.yaml, front matter, environment variables
-│   ├── publishing/                # Commands, build checks, GitHub Pages, other hosts, CLI reference (generated)
-│   └── guides/                    # Upgrading to Clay 4, 3 and 2, troubleshooting
-├── docs-archive/3.x/              # The docs of Clay 3, online under /3.x
+├── docs/                          # One folder per version of the docs
+│   ├── latest/                    # The latest docs, one Markdown file per page, at /
+│   │   ├── index.md               # The start page
+│   │   ├── index.de.md            # German translation, next to the original
+│   │   ├── getting-started/       # index.md (the section's page), introduction, installation, quick start, …
+│   │   ├── writing/               # Pages, Markdown, code blocks, alerts, links, HTML, snippets, generated docs
+│   │   │   └── components/        # Tabs, steps, cards, details, prompts, badges, math, diagrams, file trees
+│   │   ├── _snippets/             # Text included into pages; no pages of their own
+│   │   ├── organizing/            # Navigation, folders, index pages, versions, translations, clay edit
+│   │   ├── features/              # AI and agents, search, SEO, page details, themes and icons, analytics
+│   │   ├── configuration/         # clay.yaml, front matter, environment variables
+│   │   ├── publishing/            # Commands, build checks, GitHub Pages, other hosts, CLI reference (generated)
+│   │   └── guides/                # Upgrading to Clay 4, 3 and 2, troubleshooting
+│   └── 3.x/                       # The docs of Clay 3, at /3.x
 ├── config/messages.yaml           # Interface texts that differ from Clay's, named in clay.yaml
 ├── scripts/cli-reference.mjs      # Writes the CLI reference before every build ("generate" in clay.yaml)
 ├── clay.yaml                      # Site settings, with values per language

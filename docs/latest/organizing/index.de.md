@@ -52,10 +52,10 @@ Versionen und Sprachen vervielfachen denselben Aufbau. Jede Ausgabe bekommt eige
 
 ```tree
 mein-projekt/
-  docs/                   # neueste, Englisch: /
-    setup.md
-    setup.de.md           # neueste, Deutsch: /de/setup
-  docs-archive/
+  docs/
+    latest/               # neueste, Englisch: /
+      setup.md
+      setup.de.md         # neueste, Deutsch: /de/setup
     1.x/                  # Version 1.x: /1.x
       setup.md
 ```
@@ -67,7 +67,7 @@ Leser wechseln Version und Sprache in der Navigationsleiste und bleiben auf der 
 - **Der Dateibaum ist die Navigation.** Verschiebst du eine Datei, wandert sie in der Seitenleiste mit.
 - **`order` bringt Einträge in Reihenfolge.** Einträge ohne folgen alphabetisch.
 - **Die `index.md` eines Ordners beschreibt den Ordner.** Ihr Front Matter benennt ihn; ihr Text, falls vorhanden, ist die Seite des Ordners.
-- **`docs/` ist immer die neueste Version.** Ältere sind Kopien in `docs-archive/`.
+- **Die neueste Version ist `docs/`**, oder `docs/latest/`, sobald es Versionen gibt. Ältere sind Kopien daneben, etwa `docs/1.x/`.
 - **Übersetze so viel du magst.** Seiten ohne Übersetzung zeigen das Original, mit einem Hinweis.
 
 > [!TIP]

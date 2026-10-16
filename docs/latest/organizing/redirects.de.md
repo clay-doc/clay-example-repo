@@ -24,7 +24,7 @@ Wer `/installation` öffnet, landet auf `/guides/setup`, im selben Abschnitt: `/
 
 - **Schreib sie ab der Wurzel der Dokumentation**, wie einen Link, der mit `/` beginnt, ohne die `baseURL`: `/installation`, nicht `/mein-projekt/installation`. Ein `/` am Ende oder `.md` darf bleiben.
 - **Sie gelten in jeder Sprache.** Übersetzungen nutzen die Weiterleitungen des Originals: `/installation` ist auf der deutschen Seite `/de/installation`.
-- **In einer älteren Version** bleiben sie in ihr: In `docs-archive/1.x/` ist `/installation` dann `/1.x/installation`.
+- **In einer älteren Version** bleiben sie in ihr: In `docs/1.x/` ist `/installation` dann `/1.x/installation`.
 - **Eine Adresse, die selbst eine Seite ist**, oder die schon eine andere Seite nennt, wird mit einer Warnung übersprungen, ebenso Adressen anderer Websites.
 
 ## Seiten mit clay edit verschieben

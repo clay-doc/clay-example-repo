@@ -95,7 +95,7 @@ With `editURL`, every page shows an **Edit this page** link. Point it at the `do
 editURL: "https://github.com/my-org/my-project/edit/main/docs/"
 ```
 
-The page `docs/guides/setup.md` then links to `…/edit/main/docs/guides/setup.md`. This works with GitHub, GitLab, Gitea and every host with a similar URL scheme. When the URL ends in `docs/`, pages of [older versions](../organizing/versions.md) link into `docs-archive/<name>/`.
+The page `docs/guides/setup.md` then links to `…/edit/main/docs/guides/setup.md`. This works with GitHub, GitLab, Gitea and every host with a similar URL scheme. With [versions](../organizing/versions.md), pages link into their version's folder, `docs/latest/` or `docs/<name>/`, as long as the URL ends in `docs/`.
 
 ## Navbar
 

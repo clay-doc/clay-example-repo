@@ -22,8 +22,6 @@ my-project/
       setup.md
       img/
         screen.png        # images and files are published as they are
-  docs-archive/           # optional: older versions of the docs
-    1.x/                  # a copy of docs/ as it was for version 1.x
   package.json            # optional: Clay as a dev dependency
   publish/                # created by clay build; do not commit
 ```
@@ -36,7 +34,7 @@ my-project/
 | `docs/` | Every `.md` file is a page; other files are published as they are | [pages](../writing/pages.md) |
 | `index.md` | The start page (`docs/index.md`), and a folder's title, icon, order and page | [index pages](../organizing/index-pages.md) |
 | `*.de.md` and similar | Translations of the page next to them | [translations](../organizing/translations.md) |
-| `docs-archive/<name>/` | A saved copy of the docs of an older release | [versions](../organizing/versions.md) |
+| `docs/latest/`, `docs/<name>/` | With versions: the latest docs, and a saved copy for each older release | [versions](../organizing/versions.md) |
 | `publish/public/` | The finished website | [commands](../publishing/commands.md) |
 
 ## Rules for the docs folder
@@ -48,7 +46,7 @@ my-project/
 
 ## What belongs in git
 
-Commit `clay.yaml`, `docs/`, `docs-archive/`, your logo, and `package.json` with its lockfile. Leave out the build output and the dependencies:
+Commit `clay.yaml`, `docs/`, your logo, and `package.json` with its lockfile. Leave out the build output and the dependencies:
 
 ```text [.gitignore]
 node_modules/

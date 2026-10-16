@@ -70,7 +70,7 @@ The header shows which version and language you are editing.
 | Key | Action |
 |-----|--------|
 | <kbd>v</kbd> | Switch to the next version |
-| <kbd>V</kbd> | Save the current docs as a new version, see [versions](versions.md) |
+| <kbd>V</kbd> | Save the latest docs as a new version; the first one moves `docs/` into `docs/latest/`, after asking, see [versions](versions.md) |
 | <kbd>l</kbd> | Switch to the next language |
 | <kbd>c</kbd> | Start a translation of the selected entry: copies the original into `*.de.md` and so on |
 
@@ -99,7 +99,7 @@ Every action of the editor is also a command that does one change and exits. Scr
 | `clay edit translate <path> --lang <code>` | Start a translation from the original |
 | `clay edit config [get|set|unset] <key>` | Read and change `clay.yaml`, e.g. `navbar.source.link` |
 
-Paths are relative to `docs/`: `guides/setup.md` (the `.md` may be left out), `guides` for a folder, `index.md` for the start page. `--lang` works in another language, `--docs-version` in an older version, and `--json` prints the result as JSON.
+Paths are relative to the docs, `docs/` or with versions `docs/latest/`: `guides/setup.md` (the `.md` may be left out), `guides` for a folder, `index.md` for the start page. `--lang` works in another language, `--docs-version` in an older version, and `--json` prints the result as JSON.
 
 ```bash
 npx clay edit set guides/setup.md title="Setting up" order=2 --json

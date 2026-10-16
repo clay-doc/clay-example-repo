@@ -1,12 +1,12 @@
 ---
 title: Umstieg auf Clay 4
 icon: fa-solid fa-circle-up
-description: Eine Clay-3-Seite auf Clay 4 bringen - das Front-Matter-Feld cards heißt jetzt list, und Dateien mit _ am Anfang sind Snippets.
+description: Eine Clay-3-Seite auf Clay 4 bringen - das Front-Matter-Feld cards heißt jetzt list, Dateien mit _ am Anfang sind Snippets, und ältere Versionen ziehen nach docs/.
 ---
 
 # Umstieg auf Clay 4 :badge[Aktuell]{tip}
 
-Clay 4 ändert zwei Dinge: Das Front-Matter-Feld `cards` heißt jetzt `list`, und Dateien und Ordner, deren Name mit `_` beginnt, sind keine Seiten mehr: Sie enthalten [Snippets](../writing/snippets-and-variables.md). Alles andere, deine Seiten, Ordner, Links, Übersetzungen und die `clay.yaml`, bleibt, wie es ist. Bis du es umbenannt hast, meldet `clay build` jede Datei, die noch `cards` nutzt, mit einer Warnung, und `--strict` scheitert.
+Clay 4 ändert drei Dinge: Das Front-Matter-Feld `cards` heißt jetzt `list`, Dateien und Ordner, deren Name mit `_` beginnt, sind keine Seiten mehr: Sie enthalten [Snippets](../writing/snippets-and-variables.md), und ältere Versionen ziehen von `docs-archive/` nach `docs/`. Alles andere, deine Seiten, Ordner, Links, Übersetzungen und die `clay.yaml`, bleibt, wie es ist. Bis du es umbenannt hast, meldet `clay build` jede Datei, die noch `cards` nutzt, mit einer Warnung, und `--strict` scheitert.
 
 ## Auf einen Blick
 
@@ -14,6 +14,7 @@ Clay 4 ändert zwei Dinge: Das Front-Matter-Feld `cards` heißt jetzt `list`, un
 |--------|--------|
 | `cards: true` in einer `index.md` | `list: true` |
 | `docs/_entwuerfe/idee.md` ist eine Seite | Dateien und Ordner mit `_` am Anfang sind keine Seiten |
+| `docs/` und `docs-archive/1.x/` | `docs/latest/` und `docs/1.x/`, verschoben von `npx clay version` |
 
 Den Umstieg kann ein Coding-Agent übernehmen:
 
@@ -71,7 +72,15 @@ Der Umstieg ist fertig, wenn `npx clay build --strict` durchläuft.
    find docs docs-archive -name "_*"
    ```
 
-4. **Prüfe.**
+4. **Verschiebe ältere Versionen**, falls du `docs-archive/` hast:
+
+   ```bash
+   npx clay version
+   ```
+
+   Das verschiebt `docs/` nach `docs/latest/` und jedes `docs-archive/<name>/` nach `docs/<name>/`, damit alle Versionen gleich tief liegen, und gibt Pfaden, die aus `docs/` hinausführen, ein `../` mehr. Es zeigt jede Änderung und fragt vorher; siehe [die erste Version](../organizing/versions.md#die-erste-version). Committe das Verschieben für sich.
+
+5. **Prüfe.**
 
    ```bash
    npx clay build --strict

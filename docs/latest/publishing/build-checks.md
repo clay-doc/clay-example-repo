@@ -41,7 +41,7 @@ flowchart LR
 | Settings from Clay 1 | `clay.yaml: "langs" is no longer needed and is ignored` |
 | Translations without an original | `setup.de.md: translates setup.md, which does not exist; the file is skipped` |
 | Unusable language codes | `clay.yaml: "Deutsch" is not a language code like "en" or "pt-BR"; it is ignored` |
-| Unusable or clashing versions | `docs-archive/1.x: docs/1.x has the same URL as this version; rename one of them` |
+| Unusable or clashing versions | `docs/1.x: docs/latest/1.x has the same URL as this version; rename one of them` |
 | Missing git history | `the docs are not in a git repository: last-updated dates are skipped` |
 
 Links, images and videos written in HTML (`<a href>`, `<img src>`, `<video src>`) are checked like Markdown ones. Links to other websites are not checked.
@@ -68,8 +68,8 @@ To catch problems before they are merged, run the same check on every pull reque
 
 ::: prompt
 Add a GitHub Actions workflow, .github/workflows/docs-check.yaml, that runs
-`npx clay build --strict` on every pull request that changes docs/,
-docs-archive/ or clay.yaml. Set up Node.js like the deploy workflow in
+`npx clay build --strict` on every pull request that changes docs/ or
+clay.yaml. Set up Node.js like the deploy workflow in
 https://clay-doc.github.io/clay-example-repo/publishing/github-pages.md,
 check out the full history, and do not deploy anything.
 :::

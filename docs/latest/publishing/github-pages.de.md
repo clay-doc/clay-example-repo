@@ -134,7 +134,7 @@ In Repositories, die keine JavaScript-Projekte sind, führst du eine feste Clay-
 > on:
 >   push:
 >     branches: [main]
->     paths: ["docs/**", "docs-archive/**", "clay.yaml", "package-lock.json"]
+>     paths: ["docs/**", "clay.yaml", "package-lock.json"]
 > ```
 
 ## Geheimnisse

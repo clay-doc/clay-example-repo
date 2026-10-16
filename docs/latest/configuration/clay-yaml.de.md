@@ -94,7 +94,7 @@ Mit `editURL` zeigt jede Seite einen Link **Diese Seite bearbeiten**. Lass ihn a
 editURL: "https://github.com/meine-org/mein-projekt/edit/main/docs/"
 ```
 
-Die Seite `docs/guides/setup.md` verlinkt dann auf `…/edit/main/docs/guides/setup.md`. Das funktioniert mit GitHub, GitLab, Gitea und jedem Hoster mit ähnlichem URL-Schema. Endet die URL auf `docs/`, verlinken Seiten [älterer Versionen](../organizing/versions.md) nach `docs-archive/<name>/`.
+Die Seite `docs/guides/setup.md` verlinkt dann auf `…/edit/main/docs/guides/setup.md`. Das funktioniert mit GitHub, GitLab, Gitea und jedem Hoster mit ähnlichem URL-Schema. Mit [Versionen](../organizing/versions.md) verlinken Seiten in den Ordner ihrer Version, `docs/latest/` oder `docs/<name>/`, solange die URL auf `docs/` endet.
 
 ## Navigationsleiste
 

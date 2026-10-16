@@ -135,7 +135,7 @@ In repositories that are not JavaScript projects, run a fixed Clay version with 
 > on:
 >   push:
 >     branches: [main]
->     paths: ["docs/**", "docs-archive/**", "clay.yaml", "package-lock.json"]
+>     paths: ["docs/**", "clay.yaml", "package-lock.json"]
 > ```
 
 ## Secrets

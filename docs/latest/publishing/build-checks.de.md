@@ -41,7 +41,7 @@ Die Meldungen selbst sind englisch.
 | Einstellungen aus Clay 1 | `clay.yaml: "langs" is no longer needed and is ignored` |
 | Übersetzungen ohne Original | `setup.de.md: translates setup.md, which does not exist; the file is skipped` |
 | Unbrauchbare Sprachcodes | `clay.yaml: "Deutsch" is not a language code like "en" or "pt-BR"; it is ignored` |
-| Unbrauchbare oder kollidierende Versionen | `docs-archive/1.x: docs/1.x has the same URL as this version; rename one of them` |
+| Unbrauchbare oder kollidierende Versionen | `docs/1.x: docs/latest/1.x has the same URL as this version; rename one of them` |
 | Fehlende Git-Historie | `the docs are not in a git repository: last-updated dates are skipped` |
 
 Links, Bilder und Videos in HTML (`<a href>`, `<img src>`, `<video src>`) werden wie solche in Markdown geprüft. Links zu anderen Websites werden nicht geprüft.
@@ -69,7 +69,7 @@ Damit Probleme gar nicht erst gemergt werden, lass dieselbe Prüfung bei jedem P
 ::: prompt
 Leg einen GitHub-Actions-Workflow an, .github/workflows/docs-check.yaml, der
 `npx clay build --strict` bei jedem Pull Request ausführt, der docs/,
-docs-archive/ oder clay.yaml ändert. Richte Node.js ein wie der Deploy-Workflow
+oder clay.yaml ändert. Richte Node.js ein wie der Deploy-Workflow
 in https://clay-doc.github.io/clay-example-repo/de/publishing/github-pages.md,
 checke die ganze Historie aus und veröffentliche nichts.
 :::

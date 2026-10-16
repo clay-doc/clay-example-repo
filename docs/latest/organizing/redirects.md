@@ -25,7 +25,7 @@ Readers who open `/installation` land on `/guides/setup`, at the same section: `
 
 - **Write them from the root of the docs**, like a link starting with `/`, without the `baseURL`: `/installation`, not `/my-project/installation`. A trailing `/` or `.md` may stay.
 - **They count in every language.** Translations use the redirects of the original: `/installation` on the German page is `/de/installation`.
-- **In an older version**, they stay within it: in `docs-archive/1.x/`, `/installation` is `/1.x/installation`.
+- **In an older version**, they stay within it: in `docs/1.x/`, `/installation` is `/1.x/installation`.
 - **An address that is a page itself**, or that another page already lists, is skipped with a warning, and so are addresses of other sites.
 
 ## Moving pages with clay edit

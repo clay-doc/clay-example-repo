@@ -21,8 +21,6 @@ mein-projekt/
       setup.md
       img/
         screen.png        # Bilder und Dateien werden veröffentlicht, wie sie sind
-  docs-archive/           # optional: ältere Versionen der Dokumentation
-    1.x/                  # eine Kopie von docs/, wie sie für Version 1.x war
   package.json            # optional: Clay als Entwicklungsabhängigkeit
   publish/                # von clay build erzeugt; nicht committen
 ```
@@ -35,7 +33,7 @@ mein-projekt/
 | `docs/` | Jede `.md`-Datei ist eine Seite; andere Dateien werden veröffentlicht, wie sie sind | [Seiten](../writing/pages.md) |
 | `index.md` | Die Startseite (`docs/index.md`) sowie Titel, Icon, Reihenfolge und Seite eines Ordners | [Indexseiten](../organizing/index-pages.md) |
 | `*.de.md` und ähnliche | Übersetzungen der Seite daneben | [Übersetzungen](../organizing/translations.md) |
-| `docs-archive/<name>/` | Eine gespeicherte Kopie der Dokumentation eines älteren Releases | [Versionen](../organizing/versions.md) |
+| `docs/latest/`, `docs/<name>/` | Mit Versionen: die neueste Dokumentation und je eine gespeicherte Kopie älterer Releases | [Versionen](../organizing/versions.md) |
 | `publish/public/` | Die fertige Website | [Befehle](../publishing/commands.md) |
 
 ## Regeln für den Ordner docs
@@ -47,7 +45,7 @@ mein-projekt/
 
 ## Was ins Git gehört
 
-Committe `clay.yaml`, `docs/`, `docs-archive/`, dein Logo sowie `package.json` mit ihrer Lockfile. Lass die Build-Ausgabe und die Abhängigkeiten weg:
+Committe `clay.yaml`, `docs/`, dein Logo sowie `package.json` mit ihrer Lockfile. Lass die Build-Ausgabe und die Abhängigkeiten weg:
 
 ```text [.gitignore]
 node_modules/

@@ -140,7 +140,7 @@ Runs the [build checks](build-checks.md), broken links, settings, translations a
 npx clay version 2.x
 ```
 
-Copies `docs/` into `docs-archive/2.x/`, keeping the current state of the docs as an older version. In `clay edit`, <kbd>V</kbd> does the same. See [versions](../organizing/versions.md).
+Copies `docs/latest/` to `docs/2.x/`, keeping the latest docs as an older version. While the pages are right in `docs/`, it first moves them into `docs/latest/`: it shows what changes and asks before it does. In `clay edit`, <kbd>V</kbd> does the same. See [versions](../organizing/versions.md#the-first-version).
 
 ## Options
 
@@ -154,9 +154,10 @@ Copies `docs/` into `docs-archive/2.x/`, keeping the current state of the docs a
 | `--verbose` | build, dev | off | Show the full output of Nuxt instead of the progress |
 | `--json` | edit, check | off | Print the result as JSON, for scripts and agents |
 | `--lang <code>` | edit | default language | Work in another language |
-| `--docs-version <name>` | edit | latest | Work in an older version in `docs-archive/<name>/` |
+| `--docs-version <name>` | edit | latest | Work in an older version in `docs/<name>/` |
 | `--slug <name>` | edit | from the title | File or folder name for `new` and `move` |
-| `--yes` | edit | off | Confirm `delete` |
+| `--redirect` | edit | off | Keep the old address of a page in `move` and `rename`, see [redirects](../organizing/redirects.md) |
+| `--yes` | edit, version | off | Confirm `delete`; move `docs/` into `docs/latest/` without asking |
 | `-h`, `--help` | | | Show the help |
 | `-v`, `--version` | | | Show Clay's version |
 

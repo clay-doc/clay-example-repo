@@ -54,10 +54,10 @@ Versions and languages multiply the same structure. Each edition gets its own ad
 
 ```tree
 my-project/
-  docs/                   # latest, English: /
-    setup.md
-    setup.de.md           # latest, German: /de/setup
-  docs-archive/
+  docs/
+    latest/               # latest, English: /
+      setup.md
+      setup.de.md         # latest, German: /de/setup
     1.x/                  # version 1.x: /1.x
       setup.md
 ```
@@ -69,7 +69,7 @@ Readers switch versions and languages in the navbar and stay on the page they ar
 - **The file tree is the navigation.** Move a file, and it moves in the sidebar.
 - **`order` puts entries in order.** Entries without it follow alphabetically.
 - **A folder's `index.md` describes the folder.** Its front matter names it; its text, if any, is the folder's page.
-- **`docs/` is always the latest version.** Older ones are copies in `docs-archive/`.
+- **The latest version is `docs/`**, or `docs/latest/` once there are versions. Older ones are copies next to it, like `docs/1.x/`.
 - **Translate as much as you like.** Pages without a translation show the original, with a note.
 
 > [!TIP]

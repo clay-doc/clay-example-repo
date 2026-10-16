@@ -51,7 +51,7 @@ With `editURL` in `clay.yaml`, each page links to its source file, so readers ca
 editURL: "https://github.com/my-org/my-project/edit/main/docs/"
 ```
 
-On translated pages the link leads to the translation, on [older versions](../organizing/versions.md) into `docs-archive/<name>/`.
+On translated pages the link leads to the translation, with [versions](../organizing/versions.md) into the version's folder, `docs/latest/` or `docs/<name>/`.
 
 ## Previous and next
 
