@@ -208,7 +208,7 @@ This works for `navbar`, `messages`, `variables`, `head`, `analytics`, `theme`, 
 - `head`, when scripts and verifications pile up,
 - `navbar`, when the links are many.
 
-Short settings are easiest to find where they are; a site with a handful of settings needs no split at all. This site keeps its interface texts in [`config/messages.yaml`](https://github.com/clay-doc/clay-example-repo/blob/main/config/messages.yaml).
+Short settings are easiest to find where they are; a site with a handful of settings needs no split at all. This site keeps its navbar, interface texts, variables and head tags in [`config/`](https://github.com/clay-doc/clay-example-repo/tree/main/config), so its [`clay.yaml`](https://github.com/clay-doc/clay-example-repo/blob/main/clay.yaml) shows the site at a glance.
 
 > [!NOTE]
 > `clay edit` changes settings in `clay.yaml` itself. Settings in files of their own are edited in those files.

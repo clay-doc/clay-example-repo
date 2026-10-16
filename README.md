@@ -48,9 +48,13 @@ For AI assistants and coding agents, the docs are also published as Markdown:
 │   │   ├── publishing/            # Commands, build checks, GitHub Pages, other hosts, CLI reference (generated)
 │   │   └── guides/                # Upgrading to Clay 4, 3 and 2, troubleshooting
 │   └── 3.x/                       # The docs of Clay 3, at /3.x
-├── config/messages.yaml           # Interface texts that differ from Clay's, named in clay.yaml
+├── config/                        # Settings in files of their own, named in clay.yaml:
+│   ├── navbar.yaml                #   logo, source and links
+│   ├── messages.yaml              #   interface texts that differ from Clay's
+│   ├── variables.yaml             #   {{major}} and {{node}} in the docs
+│   └── head.yaml                  #   tags in the head of every page
 ├── scripts/cli-reference.mjs      # Writes the CLI reference before every build ("generate" in clay.yaml)
-├── clay.yaml                      # Site settings, with values per language
+├── clay.yaml                      # Site settings at a glance; the longer ones are in config/
 ├── logo.svg                       # Logo and favicon
 ├── package.json                   # Clay as a dev dependency
 └── .github/

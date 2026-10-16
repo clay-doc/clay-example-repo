@@ -1,0 +1,6 @@
+# {{major}} and {{node}} in the docs. Writing › Snippets & Variables shows the
+# lines between the region comments, included from here.
+# #region values
+major: "4"
+node: "20.19"
+# #endregion

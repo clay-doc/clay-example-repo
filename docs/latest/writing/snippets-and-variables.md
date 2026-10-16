@@ -92,17 +92,17 @@ const client = createClient({token: process.env.TOKEN});
 // #endregion
 ```
 
-This site does the same with its own settings: the block below is included from its `clay.yaml`, between `# #region variables` and `# #endregion`, and changes with it.
+This site does the same with its own settings: the block below is included from its `config/variables.yaml`, between `# #region values` and `# #endregion`, and changes with it.
 
 ::: tabs
 == Result
-```yaml [clay.yaml]
-<!--@include: ../../../clay.yaml#variables-->
+```yaml [config/variables.yaml]
+<!--@include: ../../../config/variables.yaml#values-->
 ```
 == Markdown
 ````markdown
-```yaml [clay.yaml]
-\<!--@include: ../../../clay.yaml#variables-->
+```yaml [config/variables.yaml]
+\<!--@include: ../../../config/variables.yaml#values-->
 ```
 ````
 :::

@@ -207,7 +207,7 @@ Das funktioniert für `navbar`, `messages`, `variables`, `head`, `analytics`, `t
 - `head`, wenn sich Skripte und Bestätigungen häufen,
 - `navbar`, wenn es viele Links sind.
 
-Kurze Einstellungen findet man am leichtesten, wo sie sind; eine Seite mit einer Handvoll Einstellungen braucht keine Aufteilung. Diese Website hält ihre Oberflächentexte in [`config/messages.yaml`](https://github.com/clay-doc/clay-example-repo/blob/main/config/messages.yaml).
+Kurze Einstellungen findet man am leichtesten, wo sie sind; eine Seite mit einer Handvoll Einstellungen braucht keine Aufteilung. Diese Website hält Navigationsleiste, Oberflächentexte, Variablen und Head-Tags in [`config/`](https://github.com/clay-doc/clay-example-repo/tree/main/config), damit ihre [`clay.yaml`](https://github.com/clay-doc/clay-example-repo/blob/main/clay.yaml) die Seite auf einen Blick zeigt.
 
 > [!NOTE]
 > `clay edit` ändert Einstellungen in der `clay.yaml` selbst. Einstellungen in eigenen Dateien bearbeitest du in diesen Dateien.

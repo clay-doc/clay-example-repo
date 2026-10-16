@@ -1,3 +1,5 @@
+# The documentation of Clay, built with Clay. Longer settings live in config/,
+# see Configuration › clay.yaml › Settings in files of their own.
 title: "Clay"
 favicon: "logo.svg"
 baseURL: "/clay-example-repo/"
@@ -7,24 +9,12 @@ editURL: "https://github.com/clay-doc/clay-example-repo/edit/main/docs/"
 fontawesomeKit: "set-in-ci"
 version: "4.0"
 languages: ["en", "de"]
-# {{major}} and {{node}} in the docs, see Writing › Snippets & Variables.
-# The page includes this block from here, between the region comments.
-# #region variables
-variables:
-  major: "4"
-  node: "20.19"
-# #endregion
-# Interface texts that differ from Clay's, in a file of their own
-messages: config/messages.yaml
-# The color of the browser's bar on phones, matching the navbar
-head:
-  meta:
-    - name: "theme-color"
-      content: "#f6f2f2"
-      media: "(prefers-color-scheme: light)"
-    - name: "theme-color"
-      content: "#151111"
-      media: "(prefers-color-scheme: dark)"
+
+navbar: config/navbar.yaml          # logo, source and links
+messages: config/messages.yaml      # interface texts that differ from Clay's
+variables: config/variables.yaml    # {{major}} and {{node}} in the docs
+head: config/head.yaml              # tags in the head of every page
+
 # Page views and searches without results, without cookies: clay.goatcounter.com
 analytics:
   goatcounter:
@@ -32,24 +22,3 @@ analytics:
 # Writes Publishing › CLI Reference from Clay's own help before every build
 generate:
   - node scripts/cli-reference.mjs
-navbar:
-  logo: "logo.svg"
-  source:
-    name: "GitHub"
-    icon: "fa-brands fa-github"
-    link: "https://github.com/clay-doc/clay"
-  links:
-    - name: "npm"
-      icon: "fa-solid fa-box-open"
-      link: "https://www.npmjs.com/package/clay-doc"
-    - name:
-        en: "Changelog"
-        de: "Änderungen"
-      icon: "fa-solid fa-clock-rotate-left"
-      link: "https://github.com/clay-doc/clay/blob/main/CHANGELOG.md"
-    - name:
-        en: "Source of this site"
-        de: "Quelltext dieser Seite"
-      icon: "fa-solid fa-code"
-      link: "https://github.com/clay-doc/clay-example-repo"
-lang: en

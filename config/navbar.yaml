@@ -1,0 +1,21 @@
+# The navbar: the logo, the link to Clay's source and the other links.
+# Names can differ per language.
+logo: "logo.svg"
+source:
+  name: "GitHub"
+  icon: "fa-brands fa-github"
+  link: "https://github.com/clay-doc/clay"
+links:
+  - name: "npm"
+    icon: "fa-solid fa-box-open"
+    link: "https://www.npmjs.com/package/clay-doc"
+  - name:
+      en: "Changelog"
+      de: "Änderungen"
+    icon: "fa-solid fa-clock-rotate-left"
+    link: "https://github.com/clay-doc/clay/blob/main/CHANGELOG.md"
+  - name:
+      en: "Source of this site"
+      de: "Quelltext dieser Seite"
+    icon: "fa-solid fa-code"
+    link: "https://github.com/clay-doc/clay-example-repo"

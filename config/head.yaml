@@ -1,0 +1,8 @@
+# The color of the browser's bar on phones, matching the navbar
+meta:
+  - name: "theme-color"
+    content: "#f6f2f2"
+    media: "(prefers-color-scheme: light)"
+  - name: "theme-color"
+    content: "#151111"
+    media: "(prefers-color-scheme: dark)"
