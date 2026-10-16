@@ -1,7 +1,7 @@
 ---
 title: Themes & Icons
 icon: fa-solid fa-palette
-description: Light and dark mode, and how to use Font Awesome icons and kits in Clay.
+description: Light and dark mode, your own colors and fonts, and how to use Font Awesome icons and kits in Clay.
 order: 5
 ---
 
@@ -12,6 +12,37 @@ order: 5
 Clay has a light and a dark theme. It starts with the reader's system setting and switches along when the system does. The sun or moon button in the navbar switches by hand; the choice is remembered in the browser and applied before the page is drawn, so pages never flash in the wrong theme.
 
 Code blocks are highlighted in two color schemes and switch together with the site.
+
+## Your own colors and fonts :badge[New in Clay 4]{tip}
+
+`theme` in `clay.yaml` gives the site your own look. Everything you leave out keeps Clay's:
+
+```yaml
+theme:
+  primary: "#2563eb"          # links, buttons, the marks in the navigation
+  radius: "0.25rem"           # corners of boxes; fields get half of it
+  font: "Lora, serif"         # the text
+  codeFont: "JetBrains Mono, monospace"
+  dark:
+    primary: "#60a5fa"        # light and dark can differ
+    background: "#0b1120"
+    text: "#e2e8f0"
+```
+
+| Setting | What it changes |
+|---------|-----------------|
+| `primary` | Links, buttons, the active entry in the sidebar and the contents |
+| `background`, `text` | The page and its text; boxes and borders are derived from the background |
+| `radius` | The corners of boxes, code blocks and buttons, e.g. `0` for square |
+| `font`, `codeFont` | The fonts of the text and of code |
+| `light`, `dark` | `primary`, `background` and `text` for one mode only |
+
+Colors are written as `#rrggbb` or `#rgb`. Text on the primary color turns black or white, whichever reads better. [Social images](seo.md#social-images) take the colors of the dark mode and the font.
+
+**Fonts from [Google Fonts](https://fonts.google.com)** are downloaded when the site is built and published with it: readers get them without having them installed, and their browsers never contact Google. Other fonts, like Georgia or Helvetica, are used when the reader has them, otherwise the next font in the list.
+
+> [!TIP]
+> Keep enough contrast between text and background, at least 4.5 to 1, so everyone can read your docs. Check your colors with a [contrast checker](https://webaim.org/resources/contrastchecker/).
 
 ## Icons
 

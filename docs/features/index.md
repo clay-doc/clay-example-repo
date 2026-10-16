@@ -15,6 +15,7 @@ What every Clay site comes with. None of these need setup: they work as soon as 
 - [SEO](seo.md)
 - [Page Details](page-details.md)
 - [Themes & Icons](themes-and-icons.md)
+- [Analytics](analytics.md)
 :::
 
 ## Out of the box, and what fine-tunes it
@@ -25,7 +26,8 @@ What every Clay site comes with. None of these need setup: they work as soon as 
 | [Search](search.md) | Every page and section, typos forgiven, filters by section | Good headings; nothing else |
 | [SEO](seo.md) | Titles, descriptions, link previews | `siteURL` for canonical links, the sitemap and structured data |
 | [Page details](page-details.md) | Contents of the page, previous and next links | `editURL` for edit links; git history for last-updated dates |
-| [Themes & icons](themes-and-icons.md) | Light and dark, free Font Awesome icons | `fontawesomeKit` for Pro icons and your own |
+| [Themes & icons](themes-and-icons.md) | Light and dark, free Font Awesome icons | `theme` for your colors and fonts; `fontawesomeKit` for Pro icons |
+| [Analytics](analytics.md) | Nothing is counted | `analytics` for Plausible, Umami or GoatCounter, without cookies |
 
 ## For every reader
 

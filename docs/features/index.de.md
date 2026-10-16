@@ -14,6 +14,7 @@ Was jede Clay-Seite mitbringt. Nichts davon braucht Einrichtung: Es funktioniert
 - [SEO](seo.md)
 - [Seitendetails](page-details.md)
 - [Designs & Icons](themes-and-icons.md)
+- [Analytics](analytics.md)
 :::
 
 ## Sofort da, und was es justiert
@@ -24,7 +25,8 @@ Was jede Clay-Seite mitbringt. Nichts davon braucht Einrichtung: Es funktioniert
 | [Suche](search.md) | Jede Seite und jeder Abschnitt, Tippfehler verziehen, Filter nach Bereich | Gute Überschriften; sonst nichts |
 | [SEO](seo.md) | Titel, Beschreibungen, Linkvorschauen | `siteURL` für kanonische Links, die Sitemap und strukturierte Daten |
 | [Seitendetails](page-details.md) | Inhaltsverzeichnis, Links zur vorigen und nächsten Seite | `editURL` für Bearbeiten-Links; Git-Historie für Änderungsdaten |
-| [Designs & Icons](themes-and-icons.md) | Hell und dunkel, kostenlose Font-Awesome-Icons | `fontawesomeKit` für Pro-Icons und eigene |
+| [Designs & Icons](themes-and-icons.md) | Hell und dunkel, kostenlose Font-Awesome-Icons | `theme` für eigene Farben und Schriften; `fontawesomeKit` für Pro-Icons |
+| [Analytics](analytics.md) | Nichts wird gezählt | `analytics` für Plausible, Umami oder GoatCounter, ohne Cookies |
 
 ## Für alle Leser
 

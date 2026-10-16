@@ -93,6 +93,8 @@ Der Umstieg ist fertig, wenn `npx clay build --strict` durchläuft.
   Jede Seite bekommt ein Bild für Link-Vorschauen, und Seiten unter einem Pfad die Adresse ihrer Sitemap.
 :::
 
+- `theme` in der `clay.yaml` setzt eigene Farben und Schriften, und `analytics` zählt Seitenaufrufe ohne Cookies, siehe [Designs](../features/themes-and-icons.md#eigene-farben-und-schriften) und [Analytics](../features/analytics.md).
+- Einstellungen können in eigenen Dateien stehen, etwa `variables: config/variables.yaml`, siehe [clay.yaml](../configuration/clay-yaml.md#einstellungen-in-eigenen-dateien).
 - `generate` in der `clay.yaml` führt vor jedem Build Werkzeuge aus, die Seiten schreiben, etwa eine API-Referenz aus dem Code, siehe [generierte Dokumentation](../writing/generated-docs.md).
 - `head` in der `clay.yaml` fügt jeder Seite Skripte und Meta-Tags hinzu, siehe [clay.yaml](../configuration/clay-yaml.md#head).
 - Videos und Einbettungen von YouTube, Vimeo, Figma und mehr, siehe [HTML](../writing/html.md#videos-und-einbettungen).

@@ -159,6 +159,18 @@ The start page is not configured here: it is `docs/index.md`, a Markdown page wi
 
 See [versions](../organizing/versions.md) and [translations](../organizing/translations.md).
 
+## Theme and analytics
+
+`theme` sets your own colors, corners and fonts, see [themes & icons](../features/themes-and-icons.md#your-own-colors-and-fonts). `analytics` counts page views without cookies, with Plausible, Umami or GoatCounter, see [analytics](../features/analytics.md).
+
+```yaml
+theme:
+  primary: "#2563eb"
+  font: "Lora, serif"
+analytics:
+  plausible: {}
+```
+
 ## Values per language
 
 On a multilingual site, every text setting can have one value per language. Languages without a value use the default language's:
@@ -173,6 +185,32 @@ navbar:
       icon: "fa-solid fa-house"
       link: "https://example.com"
 ```
+
+## Settings in files of their own :badge[New in Clay 4]{tip}
+
+A setting can name a YAML file that holds its value, relative to `clay.yaml`:
+
+```yaml
+title: "My Project"
+siteURL: "https://my-org.github.io"
+navbar: config/navbar.yaml
+variables: config/variables.yaml
+head: config/head.yaml
+```
+
+This works for `navbar`, `messages`, `variables`, `head`, `analytics`, `theme`, `generate` and `languages`. The files are checked like `clay.yaml` itself, and `clay dev` reloads when they change.
+
+**When to split.** Keep `clay.yaml` the one place to read the site at a glance: the title, the addresses, the languages. Move a setting into a file of its own when it is long, or maintained by someone else or something else:
+
+- `variables`, when a release script writes the version, so it never touches `clay.yaml`,
+- `messages`, when translators look after the interface texts,
+- `head`, when scripts and verifications pile up,
+- `navbar`, when the links are many.
+
+Short settings are easiest to find where they are; a site with a handful of settings needs no split at all.
+
+> [!NOTE]
+> `clay edit` changes settings in `clay.yaml` itself. Settings in files of their own are edited in those files.
 
 ## Checks
 

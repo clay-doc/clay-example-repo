@@ -94,6 +94,8 @@ The upgrade is done when `npx clay build --strict` passes.
   Every page gets a picture for link previews, and sites under a path the address of their sitemap.
 :::
 
+- `theme` in `clay.yaml` sets your own colors and fonts, and `analytics` counts page views without cookies, see [themes](../features/themes-and-icons.md#your-own-colors-and-fonts) and [analytics](../features/analytics.md).
+- Settings can live in files of their own, like `variables: config/variables.yaml`, see [clay.yaml](../configuration/clay-yaml.md#settings-in-files-of-their-own).
 - `generate` in `clay.yaml` runs tools that write pages before every build, like an API reference from code, see [generated docs](../writing/generated-docs.md).
 - `head` in `clay.yaml` adds scripts and meta tags to every page, see [clay.yaml](../configuration/clay-yaml.md#head).
 - Videos and embeds of YouTube, Vimeo, Figma and more, see [HTML](../writing/html.md#videos-and-embeds).

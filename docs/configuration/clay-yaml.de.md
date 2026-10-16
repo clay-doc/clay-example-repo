@@ -158,6 +158,18 @@ Die Startseite wird hier nicht eingestellt: Sie ist `docs/index.md`, eine Markdo
 
 Siehe [Versionen](../organizing/versions.md) und [Übersetzungen](../organizing/translations.md).
 
+## Theme und Analytics
+
+`theme` setzt eigene Farben, Ecken und Schriften, siehe [Designs & Icons](../features/themes-and-icons.md#eigene-farben-und-schriften). `analytics` zählt Seitenaufrufe ohne Cookies, mit Plausible, Umami oder GoatCounter, siehe [Analytics](../features/analytics.md).
+
+```yaml
+theme:
+  primary: "#2563eb"
+  font: "Lora, serif"
+analytics:
+  plausible: {}
+```
+
 ## Werte pro Sprache
 
 Auf einer mehrsprachigen Seite kann jede Texteinstellung einen Wert pro Sprache haben. Sprachen ohne Wert nutzen den der Standardsprache:
@@ -172,6 +184,32 @@ navbar:
       icon: "fa-solid fa-house"
       link: "https://example.com"
 ```
+
+## Einstellungen in eigenen Dateien :badge[Neu in Clay 4]{tip}
+
+Eine Einstellung kann eine YAML-Datei nennen, die ihren Wert enthält, relativ zur `clay.yaml`:
+
+```yaml
+title: "Mein Projekt"
+siteURL: "https://meine-org.github.io"
+navbar: config/navbar.yaml
+variables: config/variables.yaml
+head: config/head.yaml
+```
+
+Das funktioniert für `navbar`, `messages`, `variables`, `head`, `analytics`, `theme`, `generate` und `languages`. Die Dateien werden geprüft wie die `clay.yaml` selbst, und `clay dev` lädt neu, wenn sie sich ändern.
+
+**Wann aufteilen.** Halte die `clay.yaml` als den einen Ort, an dem man die Seite auf einen Blick versteht: Titel, Adressen, Sprachen. Verschiebe eine Einstellung in eine eigene Datei, wenn sie lang ist oder jemand oder etwas anderes sie pflegt:
+
+- `variables`, wenn ein Release-Skript die Version schreibt, damit es die `clay.yaml` nie anfasst,
+- `messages`, wenn Übersetzer die Texte der Oberfläche betreuen,
+- `head`, wenn sich Skripte und Bestätigungen häufen,
+- `navbar`, wenn es viele Links sind.
+
+Kurze Einstellungen findet man am leichtesten, wo sie sind; eine Seite mit einer Handvoll Einstellungen braucht keine Aufteilung.
+
+> [!NOTE]
+> `clay edit` ändert Einstellungen in der `clay.yaml` selbst. Einstellungen in eigenen Dateien bearbeitest du in diesen Dateien.
 
 ## Prüfungen
 
